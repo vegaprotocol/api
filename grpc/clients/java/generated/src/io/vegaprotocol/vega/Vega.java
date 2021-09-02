@@ -2739,10 +2739,21 @@ public final class Vega {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 value = 1 [json_name = "value"];</code>
+     * <code>string value = 1 [json_name = "value"];</code>
      * @return The value.
      */
-    long getValue();
+    java.lang.String getValue();
+    /**
+     * <pre>
+     * Price value, given as an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The bytes for value.
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
   }
   /**
    * Protobuf type {@code vega.Price}
@@ -2757,6 +2768,7 @@ public final class Vega {
       super(builder);
     }
     private Price() {
+      value_ = "";
     }
 
     @java.lang.Override
@@ -2789,9 +2801,10 @@ public final class Vega {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              value_ = input.readUInt64();
+              value_ = s;
               break;
             }
             default: {
@@ -2827,19 +2840,51 @@ public final class Vega {
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
-    private long value_;
+    private volatile java.lang.Object value_;
     /**
      * <pre>
      * Price value, given as an integer, for example `123456` is a correctly
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 value = 1 [json_name = "value"];</code>
+     * <code>string value = 1 [json_name = "value"];</code>
      * @return The value.
      */
     @java.lang.Override
-    public long getValue() {
-      return value_;
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Price value, given as an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The bytes for value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2856,8 +2901,8 @@ public final class Vega {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (value_ != 0L) {
-        output.writeUInt64(1, value_);
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -2868,9 +2913,8 @@ public final class Vega {
       if (size != -1) return size;
 
       size = 0;
-      if (value_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, value_);
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2887,8 +2931,8 @@ public final class Vega {
       }
       io.vegaprotocol.vega.Vega.Price other = (io.vegaprotocol.vega.Vega.Price) obj;
 
-      if (getValue()
-          != other.getValue()) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2901,8 +2945,7 @@ public final class Vega {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getValue());
+      hash = (53 * hash) + getValue().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3036,7 +3079,7 @@ public final class Vega {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        value_ = 0L;
+        value_ = "";
 
         return this;
       }
@@ -3113,8 +3156,9 @@ public final class Vega {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Vega.Price other) {
         if (other == io.vegaprotocol.vega.Vega.Price.getDefaultInstance()) return this;
-        if (other.getValue() != 0L) {
-          setValue(other.getValue());
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3145,19 +3189,27 @@ public final class Vega {
         return this;
       }
 
-      private long value_ ;
+      private java.lang.Object value_ = "";
       /**
        * <pre>
        * Price value, given as an integer, for example `123456` is a correctly
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 value = 1 [json_name = "value"];</code>
+       * <code>string value = 1 [json_name = "value"];</code>
        * @return The value.
        */
-      @java.lang.Override
-      public long getValue() {
-        return value_;
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -3165,11 +3217,37 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 value = 1 [json_name = "value"];</code>
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @return The bytes for value.
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Price value, given as an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string value = 1 [json_name = "value"];</code>
        * @param value The value to set.
        * @return This builder for chaining.
        */
-      public Builder setValue(long value) {
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         value_ = value;
         onChanged();
@@ -3181,12 +3259,33 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 value = 1 [json_name = "value"];</code>
+       * <code>string value = 1 [json_name = "value"];</code>
        * @return This builder for chaining.
        */
       public Builder clearValue() {
 
-        value_ = 0L;
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Price value, given as an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        value_ = value;
         onChanged();
         return this;
       }
@@ -7641,10 +7740,21 @@ public final class Vega {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 price = 5 [json_name = "price"];</code>
+     * <code>string price = 5 [json_name = "price"];</code>
      * @return The price.
      */
-    long getPrice();
+    java.lang.String getPrice();
+    /**
+     * <pre>
+     * Price for the order, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string price = 5 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    com.google.protobuf.ByteString
+        getPriceBytes();
 
     /**
      * <pre>
@@ -7892,6 +8002,7 @@ public final class Vega {
       marketId_ = "";
       partyId_ = "";
       side_ = 0;
+      price_ = "";
       timeInForce_ = 0;
       type_ = 0;
       status_ = 0;
@@ -7954,9 +8065,10 @@ public final class Vega {
               side_ = rawValue;
               break;
             }
-            case 40: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              price_ = input.readUInt64();
+              price_ = s;
               break;
             }
             case 48: {
@@ -8865,19 +8977,51 @@ public final class Vega {
     }
 
     public static final int PRICE_FIELD_NUMBER = 5;
-    private long price_;
+    private volatile java.lang.Object price_;
     /**
      * <pre>
      * Price for the order, the price is an integer, for example `123456` is a correctly
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 price = 5 [json_name = "price"];</code>
+     * <code>string price = 5 [json_name = "price"];</code>
      * @return The price.
      */
     @java.lang.Override
-    public long getPrice() {
-      return price_;
+    public java.lang.String getPrice() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        price_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Price for the order, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string price = 5 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPriceBytes() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        price_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int SIZE_FIELD_NUMBER = 6;
@@ -9261,8 +9405,8 @@ public final class Vega {
       if (side_ != io.vegaprotocol.vega.Vega.Side.SIDE_UNSPECIFIED.getNumber()) {
         output.writeEnum(4, side_);
       }
-      if (price_ != 0L) {
-        output.writeUInt64(5, price_);
+      if (!getPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, price_);
       }
       if (size_ != 0L) {
         output.writeUInt64(6, size_);
@@ -9328,9 +9472,8 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, side_);
       }
-      if (price_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, price_);
+      if (!getPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, price_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -9408,8 +9551,8 @@ public final class Vega {
       if (!getPartyId()
           .equals(other.getPartyId())) return false;
       if (side_ != other.side_) return false;
-      if (getPrice()
-          != other.getPrice()) return false;
+      if (!getPrice()
+          .equals(other.getPrice())) return false;
       if (getSize()
           != other.getSize()) return false;
       if (getRemaining()
@@ -9457,8 +9600,7 @@ public final class Vega {
       hash = (37 * hash) + SIDE_FIELD_NUMBER;
       hash = (53 * hash) + side_;
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPrice());
+      hash = (53 * hash) + getPrice().hashCode();
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
@@ -9641,7 +9783,7 @@ public final class Vega {
 
         side_ = 0;
 
-        price_ = 0L;
+        price_ = "";
 
         size_ = 0L;
 
@@ -9787,8 +9929,9 @@ public final class Vega {
         if (other.side_ != 0) {
           setSideValue(other.getSideValue());
         }
-        if (other.getPrice() != 0L) {
-          setPrice(other.getPrice());
+        if (!other.getPrice().isEmpty()) {
+          price_ = other.price_;
+          onChanged();
         }
         if (other.getSize() != 0L) {
           setSize(other.getSize());
@@ -10225,19 +10368,27 @@ public final class Vega {
         return this;
       }
 
-      private long price_ ;
+      private java.lang.Object price_ = "";
       /**
        * <pre>
        * Price for the order, the price is an integer, for example `123456` is a correctly
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 5 [json_name = "price"];</code>
+       * <code>string price = 5 [json_name = "price"];</code>
        * @return The price.
        */
-      @java.lang.Override
-      public long getPrice() {
-        return price_;
+      public java.lang.String getPrice() {
+        java.lang.Object ref = price_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          price_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -10245,11 +10396,37 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 5 [json_name = "price"];</code>
+       * <code>string price = 5 [json_name = "price"];</code>
+       * @return The bytes for price.
+       */
+      public com.google.protobuf.ByteString
+          getPriceBytes() {
+        java.lang.Object ref = price_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          price_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Price for the order, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string price = 5 [json_name = "price"];</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
-      public Builder setPrice(long value) {
+      public Builder setPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         price_ = value;
         onChanged();
@@ -10261,12 +10438,33 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 5 [json_name = "price"];</code>
+       * <code>string price = 5 [json_name = "price"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
 
-        price_ = 0L;
+        price_ = getDefaultInstance().getPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Price for the order, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string price = 5 [json_name = "price"];</code>
+       * @param value The bytes for price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        price_ = value;
         onChanged();
         return this;
       }
@@ -13677,10 +13875,20 @@ public final class Vega {
      * The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
      * </pre>
      *
-     * <code>uint64 indicative_price = 2 [json_name = "indicativePrice"];</code>
+     * <code>string indicative_price = 2 [json_name = "indicativePrice"];</code>
      * @return The indicativePrice.
      */
-    long getIndicativePrice();
+    java.lang.String getIndicativePrice();
+    /**
+     * <pre>
+     * The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
+     * </pre>
+     *
+     * <code>string indicative_price = 2 [json_name = "indicativePrice"];</code>
+     * @return The bytes for indicativePrice.
+     */
+    com.google.protobuf.ByteString
+        getIndicativePriceBytes();
 
     /**
      * <pre>
@@ -13730,6 +13938,7 @@ public final class Vega {
     }
     private AuctionIndicativeState() {
       marketId_ = "";
+      indicativePrice_ = "";
     }
 
     @java.lang.Override
@@ -13768,9 +13977,10 @@ public final class Vega {
               marketId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              indicativePrice_ = input.readUInt64();
+              indicativePrice_ = s;
               break;
             }
             case 24: {
@@ -13867,18 +14077,49 @@ public final class Vega {
     }
 
     public static final int INDICATIVE_PRICE_FIELD_NUMBER = 2;
-    private long indicativePrice_;
+    private volatile java.lang.Object indicativePrice_;
     /**
      * <pre>
      * The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
      * </pre>
      *
-     * <code>uint64 indicative_price = 2 [json_name = "indicativePrice"];</code>
+     * <code>string indicative_price = 2 [json_name = "indicativePrice"];</code>
      * @return The indicativePrice.
      */
     @java.lang.Override
-    public long getIndicativePrice() {
-      return indicativePrice_;
+    public java.lang.String getIndicativePrice() {
+      java.lang.Object ref = indicativePrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        indicativePrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
+     * </pre>
+     *
+     * <code>string indicative_price = 2 [json_name = "indicativePrice"];</code>
+     * @return The bytes for indicativePrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIndicativePriceBytes() {
+      java.lang.Object ref = indicativePrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        indicativePrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int INDICATIVE_VOLUME_FIELD_NUMBER = 3;
@@ -13943,8 +14184,8 @@ public final class Vega {
       if (!getMarketIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
-      if (indicativePrice_ != 0L) {
-        output.writeUInt64(2, indicativePrice_);
+      if (!getIndicativePriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, indicativePrice_);
       }
       if (indicativeVolume_ != 0L) {
         output.writeUInt64(3, indicativeVolume_);
@@ -13967,9 +14208,8 @@ public final class Vega {
       if (!getMarketIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
-      if (indicativePrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, indicativePrice_);
+      if (!getIndicativePriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, indicativePrice_);
       }
       if (indicativeVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -14000,8 +14240,8 @@ public final class Vega {
 
       if (!getMarketId()
           .equals(other.getMarketId())) return false;
-      if (getIndicativePrice()
-          != other.getIndicativePrice()) return false;
+      if (!getIndicativePrice()
+          .equals(other.getIndicativePrice())) return false;
       if (getIndicativeVolume()
           != other.getIndicativeVolume()) return false;
       if (getAuctionStart()
@@ -14022,8 +14262,7 @@ public final class Vega {
       hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMarketId().hashCode();
       hash = (37 * hash) + INDICATIVE_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getIndicativePrice());
+      hash = (53 * hash) + getIndicativePrice().hashCode();
       hash = (37 * hash) + INDICATIVE_VOLUME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getIndicativeVolume());
@@ -14172,7 +14411,7 @@ public final class Vega {
         super.clear();
         marketId_ = "";
 
-        indicativePrice_ = 0L;
+        indicativePrice_ = "";
 
         indicativeVolume_ = 0L;
 
@@ -14263,8 +14502,9 @@ public final class Vega {
           marketId_ = other.marketId_;
           onChanged();
         }
-        if (other.getIndicativePrice() != 0L) {
-          setIndicativePrice(other.getIndicativePrice());
+        if (!other.getIndicativePrice().isEmpty()) {
+          indicativePrice_ = other.indicativePrice_;
+          onChanged();
         }
         if (other.getIndicativeVolume() != 0L) {
           setIndicativeVolume(other.getIndicativeVolume());
@@ -14400,29 +14640,62 @@ public final class Vega {
         return this;
       }
 
-      private long indicativePrice_ ;
+      private java.lang.Object indicativePrice_ = "";
       /**
        * <pre>
        * The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
        * </pre>
        *
-       * <code>uint64 indicative_price = 2 [json_name = "indicativePrice"];</code>
+       * <code>string indicative_price = 2 [json_name = "indicativePrice"];</code>
        * @return The indicativePrice.
        */
-      @java.lang.Override
-      public long getIndicativePrice() {
-        return indicativePrice_;
+      public java.lang.String getIndicativePrice() {
+        java.lang.Object ref = indicativePrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          indicativePrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
        * </pre>
        *
-       * <code>uint64 indicative_price = 2 [json_name = "indicativePrice"];</code>
+       * <code>string indicative_price = 2 [json_name = "indicativePrice"];</code>
+       * @return The bytes for indicativePrice.
+       */
+      public com.google.protobuf.ByteString
+          getIndicativePriceBytes() {
+        java.lang.Object ref = indicativePrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          indicativePrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
+       * </pre>
+       *
+       * <code>string indicative_price = 2 [json_name = "indicativePrice"];</code>
        * @param value The indicativePrice to set.
        * @return This builder for chaining.
        */
-      public Builder setIndicativePrice(long value) {
+      public Builder setIndicativePrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         indicativePrice_ = value;
         onChanged();
@@ -14433,12 +14706,32 @@ public final class Vega {
        * The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
        * </pre>
        *
-       * <code>uint64 indicative_price = 2 [json_name = "indicativePrice"];</code>
+       * <code>string indicative_price = 2 [json_name = "indicativePrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearIndicativePrice() {
 
-        indicativePrice_ = 0L;
+        indicativePrice_ = getDefaultInstance().getIndicativePrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
+       * </pre>
+       *
+       * <code>string indicative_price = 2 [json_name = "indicativePrice"];</code>
+       * @param value The bytes for indicativePrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndicativePriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        indicativePrice_ = value;
         onChanged();
         return this;
       }
@@ -14674,10 +14967,21 @@ public final class Vega {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 price = 3 [json_name = "price"];</code>
+     * <code>string price = 3 [json_name = "price"];</code>
      * @return The price.
      */
-    long getPrice();
+    java.lang.String getPrice();
+    /**
+     * <pre>
+     * Price for the trade, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string price = 3 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    com.google.protobuf.ByteString
+        getPriceBytes();
 
     /**
      * <pre>
@@ -14911,6 +15215,7 @@ public final class Vega {
     private Trade() {
       id_ = "";
       marketId_ = "";
+      price_ = "";
       buyer_ = "";
       seller_ = "";
       aggressor_ = 0;
@@ -14961,9 +15266,10 @@ public final class Vega {
               marketId_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              price_ = input.readUInt64();
+              price_ = s;
               break;
             }
             case 32: {
@@ -15339,19 +15645,51 @@ public final class Vega {
     }
 
     public static final int PRICE_FIELD_NUMBER = 3;
-    private long price_;
+    private volatile java.lang.Object price_;
     /**
      * <pre>
      * Price for the trade, the price is an integer, for example `123456` is a correctly
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 price = 3 [json_name = "price"];</code>
+     * <code>string price = 3 [json_name = "price"];</code>
      * @return The price.
      */
     @java.lang.Override
-    public long getPrice() {
-      return price_;
+    public java.lang.String getPrice() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        price_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Price for the trade, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string price = 3 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPriceBytes() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        price_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int SIZE_FIELD_NUMBER = 4;
@@ -15749,8 +16087,8 @@ public final class Vega {
       if (!getMarketIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, marketId_);
       }
-      if (price_ != 0L) {
-        output.writeUInt64(3, price_);
+      if (!getPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, price_);
       }
       if (size_ != 0L) {
         output.writeUInt64(4, size_);
@@ -15803,9 +16141,8 @@ public final class Vega {
       if (!getMarketIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, marketId_);
       }
-      if (price_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, price_);
+      if (!getPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, price_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -15870,8 +16207,8 @@ public final class Vega {
           .equals(other.getId())) return false;
       if (!getMarketId()
           .equals(other.getMarketId())) return false;
-      if (getPrice()
-          != other.getPrice()) return false;
+      if (!getPrice()
+          .equals(other.getPrice())) return false;
       if (getSize()
           != other.getSize()) return false;
       if (!getBuyer()
@@ -15916,8 +16253,7 @@ public final class Vega {
       hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMarketId().hashCode();
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPrice());
+      hash = (53 * hash) + getPrice().hashCode();
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
@@ -16091,7 +16427,7 @@ public final class Vega {
 
         marketId_ = "";
 
-        price_ = 0L;
+        price_ = "";
 
         size_ = 0L;
 
@@ -16230,8 +16566,9 @@ public final class Vega {
           marketId_ = other.marketId_;
           onChanged();
         }
-        if (other.getPrice() != 0L) {
-          setPrice(other.getPrice());
+        if (!other.getPrice().isEmpty()) {
+          price_ = other.price_;
+          onChanged();
         }
         if (other.getSize() != 0L) {
           setSize(other.getSize());
@@ -16494,19 +16831,27 @@ public final class Vega {
         return this;
       }
 
-      private long price_ ;
+      private java.lang.Object price_ = "";
       /**
        * <pre>
        * Price for the trade, the price is an integer, for example `123456` is a correctly
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 3 [json_name = "price"];</code>
+       * <code>string price = 3 [json_name = "price"];</code>
        * @return The price.
        */
-      @java.lang.Override
-      public long getPrice() {
-        return price_;
+      public java.lang.String getPrice() {
+        java.lang.Object ref = price_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          price_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -16514,11 +16859,37 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 3 [json_name = "price"];</code>
+       * <code>string price = 3 [json_name = "price"];</code>
+       * @return The bytes for price.
+       */
+      public com.google.protobuf.ByteString
+          getPriceBytes() {
+        java.lang.Object ref = price_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          price_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Price for the trade, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string price = 3 [json_name = "price"];</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
-      public Builder setPrice(long value) {
+      public Builder setPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         price_ = value;
         onChanged();
@@ -16530,12 +16901,33 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 3 [json_name = "price"];</code>
+       * <code>string price = 3 [json_name = "price"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
 
-        price_ = 0L;
+        price_ = getDefaultInstance().getPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Price for the trade, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string price = 3 [json_name = "price"];</code>
+       * @param value The bytes for price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        price_ = value;
         onChanged();
         return this;
       }
@@ -17618,30 +18010,60 @@ public final class Vega {
      * Fee amount paid to the non-aggressive party of the trade
      * </pre>
      *
-     * <code>uint64 maker_fee = 1 [json_name = "makerFee"];</code>
+     * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
      * @return The makerFee.
      */
-    long getMakerFee();
+    java.lang.String getMakerFee();
+    /**
+     * <pre>
+     * Fee amount paid to the non-aggressive party of the trade
+     * </pre>
+     *
+     * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
+     * @return The bytes for makerFee.
+     */
+    com.google.protobuf.ByteString
+        getMakerFeeBytes();
 
     /**
      * <pre>
      * Fee amount paid for maintaining the Vega infrastructure
      * </pre>
      *
-     * <code>uint64 infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
+     * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
      * @return The infrastructureFee.
      */
-    long getInfrastructureFee();
+    java.lang.String getInfrastructureFee();
+    /**
+     * <pre>
+     * Fee amount paid for maintaining the Vega infrastructure
+     * </pre>
+     *
+     * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
+     * @return The bytes for infrastructureFee.
+     */
+    com.google.protobuf.ByteString
+        getInfrastructureFeeBytes();
 
     /**
      * <pre>
      * Fee amount paid to market makers
      * </pre>
      *
-     * <code>uint64 liquidity_fee = 3 [json_name = "liquidityFee"];</code>
+     * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
      * @return The liquidityFee.
      */
-    long getLiquidityFee();
+    java.lang.String getLiquidityFee();
+    /**
+     * <pre>
+     * Fee amount paid to market makers
+     * </pre>
+     *
+     * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
+     * @return The bytes for liquidityFee.
+     */
+    com.google.protobuf.ByteString
+        getLiquidityFeeBytes();
   }
   /**
    * <pre>
@@ -17660,6 +18082,9 @@ public final class Vega {
       super(builder);
     }
     private Fee() {
+      makerFee_ = "";
+      infrastructureFee_ = "";
+      liquidityFee_ = "";
     }
 
     @java.lang.Override
@@ -17692,19 +18117,22 @@ public final class Vega {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              makerFee_ = input.readUInt64();
+              makerFee_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              infrastructureFee_ = input.readUInt64();
+              infrastructureFee_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              liquidityFee_ = input.readUInt64();
+              liquidityFee_ = s;
               break;
             }
             default: {
@@ -17740,48 +18168,141 @@ public final class Vega {
     }
 
     public static final int MAKER_FEE_FIELD_NUMBER = 1;
-    private long makerFee_;
+    private volatile java.lang.Object makerFee_;
     /**
      * <pre>
      * Fee amount paid to the non-aggressive party of the trade
      * </pre>
      *
-     * <code>uint64 maker_fee = 1 [json_name = "makerFee"];</code>
+     * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
      * @return The makerFee.
      */
     @java.lang.Override
-    public long getMakerFee() {
-      return makerFee_;
+    public java.lang.String getMakerFee() {
+      java.lang.Object ref = makerFee_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        makerFee_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Fee amount paid to the non-aggressive party of the trade
+     * </pre>
+     *
+     * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
+     * @return The bytes for makerFee.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMakerFeeBytes() {
+      java.lang.Object ref = makerFee_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        makerFee_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int INFRASTRUCTURE_FEE_FIELD_NUMBER = 2;
-    private long infrastructureFee_;
+    private volatile java.lang.Object infrastructureFee_;
     /**
      * <pre>
      * Fee amount paid for maintaining the Vega infrastructure
      * </pre>
      *
-     * <code>uint64 infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
+     * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
      * @return The infrastructureFee.
      */
     @java.lang.Override
-    public long getInfrastructureFee() {
-      return infrastructureFee_;
+    public java.lang.String getInfrastructureFee() {
+      java.lang.Object ref = infrastructureFee_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        infrastructureFee_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Fee amount paid for maintaining the Vega infrastructure
+     * </pre>
+     *
+     * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
+     * @return The bytes for infrastructureFee.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInfrastructureFeeBytes() {
+      java.lang.Object ref = infrastructureFee_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        infrastructureFee_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int LIQUIDITY_FEE_FIELD_NUMBER = 3;
-    private long liquidityFee_;
+    private volatile java.lang.Object liquidityFee_;
     /**
      * <pre>
      * Fee amount paid to market makers
      * </pre>
      *
-     * <code>uint64 liquidity_fee = 3 [json_name = "liquidityFee"];</code>
+     * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
      * @return The liquidityFee.
      */
     @java.lang.Override
-    public long getLiquidityFee() {
-      return liquidityFee_;
+    public java.lang.String getLiquidityFee() {
+      java.lang.Object ref = liquidityFee_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        liquidityFee_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Fee amount paid to market makers
+     * </pre>
+     *
+     * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
+     * @return The bytes for liquidityFee.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLiquidityFeeBytes() {
+      java.lang.Object ref = liquidityFee_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        liquidityFee_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -17798,14 +18319,14 @@ public final class Vega {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (makerFee_ != 0L) {
-        output.writeUInt64(1, makerFee_);
+      if (!getMakerFeeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, makerFee_);
       }
-      if (infrastructureFee_ != 0L) {
-        output.writeUInt64(2, infrastructureFee_);
+      if (!getInfrastructureFeeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, infrastructureFee_);
       }
-      if (liquidityFee_ != 0L) {
-        output.writeUInt64(3, liquidityFee_);
+      if (!getLiquidityFeeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, liquidityFee_);
       }
       unknownFields.writeTo(output);
     }
@@ -17816,17 +18337,14 @@ public final class Vega {
       if (size != -1) return size;
 
       size = 0;
-      if (makerFee_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, makerFee_);
+      if (!getMakerFeeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, makerFee_);
       }
-      if (infrastructureFee_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, infrastructureFee_);
+      if (!getInfrastructureFeeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, infrastructureFee_);
       }
-      if (liquidityFee_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, liquidityFee_);
+      if (!getLiquidityFeeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, liquidityFee_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17843,12 +18361,12 @@ public final class Vega {
       }
       io.vegaprotocol.vega.Vega.Fee other = (io.vegaprotocol.vega.Vega.Fee) obj;
 
-      if (getMakerFee()
-          != other.getMakerFee()) return false;
-      if (getInfrastructureFee()
-          != other.getInfrastructureFee()) return false;
-      if (getLiquidityFee()
-          != other.getLiquidityFee()) return false;
+      if (!getMakerFee()
+          .equals(other.getMakerFee())) return false;
+      if (!getInfrastructureFee()
+          .equals(other.getInfrastructureFee())) return false;
+      if (!getLiquidityFee()
+          .equals(other.getLiquidityFee())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17861,14 +18379,11 @@ public final class Vega {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MAKER_FEE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMakerFee());
+      hash = (53 * hash) + getMakerFee().hashCode();
       hash = (37 * hash) + INFRASTRUCTURE_FEE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getInfrastructureFee());
+      hash = (53 * hash) + getInfrastructureFee().hashCode();
       hash = (37 * hash) + LIQUIDITY_FEE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLiquidityFee());
+      hash = (53 * hash) + getLiquidityFee().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -18006,11 +18521,11 @@ public final class Vega {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        makerFee_ = 0L;
+        makerFee_ = "";
 
-        infrastructureFee_ = 0L;
+        infrastructureFee_ = "";
 
-        liquidityFee_ = 0L;
+        liquidityFee_ = "";
 
         return this;
       }
@@ -18089,14 +18604,17 @@ public final class Vega {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Vega.Fee other) {
         if (other == io.vegaprotocol.vega.Vega.Fee.getDefaultInstance()) return this;
-        if (other.getMakerFee() != 0L) {
-          setMakerFee(other.getMakerFee());
+        if (!other.getMakerFee().isEmpty()) {
+          makerFee_ = other.makerFee_;
+          onChanged();
         }
-        if (other.getInfrastructureFee() != 0L) {
-          setInfrastructureFee(other.getInfrastructureFee());
+        if (!other.getInfrastructureFee().isEmpty()) {
+          infrastructureFee_ = other.infrastructureFee_;
+          onChanged();
         }
-        if (other.getLiquidityFee() != 0L) {
-          setLiquidityFee(other.getLiquidityFee());
+        if (!other.getLiquidityFee().isEmpty()) {
+          liquidityFee_ = other.liquidityFee_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18127,29 +18645,62 @@ public final class Vega {
         return this;
       }
 
-      private long makerFee_ ;
+      private java.lang.Object makerFee_ = "";
       /**
        * <pre>
        * Fee amount paid to the non-aggressive party of the trade
        * </pre>
        *
-       * <code>uint64 maker_fee = 1 [json_name = "makerFee"];</code>
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
        * @return The makerFee.
        */
-      @java.lang.Override
-      public long getMakerFee() {
-        return makerFee_;
+      public java.lang.String getMakerFee() {
+        java.lang.Object ref = makerFee_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          makerFee_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Fee amount paid to the non-aggressive party of the trade
        * </pre>
        *
-       * <code>uint64 maker_fee = 1 [json_name = "makerFee"];</code>
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
+       * @return The bytes for makerFee.
+       */
+      public com.google.protobuf.ByteString
+          getMakerFeeBytes() {
+        java.lang.Object ref = makerFee_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          makerFee_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Fee amount paid to the non-aggressive party of the trade
+       * </pre>
+       *
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
        * @param value The makerFee to set.
        * @return This builder for chaining.
        */
-      public Builder setMakerFee(long value) {
+      public Builder setMakerFee(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         makerFee_ = value;
         onChanged();
@@ -18160,39 +18711,92 @@ public final class Vega {
        * Fee amount paid to the non-aggressive party of the trade
        * </pre>
        *
-       * <code>uint64 maker_fee = 1 [json_name = "makerFee"];</code>
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMakerFee() {
 
-        makerFee_ = 0L;
+        makerFee_ = getDefaultInstance().getMakerFee();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Fee amount paid to the non-aggressive party of the trade
+       * </pre>
+       *
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
+       * @param value The bytes for makerFee to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMakerFeeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        makerFee_ = value;
         onChanged();
         return this;
       }
 
-      private long infrastructureFee_ ;
+      private java.lang.Object infrastructureFee_ = "";
       /**
        * <pre>
        * Fee amount paid for maintaining the Vega infrastructure
        * </pre>
        *
-       * <code>uint64 infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
        * @return The infrastructureFee.
        */
-      @java.lang.Override
-      public long getInfrastructureFee() {
-        return infrastructureFee_;
+      public java.lang.String getInfrastructureFee() {
+        java.lang.Object ref = infrastructureFee_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          infrastructureFee_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Fee amount paid for maintaining the Vega infrastructure
        * </pre>
        *
-       * <code>uint64 infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
+       * @return The bytes for infrastructureFee.
+       */
+      public com.google.protobuf.ByteString
+          getInfrastructureFeeBytes() {
+        java.lang.Object ref = infrastructureFee_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          infrastructureFee_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Fee amount paid for maintaining the Vega infrastructure
+       * </pre>
+       *
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
        * @param value The infrastructureFee to set.
        * @return This builder for chaining.
        */
-      public Builder setInfrastructureFee(long value) {
+      public Builder setInfrastructureFee(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         infrastructureFee_ = value;
         onChanged();
@@ -18203,39 +18807,92 @@ public final class Vega {
        * Fee amount paid for maintaining the Vega infrastructure
        * </pre>
        *
-       * <code>uint64 infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
        * @return This builder for chaining.
        */
       public Builder clearInfrastructureFee() {
 
-        infrastructureFee_ = 0L;
+        infrastructureFee_ = getDefaultInstance().getInfrastructureFee();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Fee amount paid for maintaining the Vega infrastructure
+       * </pre>
+       *
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
+       * @param value The bytes for infrastructureFee to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfrastructureFeeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        infrastructureFee_ = value;
         onChanged();
         return this;
       }
 
-      private long liquidityFee_ ;
+      private java.lang.Object liquidityFee_ = "";
       /**
        * <pre>
        * Fee amount paid to market makers
        * </pre>
        *
-       * <code>uint64 liquidity_fee = 3 [json_name = "liquidityFee"];</code>
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
        * @return The liquidityFee.
        */
-      @java.lang.Override
-      public long getLiquidityFee() {
-        return liquidityFee_;
+      public java.lang.String getLiquidityFee() {
+        java.lang.Object ref = liquidityFee_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          liquidityFee_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Fee amount paid to market makers
        * </pre>
        *
-       * <code>uint64 liquidity_fee = 3 [json_name = "liquidityFee"];</code>
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
+       * @return The bytes for liquidityFee.
+       */
+      public com.google.protobuf.ByteString
+          getLiquidityFeeBytes() {
+        java.lang.Object ref = liquidityFee_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          liquidityFee_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Fee amount paid to market makers
+       * </pre>
+       *
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
        * @param value The liquidityFee to set.
        * @return This builder for chaining.
        */
-      public Builder setLiquidityFee(long value) {
+      public Builder setLiquidityFee(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         liquidityFee_ = value;
         onChanged();
@@ -18246,12 +18903,32 @@ public final class Vega {
        * Fee amount paid to market makers
        * </pre>
        *
-       * <code>uint64 liquidity_fee = 3 [json_name = "liquidityFee"];</code>
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLiquidityFee() {
 
-        liquidityFee_ = 0L;
+        liquidityFee_ = getDefaultInstance().getLiquidityFee();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Fee amount paid to market makers
+       * </pre>
+       *
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
+       * @param value The bytes for liquidityFee to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLiquidityFeeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        liquidityFee_ = value;
         onChanged();
         return this;
       }
@@ -19253,40 +19930,80 @@ public final class Vega {
      * Highest price for trading during the candle interval
      * </pre>
      *
-     * <code>uint64 high = 3 [json_name = "high"];</code>
+     * <code>string high = 3 [json_name = "high"];</code>
      * @return The high.
      */
-    long getHigh();
+    java.lang.String getHigh();
+    /**
+     * <pre>
+     * Highest price for trading during the candle interval
+     * </pre>
+     *
+     * <code>string high = 3 [json_name = "high"];</code>
+     * @return The bytes for high.
+     */
+    com.google.protobuf.ByteString
+        getHighBytes();
 
     /**
      * <pre>
      * Lowest price for trading during the candle interval
      * </pre>
      *
-     * <code>uint64 low = 4 [json_name = "low"];</code>
+     * <code>string low = 4 [json_name = "low"];</code>
      * @return The low.
      */
-    long getLow();
+    java.lang.String getLow();
+    /**
+     * <pre>
+     * Lowest price for trading during the candle interval
+     * </pre>
+     *
+     * <code>string low = 4 [json_name = "low"];</code>
+     * @return The bytes for low.
+     */
+    com.google.protobuf.ByteString
+        getLowBytes();
 
     /**
      * <pre>
      * Open trade price
      * </pre>
      *
-     * <code>uint64 open = 5 [json_name = "open"];</code>
+     * <code>string open = 5 [json_name = "open"];</code>
      * @return The open.
      */
-    long getOpen();
+    java.lang.String getOpen();
+    /**
+     * <pre>
+     * Open trade price
+     * </pre>
+     *
+     * <code>string open = 5 [json_name = "open"];</code>
+     * @return The bytes for open.
+     */
+    com.google.protobuf.ByteString
+        getOpenBytes();
 
     /**
      * <pre>
      * Closing trade price
      * </pre>
      *
-     * <code>uint64 close = 6 [json_name = "close"];</code>
+     * <code>string close = 6 [json_name = "close"];</code>
      * @return The close.
      */
-    long getClose();
+    java.lang.String getClose();
+    /**
+     * <pre>
+     * Closing trade price
+     * </pre>
+     *
+     * <code>string close = 6 [json_name = "close"];</code>
+     * @return The bytes for close.
+     */
+    com.google.protobuf.ByteString
+        getCloseBytes();
 
     /**
      * <pre>
@@ -19336,6 +20053,10 @@ public final class Vega {
     }
     private Candle() {
       datetime_ = "";
+      high_ = "";
+      low_ = "";
+      open_ = "";
+      close_ = "";
       interval_ = 0;
     }
 
@@ -19380,24 +20101,28 @@ public final class Vega {
               datetime_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              high_ = input.readUInt64();
+              high_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              low_ = input.readUInt64();
+              low_ = s;
               break;
             }
-            case 40: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              open_ = input.readUInt64();
+              open_ = s;
               break;
             }
-            case 48: {
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              close_ = input.readUInt64();
+              close_ = s;
               break;
             }
             case 56: {
@@ -19506,63 +20231,187 @@ public final class Vega {
     }
 
     public static final int HIGH_FIELD_NUMBER = 3;
-    private long high_;
+    private volatile java.lang.Object high_;
     /**
      * <pre>
      * Highest price for trading during the candle interval
      * </pre>
      *
-     * <code>uint64 high = 3 [json_name = "high"];</code>
+     * <code>string high = 3 [json_name = "high"];</code>
      * @return The high.
      */
     @java.lang.Override
-    public long getHigh() {
-      return high_;
+    public java.lang.String getHigh() {
+      java.lang.Object ref = high_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        high_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Highest price for trading during the candle interval
+     * </pre>
+     *
+     * <code>string high = 3 [json_name = "high"];</code>
+     * @return The bytes for high.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHighBytes() {
+      java.lang.Object ref = high_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        high_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int LOW_FIELD_NUMBER = 4;
-    private long low_;
+    private volatile java.lang.Object low_;
     /**
      * <pre>
      * Lowest price for trading during the candle interval
      * </pre>
      *
-     * <code>uint64 low = 4 [json_name = "low"];</code>
+     * <code>string low = 4 [json_name = "low"];</code>
      * @return The low.
      */
     @java.lang.Override
-    public long getLow() {
-      return low_;
+    public java.lang.String getLow() {
+      java.lang.Object ref = low_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        low_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Lowest price for trading during the candle interval
+     * </pre>
+     *
+     * <code>string low = 4 [json_name = "low"];</code>
+     * @return The bytes for low.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLowBytes() {
+      java.lang.Object ref = low_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        low_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int OPEN_FIELD_NUMBER = 5;
-    private long open_;
+    private volatile java.lang.Object open_;
     /**
      * <pre>
      * Open trade price
      * </pre>
      *
-     * <code>uint64 open = 5 [json_name = "open"];</code>
+     * <code>string open = 5 [json_name = "open"];</code>
      * @return The open.
      */
     @java.lang.Override
-    public long getOpen() {
-      return open_;
+    public java.lang.String getOpen() {
+      java.lang.Object ref = open_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        open_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Open trade price
+     * </pre>
+     *
+     * <code>string open = 5 [json_name = "open"];</code>
+     * @return The bytes for open.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOpenBytes() {
+      java.lang.Object ref = open_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        open_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int CLOSE_FIELD_NUMBER = 6;
-    private long close_;
+    private volatile java.lang.Object close_;
     /**
      * <pre>
      * Closing trade price
      * </pre>
      *
-     * <code>uint64 close = 6 [json_name = "close"];</code>
+     * <code>string close = 6 [json_name = "close"];</code>
      * @return The close.
      */
     @java.lang.Override
-    public long getClose() {
-      return close_;
+    public java.lang.String getClose() {
+      java.lang.Object ref = close_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        close_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Closing trade price
+     * </pre>
+     *
+     * <code>string close = 6 [json_name = "close"];</code>
+     * @return The bytes for close.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCloseBytes() {
+      java.lang.Object ref = close_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        close_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int VOLUME_FIELD_NUMBER = 7;
@@ -19627,17 +20476,17 @@ public final class Vega {
       if (!getDatetimeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, datetime_);
       }
-      if (high_ != 0L) {
-        output.writeUInt64(3, high_);
+      if (!getHighBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, high_);
       }
-      if (low_ != 0L) {
-        output.writeUInt64(4, low_);
+      if (!getLowBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, low_);
       }
-      if (open_ != 0L) {
-        output.writeUInt64(5, open_);
+      if (!getOpenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, open_);
       }
-      if (close_ != 0L) {
-        output.writeUInt64(6, close_);
+      if (!getCloseBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, close_);
       }
       if (volume_ != 0L) {
         output.writeUInt64(7, volume_);
@@ -19661,21 +20510,17 @@ public final class Vega {
       if (!getDatetimeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, datetime_);
       }
-      if (high_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, high_);
+      if (!getHighBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, high_);
       }
-      if (low_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, low_);
+      if (!getLowBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, low_);
       }
-      if (open_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, open_);
+      if (!getOpenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, open_);
       }
-      if (close_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, close_);
+      if (!getCloseBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, close_);
       }
       if (volume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -19704,14 +20549,14 @@ public final class Vega {
           != other.getTimestamp()) return false;
       if (!getDatetime()
           .equals(other.getDatetime())) return false;
-      if (getHigh()
-          != other.getHigh()) return false;
-      if (getLow()
-          != other.getLow()) return false;
-      if (getOpen()
-          != other.getOpen()) return false;
-      if (getClose()
-          != other.getClose()) return false;
+      if (!getHigh()
+          .equals(other.getHigh())) return false;
+      if (!getLow()
+          .equals(other.getLow())) return false;
+      if (!getOpen()
+          .equals(other.getOpen())) return false;
+      if (!getClose()
+          .equals(other.getClose())) return false;
       if (getVolume()
           != other.getVolume()) return false;
       if (interval_ != other.interval_) return false;
@@ -19732,17 +20577,13 @@ public final class Vega {
       hash = (37 * hash) + DATETIME_FIELD_NUMBER;
       hash = (53 * hash) + getDatetime().hashCode();
       hash = (37 * hash) + HIGH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getHigh());
+      hash = (53 * hash) + getHigh().hashCode();
       hash = (37 * hash) + LOW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLow());
+      hash = (53 * hash) + getLow().hashCode();
       hash = (37 * hash) + OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getOpen());
+      hash = (53 * hash) + getOpen().hashCode();
       hash = (37 * hash) + CLOSE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getClose());
+      hash = (53 * hash) + getClose().hashCode();
       hash = (37 * hash) + VOLUME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getVolume());
@@ -19890,13 +20731,13 @@ public final class Vega {
 
         datetime_ = "";
 
-        high_ = 0L;
+        high_ = "";
 
-        low_ = 0L;
+        low_ = "";
 
-        open_ = 0L;
+        open_ = "";
 
-        close_ = 0L;
+        close_ = "";
 
         volume_ = 0L;
 
@@ -19991,17 +20832,21 @@ public final class Vega {
           datetime_ = other.datetime_;
           onChanged();
         }
-        if (other.getHigh() != 0L) {
-          setHigh(other.getHigh());
+        if (!other.getHigh().isEmpty()) {
+          high_ = other.high_;
+          onChanged();
         }
-        if (other.getLow() != 0L) {
-          setLow(other.getLow());
+        if (!other.getLow().isEmpty()) {
+          low_ = other.low_;
+          onChanged();
         }
-        if (other.getOpen() != 0L) {
-          setOpen(other.getOpen());
+        if (!other.getOpen().isEmpty()) {
+          open_ = other.open_;
+          onChanged();
         }
-        if (other.getClose() != 0L) {
-          setClose(other.getClose());
+        if (!other.getClose().isEmpty()) {
+          close_ = other.close_;
+          onChanged();
         }
         if (other.getVolume() != 0L) {
           setVolume(other.getVolume());
@@ -20180,29 +21025,62 @@ public final class Vega {
         return this;
       }
 
-      private long high_ ;
+      private java.lang.Object high_ = "";
       /**
        * <pre>
        * Highest price for trading during the candle interval
        * </pre>
        *
-       * <code>uint64 high = 3 [json_name = "high"];</code>
+       * <code>string high = 3 [json_name = "high"];</code>
        * @return The high.
        */
-      @java.lang.Override
-      public long getHigh() {
-        return high_;
+      public java.lang.String getHigh() {
+        java.lang.Object ref = high_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          high_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Highest price for trading during the candle interval
        * </pre>
        *
-       * <code>uint64 high = 3 [json_name = "high"];</code>
+       * <code>string high = 3 [json_name = "high"];</code>
+       * @return The bytes for high.
+       */
+      public com.google.protobuf.ByteString
+          getHighBytes() {
+        java.lang.Object ref = high_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          high_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Highest price for trading during the candle interval
+       * </pre>
+       *
+       * <code>string high = 3 [json_name = "high"];</code>
        * @param value The high to set.
        * @return This builder for chaining.
        */
-      public Builder setHigh(long value) {
+      public Builder setHigh(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         high_ = value;
         onChanged();
@@ -20213,39 +21091,92 @@ public final class Vega {
        * Highest price for trading during the candle interval
        * </pre>
        *
-       * <code>uint64 high = 3 [json_name = "high"];</code>
+       * <code>string high = 3 [json_name = "high"];</code>
        * @return This builder for chaining.
        */
       public Builder clearHigh() {
 
-        high_ = 0L;
+        high_ = getDefaultInstance().getHigh();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Highest price for trading during the candle interval
+       * </pre>
+       *
+       * <code>string high = 3 [json_name = "high"];</code>
+       * @param value The bytes for high to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHighBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        high_ = value;
         onChanged();
         return this;
       }
 
-      private long low_ ;
+      private java.lang.Object low_ = "";
       /**
        * <pre>
        * Lowest price for trading during the candle interval
        * </pre>
        *
-       * <code>uint64 low = 4 [json_name = "low"];</code>
+       * <code>string low = 4 [json_name = "low"];</code>
        * @return The low.
        */
-      @java.lang.Override
-      public long getLow() {
-        return low_;
+      public java.lang.String getLow() {
+        java.lang.Object ref = low_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          low_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Lowest price for trading during the candle interval
        * </pre>
        *
-       * <code>uint64 low = 4 [json_name = "low"];</code>
+       * <code>string low = 4 [json_name = "low"];</code>
+       * @return The bytes for low.
+       */
+      public com.google.protobuf.ByteString
+          getLowBytes() {
+        java.lang.Object ref = low_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          low_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Lowest price for trading during the candle interval
+       * </pre>
+       *
+       * <code>string low = 4 [json_name = "low"];</code>
        * @param value The low to set.
        * @return This builder for chaining.
        */
-      public Builder setLow(long value) {
+      public Builder setLow(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         low_ = value;
         onChanged();
@@ -20256,39 +21187,92 @@ public final class Vega {
        * Lowest price for trading during the candle interval
        * </pre>
        *
-       * <code>uint64 low = 4 [json_name = "low"];</code>
+       * <code>string low = 4 [json_name = "low"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLow() {
 
-        low_ = 0L;
+        low_ = getDefaultInstance().getLow();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Lowest price for trading during the candle interval
+       * </pre>
+       *
+       * <code>string low = 4 [json_name = "low"];</code>
+       * @param value The bytes for low to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLowBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        low_ = value;
         onChanged();
         return this;
       }
 
-      private long open_ ;
+      private java.lang.Object open_ = "";
       /**
        * <pre>
        * Open trade price
        * </pre>
        *
-       * <code>uint64 open = 5 [json_name = "open"];</code>
+       * <code>string open = 5 [json_name = "open"];</code>
        * @return The open.
        */
-      @java.lang.Override
-      public long getOpen() {
-        return open_;
+      public java.lang.String getOpen() {
+        java.lang.Object ref = open_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          open_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Open trade price
        * </pre>
        *
-       * <code>uint64 open = 5 [json_name = "open"];</code>
+       * <code>string open = 5 [json_name = "open"];</code>
+       * @return The bytes for open.
+       */
+      public com.google.protobuf.ByteString
+          getOpenBytes() {
+        java.lang.Object ref = open_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          open_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Open trade price
+       * </pre>
+       *
+       * <code>string open = 5 [json_name = "open"];</code>
        * @param value The open to set.
        * @return This builder for chaining.
        */
-      public Builder setOpen(long value) {
+      public Builder setOpen(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         open_ = value;
         onChanged();
@@ -20299,39 +21283,92 @@ public final class Vega {
        * Open trade price
        * </pre>
        *
-       * <code>uint64 open = 5 [json_name = "open"];</code>
+       * <code>string open = 5 [json_name = "open"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOpen() {
 
-        open_ = 0L;
+        open_ = getDefaultInstance().getOpen();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Open trade price
+       * </pre>
+       *
+       * <code>string open = 5 [json_name = "open"];</code>
+       * @param value The bytes for open to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOpenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        open_ = value;
         onChanged();
         return this;
       }
 
-      private long close_ ;
+      private java.lang.Object close_ = "";
       /**
        * <pre>
        * Closing trade price
        * </pre>
        *
-       * <code>uint64 close = 6 [json_name = "close"];</code>
+       * <code>string close = 6 [json_name = "close"];</code>
        * @return The close.
        */
-      @java.lang.Override
-      public long getClose() {
-        return close_;
+      public java.lang.String getClose() {
+        java.lang.Object ref = close_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          close_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Closing trade price
        * </pre>
        *
-       * <code>uint64 close = 6 [json_name = "close"];</code>
+       * <code>string close = 6 [json_name = "close"];</code>
+       * @return The bytes for close.
+       */
+      public com.google.protobuf.ByteString
+          getCloseBytes() {
+        java.lang.Object ref = close_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          close_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Closing trade price
+       * </pre>
+       *
+       * <code>string close = 6 [json_name = "close"];</code>
        * @param value The close to set.
        * @return This builder for chaining.
        */
-      public Builder setClose(long value) {
+      public Builder setClose(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         close_ = value;
         onChanged();
@@ -20342,12 +21379,32 @@ public final class Vega {
        * Closing trade price
        * </pre>
        *
-       * <code>uint64 close = 6 [json_name = "close"];</code>
+       * <code>string close = 6 [json_name = "close"];</code>
        * @return This builder for chaining.
        */
       public Builder clearClose() {
 
-        close_ = 0L;
+        close_ = getDefaultInstance().getClose();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Closing trade price
+       * </pre>
+       *
+       * <code>string close = 6 [json_name = "close"];</code>
+       * @param value The bytes for close to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCloseBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        close_ = value;
         onChanged();
         return this;
       }
@@ -20531,10 +21588,21 @@ public final class Vega {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 price = 1 [json_name = "price"];</code>
+     * <code>string price = 1 [json_name = "price"];</code>
      * @return The price.
      */
-    long getPrice();
+    java.lang.String getPrice();
+    /**
+     * <pre>
+     * Price for the price level, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string price = 1 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    com.google.protobuf.ByteString
+        getPriceBytes();
 
     /**
      * <pre>
@@ -20573,6 +21641,7 @@ public final class Vega {
       super(builder);
     }
     private PriceLevel() {
+      price_ = "";
     }
 
     @java.lang.Override
@@ -20605,9 +21674,10 @@ public final class Vega {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              price_ = input.readUInt64();
+              price_ = s;
               break;
             }
             case 16: {
@@ -20653,19 +21723,51 @@ public final class Vega {
     }
 
     public static final int PRICE_FIELD_NUMBER = 1;
-    private long price_;
+    private volatile java.lang.Object price_;
     /**
      * <pre>
      * Price for the price level, the price is an integer, for example `123456` is a correctly
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 price = 1 [json_name = "price"];</code>
+     * <code>string price = 1 [json_name = "price"];</code>
      * @return The price.
      */
     @java.lang.Override
-    public long getPrice() {
-      return price_;
+    public java.lang.String getPrice() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        price_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Price for the price level, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string price = 1 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPriceBytes() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        price_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int NUMBER_OF_ORDERS_FIELD_NUMBER = 2;
@@ -20712,8 +21814,8 @@ public final class Vega {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (price_ != 0L) {
-        output.writeUInt64(1, price_);
+      if (!getPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, price_);
       }
       if (numberOfOrders_ != 0L) {
         output.writeUInt64(2, numberOfOrders_);
@@ -20730,9 +21832,8 @@ public final class Vega {
       if (size != -1) return size;
 
       size = 0;
-      if (price_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, price_);
+      if (!getPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, price_);
       }
       if (numberOfOrders_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -20757,8 +21858,8 @@ public final class Vega {
       }
       io.vegaprotocol.vega.Vega.PriceLevel other = (io.vegaprotocol.vega.Vega.PriceLevel) obj;
 
-      if (getPrice()
-          != other.getPrice()) return false;
+      if (!getPrice()
+          .equals(other.getPrice())) return false;
       if (getNumberOfOrders()
           != other.getNumberOfOrders()) return false;
       if (getVolume()
@@ -20775,8 +21876,7 @@ public final class Vega {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPrice());
+      hash = (53 * hash) + getPrice().hashCode();
       hash = (37 * hash) + NUMBER_OF_ORDERS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getNumberOfOrders());
@@ -20920,7 +22020,7 @@ public final class Vega {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        price_ = 0L;
+        price_ = "";
 
         numberOfOrders_ = 0L;
 
@@ -21003,8 +22103,9 @@ public final class Vega {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Vega.PriceLevel other) {
         if (other == io.vegaprotocol.vega.Vega.PriceLevel.getDefaultInstance()) return this;
-        if (other.getPrice() != 0L) {
-          setPrice(other.getPrice());
+        if (!other.getPrice().isEmpty()) {
+          price_ = other.price_;
+          onChanged();
         }
         if (other.getNumberOfOrders() != 0L) {
           setNumberOfOrders(other.getNumberOfOrders());
@@ -21041,19 +22142,27 @@ public final class Vega {
         return this;
       }
 
-      private long price_ ;
+      private java.lang.Object price_ = "";
       /**
        * <pre>
        * Price for the price level, the price is an integer, for example `123456` is a correctly
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 1 [json_name = "price"];</code>
+       * <code>string price = 1 [json_name = "price"];</code>
        * @return The price.
        */
-      @java.lang.Override
-      public long getPrice() {
-        return price_;
+      public java.lang.String getPrice() {
+        java.lang.Object ref = price_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          price_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -21061,11 +22170,37 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 1 [json_name = "price"];</code>
+       * <code>string price = 1 [json_name = "price"];</code>
+       * @return The bytes for price.
+       */
+      public com.google.protobuf.ByteString
+          getPriceBytes() {
+        java.lang.Object ref = price_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          price_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Price for the price level, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string price = 1 [json_name = "price"];</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
-      public Builder setPrice(long value) {
+      public Builder setPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         price_ = value;
         onChanged();
@@ -21077,12 +22212,33 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 1 [json_name = "price"];</code>
+       * <code>string price = 1 [json_name = "price"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
 
-        price_ = 0L;
+        price_ = getDefaultInstance().getPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Price for the price level, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string price = 1 [json_name = "price"];</code>
+       * @param value The bytes for price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        price_ = value;
         onChanged();
         return this;
       }
@@ -24632,20 +25788,40 @@ public final class Vega {
      * Realised profit and loss for the position, value is signed +ve for long and -ve for short
      * </pre>
      *
-     * <code>int64 realised_pnl = 4 [json_name = "realisedPnl"];</code>
+     * <code>string realised_pnl = 4 [json_name = "realisedPnl"];</code>
      * @return The realisedPnl.
      */
-    long getRealisedPnl();
+    java.lang.String getRealisedPnl();
+    /**
+     * <pre>
+     * Realised profit and loss for the position, value is signed +ve for long and -ve for short
+     * </pre>
+     *
+     * <code>string realised_pnl = 4 [json_name = "realisedPnl"];</code>
+     * @return The bytes for realisedPnl.
+     */
+    com.google.protobuf.ByteString
+        getRealisedPnlBytes();
 
     /**
      * <pre>
      * Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
      * </pre>
      *
-     * <code>int64 unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
+     * <code>string unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
      * @return The unrealisedPnl.
      */
-    long getUnrealisedPnl();
+    java.lang.String getUnrealisedPnl();
+    /**
+     * <pre>
+     * Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
+     * </pre>
+     *
+     * <code>string unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
+     * @return The bytes for unrealisedPnl.
+     */
+    com.google.protobuf.ByteString
+        getUnrealisedPnlBytes();
 
     /**
      * <pre>
@@ -24653,10 +25829,21 @@ public final class Vega {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
+     * <code>string average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
      * @return The averageEntryPrice.
      */
-    long getAverageEntryPrice();
+    java.lang.String getAverageEntryPrice();
+    /**
+     * <pre>
+     * Average entry price for the position, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
+     * @return The bytes for averageEntryPrice.
+     */
+    com.google.protobuf.ByteString
+        getAverageEntryPriceBytes();
 
     /**
      * <pre>
@@ -24687,6 +25874,9 @@ public final class Vega {
     private Position() {
       marketId_ = "";
       partyId_ = "";
+      realisedPnl_ = "";
+      unrealisedPnl_ = "";
+      averageEntryPrice_ = "";
     }
 
     @java.lang.Override
@@ -24736,19 +25926,22 @@ public final class Vega {
               openVolume_ = input.readInt64();
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              realisedPnl_ = input.readInt64();
+              realisedPnl_ = s;
               break;
             }
-            case 40: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              unrealisedPnl_ = input.readInt64();
+              unrealisedPnl_ = s;
               break;
             }
-            case 48: {
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              averageEntryPrice_ = input.readUInt64();
+              averageEntryPrice_ = s;
               break;
             }
             case 56: {
@@ -24896,49 +26089,143 @@ public final class Vega {
     }
 
     public static final int REALISED_PNL_FIELD_NUMBER = 4;
-    private long realisedPnl_;
+    private volatile java.lang.Object realisedPnl_;
     /**
      * <pre>
      * Realised profit and loss for the position, value is signed +ve for long and -ve for short
      * </pre>
      *
-     * <code>int64 realised_pnl = 4 [json_name = "realisedPnl"];</code>
+     * <code>string realised_pnl = 4 [json_name = "realisedPnl"];</code>
      * @return The realisedPnl.
      */
     @java.lang.Override
-    public long getRealisedPnl() {
-      return realisedPnl_;
+    public java.lang.String getRealisedPnl() {
+      java.lang.Object ref = realisedPnl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        realisedPnl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Realised profit and loss for the position, value is signed +ve for long and -ve for short
+     * </pre>
+     *
+     * <code>string realised_pnl = 4 [json_name = "realisedPnl"];</code>
+     * @return The bytes for realisedPnl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRealisedPnlBytes() {
+      java.lang.Object ref = realisedPnl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        realisedPnl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int UNREALISED_PNL_FIELD_NUMBER = 5;
-    private long unrealisedPnl_;
+    private volatile java.lang.Object unrealisedPnl_;
     /**
      * <pre>
      * Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
      * </pre>
      *
-     * <code>int64 unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
+     * <code>string unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
      * @return The unrealisedPnl.
      */
     @java.lang.Override
-    public long getUnrealisedPnl() {
-      return unrealisedPnl_;
+    public java.lang.String getUnrealisedPnl() {
+      java.lang.Object ref = unrealisedPnl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unrealisedPnl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
+     * </pre>
+     *
+     * <code>string unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
+     * @return The bytes for unrealisedPnl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUnrealisedPnlBytes() {
+      java.lang.Object ref = unrealisedPnl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unrealisedPnl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int AVERAGE_ENTRY_PRICE_FIELD_NUMBER = 6;
-    private long averageEntryPrice_;
+    private volatile java.lang.Object averageEntryPrice_;
     /**
      * <pre>
      * Average entry price for the position, the price is an integer, for example `123456` is a correctly
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
+     * <code>string average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
      * @return The averageEntryPrice.
      */
     @java.lang.Override
-    public long getAverageEntryPrice() {
-      return averageEntryPrice_;
+    public java.lang.String getAverageEntryPrice() {
+      java.lang.Object ref = averageEntryPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        averageEntryPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Average entry price for the position, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
+     * @return The bytes for averageEntryPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAverageEntryPriceBytes() {
+      java.lang.Object ref = averageEntryPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        averageEntryPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int UPDATED_AT_FIELD_NUMBER = 7;
@@ -24979,14 +26266,14 @@ public final class Vega {
       if (openVolume_ != 0L) {
         output.writeInt64(3, openVolume_);
       }
-      if (realisedPnl_ != 0L) {
-        output.writeInt64(4, realisedPnl_);
+      if (!getRealisedPnlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, realisedPnl_);
       }
-      if (unrealisedPnl_ != 0L) {
-        output.writeInt64(5, unrealisedPnl_);
+      if (!getUnrealisedPnlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unrealisedPnl_);
       }
-      if (averageEntryPrice_ != 0L) {
-        output.writeUInt64(6, averageEntryPrice_);
+      if (!getAverageEntryPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, averageEntryPrice_);
       }
       if (updatedAt_ != 0L) {
         output.writeInt64(7, updatedAt_);
@@ -25010,17 +26297,14 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, openVolume_);
       }
-      if (realisedPnl_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, realisedPnl_);
+      if (!getRealisedPnlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, realisedPnl_);
       }
-      if (unrealisedPnl_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, unrealisedPnl_);
+      if (!getUnrealisedPnlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unrealisedPnl_);
       }
-      if (averageEntryPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, averageEntryPrice_);
+      if (!getAverageEntryPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, averageEntryPrice_);
       }
       if (updatedAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -25047,12 +26331,12 @@ public final class Vega {
           .equals(other.getPartyId())) return false;
       if (getOpenVolume()
           != other.getOpenVolume()) return false;
-      if (getRealisedPnl()
-          != other.getRealisedPnl()) return false;
-      if (getUnrealisedPnl()
-          != other.getUnrealisedPnl()) return false;
-      if (getAverageEntryPrice()
-          != other.getAverageEntryPrice()) return false;
+      if (!getRealisedPnl()
+          .equals(other.getRealisedPnl())) return false;
+      if (!getUnrealisedPnl()
+          .equals(other.getUnrealisedPnl())) return false;
+      if (!getAverageEntryPrice()
+          .equals(other.getAverageEntryPrice())) return false;
       if (getUpdatedAt()
           != other.getUpdatedAt()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -25074,14 +26358,11 @@ public final class Vega {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOpenVolume());
       hash = (37 * hash) + REALISED_PNL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRealisedPnl());
+      hash = (53 * hash) + getRealisedPnl().hashCode();
       hash = (37 * hash) + UNREALISED_PNL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUnrealisedPnl());
+      hash = (53 * hash) + getUnrealisedPnl().hashCode();
       hash = (37 * hash) + AVERAGE_ENTRY_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAverageEntryPrice());
+      hash = (53 * hash) + getAverageEntryPrice().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdatedAt());
@@ -25228,11 +26509,11 @@ public final class Vega {
 
         openVolume_ = 0L;
 
-        realisedPnl_ = 0L;
+        realisedPnl_ = "";
 
-        unrealisedPnl_ = 0L;
+        unrealisedPnl_ = "";
 
-        averageEntryPrice_ = 0L;
+        averageEntryPrice_ = "";
 
         updatedAt_ = 0L;
 
@@ -25328,14 +26609,17 @@ public final class Vega {
         if (other.getOpenVolume() != 0L) {
           setOpenVolume(other.getOpenVolume());
         }
-        if (other.getRealisedPnl() != 0L) {
-          setRealisedPnl(other.getRealisedPnl());
+        if (!other.getRealisedPnl().isEmpty()) {
+          realisedPnl_ = other.realisedPnl_;
+          onChanged();
         }
-        if (other.getUnrealisedPnl() != 0L) {
-          setUnrealisedPnl(other.getUnrealisedPnl());
+        if (!other.getUnrealisedPnl().isEmpty()) {
+          unrealisedPnl_ = other.unrealisedPnl_;
+          onChanged();
         }
-        if (other.getAverageEntryPrice() != 0L) {
-          setAverageEntryPrice(other.getAverageEntryPrice());
+        if (!other.getAverageEntryPrice().isEmpty()) {
+          averageEntryPrice_ = other.averageEntryPrice_;
+          onChanged();
         }
         if (other.getUpdatedAt() != 0L) {
           setUpdatedAt(other.getUpdatedAt());
@@ -25604,29 +26888,62 @@ public final class Vega {
         return this;
       }
 
-      private long realisedPnl_ ;
+      private java.lang.Object realisedPnl_ = "";
       /**
        * <pre>
        * Realised profit and loss for the position, value is signed +ve for long and -ve for short
        * </pre>
        *
-       * <code>int64 realised_pnl = 4 [json_name = "realisedPnl"];</code>
+       * <code>string realised_pnl = 4 [json_name = "realisedPnl"];</code>
        * @return The realisedPnl.
        */
-      @java.lang.Override
-      public long getRealisedPnl() {
-        return realisedPnl_;
+      public java.lang.String getRealisedPnl() {
+        java.lang.Object ref = realisedPnl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          realisedPnl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Realised profit and loss for the position, value is signed +ve for long and -ve for short
        * </pre>
        *
-       * <code>int64 realised_pnl = 4 [json_name = "realisedPnl"];</code>
+       * <code>string realised_pnl = 4 [json_name = "realisedPnl"];</code>
+       * @return The bytes for realisedPnl.
+       */
+      public com.google.protobuf.ByteString
+          getRealisedPnlBytes() {
+        java.lang.Object ref = realisedPnl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          realisedPnl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Realised profit and loss for the position, value is signed +ve for long and -ve for short
+       * </pre>
+       *
+       * <code>string realised_pnl = 4 [json_name = "realisedPnl"];</code>
        * @param value The realisedPnl to set.
        * @return This builder for chaining.
        */
-      public Builder setRealisedPnl(long value) {
+      public Builder setRealisedPnl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         realisedPnl_ = value;
         onChanged();
@@ -25637,39 +26954,92 @@ public final class Vega {
        * Realised profit and loss for the position, value is signed +ve for long and -ve for short
        * </pre>
        *
-       * <code>int64 realised_pnl = 4 [json_name = "realisedPnl"];</code>
+       * <code>string realised_pnl = 4 [json_name = "realisedPnl"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRealisedPnl() {
 
-        realisedPnl_ = 0L;
+        realisedPnl_ = getDefaultInstance().getRealisedPnl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Realised profit and loss for the position, value is signed +ve for long and -ve for short
+       * </pre>
+       *
+       * <code>string realised_pnl = 4 [json_name = "realisedPnl"];</code>
+       * @param value The bytes for realisedPnl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRealisedPnlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        realisedPnl_ = value;
         onChanged();
         return this;
       }
 
-      private long unrealisedPnl_ ;
+      private java.lang.Object unrealisedPnl_ = "";
       /**
        * <pre>
        * Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
        * </pre>
        *
-       * <code>int64 unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
+       * <code>string unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
        * @return The unrealisedPnl.
        */
-      @java.lang.Override
-      public long getUnrealisedPnl() {
-        return unrealisedPnl_;
+      public java.lang.String getUnrealisedPnl() {
+        java.lang.Object ref = unrealisedPnl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          unrealisedPnl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
        * </pre>
        *
-       * <code>int64 unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
+       * <code>string unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
+       * @return The bytes for unrealisedPnl.
+       */
+      public com.google.protobuf.ByteString
+          getUnrealisedPnlBytes() {
+        java.lang.Object ref = unrealisedPnl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          unrealisedPnl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
+       * </pre>
+       *
+       * <code>string unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
        * @param value The unrealisedPnl to set.
        * @return This builder for chaining.
        */
-      public Builder setUnrealisedPnl(long value) {
+      public Builder setUnrealisedPnl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         unrealisedPnl_ = value;
         onChanged();
@@ -25680,29 +27050,57 @@ public final class Vega {
        * Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
        * </pre>
        *
-       * <code>int64 unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
+       * <code>string unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUnrealisedPnl() {
 
-        unrealisedPnl_ = 0L;
+        unrealisedPnl_ = getDefaultInstance().getUnrealisedPnl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
+       * </pre>
+       *
+       * <code>string unrealised_pnl = 5 [json_name = "unrealisedPnl"];</code>
+       * @param value The bytes for unrealisedPnl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnrealisedPnlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        unrealisedPnl_ = value;
         onChanged();
         return this;
       }
 
-      private long averageEntryPrice_ ;
+      private java.lang.Object averageEntryPrice_ = "";
       /**
        * <pre>
        * Average entry price for the position, the price is an integer, for example `123456` is a correctly
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
+       * <code>string average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
        * @return The averageEntryPrice.
        */
-      @java.lang.Override
-      public long getAverageEntryPrice() {
-        return averageEntryPrice_;
+      public java.lang.String getAverageEntryPrice() {
+        java.lang.Object ref = averageEntryPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          averageEntryPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -25710,11 +27108,37 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
+       * <code>string average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
+       * @return The bytes for averageEntryPrice.
+       */
+      public com.google.protobuf.ByteString
+          getAverageEntryPriceBytes() {
+        java.lang.Object ref = averageEntryPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          averageEntryPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Average entry price for the position, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
        * @param value The averageEntryPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setAverageEntryPrice(long value) {
+      public Builder setAverageEntryPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         averageEntryPrice_ = value;
         onChanged();
@@ -25726,12 +27150,33 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
+       * <code>string average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAverageEntryPrice() {
 
-        averageEntryPrice_ = 0L;
+        averageEntryPrice_ = getDefaultInstance().getAverageEntryPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Average entry price for the position, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string average_entry_price = 6 [json_name = "averageEntryPrice"];</code>
+       * @param value The bytes for averageEntryPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAverageEntryPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        averageEntryPrice_ = value;
         onChanged();
         return this;
       }
@@ -25851,10 +27296,21 @@ public final class Vega {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 price = 2 [json_name = "price"];</code>
+     * <code>string price = 2 [json_name = "price"];</code>
      * @return The price.
      */
-    long getPrice();
+    java.lang.String getPrice();
+    /**
+     * <pre>
+     * Price for the position trade, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string price = 2 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    com.google.protobuf.ByteString
+        getPriceBytes();
   }
   /**
    * Protobuf type {@code vega.PositionTrade}
@@ -25869,6 +27325,7 @@ public final class Vega {
       super(builder);
     }
     private PositionTrade() {
+      price_ = "";
     }
 
     @java.lang.Override
@@ -25906,9 +27363,10 @@ public final class Vega {
               volume_ = input.readInt64();
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              price_ = input.readUInt64();
+              price_ = s;
               break;
             }
             default: {
@@ -25959,19 +27417,51 @@ public final class Vega {
     }
 
     public static final int PRICE_FIELD_NUMBER = 2;
-    private long price_;
+    private volatile java.lang.Object price_;
     /**
      * <pre>
      * Price for the position trade, the price is an integer, for example `123456` is a correctly
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 price = 2 [json_name = "price"];</code>
+     * <code>string price = 2 [json_name = "price"];</code>
      * @return The price.
      */
     @java.lang.Override
-    public long getPrice() {
-      return price_;
+    public java.lang.String getPrice() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        price_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Price for the position trade, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string price = 2 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPriceBytes() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        price_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -25991,8 +27481,8 @@ public final class Vega {
       if (volume_ != 0L) {
         output.writeInt64(1, volume_);
       }
-      if (price_ != 0L) {
-        output.writeUInt64(2, price_);
+      if (!getPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, price_);
       }
       unknownFields.writeTo(output);
     }
@@ -26007,9 +27497,8 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, volume_);
       }
-      if (price_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, price_);
+      if (!getPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, price_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -26028,8 +27517,8 @@ public final class Vega {
 
       if (getVolume()
           != other.getVolume()) return false;
-      if (getPrice()
-          != other.getPrice()) return false;
+      if (!getPrice()
+          .equals(other.getPrice())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -26045,8 +27534,7 @@ public final class Vega {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getVolume());
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPrice());
+      hash = (53 * hash) + getPrice().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -26182,7 +27670,7 @@ public final class Vega {
         super.clear();
         volume_ = 0L;
 
-        price_ = 0L;
+        price_ = "";
 
         return this;
       }
@@ -26263,8 +27751,9 @@ public final class Vega {
         if (other.getVolume() != 0L) {
           setVolume(other.getVolume());
         }
-        if (other.getPrice() != 0L) {
-          setPrice(other.getPrice());
+        if (!other.getPrice().isEmpty()) {
+          price_ = other.price_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -26338,19 +27827,27 @@ public final class Vega {
         return this;
       }
 
-      private long price_ ;
+      private java.lang.Object price_ = "";
       /**
        * <pre>
        * Price for the position trade, the price is an integer, for example `123456` is a correctly
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 2 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
        * @return The price.
        */
-      @java.lang.Override
-      public long getPrice() {
-        return price_;
+      public java.lang.String getPrice() {
+        java.lang.Object ref = price_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          price_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -26358,11 +27855,37 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 2 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
+       * @return The bytes for price.
+       */
+      public com.google.protobuf.ByteString
+          getPriceBytes() {
+        java.lang.Object ref = price_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          price_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Price for the position trade, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string price = 2 [json_name = "price"];</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
-      public Builder setPrice(long value) {
+      public Builder setPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         price_ = value;
         onChanged();
@@ -26374,12 +27897,33 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 price = 2 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
 
-        price_ = 0L;
+        price_ = getDefaultInstance().getPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Price for the position trade, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string price = 2 [json_name = "price"];</code>
+       * @param value The bytes for price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        price_ = value;
         onChanged();
         return this;
       }
@@ -28328,10 +29872,20 @@ public final class Vega {
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
-    long getAmount();
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * The amount to be withdrawn
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
 
     /**
      * <pre>
@@ -28490,6 +30044,7 @@ public final class Vega {
     private Withdrawal() {
       id_ = "";
       partyId_ = "";
+      amount_ = "";
       asset_ = "";
       status_ = 0;
       ref_ = "";
@@ -28538,9 +30093,10 @@ public final class Vega {
               partyId_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readUInt64();
+              amount_ = s;
               break;
             }
             case 34: {
@@ -28884,18 +30440,49 @@ public final class Vega {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 3;
-    private long amount_;
+    private volatile java.lang.Object amount_;
     /**
      * <pre>
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
-      return amount_;
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount to be withdrawn
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ASSET_FIELD_NUMBER = 4;
@@ -29168,8 +30755,8 @@ public final class Vega {
       if (!getPartyIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyId_);
       }
-      if (amount_ != 0L) {
-        output.writeUInt64(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, amount_);
       }
       if (!getAssetBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, asset_);
@@ -29210,9 +30797,8 @@ public final class Vega {
       if (!getPartyIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyId_);
       }
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, amount_);
       }
       if (!getAssetBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, asset_);
@@ -29262,8 +30848,8 @@ public final class Vega {
           .equals(other.getId())) return false;
       if (!getPartyId()
           .equals(other.getPartyId())) return false;
-      if (getAmount()
-          != other.getAmount()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
       if (!getAsset()
           .equals(other.getAsset())) return false;
       if (status_ != other.status_) return false;
@@ -29298,8 +30884,7 @@ public final class Vega {
       hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
+      hash = (53 * hash) + getAmount().hashCode();
       hash = (37 * hash) + ASSET_FIELD_NUMBER;
       hash = (53 * hash) + getAsset().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -29462,7 +31047,7 @@ public final class Vega {
 
         partyId_ = "";
 
-        amount_ = 0L;
+        amount_ = "";
 
         asset_ = "";
 
@@ -29581,8 +31166,9 @@ public final class Vega {
           partyId_ = other.partyId_;
           onChanged();
         }
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
         }
         if (!other.getAsset().isEmpty()) {
           asset_ = other.asset_;
@@ -29832,29 +31418,62 @@ public final class Vega {
         return this;
       }
 
-      private long amount_ ;
+      private java.lang.Object amount_ = "";
       /**
        * <pre>
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return The amount.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount to be withdrawn
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         amount_ = value;
         onChanged();
@@ -29865,12 +31484,32 @@ public final class Vega {
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
 
-        amount_ = 0L;
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount to be withdrawn
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
         onChanged();
         return this;
       }
@@ -32029,10 +33668,22 @@ public final class Vega {
      * and importantly balances cannot be negative
      * </pre>
      *
-     * <code>uint64 balance = 3 [json_name = "balance"];</code>
+     * <code>string balance = 3 [json_name = "balance"];</code>
      * @return The balance.
      */
-    long getBalance();
+    java.lang.String getBalance();
+    /**
+     * <pre>
+     * Balance of the asset, the balance is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * and importantly balances cannot be negative
+     * </pre>
+     *
+     * <code>string balance = 3 [json_name = "balance"];</code>
+     * @return The bytes for balance.
+     */
+    com.google.protobuf.ByteString
+        getBalanceBytes();
 
     /**
      * <pre>
@@ -32112,6 +33763,7 @@ public final class Vega {
     private Account() {
       id_ = "";
       owner_ = "";
+      balance_ = "";
       asset_ = "";
       marketId_ = "";
       type_ = 0;
@@ -32159,9 +33811,10 @@ public final class Vega {
               owner_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              balance_ = input.readUInt64();
+              balance_ = s;
               break;
             }
             case 34: {
@@ -32309,7 +33962,7 @@ public final class Vega {
     }
 
     public static final int BALANCE_FIELD_NUMBER = 3;
-    private long balance_;
+    private volatile java.lang.Object balance_;
     /**
      * <pre>
      * Balance of the asset, the balance is an integer, for example `123456` is a correctly
@@ -32317,12 +33970,45 @@ public final class Vega {
      * and importantly balances cannot be negative
      * </pre>
      *
-     * <code>uint64 balance = 3 [json_name = "balance"];</code>
+     * <code>string balance = 3 [json_name = "balance"];</code>
      * @return The balance.
      */
     @java.lang.Override
-    public long getBalance() {
-      return balance_;
+    public java.lang.String getBalance() {
+      java.lang.Object ref = balance_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        balance_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Balance of the asset, the balance is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * and importantly balances cannot be negative
+     * </pre>
+     *
+     * <code>string balance = 3 [json_name = "balance"];</code>
+     * @return The bytes for balance.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBalanceBytes() {
+      java.lang.Object ref = balance_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        balance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ASSET_FIELD_NUMBER = 4;
@@ -32464,8 +34150,8 @@ public final class Vega {
       if (!getOwnerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, owner_);
       }
-      if (balance_ != 0L) {
-        output.writeUInt64(3, balance_);
+      if (!getBalanceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, balance_);
       }
       if (!getAssetBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, asset_);
@@ -32491,9 +34177,8 @@ public final class Vega {
       if (!getOwnerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, owner_);
       }
-      if (balance_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, balance_);
+      if (!getBalanceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, balance_);
       }
       if (!getAssetBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, asset_);
@@ -32524,8 +34209,8 @@ public final class Vega {
           .equals(other.getId())) return false;
       if (!getOwner()
           .equals(other.getOwner())) return false;
-      if (getBalance()
-          != other.getBalance()) return false;
+      if (!getBalance()
+          .equals(other.getBalance())) return false;
       if (!getAsset()
           .equals(other.getAsset())) return false;
       if (!getMarketId()
@@ -32547,8 +34232,7 @@ public final class Vega {
       hash = (37 * hash) + OWNER_FIELD_NUMBER;
       hash = (53 * hash) + getOwner().hashCode();
       hash = (37 * hash) + BALANCE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBalance());
+      hash = (53 * hash) + getBalance().hashCode();
       hash = (37 * hash) + ASSET_FIELD_NUMBER;
       hash = (53 * hash) + getAsset().hashCode();
       hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
@@ -32696,7 +34380,7 @@ public final class Vega {
 
         owner_ = "";
 
-        balance_ = 0L;
+        balance_ = "";
 
         asset_ = "";
 
@@ -32792,8 +34476,9 @@ public final class Vega {
           owner_ = other.owner_;
           onChanged();
         }
-        if (other.getBalance() != 0L) {
-          setBalance(other.getBalance());
+        if (!other.getBalance().isEmpty()) {
+          balance_ = other.balance_;
+          onChanged();
         }
         if (!other.getAsset().isEmpty()) {
           asset_ = other.asset_;
@@ -33032,7 +34717,7 @@ public final class Vega {
         return this;
       }
 
-      private long balance_ ;
+      private java.lang.Object balance_ = "";
       /**
        * <pre>
        * Balance of the asset, the balance is an integer, for example `123456` is a correctly
@@ -33040,12 +34725,20 @@ public final class Vega {
        * and importantly balances cannot be negative
        * </pre>
        *
-       * <code>uint64 balance = 3 [json_name = "balance"];</code>
+       * <code>string balance = 3 [json_name = "balance"];</code>
        * @return The balance.
        */
-      @java.lang.Override
-      public long getBalance() {
-        return balance_;
+      public java.lang.String getBalance() {
+        java.lang.Object ref = balance_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          balance_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -33054,11 +34747,38 @@ public final class Vega {
        * and importantly balances cannot be negative
        * </pre>
        *
-       * <code>uint64 balance = 3 [json_name = "balance"];</code>
+       * <code>string balance = 3 [json_name = "balance"];</code>
+       * @return The bytes for balance.
+       */
+      public com.google.protobuf.ByteString
+          getBalanceBytes() {
+        java.lang.Object ref = balance_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          balance_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Balance of the asset, the balance is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * and importantly balances cannot be negative
+       * </pre>
+       *
+       * <code>string balance = 3 [json_name = "balance"];</code>
        * @param value The balance to set.
        * @return This builder for chaining.
        */
-      public Builder setBalance(long value) {
+      public Builder setBalance(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         balance_ = value;
         onChanged();
@@ -33071,12 +34791,34 @@ public final class Vega {
        * and importantly balances cannot be negative
        * </pre>
        *
-       * <code>uint64 balance = 3 [json_name = "balance"];</code>
+       * <code>string balance = 3 [json_name = "balance"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBalance() {
 
-        balance_ = 0L;
+        balance_ = getDefaultInstance().getBalance();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Balance of the asset, the balance is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * and importantly balances cannot be negative
+       * </pre>
+       *
+       * <code>string balance = 3 [json_name = "balance"];</code>
+       * @param value The bytes for balance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBalanceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        balance_ = value;
         onChanged();
         return this;
       }
@@ -33408,10 +35150,20 @@ public final class Vega {
      * A signed integer amount of asset
      * </pre>
      *
-     * <code>uint64 amount = 1 [json_name = "amount"];</code>
+     * <code>string amount = 1 [json_name = "amount"];</code>
      * @return The amount.
      */
-    long getAmount();
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * A signed integer amount of asset
+     * </pre>
+     *
+     * <code>string amount = 1 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
 
     /**
      * <pre>
@@ -33450,6 +35202,7 @@ public final class Vega {
       super(builder);
     }
     private FinancialAmount() {
+      amount_ = "";
       asset_ = "";
     }
 
@@ -33483,9 +35236,10 @@ public final class Vega {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readUInt64();
+              amount_ = s;
               break;
             }
             case 18: {
@@ -33527,18 +35281,49 @@ public final class Vega {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 1;
-    private long amount_;
+    private volatile java.lang.Object amount_;
     /**
      * <pre>
      * A signed integer amount of asset
      * </pre>
      *
-     * <code>uint64 amount = 1 [json_name = "amount"];</code>
+     * <code>string amount = 1 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
-      return amount_;
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A signed integer amount of asset
+     * </pre>
+     *
+     * <code>string amount = 1 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ASSET_FIELD_NUMBER = 2;
@@ -33601,8 +35386,8 @@ public final class Vega {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (amount_ != 0L) {
-        output.writeUInt64(1, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, amount_);
       }
       if (!getAssetBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, asset_);
@@ -33616,9 +35401,8 @@ public final class Vega {
       if (size != -1) return size;
 
       size = 0;
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, amount_);
       }
       if (!getAssetBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, asset_);
@@ -33638,8 +35422,8 @@ public final class Vega {
       }
       io.vegaprotocol.vega.Vega.FinancialAmount other = (io.vegaprotocol.vega.Vega.FinancialAmount) obj;
 
-      if (getAmount()
-          != other.getAmount()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
       if (!getAsset()
           .equals(other.getAsset())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -33654,8 +35438,7 @@ public final class Vega {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
+      hash = (53 * hash) + getAmount().hashCode();
       hash = (37 * hash) + ASSET_FIELD_NUMBER;
       hash = (53 * hash) + getAsset().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -33795,7 +35578,7 @@ public final class Vega {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        amount_ = 0L;
+        amount_ = "";
 
         asset_ = "";
 
@@ -33875,8 +35658,9 @@ public final class Vega {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Vega.FinancialAmount other) {
         if (other == io.vegaprotocol.vega.Vega.FinancialAmount.getDefaultInstance()) return this;
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
         }
         if (!other.getAsset().isEmpty()) {
           asset_ = other.asset_;
@@ -33911,29 +35695,62 @@ public final class Vega {
         return this;
       }
 
-      private long amount_ ;
+      private java.lang.Object amount_ = "";
       /**
        * <pre>
        * A signed integer amount of asset
        * </pre>
        *
-       * <code>uint64 amount = 1 [json_name = "amount"];</code>
+       * <code>string amount = 1 [json_name = "amount"];</code>
        * @return The amount.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * A signed integer amount of asset
        * </pre>
        *
-       * <code>uint64 amount = 1 [json_name = "amount"];</code>
+       * <code>string amount = 1 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A signed integer amount of asset
+       * </pre>
+       *
+       * <code>string amount = 1 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         amount_ = value;
         onChanged();
@@ -33944,12 +35761,32 @@ public final class Vega {
        * A signed integer amount of asset
        * </pre>
        *
-       * <code>uint64 amount = 1 [json_name = "amount"];</code>
+       * <code>string amount = 1 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
 
-        amount_ = 0L;
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A signed integer amount of asset
+       * </pre>
+       *
+       * <code>string amount = 1 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
         onChanged();
         return this;
       }
@@ -34177,10 +36014,20 @@ public final class Vega {
      * A minimum amount
      * </pre>
      *
-     * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+     * <code>string min_amount = 4 [json_name = "minAmount"];</code>
      * @return The minAmount.
      */
-    long getMinAmount();
+    java.lang.String getMinAmount();
+    /**
+     * <pre>
+     * A minimum amount
+     * </pre>
+     *
+     * <code>string min_amount = 4 [json_name = "minAmount"];</code>
+     * @return The bytes for minAmount.
+     */
+    com.google.protobuf.ByteString
+        getMinAmountBytes();
   }
   /**
    * <pre>
@@ -34201,6 +36048,7 @@ public final class Vega {
     private Transfer() {
       owner_ = "";
       type_ = 0;
+      minAmount_ = "";
     }
 
     @java.lang.Override
@@ -34258,9 +36106,10 @@ public final class Vega {
               type_ = rawValue;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              minAmount_ = input.readUInt64();
+              minAmount_ = s;
               break;
             }
             default: {
@@ -34407,18 +36256,49 @@ public final class Vega {
     }
 
     public static final int MIN_AMOUNT_FIELD_NUMBER = 4;
-    private long minAmount_;
+    private volatile java.lang.Object minAmount_;
     /**
      * <pre>
      * A minimum amount
      * </pre>
      *
-     * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+     * <code>string min_amount = 4 [json_name = "minAmount"];</code>
      * @return The minAmount.
      */
     @java.lang.Override
-    public long getMinAmount() {
-      return minAmount_;
+    public java.lang.String getMinAmount() {
+      java.lang.Object ref = minAmount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        minAmount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A minimum amount
+     * </pre>
+     *
+     * <code>string min_amount = 4 [json_name = "minAmount"];</code>
+     * @return The bytes for minAmount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMinAmountBytes() {
+      java.lang.Object ref = minAmount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        minAmount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -34444,8 +36324,8 @@ public final class Vega {
       if (type_ != io.vegaprotocol.vega.Vega.TransferType.TRANSFER_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(3, type_);
       }
-      if (minAmount_ != 0L) {
-        output.writeUInt64(4, minAmount_);
+      if (!getMinAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, minAmount_);
       }
       unknownFields.writeTo(output);
     }
@@ -34467,9 +36347,8 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, type_);
       }
-      if (minAmount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, minAmount_);
+      if (!getMinAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, minAmount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -34494,8 +36373,8 @@ public final class Vega {
             .equals(other.getAmount())) return false;
       }
       if (type_ != other.type_) return false;
-      if (getMinAmount()
-          != other.getMinAmount()) return false;
+      if (!getMinAmount()
+          .equals(other.getMinAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -34516,8 +36395,7 @@ public final class Vega {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       hash = (37 * hash) + MIN_AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMinAmount());
+      hash = (53 * hash) + getMinAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -34665,7 +36543,7 @@ public final class Vega {
         }
         type_ = 0;
 
-        minAmount_ = 0L;
+        minAmount_ = "";
 
         return this;
       }
@@ -34759,8 +36637,9 @@ public final class Vega {
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
-        if (other.getMinAmount() != 0L) {
-          setMinAmount(other.getMinAmount());
+        if (!other.getMinAmount().isEmpty()) {
+          minAmount_ = other.minAmount_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -35116,29 +36995,62 @@ public final class Vega {
         return this;
       }
 
-      private long minAmount_ ;
+      private java.lang.Object minAmount_ = "";
       /**
        * <pre>
        * A minimum amount
        * </pre>
        *
-       * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
        * @return The minAmount.
        */
-      @java.lang.Override
-      public long getMinAmount() {
-        return minAmount_;
+      public java.lang.String getMinAmount() {
+        java.lang.Object ref = minAmount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          minAmount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * A minimum amount
        * </pre>
        *
-       * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
+       * @return The bytes for minAmount.
+       */
+      public com.google.protobuf.ByteString
+          getMinAmountBytes() {
+        java.lang.Object ref = minAmount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          minAmount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A minimum amount
+       * </pre>
+       *
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
        * @param value The minAmount to set.
        * @return This builder for chaining.
        */
-      public Builder setMinAmount(long value) {
+      public Builder setMinAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         minAmount_ = value;
         onChanged();
@@ -35149,12 +37061,32 @@ public final class Vega {
        * A minimum amount
        * </pre>
        *
-       * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMinAmount() {
 
-        minAmount_ = 0L;
+        minAmount_ = getDefaultInstance().getMinAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A minimum amount
+       * </pre>
+       *
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
+       * @param value The bytes for minAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        minAmount_ = value;
         onChanged();
         return this;
       }
@@ -35308,20 +37240,40 @@ public final class Vega {
      * An amount to transfer for the asset
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
-    long getAmount();
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * An amount to transfer for the asset
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
 
     /**
      * <pre>
      * A minimum amount
      * </pre>
      *
-     * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+     * <code>string min_amount = 4 [json_name = "minAmount"];</code>
      * @return The minAmount.
      */
-    long getMinAmount();
+    java.lang.String getMinAmount();
+    /**
+     * <pre>
+     * A minimum amount
+     * </pre>
+     *
+     * <code>string min_amount = 4 [json_name = "minAmount"];</code>
+     * @return The bytes for minAmount.
+     */
+    com.google.protobuf.ByteString
+        getMinAmountBytes();
 
     /**
      * <pre>
@@ -35382,6 +37334,8 @@ public final class Vega {
     private TransferRequest() {
       fromAccount_ = java.util.Collections.emptyList();
       toAccount_ = java.util.Collections.emptyList();
+      amount_ = "";
+      minAmount_ = "";
       asset_ = "";
       reference_ = "";
     }
@@ -35435,14 +37389,16 @@ public final class Vega {
                   input.readMessage(io.vegaprotocol.vega.Vega.Account.parser(), extensionRegistry));
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readUInt64();
+              amount_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              minAmount_ = input.readUInt64();
+              minAmount_ = s;
               break;
             }
             case 42: {
@@ -35616,33 +37572,95 @@ public final class Vega {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 3;
-    private long amount_;
+    private volatile java.lang.Object amount_;
     /**
      * <pre>
      * An amount to transfer for the asset
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
-      return amount_;
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * An amount to transfer for the asset
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int MIN_AMOUNT_FIELD_NUMBER = 4;
-    private long minAmount_;
+    private volatile java.lang.Object minAmount_;
     /**
      * <pre>
      * A minimum amount
      * </pre>
      *
-     * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+     * <code>string min_amount = 4 [json_name = "minAmount"];</code>
      * @return The minAmount.
      */
     @java.lang.Override
-    public long getMinAmount() {
-      return minAmount_;
+    public java.lang.String getMinAmount() {
+      java.lang.Object ref = minAmount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        minAmount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A minimum amount
+     * </pre>
+     *
+     * <code>string min_amount = 4 [json_name = "minAmount"];</code>
+     * @return The bytes for minAmount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMinAmountBytes() {
+      java.lang.Object ref = minAmount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        minAmount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ASSET_FIELD_NUMBER = 5;
@@ -35757,11 +37775,11 @@ public final class Vega {
       for (int i = 0; i < toAccount_.size(); i++) {
         output.writeMessage(2, toAccount_.get(i));
       }
-      if (amount_ != 0L) {
-        output.writeUInt64(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, amount_);
       }
-      if (minAmount_ != 0L) {
-        output.writeUInt64(4, minAmount_);
+      if (!getMinAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, minAmount_);
       }
       if (!getAssetBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, asset_);
@@ -35786,13 +37804,11 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, toAccount_.get(i));
       }
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, amount_);
       }
-      if (minAmount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, minAmount_);
+      if (!getMinAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, minAmount_);
       }
       if (!getAssetBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, asset_);
@@ -35819,10 +37835,10 @@ public final class Vega {
           .equals(other.getFromAccountList())) return false;
       if (!getToAccountList()
           .equals(other.getToAccountList())) return false;
-      if (getAmount()
-          != other.getAmount()) return false;
-      if (getMinAmount()
-          != other.getMinAmount()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (!getMinAmount()
+          .equals(other.getMinAmount())) return false;
       if (!getAsset()
           .equals(other.getAsset())) return false;
       if (!getReference()
@@ -35847,11 +37863,9 @@ public final class Vega {
         hash = (53 * hash) + getToAccountList().hashCode();
       }
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
+      hash = (53 * hash) + getAmount().hashCode();
       hash = (37 * hash) + MIN_AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMinAmount());
+      hash = (53 * hash) + getMinAmount().hashCode();
       hash = (37 * hash) + ASSET_FIELD_NUMBER;
       hash = (53 * hash) + getAsset().hashCode();
       hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
@@ -36007,9 +38021,9 @@ public final class Vega {
         } else {
           toAccountBuilder_.clear();
         }
-        amount_ = 0L;
+        amount_ = "";
 
-        minAmount_ = 0L;
+        minAmount_ = "";
 
         asset_ = "";
 
@@ -36164,11 +38178,13 @@ public final class Vega {
             }
           }
         }
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
         }
-        if (other.getMinAmount() != 0L) {
-          setMinAmount(other.getMinAmount());
+        if (!other.getMinAmount().isEmpty()) {
+          minAmount_ = other.minAmount_;
+          onChanged();
         }
         if (!other.getAsset().isEmpty()) {
           asset_ = other.asset_;
@@ -36832,29 +38848,62 @@ public final class Vega {
         return toAccountBuilder_;
       }
 
-      private long amount_ ;
+      private java.lang.Object amount_ = "";
       /**
        * <pre>
        * An amount to transfer for the asset
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return The amount.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * An amount to transfer for the asset
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * An amount to transfer for the asset
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         amount_ = value;
         onChanged();
@@ -36865,39 +38914,92 @@ public final class Vega {
        * An amount to transfer for the asset
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
 
-        amount_ = 0L;
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * An amount to transfer for the asset
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
         onChanged();
         return this;
       }
 
-      private long minAmount_ ;
+      private java.lang.Object minAmount_ = "";
       /**
        * <pre>
        * A minimum amount
        * </pre>
        *
-       * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
        * @return The minAmount.
        */
-      @java.lang.Override
-      public long getMinAmount() {
-        return minAmount_;
+      public java.lang.String getMinAmount() {
+        java.lang.Object ref = minAmount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          minAmount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * A minimum amount
        * </pre>
        *
-       * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
+       * @return The bytes for minAmount.
+       */
+      public com.google.protobuf.ByteString
+          getMinAmountBytes() {
+        java.lang.Object ref = minAmount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          minAmount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A minimum amount
+       * </pre>
+       *
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
        * @param value The minAmount to set.
        * @return This builder for chaining.
        */
-      public Builder setMinAmount(long value) {
+      public Builder setMinAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         minAmount_ = value;
         onChanged();
@@ -36908,12 +39010,32 @@ public final class Vega {
        * A minimum amount
        * </pre>
        *
-       * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMinAmount() {
 
-        minAmount_ = 0L;
+        minAmount_ = getDefaultInstance().getMinAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A minimum amount
+       * </pre>
+       *
+       * <code>string min_amount = 4 [json_name = "minAmount"];</code>
+       * @param value The bytes for minAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        minAmount_ = value;
         onChanged();
         return this;
       }
@@ -37211,10 +39333,20 @@ public final class Vega {
      * An amount to transfer
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
-    long getAmount();
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * An amount to transfer
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
 
     /**
      * <pre>
@@ -37286,6 +39418,7 @@ public final class Vega {
     private LedgerEntry() {
       fromAccount_ = "";
       toAccount_ = "";
+      amount_ = "";
       reference_ = "";
       type_ = "";
     }
@@ -37332,9 +39465,10 @@ public final class Vega {
               toAccount_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readUInt64();
+              amount_ = s;
               break;
             }
             case 34: {
@@ -37479,18 +39613,49 @@ public final class Vega {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 3;
-    private long amount_;
+    private volatile java.lang.Object amount_;
     /**
      * <pre>
      * An amount to transfer
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
-      return amount_;
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * An amount to transfer
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int REFERENCE_FIELD_NUMBER = 4;
@@ -37621,8 +39786,8 @@ public final class Vega {
       if (!getToAccountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, toAccount_);
       }
-      if (amount_ != 0L) {
-        output.writeUInt64(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, amount_);
       }
       if (!getReferenceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reference_);
@@ -37648,9 +39813,8 @@ public final class Vega {
       if (!getToAccountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, toAccount_);
       }
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, amount_);
       }
       if (!getReferenceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reference_);
@@ -37681,8 +39845,8 @@ public final class Vega {
           .equals(other.getFromAccount())) return false;
       if (!getToAccount()
           .equals(other.getToAccount())) return false;
-      if (getAmount()
-          != other.getAmount()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
       if (!getReference()
           .equals(other.getReference())) return false;
       if (!getType()
@@ -37705,8 +39869,7 @@ public final class Vega {
       hash = (37 * hash) + TO_ACCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getToAccount().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
+      hash = (53 * hash) + getAmount().hashCode();
       hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + getReference().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -37855,7 +40018,7 @@ public final class Vega {
 
         toAccount_ = "";
 
-        amount_ = 0L;
+        amount_ = "";
 
         reference_ = "";
 
@@ -37951,8 +40114,9 @@ public final class Vega {
           toAccount_ = other.toAccount_;
           onChanged();
         }
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
         }
         if (!other.getReference().isEmpty()) {
           reference_ = other.reference_;
@@ -38186,29 +40350,62 @@ public final class Vega {
         return this;
       }
 
-      private long amount_ ;
+      private java.lang.Object amount_ = "";
       /**
        * <pre>
        * An amount to transfer
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return The amount.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * An amount to transfer
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * An amount to transfer
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         amount_ = value;
         onChanged();
@@ -38219,12 +40416,32 @@ public final class Vega {
        * An amount to transfer
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
 
-        amount_ = 0L;
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * An amount to transfer
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
         onChanged();
         return this;
       }
@@ -38555,10 +40772,20 @@ public final class Vega {
      * The balance relating to the transfer
      * </pre>
      *
-     * <code>uint64 balance = 2 [json_name = "balance"];</code>
+     * <code>string balance = 2 [json_name = "balance"];</code>
      * @return The balance.
      */
-    long getBalance();
+    java.lang.String getBalance();
+    /**
+     * <pre>
+     * The balance relating to the transfer
+     * </pre>
+     *
+     * <code>string balance = 2 [json_name = "balance"];</code>
+     * @return The bytes for balance.
+     */
+    com.google.protobuf.ByteString
+        getBalanceBytes();
   }
   /**
    * <pre>
@@ -38577,6 +40804,7 @@ public final class Vega {
       super(builder);
     }
     private TransferBalance() {
+      balance_ = "";
     }
 
     @java.lang.Override
@@ -38622,9 +40850,10 @@ public final class Vega {
 
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              balance_ = input.readUInt64();
+              balance_ = s;
               break;
             }
             default: {
@@ -38698,18 +40927,49 @@ public final class Vega {
     }
 
     public static final int BALANCE_FIELD_NUMBER = 2;
-    private long balance_;
+    private volatile java.lang.Object balance_;
     /**
      * <pre>
      * The balance relating to the transfer
      * </pre>
      *
-     * <code>uint64 balance = 2 [json_name = "balance"];</code>
+     * <code>string balance = 2 [json_name = "balance"];</code>
      * @return The balance.
      */
     @java.lang.Override
-    public long getBalance() {
-      return balance_;
+    public java.lang.String getBalance() {
+      java.lang.Object ref = balance_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        balance_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The balance relating to the transfer
+     * </pre>
+     *
+     * <code>string balance = 2 [json_name = "balance"];</code>
+     * @return The bytes for balance.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBalanceBytes() {
+      java.lang.Object ref = balance_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        balance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -38729,8 +40989,8 @@ public final class Vega {
       if (account_ != null) {
         output.writeMessage(1, getAccount());
       }
-      if (balance_ != 0L) {
-        output.writeUInt64(2, balance_);
+      if (!getBalanceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, balance_);
       }
       unknownFields.writeTo(output);
     }
@@ -38745,9 +41005,8 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getAccount());
       }
-      if (balance_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, balance_);
+      if (!getBalanceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, balance_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -38769,8 +41028,8 @@ public final class Vega {
         if (!getAccount()
             .equals(other.getAccount())) return false;
       }
-      if (getBalance()
-          != other.getBalance()) return false;
+      if (!getBalance()
+          .equals(other.getBalance())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -38787,8 +41046,7 @@ public final class Vega {
         hash = (53 * hash) + getAccount().hashCode();
       }
       hash = (37 * hash) + BALANCE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBalance());
+      hash = (53 * hash) + getBalance().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -38932,7 +41190,7 @@ public final class Vega {
           account_ = null;
           accountBuilder_ = null;
         }
-        balance_ = 0L;
+        balance_ = "";
 
         return this;
       }
@@ -39017,8 +41275,9 @@ public final class Vega {
         if (other.hasAccount()) {
           mergeAccount(other.getAccount());
         }
-        if (other.getBalance() != 0L) {
-          setBalance(other.getBalance());
+        if (!other.getBalance().isEmpty()) {
+          balance_ = other.balance_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -39204,29 +41463,62 @@ public final class Vega {
         return accountBuilder_;
       }
 
-      private long balance_ ;
+      private java.lang.Object balance_ = "";
       /**
        * <pre>
        * The balance relating to the transfer
        * </pre>
        *
-       * <code>uint64 balance = 2 [json_name = "balance"];</code>
+       * <code>string balance = 2 [json_name = "balance"];</code>
        * @return The balance.
        */
-      @java.lang.Override
-      public long getBalance() {
-        return balance_;
+      public java.lang.String getBalance() {
+        java.lang.Object ref = balance_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          balance_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * The balance relating to the transfer
        * </pre>
        *
-       * <code>uint64 balance = 2 [json_name = "balance"];</code>
+       * <code>string balance = 2 [json_name = "balance"];</code>
+       * @return The bytes for balance.
+       */
+      public com.google.protobuf.ByteString
+          getBalanceBytes() {
+        java.lang.Object ref = balance_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          balance_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The balance relating to the transfer
+       * </pre>
+       *
+       * <code>string balance = 2 [json_name = "balance"];</code>
        * @param value The balance to set.
        * @return This builder for chaining.
        */
-      public Builder setBalance(long value) {
+      public Builder setBalance(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         balance_ = value;
         onChanged();
@@ -39237,12 +41529,32 @@ public final class Vega {
        * The balance relating to the transfer
        * </pre>
        *
-       * <code>uint64 balance = 2 [json_name = "balance"];</code>
+       * <code>string balance = 2 [json_name = "balance"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBalance() {
 
-        balance_ = 0L;
+        balance_ = getDefaultInstance().getBalance();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The balance relating to the transfer
+       * </pre>
+       *
+       * <code>string balance = 2 [json_name = "balance"];</code>
+       * @param value The bytes for balance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBalanceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        balance_ = value;
         onChanged();
         return this;
       }
@@ -40705,40 +43017,80 @@ public final class Vega {
      * Maintenance margin value
      * </pre>
      *
-     * <code>uint64 maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
+     * <code>string maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
      * @return The maintenanceMargin.
      */
-    long getMaintenanceMargin();
+    java.lang.String getMaintenanceMargin();
+    /**
+     * <pre>
+     * Maintenance margin value
+     * </pre>
+     *
+     * <code>string maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
+     * @return The bytes for maintenanceMargin.
+     */
+    com.google.protobuf.ByteString
+        getMaintenanceMarginBytes();
 
     /**
      * <pre>
      * Search level value
      * </pre>
      *
-     * <code>uint64 search_level = 2 [json_name = "searchLevel"];</code>
+     * <code>string search_level = 2 [json_name = "searchLevel"];</code>
      * @return The searchLevel.
      */
-    long getSearchLevel();
+    java.lang.String getSearchLevel();
+    /**
+     * <pre>
+     * Search level value
+     * </pre>
+     *
+     * <code>string search_level = 2 [json_name = "searchLevel"];</code>
+     * @return The bytes for searchLevel.
+     */
+    com.google.protobuf.ByteString
+        getSearchLevelBytes();
 
     /**
      * <pre>
      * Initial margin value
      * </pre>
      *
-     * <code>uint64 initial_margin = 3 [json_name = "initialMargin"];</code>
+     * <code>string initial_margin = 3 [json_name = "initialMargin"];</code>
      * @return The initialMargin.
      */
-    long getInitialMargin();
+    java.lang.String getInitialMargin();
+    /**
+     * <pre>
+     * Initial margin value
+     * </pre>
+     *
+     * <code>string initial_margin = 3 [json_name = "initialMargin"];</code>
+     * @return The bytes for initialMargin.
+     */
+    com.google.protobuf.ByteString
+        getInitialMarginBytes();
 
     /**
      * <pre>
      * Collateral release level value
      * </pre>
      *
-     * <code>uint64 collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
+     * <code>string collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
      * @return The collateralReleaseLevel.
      */
-    long getCollateralReleaseLevel();
+    java.lang.String getCollateralReleaseLevel();
+    /**
+     * <pre>
+     * Collateral release level value
+     * </pre>
+     *
+     * <code>string collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
+     * @return The bytes for collateralReleaseLevel.
+     */
+    com.google.protobuf.ByteString
+        getCollateralReleaseLevelBytes();
 
     /**
      * <pre>
@@ -40828,6 +43180,10 @@ public final class Vega {
       super(builder);
     }
     private MarginLevels() {
+      maintenanceMargin_ = "";
+      searchLevel_ = "";
+      initialMargin_ = "";
+      collateralReleaseLevel_ = "";
       partyId_ = "";
       marketId_ = "";
       asset_ = "";
@@ -40863,24 +43219,28 @@ public final class Vega {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              maintenanceMargin_ = input.readUInt64();
+              maintenanceMargin_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              searchLevel_ = input.readUInt64();
+              searchLevel_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              initialMargin_ = input.readUInt64();
+              initialMargin_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              collateralReleaseLevel_ = input.readUInt64();
+              collateralReleaseLevel_ = s;
               break;
             }
             case 42: {
@@ -40939,63 +43299,187 @@ public final class Vega {
     }
 
     public static final int MAINTENANCE_MARGIN_FIELD_NUMBER = 1;
-    private long maintenanceMargin_;
+    private volatile java.lang.Object maintenanceMargin_;
     /**
      * <pre>
      * Maintenance margin value
      * </pre>
      *
-     * <code>uint64 maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
+     * <code>string maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
      * @return The maintenanceMargin.
      */
     @java.lang.Override
-    public long getMaintenanceMargin() {
-      return maintenanceMargin_;
+    public java.lang.String getMaintenanceMargin() {
+      java.lang.Object ref = maintenanceMargin_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maintenanceMargin_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Maintenance margin value
+     * </pre>
+     *
+     * <code>string maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
+     * @return The bytes for maintenanceMargin.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMaintenanceMarginBytes() {
+      java.lang.Object ref = maintenanceMargin_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        maintenanceMargin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int SEARCH_LEVEL_FIELD_NUMBER = 2;
-    private long searchLevel_;
+    private volatile java.lang.Object searchLevel_;
     /**
      * <pre>
      * Search level value
      * </pre>
      *
-     * <code>uint64 search_level = 2 [json_name = "searchLevel"];</code>
+     * <code>string search_level = 2 [json_name = "searchLevel"];</code>
      * @return The searchLevel.
      */
     @java.lang.Override
-    public long getSearchLevel() {
-      return searchLevel_;
+    public java.lang.String getSearchLevel() {
+      java.lang.Object ref = searchLevel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        searchLevel_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Search level value
+     * </pre>
+     *
+     * <code>string search_level = 2 [json_name = "searchLevel"];</code>
+     * @return The bytes for searchLevel.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSearchLevelBytes() {
+      java.lang.Object ref = searchLevel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        searchLevel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int INITIAL_MARGIN_FIELD_NUMBER = 3;
-    private long initialMargin_;
+    private volatile java.lang.Object initialMargin_;
     /**
      * <pre>
      * Initial margin value
      * </pre>
      *
-     * <code>uint64 initial_margin = 3 [json_name = "initialMargin"];</code>
+     * <code>string initial_margin = 3 [json_name = "initialMargin"];</code>
      * @return The initialMargin.
      */
     @java.lang.Override
-    public long getInitialMargin() {
-      return initialMargin_;
+    public java.lang.String getInitialMargin() {
+      java.lang.Object ref = initialMargin_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        initialMargin_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Initial margin value
+     * </pre>
+     *
+     * <code>string initial_margin = 3 [json_name = "initialMargin"];</code>
+     * @return The bytes for initialMargin.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInitialMarginBytes() {
+      java.lang.Object ref = initialMargin_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        initialMargin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int COLLATERAL_RELEASE_LEVEL_FIELD_NUMBER = 4;
-    private long collateralReleaseLevel_;
+    private volatile java.lang.Object collateralReleaseLevel_;
     /**
      * <pre>
      * Collateral release level value
      * </pre>
      *
-     * <code>uint64 collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
+     * <code>string collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
      * @return The collateralReleaseLevel.
      */
     @java.lang.Override
-    public long getCollateralReleaseLevel() {
-      return collateralReleaseLevel_;
+    public java.lang.String getCollateralReleaseLevel() {
+      java.lang.Object ref = collateralReleaseLevel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        collateralReleaseLevel_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Collateral release level value
+     * </pre>
+     *
+     * <code>string collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
+     * @return The bytes for collateralReleaseLevel.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCollateralReleaseLevelBytes() {
+      java.lang.Object ref = collateralReleaseLevel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        collateralReleaseLevel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PARTY_ID_FIELD_NUMBER = 5;
@@ -41166,17 +43650,17 @@ public final class Vega {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (maintenanceMargin_ != 0L) {
-        output.writeUInt64(1, maintenanceMargin_);
+      if (!getMaintenanceMarginBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, maintenanceMargin_);
       }
-      if (searchLevel_ != 0L) {
-        output.writeUInt64(2, searchLevel_);
+      if (!getSearchLevelBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, searchLevel_);
       }
-      if (initialMargin_ != 0L) {
-        output.writeUInt64(3, initialMargin_);
+      if (!getInitialMarginBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, initialMargin_);
       }
-      if (collateralReleaseLevel_ != 0L) {
-        output.writeUInt64(4, collateralReleaseLevel_);
+      if (!getCollateralReleaseLevelBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, collateralReleaseLevel_);
       }
       if (!getPartyIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, partyId_);
@@ -41199,21 +43683,17 @@ public final class Vega {
       if (size != -1) return size;
 
       size = 0;
-      if (maintenanceMargin_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, maintenanceMargin_);
+      if (!getMaintenanceMarginBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, maintenanceMargin_);
       }
-      if (searchLevel_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, searchLevel_);
+      if (!getSearchLevelBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, searchLevel_);
       }
-      if (initialMargin_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, initialMargin_);
+      if (!getInitialMarginBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, initialMargin_);
       }
-      if (collateralReleaseLevel_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, collateralReleaseLevel_);
+      if (!getCollateralReleaseLevelBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, collateralReleaseLevel_);
       }
       if (!getPartyIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, partyId_);
@@ -41243,14 +43723,14 @@ public final class Vega {
       }
       io.vegaprotocol.vega.Vega.MarginLevels other = (io.vegaprotocol.vega.Vega.MarginLevels) obj;
 
-      if (getMaintenanceMargin()
-          != other.getMaintenanceMargin()) return false;
-      if (getSearchLevel()
-          != other.getSearchLevel()) return false;
-      if (getInitialMargin()
-          != other.getInitialMargin()) return false;
-      if (getCollateralReleaseLevel()
-          != other.getCollateralReleaseLevel()) return false;
+      if (!getMaintenanceMargin()
+          .equals(other.getMaintenanceMargin())) return false;
+      if (!getSearchLevel()
+          .equals(other.getSearchLevel())) return false;
+      if (!getInitialMargin()
+          .equals(other.getInitialMargin())) return false;
+      if (!getCollateralReleaseLevel()
+          .equals(other.getCollateralReleaseLevel())) return false;
       if (!getPartyId()
           .equals(other.getPartyId())) return false;
       if (!getMarketId()
@@ -41271,17 +43751,13 @@ public final class Vega {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MAINTENANCE_MARGIN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMaintenanceMargin());
+      hash = (53 * hash) + getMaintenanceMargin().hashCode();
       hash = (37 * hash) + SEARCH_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSearchLevel());
+      hash = (53 * hash) + getSearchLevel().hashCode();
       hash = (37 * hash) + INITIAL_MARGIN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getInitialMargin());
+      hash = (53 * hash) + getInitialMargin().hashCode();
       hash = (37 * hash) + COLLATERAL_RELEASE_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCollateralReleaseLevel());
+      hash = (53 * hash) + getCollateralReleaseLevel().hashCode();
       hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
@@ -41428,13 +43904,13 @@ public final class Vega {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        maintenanceMargin_ = 0L;
+        maintenanceMargin_ = "";
 
-        searchLevel_ = 0L;
+        searchLevel_ = "";
 
-        initialMargin_ = 0L;
+        initialMargin_ = "";
 
-        collateralReleaseLevel_ = 0L;
+        collateralReleaseLevel_ = "";
 
         partyId_ = "";
 
@@ -41526,17 +44002,21 @@ public final class Vega {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Vega.MarginLevels other) {
         if (other == io.vegaprotocol.vega.Vega.MarginLevels.getDefaultInstance()) return this;
-        if (other.getMaintenanceMargin() != 0L) {
-          setMaintenanceMargin(other.getMaintenanceMargin());
+        if (!other.getMaintenanceMargin().isEmpty()) {
+          maintenanceMargin_ = other.maintenanceMargin_;
+          onChanged();
         }
-        if (other.getSearchLevel() != 0L) {
-          setSearchLevel(other.getSearchLevel());
+        if (!other.getSearchLevel().isEmpty()) {
+          searchLevel_ = other.searchLevel_;
+          onChanged();
         }
-        if (other.getInitialMargin() != 0L) {
-          setInitialMargin(other.getInitialMargin());
+        if (!other.getInitialMargin().isEmpty()) {
+          initialMargin_ = other.initialMargin_;
+          onChanged();
         }
-        if (other.getCollateralReleaseLevel() != 0L) {
-          setCollateralReleaseLevel(other.getCollateralReleaseLevel());
+        if (!other.getCollateralReleaseLevel().isEmpty()) {
+          collateralReleaseLevel_ = other.collateralReleaseLevel_;
+          onChanged();
         }
         if (!other.getPartyId().isEmpty()) {
           partyId_ = other.partyId_;
@@ -41582,29 +44062,62 @@ public final class Vega {
         return this;
       }
 
-      private long maintenanceMargin_ ;
+      private java.lang.Object maintenanceMargin_ = "";
       /**
        * <pre>
        * Maintenance margin value
        * </pre>
        *
-       * <code>uint64 maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
+       * <code>string maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
        * @return The maintenanceMargin.
        */
-      @java.lang.Override
-      public long getMaintenanceMargin() {
-        return maintenanceMargin_;
+      public java.lang.String getMaintenanceMargin() {
+        java.lang.Object ref = maintenanceMargin_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          maintenanceMargin_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Maintenance margin value
        * </pre>
        *
-       * <code>uint64 maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
+       * <code>string maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
+       * @return The bytes for maintenanceMargin.
+       */
+      public com.google.protobuf.ByteString
+          getMaintenanceMarginBytes() {
+        java.lang.Object ref = maintenanceMargin_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          maintenanceMargin_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Maintenance margin value
+       * </pre>
+       *
+       * <code>string maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
        * @param value The maintenanceMargin to set.
        * @return This builder for chaining.
        */
-      public Builder setMaintenanceMargin(long value) {
+      public Builder setMaintenanceMargin(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         maintenanceMargin_ = value;
         onChanged();
@@ -41615,39 +44128,92 @@ public final class Vega {
        * Maintenance margin value
        * </pre>
        *
-       * <code>uint64 maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
+       * <code>string maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaintenanceMargin() {
 
-        maintenanceMargin_ = 0L;
+        maintenanceMargin_ = getDefaultInstance().getMaintenanceMargin();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Maintenance margin value
+       * </pre>
+       *
+       * <code>string maintenance_margin = 1 [json_name = "maintenanceMargin"];</code>
+       * @param value The bytes for maintenanceMargin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaintenanceMarginBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        maintenanceMargin_ = value;
         onChanged();
         return this;
       }
 
-      private long searchLevel_ ;
+      private java.lang.Object searchLevel_ = "";
       /**
        * <pre>
        * Search level value
        * </pre>
        *
-       * <code>uint64 search_level = 2 [json_name = "searchLevel"];</code>
+       * <code>string search_level = 2 [json_name = "searchLevel"];</code>
        * @return The searchLevel.
        */
-      @java.lang.Override
-      public long getSearchLevel() {
-        return searchLevel_;
+      public java.lang.String getSearchLevel() {
+        java.lang.Object ref = searchLevel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          searchLevel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Search level value
        * </pre>
        *
-       * <code>uint64 search_level = 2 [json_name = "searchLevel"];</code>
+       * <code>string search_level = 2 [json_name = "searchLevel"];</code>
+       * @return The bytes for searchLevel.
+       */
+      public com.google.protobuf.ByteString
+          getSearchLevelBytes() {
+        java.lang.Object ref = searchLevel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          searchLevel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Search level value
+       * </pre>
+       *
+       * <code>string search_level = 2 [json_name = "searchLevel"];</code>
        * @param value The searchLevel to set.
        * @return This builder for chaining.
        */
-      public Builder setSearchLevel(long value) {
+      public Builder setSearchLevel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         searchLevel_ = value;
         onChanged();
@@ -41658,39 +44224,92 @@ public final class Vega {
        * Search level value
        * </pre>
        *
-       * <code>uint64 search_level = 2 [json_name = "searchLevel"];</code>
+       * <code>string search_level = 2 [json_name = "searchLevel"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSearchLevel() {
 
-        searchLevel_ = 0L;
+        searchLevel_ = getDefaultInstance().getSearchLevel();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Search level value
+       * </pre>
+       *
+       * <code>string search_level = 2 [json_name = "searchLevel"];</code>
+       * @param value The bytes for searchLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchLevelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        searchLevel_ = value;
         onChanged();
         return this;
       }
 
-      private long initialMargin_ ;
+      private java.lang.Object initialMargin_ = "";
       /**
        * <pre>
        * Initial margin value
        * </pre>
        *
-       * <code>uint64 initial_margin = 3 [json_name = "initialMargin"];</code>
+       * <code>string initial_margin = 3 [json_name = "initialMargin"];</code>
        * @return The initialMargin.
        */
-      @java.lang.Override
-      public long getInitialMargin() {
-        return initialMargin_;
+      public java.lang.String getInitialMargin() {
+        java.lang.Object ref = initialMargin_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          initialMargin_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Initial margin value
        * </pre>
        *
-       * <code>uint64 initial_margin = 3 [json_name = "initialMargin"];</code>
+       * <code>string initial_margin = 3 [json_name = "initialMargin"];</code>
+       * @return The bytes for initialMargin.
+       */
+      public com.google.protobuf.ByteString
+          getInitialMarginBytes() {
+        java.lang.Object ref = initialMargin_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          initialMargin_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Initial margin value
+       * </pre>
+       *
+       * <code>string initial_margin = 3 [json_name = "initialMargin"];</code>
        * @param value The initialMargin to set.
        * @return This builder for chaining.
        */
-      public Builder setInitialMargin(long value) {
+      public Builder setInitialMargin(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         initialMargin_ = value;
         onChanged();
@@ -41701,39 +44320,92 @@ public final class Vega {
        * Initial margin value
        * </pre>
        *
-       * <code>uint64 initial_margin = 3 [json_name = "initialMargin"];</code>
+       * <code>string initial_margin = 3 [json_name = "initialMargin"];</code>
        * @return This builder for chaining.
        */
       public Builder clearInitialMargin() {
 
-        initialMargin_ = 0L;
+        initialMargin_ = getDefaultInstance().getInitialMargin();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Initial margin value
+       * </pre>
+       *
+       * <code>string initial_margin = 3 [json_name = "initialMargin"];</code>
+       * @param value The bytes for initialMargin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInitialMarginBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        initialMargin_ = value;
         onChanged();
         return this;
       }
 
-      private long collateralReleaseLevel_ ;
+      private java.lang.Object collateralReleaseLevel_ = "";
       /**
        * <pre>
        * Collateral release level value
        * </pre>
        *
-       * <code>uint64 collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
+       * <code>string collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
        * @return The collateralReleaseLevel.
        */
-      @java.lang.Override
-      public long getCollateralReleaseLevel() {
-        return collateralReleaseLevel_;
+      public java.lang.String getCollateralReleaseLevel() {
+        java.lang.Object ref = collateralReleaseLevel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          collateralReleaseLevel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Collateral release level value
        * </pre>
        *
-       * <code>uint64 collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
+       * <code>string collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
+       * @return The bytes for collateralReleaseLevel.
+       */
+      public com.google.protobuf.ByteString
+          getCollateralReleaseLevelBytes() {
+        java.lang.Object ref = collateralReleaseLevel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          collateralReleaseLevel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Collateral release level value
+       * </pre>
+       *
+       * <code>string collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
        * @param value The collateralReleaseLevel to set.
        * @return This builder for chaining.
        */
-      public Builder setCollateralReleaseLevel(long value) {
+      public Builder setCollateralReleaseLevel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         collateralReleaseLevel_ = value;
         onChanged();
@@ -41744,12 +44416,32 @@ public final class Vega {
        * Collateral release level value
        * </pre>
        *
-       * <code>uint64 collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
+       * <code>string collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCollateralReleaseLevel() {
 
-        collateralReleaseLevel_ = 0L;
+        collateralReleaseLevel_ = getDefaultInstance().getCollateralReleaseLevel();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Collateral release level value
+       * </pre>
+       *
+       * <code>string collateral_release_level = 4 [json_name = "collateralReleaseLevel"];</code>
+       * @param value The bytes for collateralReleaseLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCollateralReleaseLevelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        collateralReleaseLevel_ = value;
         onChanged();
         return this;
       }
@@ -42150,10 +44842,21 @@ public final class Vega {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 mark_price = 1 [json_name = "markPrice"];</code>
+     * <code>string mark_price = 1 [json_name = "markPrice"];</code>
      * @return The markPrice.
      */
-    long getMarkPrice();
+    java.lang.String getMarkPrice();
+    /**
+     * <pre>
+     * Mark price, as an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string mark_price = 1 [json_name = "markPrice"];</code>
+     * @return The bytes for markPrice.
+     */
+    com.google.protobuf.ByteString
+        getMarkPriceBytes();
 
     /**
      * <pre>
@@ -42161,10 +44864,21 @@ public final class Vega {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 best_bid_price = 2 [json_name = "bestBidPrice"];</code>
+     * <code>string best_bid_price = 2 [json_name = "bestBidPrice"];</code>
      * @return The bestBidPrice.
      */
-    long getBestBidPrice();
+    java.lang.String getBestBidPrice();
+    /**
+     * <pre>
+     * Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string best_bid_price = 2 [json_name = "bestBidPrice"];</code>
+     * @return The bytes for bestBidPrice.
+     */
+    com.google.protobuf.ByteString
+        getBestBidPriceBytes();
 
     /**
      * <pre>
@@ -42181,10 +44895,20 @@ public final class Vega {
      * Lowest price level on an order book for offer orders
      * </pre>
      *
-     * <code>uint64 best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
+     * <code>string best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
      * @return The bestOfferPrice.
      */
-    long getBestOfferPrice();
+    java.lang.String getBestOfferPrice();
+    /**
+     * <pre>
+     * Lowest price level on an order book for offer orders
+     * </pre>
+     *
+     * <code>string best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
+     * @return The bytes for bestOfferPrice.
+     */
+    com.google.protobuf.ByteString
+        getBestOfferPriceBytes();
 
     /**
      * <pre>
@@ -42202,10 +44926,20 @@ public final class Vega {
      * Highest price on the order book for buy orders not including pegged orders
      * </pre>
      *
-     * <code>uint64 best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
+     * <code>string best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
      * @return The bestStaticBidPrice.
      */
-    long getBestStaticBidPrice();
+    java.lang.String getBestStaticBidPrice();
+    /**
+     * <pre>
+     * Highest price on the order book for buy orders not including pegged orders
+     * </pre>
+     *
+     * <code>string best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
+     * @return The bytes for bestStaticBidPrice.
+     */
+    com.google.protobuf.ByteString
+        getBestStaticBidPriceBytes();
 
     /**
      * <pre>
@@ -42222,10 +44956,20 @@ public final class Vega {
      * Lowest price on the order book for sell orders not including pegged orders
      * </pre>
      *
-     * <code>uint64 best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
+     * <code>string best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
      * @return The bestStaticOfferPrice.
      */
-    long getBestStaticOfferPrice();
+    java.lang.String getBestStaticOfferPrice();
+    /**
+     * <pre>
+     * Lowest price on the order book for sell orders not including pegged orders
+     * </pre>
+     *
+     * <code>string best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
+     * @return The bytes for bestStaticOfferPrice.
+     */
+    com.google.protobuf.ByteString
+        getBestStaticOfferPriceBytes();
 
     /**
      * <pre>
@@ -42243,20 +44987,41 @@ public final class Vega {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 mid_price = 10 [json_name = "midPrice"];</code>
+     * <code>string mid_price = 10 [json_name = "midPrice"];</code>
      * @return The midPrice.
      */
-    long getMidPrice();
+    java.lang.String getMidPrice();
+    /**
+     * <pre>
+     * Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string mid_price = 10 [json_name = "midPrice"];</code>
+     * @return The bytes for midPrice.
+     */
+    com.google.protobuf.ByteString
+        getMidPriceBytes();
 
     /**
      * <pre>
      * Arithmetic average of the best static bid price and best static offer price
      * </pre>
      *
-     * <code>uint64 static_mid_price = 11 [json_name = "staticMidPrice"];</code>
+     * <code>string static_mid_price = 11 [json_name = "staticMidPrice"];</code>
      * @return The staticMidPrice.
      */
-    long getStaticMidPrice();
+    java.lang.String getStaticMidPrice();
+    /**
+     * <pre>
+     * Arithmetic average of the best static bid price and best static offer price
+     * </pre>
+     *
+     * <code>string static_mid_price = 11 [json_name = "staticMidPrice"];</code>
+     * @return The bytes for staticMidPrice.
+     */
+    com.google.protobuf.ByteString
+        getStaticMidPriceBytes();
 
     /**
      * <pre>
@@ -42324,10 +45089,20 @@ public final class Vega {
      * Indicative price (zero if not in auction)
      * </pre>
      *
-     * <code>uint64 indicative_price = 17 [json_name = "indicativePrice"];</code>
+     * <code>string indicative_price = 17 [json_name = "indicativePrice"];</code>
      * @return The indicativePrice.
      */
-    long getIndicativePrice();
+    java.lang.String getIndicativePrice();
+    /**
+     * <pre>
+     * Indicative price (zero if not in auction)
+     * </pre>
+     *
+     * <code>string indicative_price = 17 [json_name = "indicativePrice"];</code>
+     * @return The bytes for indicativePrice.
+     */
+    com.google.protobuf.ByteString
+        getIndicativePriceBytes();
 
     /**
      * <pre>
@@ -42561,7 +45336,15 @@ public final class Vega {
       super(builder);
     }
     private MarketData() {
+      markPrice_ = "";
+      bestBidPrice_ = "";
+      bestOfferPrice_ = "";
+      bestStaticBidPrice_ = "";
+      bestStaticOfferPrice_ = "";
+      midPrice_ = "";
+      staticMidPrice_ = "";
       market_ = "";
+      indicativePrice_ = "";
       marketTradingMode_ = 0;
       trigger_ = 0;
       extensionTrigger_ = 0;
@@ -42603,14 +45386,16 @@ public final class Vega {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              markPrice_ = input.readUInt64();
+              markPrice_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              bestBidPrice_ = input.readUInt64();
+              bestBidPrice_ = s;
               break;
             }
             case 24: {
@@ -42618,9 +45403,10 @@ public final class Vega {
               bestBidVolume_ = input.readUInt64();
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              bestOfferPrice_ = input.readUInt64();
+              bestOfferPrice_ = s;
               break;
             }
             case 40: {
@@ -42628,9 +45414,10 @@ public final class Vega {
               bestOfferVolume_ = input.readUInt64();
               break;
             }
-            case 48: {
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              bestStaticBidPrice_ = input.readUInt64();
+              bestStaticBidPrice_ = s;
               break;
             }
             case 56: {
@@ -42638,9 +45425,10 @@ public final class Vega {
               bestStaticBidVolume_ = input.readUInt64();
               break;
             }
-            case 64: {
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              bestStaticOfferPrice_ = input.readUInt64();
+              bestStaticOfferPrice_ = s;
               break;
             }
             case 72: {
@@ -42648,14 +45436,16 @@ public final class Vega {
               bestStaticOfferVolume_ = input.readUInt64();
               break;
             }
-            case 80: {
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              midPrice_ = input.readUInt64();
+              midPrice_ = s;
               break;
             }
-            case 88: {
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              staticMidPrice_ = input.readUInt64();
+              staticMidPrice_ = s;
               break;
             }
             case 98: {
@@ -42684,9 +45474,10 @@ public final class Vega {
               auctionStart_ = input.readInt64();
               break;
             }
-            case 136: {
+            case 138: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              indicativePrice_ = input.readUInt64();
+              indicativePrice_ = s;
               break;
             }
             case 144: {
@@ -42787,35 +45578,99 @@ public final class Vega {
     }
 
     public static final int MARK_PRICE_FIELD_NUMBER = 1;
-    private long markPrice_;
+    private volatile java.lang.Object markPrice_;
     /**
      * <pre>
      * Mark price, as an integer, for example `123456` is a correctly
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 mark_price = 1 [json_name = "markPrice"];</code>
+     * <code>string mark_price = 1 [json_name = "markPrice"];</code>
      * @return The markPrice.
      */
     @java.lang.Override
-    public long getMarkPrice() {
-      return markPrice_;
+    public java.lang.String getMarkPrice() {
+      java.lang.Object ref = markPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        markPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Mark price, as an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string mark_price = 1 [json_name = "markPrice"];</code>
+     * @return The bytes for markPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMarkPriceBytes() {
+      java.lang.Object ref = markPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        markPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int BEST_BID_PRICE_FIELD_NUMBER = 2;
-    private long bestBidPrice_;
+    private volatile java.lang.Object bestBidPrice_;
     /**
      * <pre>
      * Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 best_bid_price = 2 [json_name = "bestBidPrice"];</code>
+     * <code>string best_bid_price = 2 [json_name = "bestBidPrice"];</code>
      * @return The bestBidPrice.
      */
     @java.lang.Override
-    public long getBestBidPrice() {
-      return bestBidPrice_;
+    public java.lang.String getBestBidPrice() {
+      java.lang.Object ref = bestBidPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bestBidPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string best_bid_price = 2 [json_name = "bestBidPrice"];</code>
+     * @return The bytes for bestBidPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBestBidPriceBytes() {
+      java.lang.Object ref = bestBidPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bestBidPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int BEST_BID_VOLUME_FIELD_NUMBER = 3;
@@ -42834,18 +45689,49 @@ public final class Vega {
     }
 
     public static final int BEST_OFFER_PRICE_FIELD_NUMBER = 4;
-    private long bestOfferPrice_;
+    private volatile java.lang.Object bestOfferPrice_;
     /**
      * <pre>
      * Lowest price level on an order book for offer orders
      * </pre>
      *
-     * <code>uint64 best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
+     * <code>string best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
      * @return The bestOfferPrice.
      */
     @java.lang.Override
-    public long getBestOfferPrice() {
-      return bestOfferPrice_;
+    public java.lang.String getBestOfferPrice() {
+      java.lang.Object ref = bestOfferPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bestOfferPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Lowest price level on an order book for offer orders
+     * </pre>
+     *
+     * <code>string best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
+     * @return The bytes for bestOfferPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBestOfferPriceBytes() {
+      java.lang.Object ref = bestOfferPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bestOfferPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int BEST_OFFER_VOLUME_FIELD_NUMBER = 5;
@@ -42865,18 +45751,49 @@ public final class Vega {
     }
 
     public static final int BEST_STATIC_BID_PRICE_FIELD_NUMBER = 6;
-    private long bestStaticBidPrice_;
+    private volatile java.lang.Object bestStaticBidPrice_;
     /**
      * <pre>
      * Highest price on the order book for buy orders not including pegged orders
      * </pre>
      *
-     * <code>uint64 best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
+     * <code>string best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
      * @return The bestStaticBidPrice.
      */
     @java.lang.Override
-    public long getBestStaticBidPrice() {
-      return bestStaticBidPrice_;
+    public java.lang.String getBestStaticBidPrice() {
+      java.lang.Object ref = bestStaticBidPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bestStaticBidPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Highest price on the order book for buy orders not including pegged orders
+     * </pre>
+     *
+     * <code>string best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
+     * @return The bytes for bestStaticBidPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBestStaticBidPriceBytes() {
+      java.lang.Object ref = bestStaticBidPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bestStaticBidPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int BEST_STATIC_BID_VOLUME_FIELD_NUMBER = 7;
@@ -42895,18 +45812,49 @@ public final class Vega {
     }
 
     public static final int BEST_STATIC_OFFER_PRICE_FIELD_NUMBER = 8;
-    private long bestStaticOfferPrice_;
+    private volatile java.lang.Object bestStaticOfferPrice_;
     /**
      * <pre>
      * Lowest price on the order book for sell orders not including pegged orders
      * </pre>
      *
-     * <code>uint64 best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
+     * <code>string best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
      * @return The bestStaticOfferPrice.
      */
     @java.lang.Override
-    public long getBestStaticOfferPrice() {
-      return bestStaticOfferPrice_;
+    public java.lang.String getBestStaticOfferPrice() {
+      java.lang.Object ref = bestStaticOfferPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bestStaticOfferPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Lowest price on the order book for sell orders not including pegged orders
+     * </pre>
+     *
+     * <code>string best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
+     * @return The bytes for bestStaticOfferPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBestStaticOfferPriceBytes() {
+      java.lang.Object ref = bestStaticOfferPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bestStaticOfferPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int BEST_STATIC_OFFER_VOLUME_FIELD_NUMBER = 9;
@@ -42925,34 +45873,97 @@ public final class Vega {
     }
 
     public static final int MID_PRICE_FIELD_NUMBER = 10;
-    private long midPrice_;
+    private volatile java.lang.Object midPrice_;
     /**
      * <pre>
      * Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 mid_price = 10 [json_name = "midPrice"];</code>
+     * <code>string mid_price = 10 [json_name = "midPrice"];</code>
      * @return The midPrice.
      */
     @java.lang.Override
-    public long getMidPrice() {
-      return midPrice_;
+    public java.lang.String getMidPrice() {
+      java.lang.Object ref = midPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        midPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places
+     * </pre>
+     *
+     * <code>string mid_price = 10 [json_name = "midPrice"];</code>
+     * @return The bytes for midPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMidPriceBytes() {
+      java.lang.Object ref = midPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        midPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int STATIC_MID_PRICE_FIELD_NUMBER = 11;
-    private long staticMidPrice_;
+    private volatile java.lang.Object staticMidPrice_;
     /**
      * <pre>
      * Arithmetic average of the best static bid price and best static offer price
      * </pre>
      *
-     * <code>uint64 static_mid_price = 11 [json_name = "staticMidPrice"];</code>
+     * <code>string static_mid_price = 11 [json_name = "staticMidPrice"];</code>
      * @return The staticMidPrice.
      */
     @java.lang.Override
-    public long getStaticMidPrice() {
-      return staticMidPrice_;
+    public java.lang.String getStaticMidPrice() {
+      java.lang.Object ref = staticMidPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        staticMidPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Arithmetic average of the best static bid price and best static offer price
+     * </pre>
+     *
+     * <code>string static_mid_price = 11 [json_name = "staticMidPrice"];</code>
+     * @return The bytes for staticMidPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStaticMidPriceBytes() {
+      java.lang.Object ref = staticMidPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        staticMidPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int MARKET_FIELD_NUMBER = 12;
@@ -43063,18 +46074,49 @@ public final class Vega {
     }
 
     public static final int INDICATIVE_PRICE_FIELD_NUMBER = 17;
-    private long indicativePrice_;
+    private volatile java.lang.Object indicativePrice_;
     /**
      * <pre>
      * Indicative price (zero if not in auction)
      * </pre>
      *
-     * <code>uint64 indicative_price = 17 [json_name = "indicativePrice"];</code>
+     * <code>string indicative_price = 17 [json_name = "indicativePrice"];</code>
      * @return The indicativePrice.
      */
     @java.lang.Override
-    public long getIndicativePrice() {
-      return indicativePrice_;
+    public java.lang.String getIndicativePrice() {
+      java.lang.Object ref = indicativePrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        indicativePrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Indicative price (zero if not in auction)
+     * </pre>
+     *
+     * <code>string indicative_price = 17 [json_name = "indicativePrice"];</code>
+     * @return The bytes for indicativePrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIndicativePriceBytes() {
+      java.lang.Object ref = indicativePrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        indicativePrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int INDICATIVE_VOLUME_FIELD_NUMBER = 18;
@@ -43445,38 +46487,38 @@ public final class Vega {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (markPrice_ != 0L) {
-        output.writeUInt64(1, markPrice_);
+      if (!getMarkPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, markPrice_);
       }
-      if (bestBidPrice_ != 0L) {
-        output.writeUInt64(2, bestBidPrice_);
+      if (!getBestBidPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bestBidPrice_);
       }
       if (bestBidVolume_ != 0L) {
         output.writeUInt64(3, bestBidVolume_);
       }
-      if (bestOfferPrice_ != 0L) {
-        output.writeUInt64(4, bestOfferPrice_);
+      if (!getBestOfferPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bestOfferPrice_);
       }
       if (bestOfferVolume_ != 0L) {
         output.writeUInt64(5, bestOfferVolume_);
       }
-      if (bestStaticBidPrice_ != 0L) {
-        output.writeUInt64(6, bestStaticBidPrice_);
+      if (!getBestStaticBidPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, bestStaticBidPrice_);
       }
       if (bestStaticBidVolume_ != 0L) {
         output.writeUInt64(7, bestStaticBidVolume_);
       }
-      if (bestStaticOfferPrice_ != 0L) {
-        output.writeUInt64(8, bestStaticOfferPrice_);
+      if (!getBestStaticOfferPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, bestStaticOfferPrice_);
       }
       if (bestStaticOfferVolume_ != 0L) {
         output.writeUInt64(9, bestStaticOfferVolume_);
       }
-      if (midPrice_ != 0L) {
-        output.writeUInt64(10, midPrice_);
+      if (!getMidPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, midPrice_);
       }
-      if (staticMidPrice_ != 0L) {
-        output.writeUInt64(11, staticMidPrice_);
+      if (!getStaticMidPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, staticMidPrice_);
       }
       if (!getMarketBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, market_);
@@ -43493,8 +46535,8 @@ public final class Vega {
       if (auctionStart_ != 0L) {
         output.writeInt64(16, auctionStart_);
       }
-      if (indicativePrice_ != 0L) {
-        output.writeUInt64(17, indicativePrice_);
+      if (!getIndicativePriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, indicativePrice_);
       }
       if (indicativeVolume_ != 0L) {
         output.writeUInt64(18, indicativeVolume_);
@@ -43532,49 +46574,42 @@ public final class Vega {
       if (size != -1) return size;
 
       size = 0;
-      if (markPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, markPrice_);
+      if (!getMarkPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, markPrice_);
       }
-      if (bestBidPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, bestBidPrice_);
+      if (!getBestBidPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bestBidPrice_);
       }
       if (bestBidVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, bestBidVolume_);
       }
-      if (bestOfferPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, bestOfferPrice_);
+      if (!getBestOfferPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, bestOfferPrice_);
       }
       if (bestOfferVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(5, bestOfferVolume_);
       }
-      if (bestStaticBidPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, bestStaticBidPrice_);
+      if (!getBestStaticBidPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, bestStaticBidPrice_);
       }
       if (bestStaticBidVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(7, bestStaticBidVolume_);
       }
-      if (bestStaticOfferPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(8, bestStaticOfferPrice_);
+      if (!getBestStaticOfferPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, bestStaticOfferPrice_);
       }
       if (bestStaticOfferVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(9, bestStaticOfferVolume_);
       }
-      if (midPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, midPrice_);
+      if (!getMidPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, midPrice_);
       }
-      if (staticMidPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(11, staticMidPrice_);
+      if (!getStaticMidPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, staticMidPrice_);
       }
       if (!getMarketBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, market_);
@@ -43595,9 +46630,8 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(16, auctionStart_);
       }
-      if (indicativePrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(17, indicativePrice_);
+      if (!getIndicativePriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, indicativePrice_);
       }
       if (indicativeVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -43647,28 +46681,28 @@ public final class Vega {
       }
       io.vegaprotocol.vega.Vega.MarketData other = (io.vegaprotocol.vega.Vega.MarketData) obj;
 
-      if (getMarkPrice()
-          != other.getMarkPrice()) return false;
-      if (getBestBidPrice()
-          != other.getBestBidPrice()) return false;
+      if (!getMarkPrice()
+          .equals(other.getMarkPrice())) return false;
+      if (!getBestBidPrice()
+          .equals(other.getBestBidPrice())) return false;
       if (getBestBidVolume()
           != other.getBestBidVolume()) return false;
-      if (getBestOfferPrice()
-          != other.getBestOfferPrice()) return false;
+      if (!getBestOfferPrice()
+          .equals(other.getBestOfferPrice())) return false;
       if (getBestOfferVolume()
           != other.getBestOfferVolume()) return false;
-      if (getBestStaticBidPrice()
-          != other.getBestStaticBidPrice()) return false;
+      if (!getBestStaticBidPrice()
+          .equals(other.getBestStaticBidPrice())) return false;
       if (getBestStaticBidVolume()
           != other.getBestStaticBidVolume()) return false;
-      if (getBestStaticOfferPrice()
-          != other.getBestStaticOfferPrice()) return false;
+      if (!getBestStaticOfferPrice()
+          .equals(other.getBestStaticOfferPrice())) return false;
       if (getBestStaticOfferVolume()
           != other.getBestStaticOfferVolume()) return false;
-      if (getMidPrice()
-          != other.getMidPrice()) return false;
-      if (getStaticMidPrice()
-          != other.getStaticMidPrice()) return false;
+      if (!getMidPrice()
+          .equals(other.getMidPrice())) return false;
+      if (!getStaticMidPrice()
+          .equals(other.getStaticMidPrice())) return false;
       if (!getMarket()
           .equals(other.getMarket())) return false;
       if (getTimestamp()
@@ -43679,8 +46713,8 @@ public final class Vega {
           != other.getAuctionEnd()) return false;
       if (getAuctionStart()
           != other.getAuctionStart()) return false;
-      if (getIndicativePrice()
-          != other.getIndicativePrice()) return false;
+      if (!getIndicativePrice()
+          .equals(other.getIndicativePrice())) return false;
       if (getIndicativeVolume()
           != other.getIndicativeVolume()) return false;
       if (marketTradingMode_ != other.marketTradingMode_) return false;
@@ -43708,38 +46742,31 @@ public final class Vega {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MARK_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMarkPrice());
+      hash = (53 * hash) + getMarkPrice().hashCode();
       hash = (37 * hash) + BEST_BID_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBestBidPrice());
+      hash = (53 * hash) + getBestBidPrice().hashCode();
       hash = (37 * hash) + BEST_BID_VOLUME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBestBidVolume());
       hash = (37 * hash) + BEST_OFFER_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBestOfferPrice());
+      hash = (53 * hash) + getBestOfferPrice().hashCode();
       hash = (37 * hash) + BEST_OFFER_VOLUME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBestOfferVolume());
       hash = (37 * hash) + BEST_STATIC_BID_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBestStaticBidPrice());
+      hash = (53 * hash) + getBestStaticBidPrice().hashCode();
       hash = (37 * hash) + BEST_STATIC_BID_VOLUME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBestStaticBidVolume());
       hash = (37 * hash) + BEST_STATIC_OFFER_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBestStaticOfferPrice());
+      hash = (53 * hash) + getBestStaticOfferPrice().hashCode();
       hash = (37 * hash) + BEST_STATIC_OFFER_VOLUME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBestStaticOfferVolume());
       hash = (37 * hash) + MID_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMidPrice());
+      hash = (53 * hash) + getMidPrice().hashCode();
       hash = (37 * hash) + STATIC_MID_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getStaticMidPrice());
+      hash = (53 * hash) + getStaticMidPrice().hashCode();
       hash = (37 * hash) + MARKET_FIELD_NUMBER;
       hash = (53 * hash) + getMarket().hashCode();
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
@@ -43755,8 +46782,7 @@ public final class Vega {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAuctionStart());
       hash = (37 * hash) + INDICATIVE_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getIndicativePrice());
+      hash = (53 * hash) + getIndicativePrice().hashCode();
       hash = (37 * hash) + INDICATIVE_VOLUME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getIndicativeVolume());
@@ -43919,27 +46945,27 @@ public final class Vega {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        markPrice_ = 0L;
+        markPrice_ = "";
 
-        bestBidPrice_ = 0L;
+        bestBidPrice_ = "";
 
         bestBidVolume_ = 0L;
 
-        bestOfferPrice_ = 0L;
+        bestOfferPrice_ = "";
 
         bestOfferVolume_ = 0L;
 
-        bestStaticBidPrice_ = 0L;
+        bestStaticBidPrice_ = "";
 
         bestStaticBidVolume_ = 0L;
 
-        bestStaticOfferPrice_ = 0L;
+        bestStaticOfferPrice_ = "";
 
         bestStaticOfferVolume_ = 0L;
 
-        midPrice_ = 0L;
+        midPrice_ = "";
 
-        staticMidPrice_ = 0L;
+        staticMidPrice_ = "";
 
         market_ = "";
 
@@ -43951,7 +46977,7 @@ public final class Vega {
 
         auctionStart_ = 0L;
 
-        indicativePrice_ = 0L;
+        indicativePrice_ = "";
 
         indicativeVolume_ = 0L;
 
@@ -44096,38 +47122,45 @@ public final class Vega {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Vega.MarketData other) {
         if (other == io.vegaprotocol.vega.Vega.MarketData.getDefaultInstance()) return this;
-        if (other.getMarkPrice() != 0L) {
-          setMarkPrice(other.getMarkPrice());
+        if (!other.getMarkPrice().isEmpty()) {
+          markPrice_ = other.markPrice_;
+          onChanged();
         }
-        if (other.getBestBidPrice() != 0L) {
-          setBestBidPrice(other.getBestBidPrice());
+        if (!other.getBestBidPrice().isEmpty()) {
+          bestBidPrice_ = other.bestBidPrice_;
+          onChanged();
         }
         if (other.getBestBidVolume() != 0L) {
           setBestBidVolume(other.getBestBidVolume());
         }
-        if (other.getBestOfferPrice() != 0L) {
-          setBestOfferPrice(other.getBestOfferPrice());
+        if (!other.getBestOfferPrice().isEmpty()) {
+          bestOfferPrice_ = other.bestOfferPrice_;
+          onChanged();
         }
         if (other.getBestOfferVolume() != 0L) {
           setBestOfferVolume(other.getBestOfferVolume());
         }
-        if (other.getBestStaticBidPrice() != 0L) {
-          setBestStaticBidPrice(other.getBestStaticBidPrice());
+        if (!other.getBestStaticBidPrice().isEmpty()) {
+          bestStaticBidPrice_ = other.bestStaticBidPrice_;
+          onChanged();
         }
         if (other.getBestStaticBidVolume() != 0L) {
           setBestStaticBidVolume(other.getBestStaticBidVolume());
         }
-        if (other.getBestStaticOfferPrice() != 0L) {
-          setBestStaticOfferPrice(other.getBestStaticOfferPrice());
+        if (!other.getBestStaticOfferPrice().isEmpty()) {
+          bestStaticOfferPrice_ = other.bestStaticOfferPrice_;
+          onChanged();
         }
         if (other.getBestStaticOfferVolume() != 0L) {
           setBestStaticOfferVolume(other.getBestStaticOfferVolume());
         }
-        if (other.getMidPrice() != 0L) {
-          setMidPrice(other.getMidPrice());
+        if (!other.getMidPrice().isEmpty()) {
+          midPrice_ = other.midPrice_;
+          onChanged();
         }
-        if (other.getStaticMidPrice() != 0L) {
-          setStaticMidPrice(other.getStaticMidPrice());
+        if (!other.getStaticMidPrice().isEmpty()) {
+          staticMidPrice_ = other.staticMidPrice_;
+          onChanged();
         }
         if (!other.getMarket().isEmpty()) {
           market_ = other.market_;
@@ -44145,8 +47178,9 @@ public final class Vega {
         if (other.getAuctionStart() != 0L) {
           setAuctionStart(other.getAuctionStart());
         }
-        if (other.getIndicativePrice() != 0L) {
-          setIndicativePrice(other.getIndicativePrice());
+        if (!other.getIndicativePrice().isEmpty()) {
+          indicativePrice_ = other.indicativePrice_;
+          onChanged();
         }
         if (other.getIndicativeVolume() != 0L) {
           setIndicativeVolume(other.getIndicativeVolume());
@@ -44254,19 +47288,27 @@ public final class Vega {
       }
       private int bitField0_;
 
-      private long markPrice_ ;
+      private java.lang.Object markPrice_ = "";
       /**
        * <pre>
        * Mark price, as an integer, for example `123456` is a correctly
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 mark_price = 1 [json_name = "markPrice"];</code>
+       * <code>string mark_price = 1 [json_name = "markPrice"];</code>
        * @return The markPrice.
        */
-      @java.lang.Override
-      public long getMarkPrice() {
-        return markPrice_;
+      public java.lang.String getMarkPrice() {
+        java.lang.Object ref = markPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          markPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -44274,11 +47316,37 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 mark_price = 1 [json_name = "markPrice"];</code>
+       * <code>string mark_price = 1 [json_name = "markPrice"];</code>
+       * @return The bytes for markPrice.
+       */
+      public com.google.protobuf.ByteString
+          getMarkPriceBytes() {
+        java.lang.Object ref = markPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          markPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Mark price, as an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string mark_price = 1 [json_name = "markPrice"];</code>
        * @param value The markPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setMarkPrice(long value) {
+      public Builder setMarkPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         markPrice_ = value;
         onChanged();
@@ -44290,29 +47358,58 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 mark_price = 1 [json_name = "markPrice"];</code>
+       * <code>string mark_price = 1 [json_name = "markPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMarkPrice() {
 
-        markPrice_ = 0L;
+        markPrice_ = getDefaultInstance().getMarkPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Mark price, as an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string mark_price = 1 [json_name = "markPrice"];</code>
+       * @param value The bytes for markPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMarkPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        markPrice_ = value;
         onChanged();
         return this;
       }
 
-      private long bestBidPrice_ ;
+      private java.lang.Object bestBidPrice_ = "";
       /**
        * <pre>
        * Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 best_bid_price = 2 [json_name = "bestBidPrice"];</code>
+       * <code>string best_bid_price = 2 [json_name = "bestBidPrice"];</code>
        * @return The bestBidPrice.
        */
-      @java.lang.Override
-      public long getBestBidPrice() {
-        return bestBidPrice_;
+      public java.lang.String getBestBidPrice() {
+        java.lang.Object ref = bestBidPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bestBidPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -44320,11 +47417,37 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 best_bid_price = 2 [json_name = "bestBidPrice"];</code>
+       * <code>string best_bid_price = 2 [json_name = "bestBidPrice"];</code>
+       * @return The bytes for bestBidPrice.
+       */
+      public com.google.protobuf.ByteString
+          getBestBidPriceBytes() {
+        java.lang.Object ref = bestBidPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bestBidPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string best_bid_price = 2 [json_name = "bestBidPrice"];</code>
        * @param value The bestBidPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setBestBidPrice(long value) {
+      public Builder setBestBidPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         bestBidPrice_ = value;
         onChanged();
@@ -44336,12 +47459,33 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 best_bid_price = 2 [json_name = "bestBidPrice"];</code>
+       * <code>string best_bid_price = 2 [json_name = "bestBidPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBestBidPrice() {
 
-        bestBidPrice_ = 0L;
+        bestBidPrice_ = getDefaultInstance().getBestBidPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string best_bid_price = 2 [json_name = "bestBidPrice"];</code>
+       * @param value The bytes for bestBidPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBestBidPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        bestBidPrice_ = value;
         onChanged();
         return this;
       }
@@ -44389,29 +47533,62 @@ public final class Vega {
         return this;
       }
 
-      private long bestOfferPrice_ ;
+      private java.lang.Object bestOfferPrice_ = "";
       /**
        * <pre>
        * Lowest price level on an order book for offer orders
        * </pre>
        *
-       * <code>uint64 best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
+       * <code>string best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
        * @return The bestOfferPrice.
        */
-      @java.lang.Override
-      public long getBestOfferPrice() {
-        return bestOfferPrice_;
+      public java.lang.String getBestOfferPrice() {
+        java.lang.Object ref = bestOfferPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bestOfferPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Lowest price level on an order book for offer orders
        * </pre>
        *
-       * <code>uint64 best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
+       * <code>string best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
+       * @return The bytes for bestOfferPrice.
+       */
+      public com.google.protobuf.ByteString
+          getBestOfferPriceBytes() {
+        java.lang.Object ref = bestOfferPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bestOfferPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Lowest price level on an order book for offer orders
+       * </pre>
+       *
+       * <code>string best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
        * @param value The bestOfferPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setBestOfferPrice(long value) {
+      public Builder setBestOfferPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         bestOfferPrice_ = value;
         onChanged();
@@ -44422,12 +47599,32 @@ public final class Vega {
        * Lowest price level on an order book for offer orders
        * </pre>
        *
-       * <code>uint64 best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
+       * <code>string best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBestOfferPrice() {
 
-        bestOfferPrice_ = 0L;
+        bestOfferPrice_ = getDefaultInstance().getBestOfferPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Lowest price level on an order book for offer orders
+       * </pre>
+       *
+       * <code>string best_offer_price = 4 [json_name = "bestOfferPrice"];</code>
+       * @param value The bytes for bestOfferPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBestOfferPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        bestOfferPrice_ = value;
         onChanged();
         return this;
       }
@@ -44478,29 +47675,62 @@ public final class Vega {
         return this;
       }
 
-      private long bestStaticBidPrice_ ;
+      private java.lang.Object bestStaticBidPrice_ = "";
       /**
        * <pre>
        * Highest price on the order book for buy orders not including pegged orders
        * </pre>
        *
-       * <code>uint64 best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
+       * <code>string best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
        * @return The bestStaticBidPrice.
        */
-      @java.lang.Override
-      public long getBestStaticBidPrice() {
-        return bestStaticBidPrice_;
+      public java.lang.String getBestStaticBidPrice() {
+        java.lang.Object ref = bestStaticBidPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bestStaticBidPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Highest price on the order book for buy orders not including pegged orders
        * </pre>
        *
-       * <code>uint64 best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
+       * <code>string best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
+       * @return The bytes for bestStaticBidPrice.
+       */
+      public com.google.protobuf.ByteString
+          getBestStaticBidPriceBytes() {
+        java.lang.Object ref = bestStaticBidPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bestStaticBidPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Highest price on the order book for buy orders not including pegged orders
+       * </pre>
+       *
+       * <code>string best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
        * @param value The bestStaticBidPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setBestStaticBidPrice(long value) {
+      public Builder setBestStaticBidPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         bestStaticBidPrice_ = value;
         onChanged();
@@ -44511,12 +47741,32 @@ public final class Vega {
        * Highest price on the order book for buy orders not including pegged orders
        * </pre>
        *
-       * <code>uint64 best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
+       * <code>string best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBestStaticBidPrice() {
 
-        bestStaticBidPrice_ = 0L;
+        bestStaticBidPrice_ = getDefaultInstance().getBestStaticBidPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Highest price on the order book for buy orders not including pegged orders
+       * </pre>
+       *
+       * <code>string best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];</code>
+       * @param value The bytes for bestStaticBidPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBestStaticBidPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        bestStaticBidPrice_ = value;
         onChanged();
         return this;
       }
@@ -44564,29 +47814,62 @@ public final class Vega {
         return this;
       }
 
-      private long bestStaticOfferPrice_ ;
+      private java.lang.Object bestStaticOfferPrice_ = "";
       /**
        * <pre>
        * Lowest price on the order book for sell orders not including pegged orders
        * </pre>
        *
-       * <code>uint64 best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
+       * <code>string best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
        * @return The bestStaticOfferPrice.
        */
-      @java.lang.Override
-      public long getBestStaticOfferPrice() {
-        return bestStaticOfferPrice_;
+      public java.lang.String getBestStaticOfferPrice() {
+        java.lang.Object ref = bestStaticOfferPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bestStaticOfferPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Lowest price on the order book for sell orders not including pegged orders
        * </pre>
        *
-       * <code>uint64 best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
+       * <code>string best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
+       * @return The bytes for bestStaticOfferPrice.
+       */
+      public com.google.protobuf.ByteString
+          getBestStaticOfferPriceBytes() {
+        java.lang.Object ref = bestStaticOfferPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bestStaticOfferPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Lowest price on the order book for sell orders not including pegged orders
+       * </pre>
+       *
+       * <code>string best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
        * @param value The bestStaticOfferPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setBestStaticOfferPrice(long value) {
+      public Builder setBestStaticOfferPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         bestStaticOfferPrice_ = value;
         onChanged();
@@ -44597,12 +47880,32 @@ public final class Vega {
        * Lowest price on the order book for sell orders not including pegged orders
        * </pre>
        *
-       * <code>uint64 best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
+       * <code>string best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBestStaticOfferPrice() {
 
-        bestStaticOfferPrice_ = 0L;
+        bestStaticOfferPrice_ = getDefaultInstance().getBestStaticOfferPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Lowest price on the order book for sell orders not including pegged orders
+       * </pre>
+       *
+       * <code>string best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];</code>
+       * @param value The bytes for bestStaticOfferPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBestStaticOfferPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        bestStaticOfferPrice_ = value;
         onChanged();
         return this;
       }
@@ -44650,19 +47953,27 @@ public final class Vega {
         return this;
       }
 
-      private long midPrice_ ;
+      private java.lang.Object midPrice_ = "";
       /**
        * <pre>
        * Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 mid_price = 10 [json_name = "midPrice"];</code>
+       * <code>string mid_price = 10 [json_name = "midPrice"];</code>
        * @return The midPrice.
        */
-      @java.lang.Override
-      public long getMidPrice() {
-        return midPrice_;
+      public java.lang.String getMidPrice() {
+        java.lang.Object ref = midPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          midPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -44670,11 +47981,37 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 mid_price = 10 [json_name = "midPrice"];</code>
+       * <code>string mid_price = 10 [json_name = "midPrice"];</code>
+       * @return The bytes for midPrice.
+       */
+      public com.google.protobuf.ByteString
+          getMidPriceBytes() {
+        java.lang.Object ref = midPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          midPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string mid_price = 10 [json_name = "midPrice"];</code>
        * @param value The midPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setMidPrice(long value) {
+      public Builder setMidPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         midPrice_ = value;
         onChanged();
@@ -44686,39 +48023,93 @@ public final class Vega {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 mid_price = 10 [json_name = "midPrice"];</code>
+       * <code>string mid_price = 10 [json_name = "midPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMidPrice() {
 
-        midPrice_ = 0L;
+        midPrice_ = getDefaultInstance().getMidPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places
+       * </pre>
+       *
+       * <code>string mid_price = 10 [json_name = "midPrice"];</code>
+       * @param value The bytes for midPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMidPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        midPrice_ = value;
         onChanged();
         return this;
       }
 
-      private long staticMidPrice_ ;
+      private java.lang.Object staticMidPrice_ = "";
       /**
        * <pre>
        * Arithmetic average of the best static bid price and best static offer price
        * </pre>
        *
-       * <code>uint64 static_mid_price = 11 [json_name = "staticMidPrice"];</code>
+       * <code>string static_mid_price = 11 [json_name = "staticMidPrice"];</code>
        * @return The staticMidPrice.
        */
-      @java.lang.Override
-      public long getStaticMidPrice() {
-        return staticMidPrice_;
+      public java.lang.String getStaticMidPrice() {
+        java.lang.Object ref = staticMidPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          staticMidPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Arithmetic average of the best static bid price and best static offer price
        * </pre>
        *
-       * <code>uint64 static_mid_price = 11 [json_name = "staticMidPrice"];</code>
+       * <code>string static_mid_price = 11 [json_name = "staticMidPrice"];</code>
+       * @return The bytes for staticMidPrice.
+       */
+      public com.google.protobuf.ByteString
+          getStaticMidPriceBytes() {
+        java.lang.Object ref = staticMidPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          staticMidPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Arithmetic average of the best static bid price and best static offer price
+       * </pre>
+       *
+       * <code>string static_mid_price = 11 [json_name = "staticMidPrice"];</code>
        * @param value The staticMidPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setStaticMidPrice(long value) {
+      public Builder setStaticMidPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         staticMidPrice_ = value;
         onChanged();
@@ -44729,12 +48120,32 @@ public final class Vega {
        * Arithmetic average of the best static bid price and best static offer price
        * </pre>
        *
-       * <code>uint64 static_mid_price = 11 [json_name = "staticMidPrice"];</code>
+       * <code>string static_mid_price = 11 [json_name = "staticMidPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearStaticMidPrice() {
 
-        staticMidPrice_ = 0L;
+        staticMidPrice_ = getDefaultInstance().getStaticMidPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Arithmetic average of the best static bid price and best static offer price
+       * </pre>
+       *
+       * <code>string static_mid_price = 11 [json_name = "staticMidPrice"];</code>
+       * @param value The bytes for staticMidPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStaticMidPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        staticMidPrice_ = value;
         onChanged();
         return this;
       }
@@ -45010,29 +48421,62 @@ public final class Vega {
         return this;
       }
 
-      private long indicativePrice_ ;
+      private java.lang.Object indicativePrice_ = "";
       /**
        * <pre>
        * Indicative price (zero if not in auction)
        * </pre>
        *
-       * <code>uint64 indicative_price = 17 [json_name = "indicativePrice"];</code>
+       * <code>string indicative_price = 17 [json_name = "indicativePrice"];</code>
        * @return The indicativePrice.
        */
-      @java.lang.Override
-      public long getIndicativePrice() {
-        return indicativePrice_;
+      public java.lang.String getIndicativePrice() {
+        java.lang.Object ref = indicativePrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          indicativePrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Indicative price (zero if not in auction)
        * </pre>
        *
-       * <code>uint64 indicative_price = 17 [json_name = "indicativePrice"];</code>
+       * <code>string indicative_price = 17 [json_name = "indicativePrice"];</code>
+       * @return The bytes for indicativePrice.
+       */
+      public com.google.protobuf.ByteString
+          getIndicativePriceBytes() {
+        java.lang.Object ref = indicativePrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          indicativePrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Indicative price (zero if not in auction)
+       * </pre>
+       *
+       * <code>string indicative_price = 17 [json_name = "indicativePrice"];</code>
        * @param value The indicativePrice to set.
        * @return This builder for chaining.
        */
-      public Builder setIndicativePrice(long value) {
+      public Builder setIndicativePrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         indicativePrice_ = value;
         onChanged();
@@ -45043,12 +48487,32 @@ public final class Vega {
        * Indicative price (zero if not in auction)
        * </pre>
        *
-       * <code>uint64 indicative_price = 17 [json_name = "indicativePrice"];</code>
+       * <code>string indicative_price = 17 [json_name = "indicativePrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearIndicativePrice() {
 
-        indicativePrice_ = 0L;
+        indicativePrice_ = getDefaultInstance().getIndicativePrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicative price (zero if not in auction)
+       * </pre>
+       *
+       * <code>string indicative_price = 17 [json_name = "indicativePrice"];</code>
+       * @param value The bytes for indicativePrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndicativePriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        indicativePrice_ = value;
         onChanged();
         return this;
       }
@@ -47275,20 +50739,40 @@ public final class Vega {
      * Minimum price that isn't currently breaching the specified price monitoring trigger
      * </pre>
      *
-     * <code>uint64 min_valid_price = 1 [json_name = "minValidPrice"];</code>
+     * <code>string min_valid_price = 1 [json_name = "minValidPrice"];</code>
      * @return The minValidPrice.
      */
-    long getMinValidPrice();
+    java.lang.String getMinValidPrice();
+    /**
+     * <pre>
+     * Minimum price that isn't currently breaching the specified price monitoring trigger
+     * </pre>
+     *
+     * <code>string min_valid_price = 1 [json_name = "minValidPrice"];</code>
+     * @return The bytes for minValidPrice.
+     */
+    com.google.protobuf.ByteString
+        getMinValidPriceBytes();
 
     /**
      * <pre>
      * Maximum price that isn't currently breaching the specified price monitoring trigger
      * </pre>
      *
-     * <code>uint64 max_valid_price = 2 [json_name = "maxValidPrice"];</code>
+     * <code>string max_valid_price = 2 [json_name = "maxValidPrice"];</code>
      * @return The maxValidPrice.
      */
-    long getMaxValidPrice();
+    java.lang.String getMaxValidPrice();
+    /**
+     * <pre>
+     * Maximum price that isn't currently breaching the specified price monitoring trigger
+     * </pre>
+     *
+     * <code>string max_valid_price = 2 [json_name = "maxValidPrice"];</code>
+     * @return The bytes for maxValidPrice.
+     */
+    com.google.protobuf.ByteString
+        getMaxValidPriceBytes();
 
     /**
      * <pre>
@@ -47344,6 +50828,8 @@ public final class Vega {
       super(builder);
     }
     private PriceMonitoringBounds() {
+      minValidPrice_ = "";
+      maxValidPrice_ = "";
     }
 
     @java.lang.Override
@@ -47376,14 +50862,16 @@ public final class Vega {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              minValidPrice_ = input.readUInt64();
+              minValidPrice_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              maxValidPrice_ = input.readUInt64();
+              maxValidPrice_ = s;
               break;
             }
             case 26: {
@@ -47437,33 +50925,95 @@ public final class Vega {
     }
 
     public static final int MIN_VALID_PRICE_FIELD_NUMBER = 1;
-    private long minValidPrice_;
+    private volatile java.lang.Object minValidPrice_;
     /**
      * <pre>
      * Minimum price that isn't currently breaching the specified price monitoring trigger
      * </pre>
      *
-     * <code>uint64 min_valid_price = 1 [json_name = "minValidPrice"];</code>
+     * <code>string min_valid_price = 1 [json_name = "minValidPrice"];</code>
      * @return The minValidPrice.
      */
     @java.lang.Override
-    public long getMinValidPrice() {
-      return minValidPrice_;
+    public java.lang.String getMinValidPrice() {
+      java.lang.Object ref = minValidPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        minValidPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Minimum price that isn't currently breaching the specified price monitoring trigger
+     * </pre>
+     *
+     * <code>string min_valid_price = 1 [json_name = "minValidPrice"];</code>
+     * @return The bytes for minValidPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMinValidPriceBytes() {
+      java.lang.Object ref = minValidPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        minValidPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int MAX_VALID_PRICE_FIELD_NUMBER = 2;
-    private long maxValidPrice_;
+    private volatile java.lang.Object maxValidPrice_;
     /**
      * <pre>
      * Maximum price that isn't currently breaching the specified price monitoring trigger
      * </pre>
      *
-     * <code>uint64 max_valid_price = 2 [json_name = "maxValidPrice"];</code>
+     * <code>string max_valid_price = 2 [json_name = "maxValidPrice"];</code>
      * @return The maxValidPrice.
      */
     @java.lang.Override
-    public long getMaxValidPrice() {
-      return maxValidPrice_;
+    public java.lang.String getMaxValidPrice() {
+      java.lang.Object ref = maxValidPrice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maxValidPrice_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Maximum price that isn't currently breaching the specified price monitoring trigger
+     * </pre>
+     *
+     * <code>string max_valid_price = 2 [json_name = "maxValidPrice"];</code>
+     * @return The bytes for maxValidPrice.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMaxValidPriceBytes() {
+      java.lang.Object ref = maxValidPrice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        maxValidPrice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int TRIGGER_FIELD_NUMBER = 3;
@@ -47533,11 +51083,11 @@ public final class Vega {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (minValidPrice_ != 0L) {
-        output.writeUInt64(1, minValidPrice_);
+      if (!getMinValidPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, minValidPrice_);
       }
-      if (maxValidPrice_ != 0L) {
-        output.writeUInt64(2, maxValidPrice_);
+      if (!getMaxValidPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, maxValidPrice_);
       }
       if (trigger_ != null) {
         output.writeMessage(3, getTrigger());
@@ -47554,13 +51104,11 @@ public final class Vega {
       if (size != -1) return size;
 
       size = 0;
-      if (minValidPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, minValidPrice_);
+      if (!getMinValidPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, minValidPrice_);
       }
-      if (maxValidPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, maxValidPrice_);
+      if (!getMaxValidPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, maxValidPrice_);
       }
       if (trigger_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -47585,10 +51133,10 @@ public final class Vega {
       }
       io.vegaprotocol.vega.Vega.PriceMonitoringBounds other = (io.vegaprotocol.vega.Vega.PriceMonitoringBounds) obj;
 
-      if (getMinValidPrice()
-          != other.getMinValidPrice()) return false;
-      if (getMaxValidPrice()
-          != other.getMaxValidPrice()) return false;
+      if (!getMinValidPrice()
+          .equals(other.getMinValidPrice())) return false;
+      if (!getMaxValidPrice()
+          .equals(other.getMaxValidPrice())) return false;
       if (hasTrigger() != other.hasTrigger()) return false;
       if (hasTrigger()) {
         if (!getTrigger()
@@ -47609,11 +51157,9 @@ public final class Vega {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MIN_VALID_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMinValidPrice());
+      hash = (53 * hash) + getMinValidPrice().hashCode();
       hash = (37 * hash) + MAX_VALID_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMaxValidPrice());
+      hash = (53 * hash) + getMaxValidPrice().hashCode();
       if (hasTrigger()) {
         hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
         hash = (53 * hash) + getTrigger().hashCode();
@@ -47758,9 +51304,9 @@ public final class Vega {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        minValidPrice_ = 0L;
+        minValidPrice_ = "";
 
-        maxValidPrice_ = 0L;
+        maxValidPrice_ = "";
 
         if (triggerBuilder_ == null) {
           trigger_ = null;
@@ -47852,11 +51398,13 @@ public final class Vega {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Vega.PriceMonitoringBounds other) {
         if (other == io.vegaprotocol.vega.Vega.PriceMonitoringBounds.getDefaultInstance()) return this;
-        if (other.getMinValidPrice() != 0L) {
-          setMinValidPrice(other.getMinValidPrice());
+        if (!other.getMinValidPrice().isEmpty()) {
+          minValidPrice_ = other.minValidPrice_;
+          onChanged();
         }
-        if (other.getMaxValidPrice() != 0L) {
-          setMaxValidPrice(other.getMaxValidPrice());
+        if (!other.getMaxValidPrice().isEmpty()) {
+          maxValidPrice_ = other.maxValidPrice_;
+          onChanged();
         }
         if (other.hasTrigger()) {
           mergeTrigger(other.getTrigger());
@@ -47893,29 +51441,62 @@ public final class Vega {
         return this;
       }
 
-      private long minValidPrice_ ;
+      private java.lang.Object minValidPrice_ = "";
       /**
        * <pre>
        * Minimum price that isn't currently breaching the specified price monitoring trigger
        * </pre>
        *
-       * <code>uint64 min_valid_price = 1 [json_name = "minValidPrice"];</code>
+       * <code>string min_valid_price = 1 [json_name = "minValidPrice"];</code>
        * @return The minValidPrice.
        */
-      @java.lang.Override
-      public long getMinValidPrice() {
-        return minValidPrice_;
+      public java.lang.String getMinValidPrice() {
+        java.lang.Object ref = minValidPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          minValidPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Minimum price that isn't currently breaching the specified price monitoring trigger
        * </pre>
        *
-       * <code>uint64 min_valid_price = 1 [json_name = "minValidPrice"];</code>
+       * <code>string min_valid_price = 1 [json_name = "minValidPrice"];</code>
+       * @return The bytes for minValidPrice.
+       */
+      public com.google.protobuf.ByteString
+          getMinValidPriceBytes() {
+        java.lang.Object ref = minValidPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          minValidPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Minimum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>string min_valid_price = 1 [json_name = "minValidPrice"];</code>
        * @param value The minValidPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setMinValidPrice(long value) {
+      public Builder setMinValidPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         minValidPrice_ = value;
         onChanged();
@@ -47926,39 +51507,92 @@ public final class Vega {
        * Minimum price that isn't currently breaching the specified price monitoring trigger
        * </pre>
        *
-       * <code>uint64 min_valid_price = 1 [json_name = "minValidPrice"];</code>
+       * <code>string min_valid_price = 1 [json_name = "minValidPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMinValidPrice() {
 
-        minValidPrice_ = 0L;
+        minValidPrice_ = getDefaultInstance().getMinValidPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Minimum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>string min_valid_price = 1 [json_name = "minValidPrice"];</code>
+       * @param value The bytes for minValidPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinValidPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        minValidPrice_ = value;
         onChanged();
         return this;
       }
 
-      private long maxValidPrice_ ;
+      private java.lang.Object maxValidPrice_ = "";
       /**
        * <pre>
        * Maximum price that isn't currently breaching the specified price monitoring trigger
        * </pre>
        *
-       * <code>uint64 max_valid_price = 2 [json_name = "maxValidPrice"];</code>
+       * <code>string max_valid_price = 2 [json_name = "maxValidPrice"];</code>
        * @return The maxValidPrice.
        */
-      @java.lang.Override
-      public long getMaxValidPrice() {
-        return maxValidPrice_;
+      public java.lang.String getMaxValidPrice() {
+        java.lang.Object ref = maxValidPrice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          maxValidPrice_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Maximum price that isn't currently breaching the specified price monitoring trigger
        * </pre>
        *
-       * <code>uint64 max_valid_price = 2 [json_name = "maxValidPrice"];</code>
+       * <code>string max_valid_price = 2 [json_name = "maxValidPrice"];</code>
+       * @return The bytes for maxValidPrice.
+       */
+      public com.google.protobuf.ByteString
+          getMaxValidPriceBytes() {
+        java.lang.Object ref = maxValidPrice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          maxValidPrice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Maximum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>string max_valid_price = 2 [json_name = "maxValidPrice"];</code>
        * @param value The maxValidPrice to set.
        * @return This builder for chaining.
        */
-      public Builder setMaxValidPrice(long value) {
+      public Builder setMaxValidPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         maxValidPrice_ = value;
         onChanged();
@@ -47969,12 +51603,32 @@ public final class Vega {
        * Maximum price that isn't currently breaching the specified price monitoring trigger
        * </pre>
        *
-       * <code>uint64 max_valid_price = 2 [json_name = "maxValidPrice"];</code>
+       * <code>string max_valid_price = 2 [json_name = "maxValidPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxValidPrice() {
 
-        maxValidPrice_ = 0L;
+        maxValidPrice_ = getDefaultInstance().getMaxValidPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Maximum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>string max_valid_price = 2 [json_name = "maxValidPrice"];</code>
+       * @param value The bytes for maxValidPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxValidPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        maxValidPrice_ = value;
         onChanged();
         return this;
       }
@@ -51631,10 +55285,20 @@ public final class Vega {
      * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitment_amount = 6 [json_name = "commitmentAmount"];</code>
+     * <code>string commitment_amount = 6 [json_name = "commitmentAmount"];</code>
      * @return The commitmentAmount.
      */
-    long getCommitmentAmount();
+    java.lang.String getCommitmentAmount();
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market
+     * </pre>
+     *
+     * <code>string commitment_amount = 6 [json_name = "commitmentAmount"];</code>
+     * @return The bytes for commitmentAmount.
+     */
+    com.google.protobuf.ByteString
+        getCommitmentAmountBytes();
 
     /**
      * <pre>
@@ -51823,6 +55487,7 @@ public final class Vega {
       id_ = "";
       partyId_ = "";
       marketId_ = "";
+      commitmentAmount_ = "";
       fee_ = "";
       sells_ = java.util.Collections.emptyList();
       buys_ = java.util.Collections.emptyList();
@@ -51890,9 +55555,10 @@ public final class Vega {
               marketId_ = s;
               break;
             }
-            case 48: {
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              commitmentAmount_ = input.readUInt64();
+              commitmentAmount_ = s;
               break;
             }
             case 58: {
@@ -52363,18 +56029,49 @@ public final class Vega {
     }
 
     public static final int COMMITMENT_AMOUNT_FIELD_NUMBER = 6;
-    private long commitmentAmount_;
+    private volatile java.lang.Object commitmentAmount_;
     /**
      * <pre>
      * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitment_amount = 6 [json_name = "commitmentAmount"];</code>
+     * <code>string commitment_amount = 6 [json_name = "commitmentAmount"];</code>
      * @return The commitmentAmount.
      */
     @java.lang.Override
-    public long getCommitmentAmount() {
-      return commitmentAmount_;
+    public java.lang.String getCommitmentAmount() {
+      java.lang.Object ref = commitmentAmount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        commitmentAmount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market
+     * </pre>
+     *
+     * <code>string commitment_amount = 6 [json_name = "commitmentAmount"];</code>
+     * @return The bytes for commitmentAmount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCommitmentAmountBytes() {
+      java.lang.Object ref = commitmentAmount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        commitmentAmount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int FEE_FIELD_NUMBER = 7;
@@ -52691,8 +56388,8 @@ public final class Vega {
       if (!getMarketIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, marketId_);
       }
-      if (commitmentAmount_ != 0L) {
-        output.writeUInt64(6, commitmentAmount_);
+      if (!getCommitmentAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, commitmentAmount_);
       }
       if (!getFeeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, fee_);
@@ -52738,9 +56435,8 @@ public final class Vega {
       if (!getMarketIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, marketId_);
       }
-      if (commitmentAmount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, commitmentAmount_);
+      if (!getCommitmentAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, commitmentAmount_);
       }
       if (!getFeeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, fee_);
@@ -52788,8 +56484,8 @@ public final class Vega {
           != other.getUpdatedAt()) return false;
       if (!getMarketId()
           .equals(other.getMarketId())) return false;
-      if (getCommitmentAmount()
-          != other.getCommitmentAmount()) return false;
+      if (!getCommitmentAmount()
+          .equals(other.getCommitmentAmount())) return false;
       if (!getFee()
           .equals(other.getFee())) return false;
       if (!getSellsList()
@@ -52825,8 +56521,7 @@ public final class Vega {
       hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMarketId().hashCode();
       hash = (37 * hash) + COMMITMENT_AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCommitmentAmount());
+      hash = (53 * hash) + getCommitmentAmount().hashCode();
       hash = (37 * hash) + FEE_FIELD_NUMBER;
       hash = (53 * hash) + getFee().hashCode();
       if (getSellsCount() > 0) {
@@ -52992,7 +56687,7 @@ public final class Vega {
 
         marketId_ = "";
 
-        commitmentAmount_ = 0L;
+        commitmentAmount_ = "";
 
         fee_ = "";
 
@@ -53135,8 +56830,9 @@ public final class Vega {
           marketId_ = other.marketId_;
           onChanged();
         }
-        if (other.getCommitmentAmount() != 0L) {
-          setCommitmentAmount(other.getCommitmentAmount());
+        if (!other.getCommitmentAmount().isEmpty()) {
+          commitmentAmount_ = other.commitmentAmount_;
+          onChanged();
         }
         if (!other.getFee().isEmpty()) {
           fee_ = other.fee_;
@@ -53615,29 +57311,62 @@ public final class Vega {
         return this;
       }
 
-      private long commitmentAmount_ ;
+      private java.lang.Object commitmentAmount_ = "";
       /**
        * <pre>
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 6 [json_name = "commitmentAmount"];</code>
+       * <code>string commitment_amount = 6 [json_name = "commitmentAmount"];</code>
        * @return The commitmentAmount.
        */
-      @java.lang.Override
-      public long getCommitmentAmount() {
-        return commitmentAmount_;
+      public java.lang.String getCommitmentAmount() {
+        java.lang.Object ref = commitmentAmount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          commitmentAmount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 6 [json_name = "commitmentAmount"];</code>
+       * <code>string commitment_amount = 6 [json_name = "commitmentAmount"];</code>
+       * @return The bytes for commitmentAmount.
+       */
+      public com.google.protobuf.ByteString
+          getCommitmentAmountBytes() {
+        java.lang.Object ref = commitmentAmount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          commitmentAmount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market
+       * </pre>
+       *
+       * <code>string commitment_amount = 6 [json_name = "commitmentAmount"];</code>
        * @param value The commitmentAmount to set.
        * @return This builder for chaining.
        */
-      public Builder setCommitmentAmount(long value) {
+      public Builder setCommitmentAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         commitmentAmount_ = value;
         onChanged();
@@ -53648,12 +57377,32 @@ public final class Vega {
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 6 [json_name = "commitmentAmount"];</code>
+       * <code>string commitment_amount = 6 [json_name = "commitmentAmount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCommitmentAmount() {
 
-        commitmentAmount_ = 0L;
+        commitmentAmount_ = getDefaultInstance().getCommitmentAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market
+       * </pre>
+       *
+       * <code>string commitment_amount = 6 [json_name = "commitmentAmount"];</code>
+       * @param value The bytes for commitmentAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCommitmentAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        commitmentAmount_ = value;
         onChanged();
         return this;
       }
@@ -60397,6 +64146,46 @@ public final class Vega {
      */
     io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelagationsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * Node score
+     * </pre>
+     *
+     * <code>string score = 13 [json_name = "score"];</code>
+     * @return The score.
+     */
+    java.lang.String getScore();
+    /**
+     * <pre>
+     * Node score
+     * </pre>
+     *
+     * <code>string score = 13 [json_name = "score"];</code>
+     * @return The bytes for score.
+     */
+    com.google.protobuf.ByteString
+        getScoreBytes();
+
+    /**
+     * <pre>
+     * Node normalised score
+     * </pre>
+     *
+     * <code>string normalised_score = 14 [json_name = "normalisedScore"];</code>
+     * @return The normalisedScore.
+     */
+    java.lang.String getNormalisedScore();
+    /**
+     * <pre>
+     * Node normalised score
+     * </pre>
+     *
+     * <code>string normalised_score = 14 [json_name = "normalisedScore"];</code>
+     * @return The bytes for normalisedScore.
+     */
+    com.google.protobuf.ByteString
+        getNormalisedScoreBytes();
   }
   /**
    * Protobuf type {@code vega.Node}
@@ -60422,6 +64211,8 @@ public final class Vega {
       pendingStake_ = "";
       status_ = 0;
       delagations_ = java.util.Collections.emptyList();
+      score_ = "";
+      normalisedScore_ = "";
     }
 
     @java.lang.Override
@@ -60535,6 +64326,18 @@ public final class Vega {
               }
               delagations_.add(
                   input.readMessage(io.vegaprotocol.vega.Vega.Delegation.parser(), extensionRegistry));
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              score_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              normalisedScore_ = s;
               break;
             }
             default: {
@@ -61111,6 +64914,98 @@ public final class Vega {
       return delagations_.get(index);
     }
 
+    public static final int SCORE_FIELD_NUMBER = 13;
+    private volatile java.lang.Object score_;
+    /**
+     * <pre>
+     * Node score
+     * </pre>
+     *
+     * <code>string score = 13 [json_name = "score"];</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public java.lang.String getScore() {
+      java.lang.Object ref = score_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        score_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Node score
+     * </pre>
+     *
+     * <code>string score = 13 [json_name = "score"];</code>
+     * @return The bytes for score.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getScoreBytes() {
+      java.lang.Object ref = score_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        score_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NORMALISED_SCORE_FIELD_NUMBER = 14;
+    private volatile java.lang.Object normalisedScore_;
+    /**
+     * <pre>
+     * Node normalised score
+     * </pre>
+     *
+     * <code>string normalised_score = 14 [json_name = "normalisedScore"];</code>
+     * @return The normalisedScore.
+     */
+    @java.lang.Override
+    public java.lang.String getNormalisedScore() {
+      java.lang.Object ref = normalisedScore_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        normalisedScore_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Node normalised score
+     * </pre>
+     *
+     * <code>string normalised_score = 14 [json_name = "normalisedScore"];</code>
+     * @return The bytes for normalisedScore.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNormalisedScoreBytes() {
+      java.lang.Object ref = normalisedScore_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        normalisedScore_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -61161,6 +65056,12 @@ public final class Vega {
       for (int i = 0; i < delagations_.size(); i++) {
         output.writeMessage(12, delagations_.get(i));
       }
+      if (!getScoreBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, score_);
+      }
+      if (!getNormalisedScoreBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, normalisedScore_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -61209,6 +65110,12 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, delagations_.get(i));
       }
+      if (!getScoreBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, score_);
+      }
+      if (!getNormalisedScoreBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, normalisedScore_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -61250,6 +65157,10 @@ public final class Vega {
       if (status_ != other.status_) return false;
       if (!getDelagationsList()
           .equals(other.getDelagationsList())) return false;
+      if (!getScore()
+          .equals(other.getScore())) return false;
+      if (!getNormalisedScore()
+          .equals(other.getNormalisedScore())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -61289,6 +65200,10 @@ public final class Vega {
         hash = (37 * hash) + DELAGATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getDelagationsList().hashCode();
       }
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore().hashCode();
+      hash = (37 * hash) + NORMALISED_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getNormalisedScore().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -61455,6 +65370,10 @@ public final class Vega {
         } else {
           delagationsBuilder_.clear();
         }
+        score_ = "";
+
+        normalisedScore_ = "";
+
         return this;
       }
 
@@ -61506,6 +65425,8 @@ public final class Vega {
         } else {
           result.delagations_ = delagationsBuilder_.build();
         }
+        result.score_ = score_;
+        result.normalisedScore_ = normalisedScore_;
         onBuilt();
         return result;
       }
@@ -61621,6 +65542,14 @@ public final class Vega {
               delagationsBuilder_.addAllMessages(other.delagations_);
             }
           }
+        }
+        if (!other.getScore().isEmpty()) {
+          score_ = other.score_;
+          onChanged();
+        }
+        if (!other.getNormalisedScore().isEmpty()) {
+          normalisedScore_ = other.normalisedScore_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -63055,6 +66984,198 @@ public final class Vega {
           delagations_ = null;
         }
         return delagationsBuilder_;
+      }
+
+      private java.lang.Object score_ = "";
+      /**
+       * <pre>
+       * Node score
+       * </pre>
+       *
+       * <code>string score = 13 [json_name = "score"];</code>
+       * @return The score.
+       */
+      public java.lang.String getScore() {
+        java.lang.Object ref = score_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          score_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Node score
+       * </pre>
+       *
+       * <code>string score = 13 [json_name = "score"];</code>
+       * @return The bytes for score.
+       */
+      public com.google.protobuf.ByteString
+          getScoreBytes() {
+        java.lang.Object ref = score_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          score_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Node score
+       * </pre>
+       *
+       * <code>string score = 13 [json_name = "score"];</code>
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node score
+       * </pre>
+       *
+       * <code>string score = 13 [json_name = "score"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+
+        score_ = getDefaultInstance().getScore();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node score
+       * </pre>
+       *
+       * <code>string score = 13 [json_name = "score"];</code>
+       * @param value The bytes for score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScoreBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        score_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object normalisedScore_ = "";
+      /**
+       * <pre>
+       * Node normalised score
+       * </pre>
+       *
+       * <code>string normalised_score = 14 [json_name = "normalisedScore"];</code>
+       * @return The normalisedScore.
+       */
+      public java.lang.String getNormalisedScore() {
+        java.lang.Object ref = normalisedScore_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          normalisedScore_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Node normalised score
+       * </pre>
+       *
+       * <code>string normalised_score = 14 [json_name = "normalisedScore"];</code>
+       * @return The bytes for normalisedScore.
+       */
+      public com.google.protobuf.ByteString
+          getNormalisedScoreBytes() {
+        java.lang.Object ref = normalisedScore_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          normalisedScore_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Node normalised score
+       * </pre>
+       *
+       * <code>string normalised_score = 14 [json_name = "normalisedScore"];</code>
+       * @param value The normalisedScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNormalisedScore(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        normalisedScore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node normalised score
+       * </pre>
+       *
+       * <code>string normalised_score = 14 [json_name = "normalisedScore"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNormalisedScore() {
+
+        normalisedScore_ = getDefaultInstance().getNormalisedScore();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node normalised score
+       * </pre>
+       *
+       * <code>string normalised_score = 14 [json_name = "normalisedScore"];</code>
+       * @param value The bytes for normalisedScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNormalisedScoreBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        normalisedScore_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -67957,7 +72078,7 @@ public final class Vega {
       "\n\nvega.proto\022\004vega\0326github.com/mwitkow/g" +
       "o-proto-validators/validator.proto\032\rmark" +
       "ets.proto\032\014assets.proto\"\035\n\005Price\022\024\n\005valu" +
-      "e\030\001 \001(\004R\005value\"!\n\tTimestamp\022\024\n\005value\030\001 \001" +
+      "e\030\001 \001(\tR\005value\"!\n\tTimestamp\022\024\n\005value\030\001 \001" +
       "(\003R\005value\"S\n\005Party\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002 \001R\002" +
       "id\0222\n\013delegations\030\002 \003(\0132\020.vega.Delegatio" +
       "nR\013delegations\"N\n\nRiskFactor\022\026\n\006market\030\001" +
@@ -67979,7 +72100,7 @@ public final class Vega {
       "et\030\002 \001(\003R\006offset\"\342\010\n\005Order\022\016\n\002id\030\001 \001(\tR\002" +
       "id\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\022\031\n\010party" +
       "_id\030\003 \001(\tR\007partyId\022\036\n\004side\030\004 \001(\0162\n.vega." +
-      "SideR\004side\022\024\n\005price\030\005 \001(\004R\005price\022\022\n\004size" +
+      "SideR\004side\022\024\n\005price\030\005 \001(\tR\005price\022\022\n\004size" +
       "\030\006 \001(\004R\004size\022\034\n\tremaining\030\007 \001(\004R\tremaini" +
       "ng\022;\n\rtime_in_force\030\010 \001(\0162\027.vega.Order.T" +
       "imeInForceR\013timeInForce\022$\n\004type\030\t \001(\0162\020." +
@@ -68012,12 +72133,12 @@ public final class Vega {
       "s_affected\030\003 \003(\0132\013.vega.OrderR\025passiveOr" +
       "dersAffected\"\323\001\n\026AuctionIndicativeState\022" +
       "\033\n\tmarket_id\030\001 \001(\tR\010marketId\022)\n\020indicati" +
-      "ve_price\030\002 \001(\004R\017indicativePrice\022+\n\021indic" +
+      "ve_price\030\002 \001(\tR\017indicativePrice\022+\n\021indic" +
       "ative_volume\030\003 \001(\004R\020indicativeVolume\022#\n\r" +
       "auction_start\030\004 \001(\003R\014auctionStart\022\037\n\013auc" +
       "tion_end\030\005 \001(\003R\nauctionEnd\"\333\004\n\005Trade\022\016\n\002" +
       "id\030\001 \001(\tR\002id\022\033\n\tmarket_id\030\002 \001(\tR\010marketI" +
-      "d\022\024\n\005price\030\003 \001(\004R\005price\022\022\n\004size\030\004 \001(\004R\004s" +
+      "d\022\024\n\005price\030\003 \001(\tR\005price\022\022\n\004size\030\004 \001(\004R\004s" +
       "ize\022\024\n\005buyer\030\005 \001(\tR\005buyer\022\026\n\006seller\030\006 \001(" +
       "\tR\006seller\022(\n\taggressor\030\007 \001(\0162\n.vega.Side" +
       "R\taggressor\022\033\n\tbuy_order\030\010 \001(\tR\010buyOrder" +
@@ -68031,17 +72152,17 @@ public final class Vega {
       "o\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_DE" +
       "FAULT\020\001\022\037\n\033TYPE_NETWORK_CLOSE_OUT_GOOD\020\002" +
       "\022\036\n\032TYPE_NETWORK_CLOSE_OUT_BAD\020\003\"v\n\003Fee\022" +
-      "\033\n\tmaker_fee\030\001 \001(\004R\010makerFee\022-\n\022infrastr" +
-      "ucture_fee\030\002 \001(\004R\021infrastructureFee\022#\n\rl" +
-      "iquidity_fee\030\003 \001(\004R\014liquidityFee\"/\n\010Trad" +
+      "\033\n\tmaker_fee\030\001 \001(\tR\010makerFee\022-\n\022infrastr" +
+      "ucture_fee\030\002 \001(\tR\021infrastructureFee\022#\n\rl" +
+      "iquidity_fee\030\003 \001(\tR\014liquidityFee\"/\n\010Trad" +
       "eSet\022#\n\006trades\030\001 \003(\0132\013.vega.TradeR\006trade" +
       "s\"\326\001\n\006Candle\022\034\n\ttimestamp\030\001 \001(\003R\ttimesta" +
       "mp\022\032\n\010datetime\030\002 \001(\tR\010datetime\022\022\n\004high\030\003" +
-      " \001(\004R\004high\022\020\n\003low\030\004 \001(\004R\003low\022\022\n\004open\030\005 \001" +
-      "(\004R\004open\022\024\n\005close\030\006 \001(\004R\005close\022\026\n\006volume" +
+      " \001(\tR\004high\022\020\n\003low\030\004 \001(\tR\003low\022\022\n\004open\030\005 \001" +
+      "(\tR\004open\022\024\n\005close\030\006 \001(\tR\005close\022\026\n\006volume" +
       "\030\007 \001(\004R\006volume\022*\n\010interval\030\010 \001(\0162\016.vega." +
       "IntervalR\010interval\"d\n\nPriceLevel\022\024\n\005pric" +
-      "e\030\001 \001(\004R\005price\022(\n\020number_of_orders\030\002 \001(\004" +
+      "e\030\001 \001(\tR\005price\022(\n\020number_of_orders\030\002 \001(\004" +
       "R\016numberOfOrders\022\026\n\006volume\030\003 \001(\004R\006volume" +
       "\"\235\001\n\013MarketDepth\022\033\n\tmarket_id\030\001 \001(\tR\010mar" +
       "ketId\022\"\n\003buy\030\002 \003(\0132\020.vega.PriceLevelR\003bu" +
@@ -68054,11 +72175,11 @@ public final class Vega {
       "Number\"\374\001\n\010Position\022\033\n\tmarket_id\030\001 \001(\tR\010" +
       "marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\037\n\013o" +
       "pen_volume\030\003 \001(\003R\nopenVolume\022!\n\014realised" +
-      "_pnl\030\004 \001(\003R\013realisedPnl\022%\n\016unrealised_pn" +
-      "l\030\005 \001(\003R\runrealisedPnl\022.\n\023average_entry_" +
-      "price\030\006 \001(\004R\021averageEntryPrice\022\035\n\nupdate" +
+      "_pnl\030\004 \001(\tR\013realisedPnl\022%\n\016unrealised_pn" +
+      "l\030\005 \001(\tR\runrealisedPnl\022.\n\023average_entry_" +
+      "price\030\006 \001(\tR\021averageEntryPrice\022\035\n\nupdate" +
       "d_at\030\007 \001(\003R\tupdatedAt\"=\n\rPositionTrade\022\026" +
-      "\n\006volume\030\001 \001(\003R\006volume\022\024\n\005price\030\002 \001(\004R\005p" +
+      "\n\006volume\030\001 \001(\003R\006volume\022\024\n\005price\030\002 \001(\tR\005p" +
       "rice\"\344\002\n\007Deposit\022\016\n\002id\030\001 \001(\tR\002id\022,\n\006stat" +
       "us\030\002 \001(\0162\024.vega.Deposit.StatusR\006status\022\031" +
       "\n\010party_id\030\003 \001(\tR\007partyId\022\024\n\005asset\030\004 \001(\t" +
@@ -68069,7 +72190,7 @@ public final class Vega {
       "\n\022STATUS_UNSPECIFIED\020\000\022\017\n\013STATUS_OPEN\020\001\022" +
       "\024\n\020STATUS_CANCELLED\020\002\022\024\n\020STATUS_FINALIZE" +
       "D\020\003\"\273\003\n\nWithdrawal\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010pa" +
-      "rty_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(\004R\006a" +
+      "rty_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(\tR\006a" +
       "mount\022\024\n\005asset\030\004 \001(\tR\005asset\022/\n\006status\030\005 " +
       "\001(\0162\027.vega.Withdrawal.StatusR\006status\022\020\n\003" +
       "ref\030\006 \001(\tR\003ref\022\026\n\006expiry\030\007 \001(\003R\006expiry\022\027" +
@@ -68084,55 +72205,55 @@ public final class Vega {
       "=\n\020Erc20WithdrawExt\022)\n\020receiver_address\030" +
       "\001 \001(\tR\017receiverAddress\"\243\001\n\007Account\022\016\n\002id" +
       "\030\001 \001(\tR\002id\022\024\n\005owner\030\002 \001(\tR\005owner\022\030\n\007bala" +
-      "nce\030\003 \001(\004R\007balance\022\024\n\005asset\030\004 \001(\tR\005asset" +
+      "nce\030\003 \001(\tR\007balance\022\024\n\005asset\030\004 \001(\tR\005asset" +
       "\022\033\n\tmarket_id\030\005 \001(\tR\010marketId\022%\n\004type\030\006 " +
       "\001(\0162\021.vega.AccountTypeR\004type\"?\n\017Financia" +
-      "lAmount\022\026\n\006amount\030\001 \001(\004R\006amount\022\024\n\005asset" +
+      "lAmount\022\026\n\006amount\030\001 \001(\tR\006amount\022\024\n\005asset" +
       "\030\002 \001(\tR\005asset\"\226\001\n\010Transfer\022\024\n\005owner\030\001 \001(" +
       "\tR\005owner\022-\n\006amount\030\002 \001(\0132\025.vega.Financia" +
       "lAmountR\006amount\022&\n\004type\030\003 \001(\0162\022.vega.Tra" +
-      "nsferTypeR\004type\022\035\n\nmin_amount\030\004 \001(\004R\tmin" +
+      "nsferTypeR\004type\022\035\n\nmin_amount\030\004 \001(\tR\tmin" +
       "Amount\"\334\001\n\017TransferRequest\0220\n\014from_accou" +
       "nt\030\001 \003(\0132\r.vega.AccountR\013fromAccount\022,\n\n" +
       "to_account\030\002 \003(\0132\r.vega.AccountR\ttoAccou" +
-      "nt\022\026\n\006amount\030\003 \001(\004R\006amount\022\035\n\nmin_amount" +
-      "\030\004 \001(\004R\tminAmount\022\024\n\005asset\030\005 \001(\tR\005asset\022" +
+      "nt\022\026\n\006amount\030\003 \001(\tR\006amount\022\035\n\nmin_amount" +
+      "\030\004 \001(\tR\tminAmount\022\024\n\005asset\030\005 \001(\tR\005asset\022" +
       "\034\n\treference\030\006 \001(\tR\treference\"\267\001\n\013Ledger" +
       "Entry\022!\n\014from_account\030\001 \001(\tR\013fromAccount" +
       "\022\035\n\nto_account\030\002 \001(\tR\ttoAccount\022\026\n\006amoun" +
-      "t\030\003 \001(\004R\006amount\022\034\n\treference\030\004 \001(\tR\trefe" +
+      "t\030\003 \001(\tR\006amount\022\034\n\treference\030\004 \001(\tR\trefe" +
       "rence\022\022\n\004type\030\005 \001(\tR\004type\022\034\n\ttimestamp\030\006" +
       " \001(\003R\ttimestamp\"T\n\017TransferBalance\022\'\n\007ac" +
       "count\030\001 \001(\0132\r.vega.AccountR\007account\022\030\n\007b" +
-      "alance\030\002 \001(\004R\007balance\"v\n\020TransferRespons" +
+      "alance\030\002 \001(\tR\007balance\"v\n\020TransferRespons" +
       "e\022/\n\ttransfers\030\001 \003(\0132\021.vega.LedgerEntryR" +
       "\ttransfers\0221\n\010balances\030\002 \003(\0132\025.vega.Tran" +
       "sferBalanceR\010balances\"\255\002\n\014MarginLevels\022-" +
-      "\n\022maintenance_margin\030\001 \001(\004R\021maintenanceM" +
-      "argin\022!\n\014search_level\030\002 \001(\004R\013searchLevel" +
-      "\022%\n\016initial_margin\030\003 \001(\004R\rinitialMargin\022" +
-      "8\n\030collateral_release_level\030\004 \001(\004R\026colla" +
+      "\n\022maintenance_margin\030\001 \001(\tR\021maintenanceM" +
+      "argin\022!\n\014search_level\030\002 \001(\tR\013searchLevel" +
+      "\022%\n\016initial_margin\030\003 \001(\tR\rinitialMargin\022" +
+      "8\n\030collateral_release_level\030\004 \001(\tR\026colla" +
       "teralReleaseLevel\022\031\n\010party_id\030\005 \001(\tR\007par" +
       "tyId\022\033\n\tmarket_id\030\006 \001(\tR\010marketId\022\024\n\005ass" +
       "et\030\007 \001(\tR\005asset\022\034\n\ttimestamp\030\010 \001(\003R\ttime" +
-      "stamp\"\323\t\n\nMarketData\022\035\n\nmark_price\030\001 \001(\004" +
-      "R\tmarkPrice\022$\n\016best_bid_price\030\002 \001(\004R\014bes" +
+      "stamp\"\323\t\n\nMarketData\022\035\n\nmark_price\030\001 \001(\t" +
+      "R\tmarkPrice\022$\n\016best_bid_price\030\002 \001(\tR\014bes" +
       "tBidPrice\022&\n\017best_bid_volume\030\003 \001(\004R\rbest" +
-      "BidVolume\022(\n\020best_offer_price\030\004 \001(\004R\016bes" +
+      "BidVolume\022(\n\020best_offer_price\030\004 \001(\tR\016bes" +
       "tOfferPrice\022*\n\021best_offer_volume\030\005 \001(\004R\017" +
       "bestOfferVolume\0221\n\025best_static_bid_price" +
-      "\030\006 \001(\004R\022bestStaticBidPrice\0223\n\026best_stati" +
+      "\030\006 \001(\tR\022bestStaticBidPrice\0223\n\026best_stati" +
       "c_bid_volume\030\007 \001(\004R\023bestStaticBidVolume\022" +
-      "5\n\027best_static_offer_price\030\010 \001(\004R\024bestSt" +
+      "5\n\027best_static_offer_price\030\010 \001(\tR\024bestSt" +
       "aticOfferPrice\0227\n\030best_static_offer_volu" +
       "me\030\t \001(\004R\025bestStaticOfferVolume\022\033\n\tmid_p" +
-      "rice\030\n \001(\004R\010midPrice\022(\n\020static_mid_price" +
-      "\030\013 \001(\004R\016staticMidPrice\022\026\n\006market\030\014 \001(\tR\006" +
+      "rice\030\n \001(\tR\010midPrice\022(\n\020static_mid_price" +
+      "\030\013 \001(\tR\016staticMidPrice\022\026\n\006market\030\014 \001(\tR\006" +
       "market\022\034\n\ttimestamp\030\r \001(\003R\ttimestamp\022#\n\r" +
       "open_interest\030\016 \001(\004R\014openInterest\022\037\n\013auc" +
       "tion_end\030\017 \001(\003R\nauctionEnd\022#\n\rauction_st" +
       "art\030\020 \001(\003R\014auctionStart\022)\n\020indicative_pr" +
-      "ice\030\021 \001(\004R\017indicativePrice\022+\n\021indicative" +
+      "ice\030\021 \001(\tR\017indicativePrice\022+\n\021indicative" +
       "_volume\030\022 \001(\004R\020indicativeVolume\022H\n\023marke" +
       "t_trading_mode\030\023 \001(\0162\030.vega.Market.Tradi" +
       "ngModeR\021marketTradingMode\022.\n\007trigger\030\024 \001" +
@@ -68151,8 +72272,8 @@ public final class Vega {
       "(\tR\017equityLikeShare\0226\n\027average_entry_val" +
       "uation\030\003 \001(\tR\025averageEntryValuation\"\310\001\n\025" +
       "PriceMonitoringBounds\022&\n\017min_valid_price" +
-      "\030\001 \001(\004R\rminValidPrice\022&\n\017max_valid_price" +
-      "\030\002 \001(\004R\rmaxValidPrice\0226\n\007trigger\030\003 \001(\0132\034" +
+      "\030\001 \001(\tR\rminValidPrice\022&\n\017max_valid_price" +
+      "\030\002 \001(\tR\rmaxValidPrice\0226\n\007trigger\030\003 \001(\0132\034" +
       ".vega.PriceMonitoringTriggerR\007trigger\022\'\n" +
       "\017reference_price\030\004 \001(\001R\016referencePrice\"Q" +
       "\n\013ErrorDetail\022\022\n\004code\030\001 \001(\005R\004code\022\030\n\007mes" +
@@ -68169,7 +72290,7 @@ public final class Vega {
       "(\tR\007partyId\022\035\n\ncreated_at\030\003 \001(\003R\tcreated" +
       "At\022\035\n\nupdated_at\030\004 \001(\003R\tupdatedAt\022#\n\tmar" +
       "ket_id\030\005 \001(\tB\006\342\337\037\002X\001R\010marketId\022+\n\021commit" +
-      "ment_amount\030\006 \001(\004R\020commitmentAmount\022\020\n\003f" +
+      "ment_amount\030\006 \001(\tR\020commitmentAmount\022\020\n\003f" +
       "ee\030\007 \001(\tR\003fee\0223\n\005sells\030\010 \003(\0132\035.vega.Liqu" +
       "idityOrderReferenceR\005sells\0221\n\004buys\030\t \003(\013" +
       "2\035.vega.LiquidityOrderReferenceR\004buys\022\030\n" +
@@ -68199,7 +72320,7 @@ public final class Vega {
       "\006online\022#\n\rtotal_rewards\030\004 \001(\001R\014totalRew" +
       "ards\"S\n\tEpochData\022\024\n\005total\030\001 \001(\005R\005total\022" +
       "\030\n\007offline\030\002 \001(\005R\007offline\022\026\n\006online\030\003 \001(" +
-      "\005R\006online\"\340\003\n\004Node\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\007pu" +
+      "\005R\006online\"\241\004\n\004Node\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\007pu" +
       "b_key\030\002 \001(\tB\006\342\337\037\002X\001R\006pubKey\022\031\n\010info_url\030" +
       "\003 \001(\tR\007infoUrl\022\032\n\010location\030\004 \001(\tR\010locati" +
       "on\022,\n\022staked_by_operator\030\005 \001(\tR\020stakedBy" +
@@ -68211,122 +72332,124 @@ public final class Vega {
       "a.EpochDataB\006\342\337\037\002 \001R\tepochData\0220\n\006status" +
       "\030\013 \001(\0162\020.vega.NodeStatusB\006\342\337\037\002 \001R\006status" +
       "\0222\n\013delagations\030\014 \003(\0132\020.vega.DelegationR" +
-      "\013delagations\"\270\001\n\010NodeData\022!\n\014staked_tota" +
-      "l\030\001 \001(\tR\013stakedTotal\022\037\n\013total_nodes\030\002 \001(" +
-      "\rR\ntotalNodes\022%\n\016inactive_nodes\030\003 \001(\rR\ri" +
-      "nactiveNodes\022)\n\020validating_nodes\030\004 \001(\rR\017" +
-      "validatingNodes\022\026\n\006uptime\030\005 \001(\002R\006uptime\"" +
-      "p\n\nDelegation\022\024\n\005party\030\001 \001(\tR\005party\022\027\n\007n" +
-      "ode_id\030\002 \001(\tR\006nodeId\022\026\n\006amount\030\003 \001(\tR\006am" +
-      "ount\022\033\n\tepoch_seq\030\004 \001(\tR\010epochSeq\"\304\001\n\rRe" +
-      "wardDetails\022\031\n\010asset_id\030\001 \001(\tR\007assetId\022\031" +
-      "\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005epoch\030\003 \001(\004" +
-      "R\005epoch\022\026\n\006amount\030\004 \001(\tR\006amount\022.\n\023perce" +
-      "ntage_of_total\030\005 \001(\tR\021percentageOfTotal\022" +
-      "\037\n\013received_at\030\006 \001(\003R\nreceivedAt\"\203\001\n\024Rew" +
-      "ardPerAssetDetail\022\024\n\005asset\030\001 \001(\tR\005asset\022" +
-      "-\n\007details\030\002 \003(\0132\023.vega.RewardDetailsR\007d" +
-      "etails\022&\n\017total_for_asset\030\003 \001(\tR\rtotalFo" +
-      "rAsset*9\n\004Side\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010" +
-      "SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030" +
-      "\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014INTERVAL_I1M" +
-      "\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204" +
-      "\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001" +
-      "\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016AuctionTrigger\022" +
-      "\037\n\033AUCTION_TRIGGER_UNSPECIFIED\020\000\022\031\n\025AUCT" +
-      "ION_TRIGGER_BATCH\020\001\022\033\n\027AUCTION_TRIGGER_O" +
-      "PENING\020\002\022\031\n\025AUCTION_TRIGGER_PRICE\020\003\022\035\n\031A" +
-      "UCTION_TRIGGER_LIQUIDITY\020\004*\213\001\n\017PeggedRef" +
-      "erence\022 \n\034PEGGED_REFERENCE_UNSPECIFIED\020\000" +
-      "\022\030\n\024PEGGED_REFERENCE_MID\020\001\022\035\n\031PEGGED_REF" +
-      "ERENCE_BEST_BID\020\002\022\035\n\031PEGGED_REFERENCE_BE" +
-      "ST_ASK\020\003*\370\017\n\nOrderError\022\033\n\027ORDER_ERROR_U" +
-      "NSPECIFIED\020\000\022!\n\035ORDER_ERROR_INVALID_MARK" +
-      "ET_ID\020\001\022 \n\034ORDER_ERROR_INVALID_ORDER_ID\020" +
-      "\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQUENCE\020\003\022&\n\"OR" +
-      "DER_ERROR_INVALID_REMAINING_SIZE\020\004\022\034\n\030OR" +
-      "DER_ERROR_TIME_FAILURE\020\005\022\037\n\033ORDER_ERROR_" +
-      "REMOVAL_FAILURE\020\006\022+\n\'ORDER_ERROR_INVALID" +
-      "_EXPIRATION_DATETIME\020\007\022\'\n#ORDER_ERROR_IN" +
-      "VALID_ORDER_REFERENCE\020\010\022 \n\034ORDER_ERROR_E" +
-      "DIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_ERROR_AMEND_F" +
-      "AILURE\020\n\022\031\n\025ORDER_ERROR_NOT_FOUND\020\013\022 \n\034O" +
-      "RDER_ERROR_INVALID_PARTY_ID\020\014\022\035\n\031ORDER_E" +
-      "RROR_MARKET_CLOSED\020\r\022#\n\037ORDER_ERROR_MARG" +
-      "IN_CHECK_FAILED\020\016\022\'\n#ORDER_ERROR_MISSING" +
-      "_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_ERROR_INTERN" +
-      "AL_ERROR\020\020\022\034\n\030ORDER_ERROR_INVALID_SIZE\020\021" +
-      "\022#\n\037ORDER_ERROR_INVALID_PERSISTENCE\020\022\022\034\n" +
-      "\030ORDER_ERROR_INVALID_TYPE\020\023\022\034\n\030ORDER_ERR" +
-      "OR_SELF_TRADING\020\024\022.\n*ORDER_ERROR_INSUFFI" +
-      "CIENT_FUNDS_TO_PAY_FEES\020\025\022%\n!ORDER_ERROR" +
-      "_INCORRECT_MARKET_TYPE\020\026\022%\n!ORDER_ERROR_" +
-      "INVALID_TIME_IN_FORCE\020\027\022+\n\'ORDER_ERROR_G" +
-      "FN_ORDER_DURING_AN_AUCTION\020\030\0223\n/ORDER_ER" +
-      "ROR_GFA_ORDER_DURING_CONTINUOUS_TRADING\020" +
-      "\031\0224\n0ORDER_ERROR_CANNOT_AMEND_TO_GTT_WIT" +
-      "HOUT_EXPIRYAT\020\032\022)\n%ORDER_ERROR_EXPIRYAT_" +
-      "BEFORE_CREATEDAT\020\033\022,\n(ORDER_ERROR_CANNOT" +
-      "_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n&ORDER_ERROR_" +
-      "CANNOT_AMEND_TO_FOK_OR_IOC\020\035\022*\n&ORDER_ER" +
-      "ROR_CANNOT_AMEND_TO_GFA_OR_GFN\020\036\022,\n(ORDE" +
-      "R_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN\020\037\0224" +
-      "\n0ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURI" +
-      "NG_AUCTION\020 \0224\n0ORDER_ERROR_CANNOT_SEND_" +
-      "FOK_ORDER_DURING_AUCTION\020!\022#\n\037ORDER_ERRO" +
-      "R_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036ORDER_ERROR_M" +
-      "UST_BE_GTT_OR_GTC\020#\022\'\n#ORDER_ERROR_WITHO" +
-      "UT_REFERENCE_PRICE\020$\0223\n/ORDER_ERROR_BUY_" +
-      "CANNOT_REFERENCE_BEST_ASK_PRICE\020%\0224\n0ORD" +
-      "ER_ERROR_OFFSET_MUST_BE_LESS_OR_EQUAL_TO" +
-      "_ZERO\020&\022-\n)ORDER_ERROR_OFFSET_MUST_BE_LE" +
-      "SS_THAN_ZERO\020\'\0227\n3ORDER_ERROR_OFFSET_MUS" +
-      "T_BE_GREATER_OR_EQUAL_TO_ZERO\020(\0224\n0ORDER" +
-      "_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PR" +
-      "ICE\020)\0220\n,ORDER_ERROR_OFFSET_MUST_BE_GREA" +
-      "TER_THAN_ZERO\020*\022*\n&ORDER_ERROR_INSUFFICI" +
-      "ENT_ASSET_BALANCE\020+\022E\nAORDER_ERROR_CANNO" +
-      "T_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGG" +
-      "ED_ORDER\020,\022.\n*ORDER_ERROR_UNABLE_TO_REPR" +
-      "ICE_PEGGED_ORDER\020-\0225\n1ORDER_ERROR_UNABLE" +
-      "_TO_AMEND_PRICE_ON_PEGGED_ORDER\020.\0228\n4ORD" +
-      "ER_ERROR_NON_PERSISTENT_ORDER_OUT_OF_PRI" +
-      "CE_BOUNDS\020/*\202\001\n\013ChainStatus\022\034\n\030CHAIN_STA" +
-      "TUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_STATUS_DISCON" +
-      "NECTED\020\001\022\032\n\026CHAIN_STATUS_REPLAYING\020\002\022\032\n\026" +
-      "CHAIN_STATUS_CONNECTED\020\003*\220\003\n\013AccountType" +
-      "\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020\000\022\032\n\026ACCOUN" +
-      "T_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT_TYPE_SETTL" +
-      "EMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020\003\022\030\n\024ACCO" +
-      "UNT_TYPE_GENERAL\020\004\022$\n ACCOUNT_TYPE_FEES_" +
-      "INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LI" +
-      "QUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007\022\036" +
-      "\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020\010\022\025\n\021ACCOUN" +
-      "T_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TYPE_EXTERNAL\020\n" +
-      "\022!\n\035ACCOUNT_TYPE_GLOBAL_INSURANCE\020\013\022\036\n\032A" +
-      "CCOUNT_TYPE_GLOBAL_REWARD\020\014*\323\005\n\014Transfer" +
-      "Type\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022T" +
-      "RANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN" +
-      "\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_" +
-      "TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN" +
-      "\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRAN" +
-      "SFER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE" +
-      "_MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYPE_M" +
-      "AKER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER_FE" +
-      "E_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTRUCT" +
-      "URE_FEE_PAY\020\013\022/\n+TRANSFER_TYPE_INFRASTRU" +
-      "CTURE_FEE_DISTRIBUTE\020\014\022#\n\037TRANSFER_TYPE_" +
-      "LIQUIDITY_FEE_PAY\020\r\022*\n&TRANSFER_TYPE_LIQ" +
-      "UIDITY_FEE_DISTRIBUTE\020\016\022\032\n\026TRANSFER_TYPE" +
-      "_BOND_LOW\020\017\022\033\n\027TRANSFER_TYPE_BOND_HIGH\020\020" +
-      "\022\037\n\033TRANSFER_TYPE_WITHDRAW_LOCK\020\021\022\032\n\026TRA" +
-      "NSFER_TYPE_WITHDRAW\020\022\022\031\n\025TRANSFER_TYPE_D" +
-      "EPOSIT\020\023\022\037\n\033TRANSFER_TYPE_BOND_SLASHING\020" +
-      "\024\022\036\n\032TRANSFER_TYPE_STAKE_REWARD\020\025*c\n\nNod" +
-      "eStatus\022\033\n\027NODE_STATUS_UNSPECIFIED\020\000\022\031\n\025" +
-      "NODE_STATUS_VALIDATOR\020\001\022\035\n\031NODE_STATUS_N" +
-      "ON_VALIDATOR\020\002B7\n\024io.vegaprotocol.vegaZ\037" +
-      "code.vegaprotocol.io/vega/protob\006proto3"
+      "\013delagations\022\024\n\005score\030\r \001(\tR\005score\022)\n\020no" +
+      "rmalised_score\030\016 \001(\tR\017normalisedScore\"\270\001" +
+      "\n\010NodeData\022!\n\014staked_total\030\001 \001(\tR\013staked" +
+      "Total\022\037\n\013total_nodes\030\002 \001(\rR\ntotalNodes\022%" +
+      "\n\016inactive_nodes\030\003 \001(\rR\rinactiveNodes\022)\n" +
+      "\020validating_nodes\030\004 \001(\rR\017validatingNodes" +
+      "\022\026\n\006uptime\030\005 \001(\002R\006uptime\"p\n\nDelegation\022\024" +
+      "\n\005party\030\001 \001(\tR\005party\022\027\n\007node_id\030\002 \001(\tR\006n" +
+      "odeId\022\026\n\006amount\030\003 \001(\tR\006amount\022\033\n\tepoch_s" +
+      "eq\030\004 \001(\tR\010epochSeq\"\304\001\n\rRewardDetails\022\031\n\010" +
+      "asset_id\030\001 \001(\tR\007assetId\022\031\n\010party_id\030\002 \001(" +
+      "\tR\007partyId\022\024\n\005epoch\030\003 \001(\004R\005epoch\022\026\n\006amou" +
+      "nt\030\004 \001(\tR\006amount\022.\n\023percentage_of_total\030" +
+      "\005 \001(\tR\021percentageOfTotal\022\037\n\013received_at\030" +
+      "\006 \001(\003R\nreceivedAt\"\203\001\n\024RewardPerAssetDeta" +
+      "il\022\024\n\005asset\030\001 \001(\tR\005asset\022-\n\007details\030\002 \003(" +
+      "\0132\023.vega.RewardDetailsR\007details\022&\n\017total" +
+      "_for_asset\030\003 \001(\tR\rtotalForAsset*9\n\004Side\022" +
+      "\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tS" +
+      "IDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERVAL_UNSP" +
+      "ECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014INTERVAL_" +
+      "I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INTERVAL_I" +
+      "1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1" +
+      "D\020\200\243\005*\243\001\n\016AuctionTrigger\022\037\n\033AUCTION_TRIG" +
+      "GER_UNSPECIFIED\020\000\022\031\n\025AUCTION_TRIGGER_BAT" +
+      "CH\020\001\022\033\n\027AUCTION_TRIGGER_OPENING\020\002\022\031\n\025AUC" +
+      "TION_TRIGGER_PRICE\020\003\022\035\n\031AUCTION_TRIGGER_" +
+      "LIQUIDITY\020\004*\213\001\n\017PeggedReference\022 \n\034PEGGE" +
+      "D_REFERENCE_UNSPECIFIED\020\000\022\030\n\024PEGGED_REFE" +
+      "RENCE_MID\020\001\022\035\n\031PEGGED_REFERENCE_BEST_BID" +
+      "\020\002\022\035\n\031PEGGED_REFERENCE_BEST_ASK\020\003*\370\017\n\nOr" +
+      "derError\022\033\n\027ORDER_ERROR_UNSPECIFIED\020\000\022!\n" +
+      "\035ORDER_ERROR_INVALID_MARKET_ID\020\001\022 \n\034ORDE" +
+      "R_ERROR_INVALID_ORDER_ID\020\002\022\037\n\033ORDER_ERRO" +
+      "R_OUT_OF_SEQUENCE\020\003\022&\n\"ORDER_ERROR_INVAL" +
+      "ID_REMAINING_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_" +
+      "FAILURE\020\005\022\037\n\033ORDER_ERROR_REMOVAL_FAILURE" +
+      "\020\006\022+\n\'ORDER_ERROR_INVALID_EXPIRATION_DAT" +
+      "ETIME\020\007\022\'\n#ORDER_ERROR_INVALID_ORDER_REF" +
+      "ERENCE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT_ALLOWED" +
+      "\020\t\022\035\n\031ORDER_ERROR_AMEND_FAILURE\020\n\022\031\n\025ORD" +
+      "ER_ERROR_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_INVA" +
+      "LID_PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CLO" +
+      "SED\020\r\022#\n\037ORDER_ERROR_MARGIN_CHECK_FAILED" +
+      "\020\016\022\'\n#ORDER_ERROR_MISSING_GENERAL_ACCOUN" +
+      "T\020\017\022\036\n\032ORDER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030O" +
+      "RDER_ERROR_INVALID_SIZE\020\021\022#\n\037ORDER_ERROR" +
+      "_INVALID_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR_IN" +
+      "VALID_TYPE\020\023\022\034\n\030ORDER_ERROR_SELF_TRADING" +
+      "\020\024\022.\n*ORDER_ERROR_INSUFFICIENT_FUNDS_TO_" +
+      "PAY_FEES\020\025\022%\n!ORDER_ERROR_INCORRECT_MARK" +
+      "ET_TYPE\020\026\022%\n!ORDER_ERROR_INVALID_TIME_IN" +
+      "_FORCE\020\027\022+\n\'ORDER_ERROR_GFN_ORDER_DURING" +
+      "_AN_AUCTION\020\030\0223\n/ORDER_ERROR_GFA_ORDER_D" +
+      "URING_CONTINUOUS_TRADING\020\031\0224\n0ORDER_ERRO" +
+      "R_CANNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT\020\032" +
+      "\022)\n%ORDER_ERROR_EXPIRYAT_BEFORE_CREATEDA" +
+      "T\020\033\022,\n(ORDER_ERROR_CANNOT_HAVE_GTC_AND_E" +
+      "XPIRYAT\020\034\022*\n&ORDER_ERROR_CANNOT_AMEND_TO" +
+      "_FOK_OR_IOC\020\035\022*\n&ORDER_ERROR_CANNOT_AMEN" +
+      "D_TO_GFA_OR_GFN\020\036\022,\n(ORDER_ERROR_CANNOT_" +
+      "AMEND_FROM_GFA_OR_GFN\020\037\0224\n0ORDER_ERROR_C" +
+      "ANNOT_SEND_IOC_ORDER_DURING_AUCTION\020 \0224\n" +
+      "0ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURIN" +
+      "G_AUCTION\020!\022#\n\037ORDER_ERROR_MUST_BE_LIMIT" +
+      "_ORDER\020\"\022\"\n\036ORDER_ERROR_MUST_BE_GTT_OR_G" +
+      "TC\020#\022\'\n#ORDER_ERROR_WITHOUT_REFERENCE_PR" +
+      "ICE\020$\0223\n/ORDER_ERROR_BUY_CANNOT_REFERENC" +
+      "E_BEST_ASK_PRICE\020%\0224\n0ORDER_ERROR_OFFSET" +
+      "_MUST_BE_LESS_OR_EQUAL_TO_ZERO\020&\022-\n)ORDE" +
+      "R_ERROR_OFFSET_MUST_BE_LESS_THAN_ZERO\020\'\022" +
+      "7\n3ORDER_ERROR_OFFSET_MUST_BE_GREATER_OR" +
+      "_EQUAL_TO_ZERO\020(\0224\n0ORDER_ERROR_SELL_CAN" +
+      "NOT_REFERENCE_BEST_BID_PRICE\020)\0220\n,ORDER_" +
+      "ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO\020*" +
+      "\022*\n&ORDER_ERROR_INSUFFICIENT_ASSET_BALAN" +
+      "CE\020+\022E\nAORDER_ERROR_CANNOT_AMEND_PEGGED_" +
+      "ORDER_DETAILS_ON_NON_PEGGED_ORDER\020,\022.\n*O" +
+      "RDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDE" +
+      "R\020-\0225\n1ORDER_ERROR_UNABLE_TO_AMEND_PRICE" +
+      "_ON_PEGGED_ORDER\020.\0228\n4ORDER_ERROR_NON_PE" +
+      "RSISTENT_ORDER_OUT_OF_PRICE_BOUNDS\020/*\202\001\n" +
+      "\013ChainStatus\022\034\n\030CHAIN_STATUS_UNSPECIFIED" +
+      "\020\000\022\035\n\031CHAIN_STATUS_DISCONNECTED\020\001\022\032\n\026CHA" +
+      "IN_STATUS_REPLAYING\020\002\022\032\n\026CHAIN_STATUS_CO" +
+      "NNECTED\020\003*\220\003\n\013AccountType\022\034\n\030ACCOUNT_TYP" +
+      "E_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TYPE_INSURANC" +
+      "E\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCO" +
+      "UNT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERA" +
+      "L\020\004\022$\n ACCOUNT_TYPE_FEES_INFRASTRUCTURE\020" +
+      "\005\022\037\n\033ACCOUNT_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027AC" +
+      "COUNT_TYPE_FEES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_" +
+      "LOCK_WITHDRAW\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022\031" +
+      "\n\025ACCOUNT_TYPE_EXTERNAL\020\n\022!\n\035ACCOUNT_TYP" +
+      "E_GLOBAL_INSURANCE\020\013\022\036\n\032ACCOUNT_TYPE_GLO" +
+      "BAL_REWARD\020\014*\323\005\n\014TransferType\022\035\n\031TRANSFE" +
+      "R_TYPE_UNSPECIFIED\020\000\022\026\n\022TRANSFER_TYPE_LO" +
+      "SS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020\002\022\027\n\023TRANSFER_" +
+      "TYPE_CLOSE\020\003\022\032\n\026TRANSFER_TYPE_MTM_LOSS\020\004" +
+      "\022\031\n\025TRANSFER_TYPE_MTM_WIN\020\005\022\034\n\030TRANSFER_" +
+      "TYPE_MARGIN_LOW\020\006\022\035\n\031TRANSFER_TYPE_MARGI" +
+      "N_HIGH\020\007\022$\n TRANSFER_TYPE_MARGIN_CONFISC" +
+      "ATED\020\010\022\037\n\033TRANSFER_TYPE_MAKER_FEE_PAY\020\t\022" +
+      "#\n\037TRANSFER_TYPE_MAKER_FEE_RECEIVE\020\n\022(\n$" +
+      "TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY\020\013\022/" +
+      "\n+TRANSFER_TYPE_INFRASTRUCTURE_FEE_DISTR" +
+      "IBUTE\020\014\022#\n\037TRANSFER_TYPE_LIQUIDITY_FEE_P" +
+      "AY\020\r\022*\n&TRANSFER_TYPE_LIQUIDITY_FEE_DIST" +
+      "RIBUTE\020\016\022\032\n\026TRANSFER_TYPE_BOND_LOW\020\017\022\033\n\027" +
+      "TRANSFER_TYPE_BOND_HIGH\020\020\022\037\n\033TRANSFER_TY" +
+      "PE_WITHDRAW_LOCK\020\021\022\032\n\026TRANSFER_TYPE_WITH" +
+      "DRAW\020\022\022\031\n\025TRANSFER_TYPE_DEPOSIT\020\023\022\037\n\033TRA" +
+      "NSFER_TYPE_BOND_SLASHING\020\024\022\036\n\032TRANSFER_T" +
+      "YPE_STAKE_REWARD\020\025*c\n\nNodeStatus\022\033\n\027NODE" +
+      "_STATUS_UNSPECIFIED\020\000\022\031\n\025NODE_STATUS_VAL" +
+      "IDATOR\020\001\022\035\n\031NODE_STATUS_NON_VALIDATOR\020\002B" +
+      "7\n\024io.vegaprotocol.vegaZ\037code.vegaprotoc" +
+      "ol.io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -68616,7 +72739,7 @@ public final class Vega {
     internal_static_vega_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Node_descriptor,
-        new java.lang.String[] { "Id", "PubKey", "InfoUrl", "Location", "StakedByOperator", "StakedByDelegates", "StakedTotal", "MaxIntendedStake", "PendingStake", "EpochData", "Status", "Delagations", });
+        new java.lang.String[] { "Id", "PubKey", "InfoUrl", "Location", "StakedByOperator", "StakedByDelegates", "StakedTotal", "MaxIntendedStake", "PendingStake", "EpochData", "Status", "Delagations", "Score", "NormalisedScore", });
     internal_static_vega_NodeData_descriptor =
       getDescriptor().getMessageTypes().get(45);
     internal_static_vega_NodeData_fieldAccessorTable = new

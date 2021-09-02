@@ -607,7 +607,7 @@ const char descriptor_table_protodef_chain_5fevents_2eproto[] PROTOBUF_SECTION_V
   "nt\030\003 \001(\004R\006amount\"o\n\026BuiltinAssetWithdraw"
   "al\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAssetId\022\031"
   "\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001("
-  "\004R\006amount\"\226\001\n\021BuiltinAssetEvent\0226\n\007depos"
+  "\tR\006amount\"\226\001\n\021BuiltinAssetEvent\0226\n\007depos"
   "it\030\351\007 \001(\0132\031.vega.BuiltinAssetDepositH\000R\007"
   "deposit\022\?\n\nwithdrawal\030\352\007 \001(\0132\034.vega.Buil"
   "tinAssetWithdrawalH\000R\nwithdrawalB\010\n\006acti"
@@ -1002,7 +1002,11 @@ BuiltinAssetWithdrawal::BuiltinAssetWithdrawal(const BuiltinAssetWithdrawal& fro
     party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_party_id(),
       GetArena());
   }
-  amount_ = from.amount_;
+  amount_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_amount().empty()) {
+    amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_amount(),
+      GetArena());
+  }
   // @@protoc_insertion_point(copy_constructor:vega.BuiltinAssetWithdrawal)
 }
 
@@ -1010,7 +1014,7 @@ void BuiltinAssetWithdrawal::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BuiltinAssetWithdrawal_chain_5fevents_2eproto.base);
   vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  amount_ = PROTOBUF_ULONGLONG(0);
+  amount_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 BuiltinAssetWithdrawal::~BuiltinAssetWithdrawal() {
@@ -1023,6 +1027,7 @@ void BuiltinAssetWithdrawal::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   vega_asset_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   party_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  amount_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void BuiltinAssetWithdrawal::ArenaDtor(void* object) {
@@ -1048,7 +1053,7 @@ void BuiltinAssetWithdrawal::Clear() {
 
   vega_asset_id_.ClearToEmpty();
   party_id_.ClearToEmpty();
-  amount_ = PROTOBUF_ULONGLONG(0);
+  amount_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1077,10 +1082,12 @@ const char* BuiltinAssetWithdrawal::_InternalParse(const char* ptr, ::PROTOBUF_N
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 amount = 3 [json_name = "amount"];
+      // string amount = 3 [json_name = "amount"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          amount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_amount();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BuiltinAssetWithdrawal.amount"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1132,10 +1139,14 @@ failure:
         2, this->_internal_party_id(), target);
   }
 
-  // uint64 amount = 3 [json_name = "amount"];
-  if (this->amount() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_amount(), target);
+  // string amount = 3 [json_name = "amount"];
+  if (this->amount().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_amount().data(), static_cast<int>(this->_internal_amount().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.BuiltinAssetWithdrawal.amount");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_amount(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1168,10 +1179,10 @@ size_t BuiltinAssetWithdrawal::ByteSizeLong() const {
         this->_internal_party_id());
   }
 
-  // uint64 amount = 3 [json_name = "amount"];
-  if (this->amount() != 0) {
+  // string amount = 3 [json_name = "amount"];
+  if (this->amount().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_amount());
   }
 
@@ -1212,7 +1223,7 @@ void BuiltinAssetWithdrawal::MergeFrom(const BuiltinAssetWithdrawal& from) {
   if (from.party_id().size() > 0) {
     _internal_set_party_id(from._internal_party_id());
   }
-  if (from.amount() != 0) {
+  if (from.amount().size() > 0) {
     _internal_set_amount(from._internal_amount());
   }
 }
@@ -1240,7 +1251,7 @@ void BuiltinAssetWithdrawal::InternalSwap(BuiltinAssetWithdrawal* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   vega_asset_id_.Swap(&other->vega_asset_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   party_id_.Swap(&other->party_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(amount_, other->amount_);
+  amount_.Swap(&other->amount_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BuiltinAssetWithdrawal::GetMetadata() const {

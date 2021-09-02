@@ -8664,6 +8664,51 @@ public final class Events {
      */
     io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmissionOrBuilder getWithdrawSubmissionOrBuilder();
 
+    /**
+     * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+     * @return Whether the delegateSubmission field is set.
+     */
+    boolean hasDelegateSubmission();
+    /**
+     * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+     * @return The delegateSubmission.
+     */
+    io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission getDelegateSubmission();
+    /**
+     * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+     */
+    io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmissionOrBuilder getDelegateSubmissionOrBuilder();
+
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+     * @return Whether the undelegateSubmission field is set.
+     */
+    boolean hasUndelegateSubmission();
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+     * @return The undelegateSubmission.
+     */
+    io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission getUndelegateSubmission();
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+     */
+    io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder getUndelegateSubmissionOrBuilder();
+
+    /**
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+     * @return Whether the restoreSnapshot field is set.
+     */
+    boolean hasRestoreSnapshot();
+    /**
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+     * @return The restoreSnapshot.
+     */
+    io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot getRestoreSnapshot();
+    /**
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+     */
+    io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder getRestoreSnapshotOrBuilder();
+
     public io.vegaprotocol.vega.events.v1.Events.TxErrorEvent.TransactionCase getTransactionCase();
   }
   /**
@@ -8823,6 +8868,48 @@ public final class Events {
               transactionCase_ = 107;
               break;
             }
+            case 866: {
+              io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.Builder subBuilder = null;
+              if (transactionCase_ == 108) {
+                subBuilder = ((io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_).toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+              transactionCase_ = 108;
+              break;
+            }
+            case 874: {
+              io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder subBuilder = null;
+              if (transactionCase_ == 109) {
+                subBuilder = ((io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_).toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+              transactionCase_ = 109;
+              break;
+            }
+            case 882: {
+              io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder subBuilder = null;
+              if (transactionCase_ == 110) {
+                subBuilder = ((io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_).toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+              transactionCase_ = 110;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -8867,6 +8954,9 @@ public final class Events {
       VOTE_SUBMISSION(105),
       LIQUIDITY_PROVISION_SUBMISSION(106),
       WITHDRAW_SUBMISSION(107),
+      DELEGATE_SUBMISSION(108),
+      UNDELEGATE_SUBMISSION(109),
+      RESTORE_SNAPSHOT(110),
       TRANSACTION_NOT_SET(0);
       private final int value;
       private TransactionCase(int value) {
@@ -8891,6 +8981,9 @@ public final class Events {
           case 105: return VOTE_SUBMISSION;
           case 106: return LIQUIDITY_PROVISION_SUBMISSION;
           case 107: return WITHDRAW_SUBMISSION;
+          case 108: return DELEGATE_SUBMISSION;
+          case 109: return UNDELEGATE_SUBMISSION;
+          case 110: return RESTORE_SNAPSHOT;
           case 0: return TRANSACTION_NOT_SET;
           default: return null;
         }
@@ -9215,6 +9308,99 @@ public final class Events {
       return io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission.getDefaultInstance();
     }
 
+    public static final int DELEGATE_SUBMISSION_FIELD_NUMBER = 108;
+    /**
+     * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+     * @return Whether the delegateSubmission field is set.
+     */
+    @java.lang.Override
+    public boolean hasDelegateSubmission() {
+      return transactionCase_ == 108;
+    }
+    /**
+     * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+     * @return The delegateSubmission.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission getDelegateSubmission() {
+      if (transactionCase_ == 108) {
+         return (io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_;
+      }
+      return io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmissionOrBuilder getDelegateSubmissionOrBuilder() {
+      if (transactionCase_ == 108) {
+         return (io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_;
+      }
+      return io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.getDefaultInstance();
+    }
+
+    public static final int UNDELEGATE_SUBMISSION_FIELD_NUMBER = 109;
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+     * @return Whether the undelegateSubmission field is set.
+     */
+    @java.lang.Override
+    public boolean hasUndelegateSubmission() {
+      return transactionCase_ == 109;
+    }
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+     * @return The undelegateSubmission.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission getUndelegateSubmission() {
+      if (transactionCase_ == 109) {
+         return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_;
+      }
+      return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder getUndelegateSubmissionOrBuilder() {
+      if (transactionCase_ == 109) {
+         return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_;
+      }
+      return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
+    }
+
+    public static final int RESTORE_SNAPSHOT_FIELD_NUMBER = 110;
+    /**
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+     * @return Whether the restoreSnapshot field is set.
+     */
+    @java.lang.Override
+    public boolean hasRestoreSnapshot() {
+      return transactionCase_ == 110;
+    }
+    /**
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+     * @return The restoreSnapshot.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot getRestoreSnapshot() {
+      if (transactionCase_ == 110) {
+         return (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_;
+      }
+      return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder getRestoreSnapshotOrBuilder() {
+      if (transactionCase_ == 110) {
+         return (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_;
+      }
+      return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9255,6 +9441,15 @@ public final class Events {
       }
       if (transactionCase_ == 107) {
         output.writeMessage(107, (io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission) transaction_);
+      }
+      if (transactionCase_ == 108) {
+        output.writeMessage(108, (io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_);
+      }
+      if (transactionCase_ == 109) {
+        output.writeMessage(109, (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_);
+      }
+      if (transactionCase_ == 110) {
+        output.writeMessage(110, (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_);
       }
       unknownFields.writeTo(output);
     }
@@ -9298,6 +9493,18 @@ public final class Events {
       if (transactionCase_ == 107) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(107, (io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission) transaction_);
+      }
+      if (transactionCase_ == 108) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(108, (io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_);
+      }
+      if (transactionCase_ == 109) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(109, (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_);
+      }
+      if (transactionCase_ == 110) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(110, (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9348,6 +9555,18 @@ public final class Events {
           if (!getWithdrawSubmission()
               .equals(other.getWithdrawSubmission())) return false;
           break;
+        case 108:
+          if (!getDelegateSubmission()
+              .equals(other.getDelegateSubmission())) return false;
+          break;
+        case 109:
+          if (!getUndelegateSubmission()
+              .equals(other.getUndelegateSubmission())) return false;
+          break;
+        case 110:
+          if (!getRestoreSnapshot()
+              .equals(other.getRestoreSnapshot())) return false;
+          break;
         case 0:
         default:
       }
@@ -9394,6 +9613,18 @@ public final class Events {
         case 107:
           hash = (37 * hash) + WITHDRAW_SUBMISSION_FIELD_NUMBER;
           hash = (53 * hash) + getWithdrawSubmission().hashCode();
+          break;
+        case 108:
+          hash = (37 * hash) + DELEGATE_SUBMISSION_FIELD_NUMBER;
+          hash = (53 * hash) + getDelegateSubmission().hashCode();
+          break;
+        case 109:
+          hash = (37 * hash) + UNDELEGATE_SUBMISSION_FIELD_NUMBER;
+          hash = (53 * hash) + getUndelegateSubmission().hashCode();
+          break;
+        case 110:
+          hash = (37 * hash) + RESTORE_SNAPSHOT_FIELD_NUMBER;
+          hash = (53 * hash) + getRestoreSnapshot().hashCode();
           break;
         case 0:
         default:
@@ -9614,6 +9845,27 @@ public final class Events {
             result.transaction_ = withdrawSubmissionBuilder_.build();
           }
         }
+        if (transactionCase_ == 108) {
+          if (delegateSubmissionBuilder_ == null) {
+            result.transaction_ = transaction_;
+          } else {
+            result.transaction_ = delegateSubmissionBuilder_.build();
+          }
+        }
+        if (transactionCase_ == 109) {
+          if (undelegateSubmissionBuilder_ == null) {
+            result.transaction_ = transaction_;
+          } else {
+            result.transaction_ = undelegateSubmissionBuilder_.build();
+          }
+        }
+        if (transactionCase_ == 110) {
+          if (restoreSnapshotBuilder_ == null) {
+            result.transaction_ = transaction_;
+          } else {
+            result.transaction_ = restoreSnapshotBuilder_.build();
+          }
+        }
         result.transactionCase_ = transactionCase_;
         onBuilt();
         return result;
@@ -9698,6 +9950,18 @@ public final class Events {
           }
           case WITHDRAW_SUBMISSION: {
             mergeWithdrawSubmission(other.getWithdrawSubmission());
+            break;
+          }
+          case DELEGATE_SUBMISSION: {
+            mergeDelegateSubmission(other.getDelegateSubmission());
+            break;
+          }
+          case UNDELEGATE_SUBMISSION: {
+            mergeUndelegateSubmission(other.getUndelegateSubmission());
+            break;
+          }
+          case RESTORE_SNAPSHOT: {
+            mergeRestoreSnapshot(other.getRestoreSnapshot());
             break;
           }
           case TRANSACTION_NOT_SET: {
@@ -10925,6 +11189,429 @@ public final class Events {
         transactionCase_ = 107;
         onChanged();;
         return withdrawSubmissionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission, io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmissionOrBuilder> delegateSubmissionBuilder_;
+      /**
+       * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+       * @return Whether the delegateSubmission field is set.
+       */
+      @java.lang.Override
+      public boolean hasDelegateSubmission() {
+        return transactionCase_ == 108;
+      }
+      /**
+       * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+       * @return The delegateSubmission.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission getDelegateSubmission() {
+        if (delegateSubmissionBuilder_ == null) {
+          if (transactionCase_ == 108) {
+            return (io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_;
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.getDefaultInstance();
+        } else {
+          if (transactionCase_ == 108) {
+            return delegateSubmissionBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+       */
+      public Builder setDelegateSubmission(io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission value) {
+        if (delegateSubmissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transaction_ = value;
+          onChanged();
+        } else {
+          delegateSubmissionBuilder_.setMessage(value);
+        }
+        transactionCase_ = 108;
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+       */
+      public Builder setDelegateSubmission(
+          io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.Builder builderForValue) {
+        if (delegateSubmissionBuilder_ == null) {
+          transaction_ = builderForValue.build();
+          onChanged();
+        } else {
+          delegateSubmissionBuilder_.setMessage(builderForValue.build());
+        }
+        transactionCase_ = 108;
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+       */
+      public Builder mergeDelegateSubmission(io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission value) {
+        if (delegateSubmissionBuilder_ == null) {
+          if (transactionCase_ == 108 &&
+              transaction_ != io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.getDefaultInstance()) {
+            transaction_ = io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.newBuilder((io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transaction_ = value;
+          }
+          onChanged();
+        } else {
+          if (transactionCase_ == 108) {
+            delegateSubmissionBuilder_.mergeFrom(value);
+          }
+          delegateSubmissionBuilder_.setMessage(value);
+        }
+        transactionCase_ = 108;
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+       */
+      public Builder clearDelegateSubmission() {
+        if (delegateSubmissionBuilder_ == null) {
+          if (transactionCase_ == 108) {
+            transactionCase_ = 0;
+            transaction_ = null;
+            onChanged();
+          }
+        } else {
+          if (transactionCase_ == 108) {
+            transactionCase_ = 0;
+            transaction_ = null;
+          }
+          delegateSubmissionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+       */
+      public io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.Builder getDelegateSubmissionBuilder() {
+        return getDelegateSubmissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmissionOrBuilder getDelegateSubmissionOrBuilder() {
+        if ((transactionCase_ == 108) && (delegateSubmissionBuilder_ != null)) {
+          return delegateSubmissionBuilder_.getMessageOrBuilder();
+        } else {
+          if (transactionCase_ == 108) {
+            return (io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_;
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission, io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmissionOrBuilder>
+          getDelegateSubmissionFieldBuilder() {
+        if (delegateSubmissionBuilder_ == null) {
+          if (!(transactionCase_ == 108)) {
+            transaction_ = io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.getDefaultInstance();
+          }
+          delegateSubmissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission, io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmissionOrBuilder>(
+                  (io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) transaction_,
+                  getParentForChildren(),
+                  isClean());
+          transaction_ = null;
+        }
+        transactionCase_ = 108;
+        onChanged();;
+        return delegateSubmissionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder> undelegateSubmissionBuilder_;
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+       * @return Whether the undelegateSubmission field is set.
+       */
+      @java.lang.Override
+      public boolean hasUndelegateSubmission() {
+        return transactionCase_ == 109;
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+       * @return The undelegateSubmission.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission getUndelegateSubmission() {
+        if (undelegateSubmissionBuilder_ == null) {
+          if (transactionCase_ == 109) {
+            return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_;
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
+        } else {
+          if (transactionCase_ == 109) {
+            return undelegateSubmissionBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+       */
+      public Builder setUndelegateSubmission(io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission value) {
+        if (undelegateSubmissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transaction_ = value;
+          onChanged();
+        } else {
+          undelegateSubmissionBuilder_.setMessage(value);
+        }
+        transactionCase_ = 109;
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+       */
+      public Builder setUndelegateSubmission(
+          io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder builderForValue) {
+        if (undelegateSubmissionBuilder_ == null) {
+          transaction_ = builderForValue.build();
+          onChanged();
+        } else {
+          undelegateSubmissionBuilder_.setMessage(builderForValue.build());
+        }
+        transactionCase_ = 109;
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+       */
+      public Builder mergeUndelegateSubmission(io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission value) {
+        if (undelegateSubmissionBuilder_ == null) {
+          if (transactionCase_ == 109 &&
+              transaction_ != io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance()) {
+            transaction_ = io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.newBuilder((io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transaction_ = value;
+          }
+          onChanged();
+        } else {
+          if (transactionCase_ == 109) {
+            undelegateSubmissionBuilder_.mergeFrom(value);
+          }
+          undelegateSubmissionBuilder_.setMessage(value);
+        }
+        transactionCase_ = 109;
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+       */
+      public Builder clearUndelegateSubmission() {
+        if (undelegateSubmissionBuilder_ == null) {
+          if (transactionCase_ == 109) {
+            transactionCase_ = 0;
+            transaction_ = null;
+            onChanged();
+          }
+        } else {
+          if (transactionCase_ == 109) {
+            transactionCase_ = 0;
+            transaction_ = null;
+          }
+          undelegateSubmissionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+       */
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder getUndelegateSubmissionBuilder() {
+        return getUndelegateSubmissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder getUndelegateSubmissionOrBuilder() {
+        if ((transactionCase_ == 109) && (undelegateSubmissionBuilder_ != null)) {
+          return undelegateSubmissionBuilder_.getMessageOrBuilder();
+        } else {
+          if (transactionCase_ == 109) {
+            return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_;
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder>
+          getUndelegateSubmissionFieldBuilder() {
+        if (undelegateSubmissionBuilder_ == null) {
+          if (!(transactionCase_ == 109)) {
+            transaction_ = io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
+          }
+          undelegateSubmissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder>(
+                  (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) transaction_,
+                  getParentForChildren(),
+                  isClean());
+          transaction_ = null;
+        }
+        transactionCase_ = 109;
+        onChanged();;
+        return undelegateSubmissionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder> restoreSnapshotBuilder_;
+      /**
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+       * @return Whether the restoreSnapshot field is set.
+       */
+      @java.lang.Override
+      public boolean hasRestoreSnapshot() {
+        return transactionCase_ == 110;
+      }
+      /**
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+       * @return The restoreSnapshot.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot getRestoreSnapshot() {
+        if (restoreSnapshotBuilder_ == null) {
+          if (transactionCase_ == 110) {
+            return (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_;
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+        } else {
+          if (transactionCase_ == 110) {
+            return restoreSnapshotBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+       */
+      public Builder setRestoreSnapshot(io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot value) {
+        if (restoreSnapshotBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transaction_ = value;
+          onChanged();
+        } else {
+          restoreSnapshotBuilder_.setMessage(value);
+        }
+        transactionCase_ = 110;
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+       */
+      public Builder setRestoreSnapshot(
+          io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder builderForValue) {
+        if (restoreSnapshotBuilder_ == null) {
+          transaction_ = builderForValue.build();
+          onChanged();
+        } else {
+          restoreSnapshotBuilder_.setMessage(builderForValue.build());
+        }
+        transactionCase_ = 110;
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+       */
+      public Builder mergeRestoreSnapshot(io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot value) {
+        if (restoreSnapshotBuilder_ == null) {
+          if (transactionCase_ == 110 &&
+              transaction_ != io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance()) {
+            transaction_ = io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.newBuilder((io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transaction_ = value;
+          }
+          onChanged();
+        } else {
+          if (transactionCase_ == 110) {
+            restoreSnapshotBuilder_.mergeFrom(value);
+          }
+          restoreSnapshotBuilder_.setMessage(value);
+        }
+        transactionCase_ = 110;
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+       */
+      public Builder clearRestoreSnapshot() {
+        if (restoreSnapshotBuilder_ == null) {
+          if (transactionCase_ == 110) {
+            transactionCase_ = 0;
+            transaction_ = null;
+            onChanged();
+          }
+        } else {
+          if (transactionCase_ == 110) {
+            transactionCase_ = 0;
+            transaction_ = null;
+          }
+          restoreSnapshotBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+       */
+      public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder getRestoreSnapshotBuilder() {
+        return getRestoreSnapshotFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder getRestoreSnapshotOrBuilder() {
+        if ((transactionCase_ == 110) && (restoreSnapshotBuilder_ != null)) {
+          return restoreSnapshotBuilder_.getMessageOrBuilder();
+        } else {
+          if (transactionCase_ == 110) {
+            return (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_;
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder>
+          getRestoreSnapshotFieldBuilder() {
+        if (restoreSnapshotBuilder_ == null) {
+          if (!(transactionCase_ == 110)) {
+            transaction_ = io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+          }
+          restoreSnapshotBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder>(
+                  (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) transaction_,
+                  getParentForChildren(),
+                  isClean());
+          transaction_ = null;
+        }
+        transactionCase_ = 110;
+        onChanged();;
+        return restoreSnapshotBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -32854,7 +33541,7 @@ public final class Events {
       "unt\022/\n\023undelegation_amount\030\004 \001(\004R\022undele" +
       "gationAmount\022\033\n\tepoch_seq\030\005 \001(\tR\010epochSe" +
       "q\"D\n\013MarketEvent\022\033\n\tmarket_id\030\001 \001(\tR\010mar" +
-      "ketId\022\030\n\007payload\030\002 \001(\tR\007payload\"\246\005\n\014TxEr" +
+      "ketId\022\030\n\007payload\030\002 \001(\tR\007payload\"\256\007\n\014TxEr" +
       "rorEvent\022\031\n\010party_id\030\001 \001(\tR\007partyId\022\027\n\007e" +
       "rr_msg\030\002 \001(\tR\006errMsg\022N\n\020order_submission" +
       "\030e \001(\0132!.vega.commands.v1.OrderSubmissio" +
@@ -32871,133 +33558,139 @@ public final class Events {
       "visionSubmissionH\000R\034liquidityProvisionSu" +
       "bmission\022W\n\023withdraw_submission\030k \001(\0132$." +
       "vega.commands.v1.WithdrawSubmissionH\000R\022w" +
-      "ithdrawSubmissionB\r\n\013transaction\"*\n\nTime" +
-      "Update\022\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\"y\n\n" +
-      "EpochEvent\022\020\n\003seq\030\001 \001(\004R\003seq\022\035\n\nstart_ti" +
-      "me\030\002 \001(\003R\tstartTime\022\037\n\013expire_time\030\003 \001(\003" +
-      "R\nexpireTime\022\031\n\010end_time\030\004 \001(\003R\007endTime\"" +
-      "I\n\021TransferResponses\0224\n\tresponses\030\001 \003(\0132" +
-      "\026.vega.TransferResponseR\tresponses\"\210\001\n\022P" +
-      "ositionResolution\022\033\n\tmarket_id\030\001 \001(\tR\010ma" +
-      "rketId\022\036\n\ndistressed\030\002 \001(\003R\ndistressed\022\026" +
-      "\n\006closed\030\003 \001(\003R\006closed\022\035\n\nmark_price\030\004 \001" +
-      "(\004R\tmarkPrice\"c\n\021LossSocialization\022\033\n\tma" +
+      "ithdrawSubmission\022W\n\023delegate_submission" +
+      "\030l \001(\0132$.vega.commands.v1.DelegateSubmis" +
+      "sionH\000R\022delegateSubmission\022]\n\025undelegate" +
+      "_submission\030m \001(\0132&.vega.commands.v1.Und" +
+      "elegateSubmissionH\000R\024undelegateSubmissio" +
+      "n\022N\n\020restore_snapshot\030n \001(\0132!.vega.comma" +
+      "nds.v1.RestoreSnapshotH\000R\017restoreSnapsho" +
+      "tB\r\n\013transaction\"*\n\nTimeUpdate\022\034\n\ttimest" +
+      "amp\030\001 \001(\003R\ttimestamp\"y\n\nEpochEvent\022\020\n\003se" +
+      "q\030\001 \001(\004R\003seq\022\035\n\nstart_time\030\002 \001(\003R\tstartT" +
+      "ime\022\037\n\013expire_time\030\003 \001(\003R\nexpireTime\022\031\n\010" +
+      "end_time\030\004 \001(\003R\007endTime\"I\n\021TransferRespo" +
+      "nses\0224\n\tresponses\030\001 \003(\0132\026.vega.TransferR" +
+      "esponseR\tresponses\"\210\001\n\022PositionResolutio" +
+      "n\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\036\n\ndistre" +
+      "ssed\030\002 \001(\003R\ndistressed\022\026\n\006closed\030\003 \001(\003R\006" +
+      "closed\022\035\n\nmark_price\030\004 \001(\004R\tmarkPrice\"c\n" +
+      "\021LossSocialization\022\033\n\tmarket_id\030\001 \001(\tR\010m" +
+      "arketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006am" +
+      "ount\030\003 \001(\003R\006amount\";\n\017TradeSettlement\022\022\n" +
+      "\004size\030\001 \001(\003R\004size\022\024\n\005price\030\002 \001(\004R\005price\"" +
+      "\254\001\n\016SettlePosition\022\033\n\tmarket_id\030\001 \001(\tR\010m" +
+      "arketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005pr" +
+      "ice\030\003 \001(\004R\005price\022L\n\021trade_settlements\030\004 " +
+      "\003(\0132\037.vega.events.v1.TradeSettlementR\020tr" +
+      "adeSettlements\"x\n\020SettleDistressed\022\033\n\tma" +
       "rket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(" +
-      "\tR\007partyId\022\026\n\006amount\030\003 \001(\003R\006amount\";\n\017Tr" +
-      "adeSettlement\022\022\n\004size\030\001 \001(\003R\004size\022\024\n\005pri" +
-      "ce\030\002 \001(\004R\005price\"\254\001\n\016SettlePosition\022\033\n\tma" +
-      "rket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(" +
-      "\tR\007partyId\022\024\n\005price\030\003 \001(\004R\005price\022L\n\021trad" +
-      "e_settlements\030\004 \003(\0132\037.vega.events.v1.Tra" +
-      "deSettlementR\020tradeSettlements\"x\n\020Settle" +
-      "Distressed\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022" +
-      "\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006margin\030\003 \001" +
-      "(\004R\006margin\022\024\n\005price\030\004 \001(\004R\005price\"0\n\nMark" +
-      "etTick\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004time\030\002 \001(\003R\004ti" +
-      "me\"\205\002\n\014AuctionEvent\022\033\n\tmarket_id\030\001 \001(\tR\010" +
-      "marketId\022\'\n\017opening_auction\030\002 \001(\010R\016openi" +
-      "ngAuction\022\024\n\005leave\030\003 \001(\010R\005leave\022\024\n\005start" +
-      "\030\004 \001(\003R\005start\022\020\n\003end\030\005 \001(\003R\003end\022.\n\007trigg" +
-      "er\030\006 \001(\0162\024.vega.AuctionTriggerR\007trigger\022" +
-      "A\n\021extension_trigger\030\007 \001(\0162\024.vega.Auctio" +
-      "nTriggerR\020extensionTrigger\"\261\001\n\017Validator" +
-      "Update\022 \n\014vega_pub_key\030\001 \001(\tR\nvegaPubKey" +
-      "\022)\n\020ethereum_address\030\002 \001(\tR\017ethereumAddr" +
-      "ess\022\034\n\ntm_pub_key\030\003 \001(\tR\010tmPubKey\022\031\n\010inf" +
-      "o_url\030\004 \001(\tR\007infoUrl\022\030\n\007country\030\005 \001(\tR\007c" +
-      "ountry\"\235\022\n\010BusEvent\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005b" +
-      "lock\030\002 \001(\tR\005block\0220\n\004type\030\003 \001(\0162\034.vega.e" +
-      "vents.v1.BusEventTypeR\004type\022=\n\013time_upda" +
-      "te\030e \001(\0132\032.vega.events.v1.TimeUpdateH\000R\n" +
-      "timeUpdate\022R\n\022transfer_responses\030f \001(\0132!" +
-      ".vega.events.v1.TransferResponsesH\000R\021tra" +
-      "nsferResponses\022U\n\023position_resolution\030g " +
-      "\001(\0132\".vega.events.v1.PositionResolutionH" +
-      "\000R\022positionResolution\022#\n\005order\030h \001(\0132\013.v" +
-      "ega.OrderH\000R\005order\022)\n\007account\030i \001(\0132\r.ve" +
-      "ga.AccountH\000R\007account\022#\n\005party\030j \001(\0132\013.v" +
-      "ega.PartyH\000R\005party\022#\n\005trade\030k \001(\0132\013.vega" +
-      ".TradeH\000R\005trade\0229\n\rmargin_levels\030l \001(\0132\022" +
-      ".vega.MarginLevelsH\000R\014marginLevels\022,\n\010pr" +
-      "oposal\030m \001(\0132\016.vega.ProposalH\000R\010proposal" +
-      "\022 \n\004vote\030n \001(\0132\n.vega.VoteH\000R\004vote\0223\n\013ma" +
-      "rket_data\030o \001(\0132\020.vega.MarketDataH\000R\nmar" +
-      "ketData\022H\n\016node_signature\030p \001(\0132\037.vega.c" +
-      "ommands.v1.NodeSignatureH\000R\rnodeSignatur" +
-      "e\022R\n\022loss_socialization\030q \001(\0132!.vega.eve" +
-      "nts.v1.LossSocializationH\000R\021lossSocializ" +
-      "ation\022I\n\017settle_position\030r \001(\0132\036.vega.ev" +
-      "ents.v1.SettlePositionH\000R\016settlePosition" +
-      "\022O\n\021settle_distressed\030s \001(\0132 .vega.event" +
-      "s.v1.SettleDistressedH\000R\020settleDistresse" +
-      "d\0225\n\016market_created\030t \001(\0132\014.vega.MarketH" +
-      "\000R\rmarketCreated\022#\n\005asset\030u \001(\0132\013.vega.A" +
-      "ssetH\000R\005asset\022=\n\013market_tick\030v \001(\0132\032.veg" +
-      "a.events.v1.MarketTickH\000R\nmarketTick\0222\n\n" +
-      "withdrawal\030w \001(\0132\020.vega.WithdrawalH\000R\nwi" +
-      "thdrawal\022)\n\007deposit\030x \001(\0132\r.vega.Deposit" +
-      "H\000R\007deposit\0228\n\007auction\030y \001(\0132\034.vega.even" +
-      "ts.v1.AuctionEventH\000R\007auction\0223\n\013risk_fa" +
-      "ctor\030z \001(\0132\020.vega.RiskFactorH\000R\nriskFact" +
-      "or\022E\n\021network_parameter\030{ \001(\0132\026.vega.Net" +
-      "workParameterH\000R\020networkParameter\022K\n\023liq" +
-      "uidity_provision\030| \001(\0132\030.vega.LiquidityP" +
-      "rovisionH\000R\022liquidityProvision\0225\n\016market" +
-      "_updated\030} \001(\0132\014.vega.MarketH\000R\rmarketUp" +
-      "dated\0229\n\013oracle_spec\030~ \001(\0132\026.oracles.v1." +
-      "OracleSpecH\000R\noracleSpec\0229\n\013oracle_data\030" +
-      "\177 \001(\0132\026.oracles.v1.OracleDataH\000R\noracleD" +
-      "ata\022X\n\022delegation_balance\030\201\001 \001(\0132&.vega." +
-      "events.v1.DelegationBalanceEventH\000R\021dele" +
-      "gationBalance\022O\n\017validator_score\030\202\001 \001(\0132" +
-      "#.vega.events.v1.ValidatorScoreEventH\000R\016" +
-      "validatorScore\022>\n\013epoch_event\030\203\001 \001(\0132\032.v" +
-      "ega.events.v1.EpochEventH\000R\nepochEvent\022M" +
-      "\n\020validator_update\030\204\001 \001(\0132\037.vega.events." +
-      "v1.ValidatorUpdateH\000R\017validatorUpdate\022D\n" +
-      "\rstake_linking\030\205\001 \001(\0132\034.vega.events.v1.S" +
-      "takeLinkingH\000R\014stakeLinking\022I\n\rreward_pa" +
-      "yout\030\206\001 \001(\0132!.vega.events.v1.RewardPayou" +
-      "tEventH\000R\014rewardPayout\022B\n\ncheckpoint\030\207\001 " +
-      "\001(\0132\037.vega.events.v1.CheckpointEventH\000R\n" +
-      "checkpoint\0226\n\006market\030\351\007 \001(\0132\033.vega.event" +
-      "s.v1.MarketEventH\000R\006market\022A\n\014tx_err_eve" +
-      "nt\030\321\017 \001(\0132\034.vega.events.v1.TxErrorEventH" +
-      "\000R\ntxErrEventB\007\n\005event*\343\t\n\014BusEventType\022" +
-      "\036\n\032BUS_EVENT_TYPE_UNSPECIFIED\020\000\022\026\n\022BUS_E" +
-      "VENT_TYPE_ALL\020\001\022\036\n\032BUS_EVENT_TYPE_TIME_U" +
-      "PDATE\020\002\022%\n!BUS_EVENT_TYPE_TRANSFER_RESPO" +
-      "NSES\020\003\022&\n\"BUS_EVENT_TYPE_POSITION_RESOLU" +
-      "TION\020\004\022\030\n\024BUS_EVENT_TYPE_ORDER\020\005\022\032\n\026BUS_" +
-      "EVENT_TYPE_ACCOUNT\020\006\022\030\n\024BUS_EVENT_TYPE_P" +
-      "ARTY\020\007\022\030\n\024BUS_EVENT_TYPE_TRADE\020\010\022 \n\034BUS_" +
-      "EVENT_TYPE_MARGIN_LEVELS\020\t\022\033\n\027BUS_EVENT_" +
-      "TYPE_PROPOSAL\020\n\022\027\n\023BUS_EVENT_TYPE_VOTE\020\013" +
-      "\022\036\n\032BUS_EVENT_TYPE_MARKET_DATA\020\014\022!\n\035BUS_" +
-      "EVENT_TYPE_NODE_SIGNATURE\020\r\022%\n!BUS_EVENT" +
-      "_TYPE_LOSS_SOCIALIZATION\020\016\022\"\n\036BUS_EVENT_" +
-      "TYPE_SETTLE_POSITION\020\017\022$\n BUS_EVENT_TYPE" +
-      "_SETTLE_DISTRESSED\020\020\022!\n\035BUS_EVENT_TYPE_M" +
-      "ARKET_CREATED\020\021\022\030\n\024BUS_EVENT_TYPE_ASSET\020" +
-      "\022\022\036\n\032BUS_EVENT_TYPE_MARKET_TICK\020\023\022\035\n\031BUS" +
-      "_EVENT_TYPE_WITHDRAWAL\020\024\022\032\n\026BUS_EVENT_TY" +
-      "PE_DEPOSIT\020\025\022\032\n\026BUS_EVENT_TYPE_AUCTION\020\026" +
-      "\022\036\n\032BUS_EVENT_TYPE_RISK_FACTOR\020\027\022$\n BUS_" +
-      "EVENT_TYPE_NETWORK_PARAMETER\020\030\022&\n\"BUS_EV" +
-      "ENT_TYPE_LIQUIDITY_PROVISION\020\031\022!\n\035BUS_EV" +
-      "ENT_TYPE_MARKET_UPDATED\020\032\022\036\n\032BUS_EVENT_T" +
-      "YPE_ORACLE_SPEC\020\033\022\036\n\032BUS_EVENT_TYPE_ORAC" +
-      "LE_DATA\020\034\022%\n!BUS_EVENT_TYPE_DELEGATION_B" +
-      "ALANCE\020\035\022\"\n\036BUS_EVENT_TYPE_VALIDATOR_SCO" +
-      "RE\020\036\022\037\n\033BUS_EVENT_TYPE_EPOCH_UPDATE\020\037\022#\n" +
-      "\037BUS_EVENT_TYPE_VALIDATOR_UPDATE\020 \022 \n\034BU" +
-      "S_EVENT_TYPE_STAKE_LINKING\020!\022&\n\"BUS_EVEN" +
-      "T_TYPE_REWARD_PAYOUT_EVENT\020\"\022\035\n\031BUS_EVEN" +
-      "T_TYPE_CHECKPOINT\020#\022\031\n\025BUS_EVENT_TYPE_MA" +
-      "RKET\020e\022\034\n\027BUS_EVENT_TYPE_TX_ERROR\020\311\001BK\n\036" +
-      "io.vegaprotocol.vega.events.v1Z)code.veg" +
-      "aprotocol.io/vega/proto/events/v1b\006proto" +
-      "3"
+      "\tR\007partyId\022\026\n\006margin\030\003 \001(\004R\006margin\022\024\n\005pr" +
+      "ice\030\004 \001(\004R\005price\"0\n\nMarketTick\022\016\n\002id\030\001 \001" +
+      "(\tR\002id\022\022\n\004time\030\002 \001(\003R\004time\"\205\002\n\014AuctionEv" +
+      "ent\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\'\n\017open" +
+      "ing_auction\030\002 \001(\010R\016openingAuction\022\024\n\005lea" +
+      "ve\030\003 \001(\010R\005leave\022\024\n\005start\030\004 \001(\003R\005start\022\020\n" +
+      "\003end\030\005 \001(\003R\003end\022.\n\007trigger\030\006 \001(\0162\024.vega." +
+      "AuctionTriggerR\007trigger\022A\n\021extension_tri" +
+      "gger\030\007 \001(\0162\024.vega.AuctionTriggerR\020extens" +
+      "ionTrigger\"\261\001\n\017ValidatorUpdate\022 \n\014vega_p" +
+      "ub_key\030\001 \001(\tR\nvegaPubKey\022)\n\020ethereum_add" +
+      "ress\030\002 \001(\tR\017ethereumAddress\022\034\n\ntm_pub_ke" +
+      "y\030\003 \001(\tR\010tmPubKey\022\031\n\010info_url\030\004 \001(\tR\007inf" +
+      "oUrl\022\030\n\007country\030\005 \001(\tR\007country\"\235\022\n\010BusEv" +
+      "ent\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005block\030\002 \001(\tR\005bloc" +
+      "k\0220\n\004type\030\003 \001(\0162\034.vega.events.v1.BusEven" +
+      "tTypeR\004type\022=\n\013time_update\030e \001(\0132\032.vega." +
+      "events.v1.TimeUpdateH\000R\ntimeUpdate\022R\n\022tr" +
+      "ansfer_responses\030f \001(\0132!.vega.events.v1." +
+      "TransferResponsesH\000R\021transferResponses\022U" +
+      "\n\023position_resolution\030g \001(\0132\".vega.event" +
+      "s.v1.PositionResolutionH\000R\022positionResol" +
+      "ution\022#\n\005order\030h \001(\0132\013.vega.OrderH\000R\005ord" +
+      "er\022)\n\007account\030i \001(\0132\r.vega.AccountH\000R\007ac" +
+      "count\022#\n\005party\030j \001(\0132\013.vega.PartyH\000R\005par" +
+      "ty\022#\n\005trade\030k \001(\0132\013.vega.TradeH\000R\005trade\022" +
+      "9\n\rmargin_levels\030l \001(\0132\022.vega.MarginLeve" +
+      "lsH\000R\014marginLevels\022,\n\010proposal\030m \001(\0132\016.v" +
+      "ega.ProposalH\000R\010proposal\022 \n\004vote\030n \001(\0132\n" +
+      ".vega.VoteH\000R\004vote\0223\n\013market_data\030o \001(\0132" +
+      "\020.vega.MarketDataH\000R\nmarketData\022H\n\016node_" +
+      "signature\030p \001(\0132\037.vega.commands.v1.NodeS" +
+      "ignatureH\000R\rnodeSignature\022R\n\022loss_social" +
+      "ization\030q \001(\0132!.vega.events.v1.LossSocia" +
+      "lizationH\000R\021lossSocialization\022I\n\017settle_" +
+      "position\030r \001(\0132\036.vega.events.v1.SettlePo" +
+      "sitionH\000R\016settlePosition\022O\n\021settle_distr" +
+      "essed\030s \001(\0132 .vega.events.v1.SettleDistr" +
+      "essedH\000R\020settleDistressed\0225\n\016market_crea" +
+      "ted\030t \001(\0132\014.vega.MarketH\000R\rmarketCreated" +
+      "\022#\n\005asset\030u \001(\0132\013.vega.AssetH\000R\005asset\022=\n" +
+      "\013market_tick\030v \001(\0132\032.vega.events.v1.Mark" +
+      "etTickH\000R\nmarketTick\0222\n\nwithdrawal\030w \001(\013" +
+      "2\020.vega.WithdrawalH\000R\nwithdrawal\022)\n\007depo" +
+      "sit\030x \001(\0132\r.vega.DepositH\000R\007deposit\0228\n\007a" +
+      "uction\030y \001(\0132\034.vega.events.v1.AuctionEve" +
+      "ntH\000R\007auction\0223\n\013risk_factor\030z \001(\0132\020.veg" +
+      "a.RiskFactorH\000R\nriskFactor\022E\n\021network_pa" +
+      "rameter\030{ \001(\0132\026.vega.NetworkParameterH\000R" +
+      "\020networkParameter\022K\n\023liquidity_provision" +
+      "\030| \001(\0132\030.vega.LiquidityProvisionH\000R\022liqu" +
+      "idityProvision\0225\n\016market_updated\030} \001(\0132\014" +
+      ".vega.MarketH\000R\rmarketUpdated\0229\n\013oracle_" +
+      "spec\030~ \001(\0132\026.oracles.v1.OracleSpecH\000R\nor" +
+      "acleSpec\0229\n\013oracle_data\030\177 \001(\0132\026.oracles." +
+      "v1.OracleDataH\000R\noracleData\022X\n\022delegatio" +
+      "n_balance\030\201\001 \001(\0132&.vega.events.v1.Delega" +
+      "tionBalanceEventH\000R\021delegationBalance\022O\n" +
+      "\017validator_score\030\202\001 \001(\0132#.vega.events.v1" +
+      ".ValidatorScoreEventH\000R\016validatorScore\022>" +
+      "\n\013epoch_event\030\203\001 \001(\0132\032.vega.events.v1.Ep" +
+      "ochEventH\000R\nepochEvent\022M\n\020validator_upda" +
+      "te\030\204\001 \001(\0132\037.vega.events.v1.ValidatorUpda" +
+      "teH\000R\017validatorUpdate\022D\n\rstake_linking\030\205" +
+      "\001 \001(\0132\034.vega.events.v1.StakeLinkingH\000R\014s" +
+      "takeLinking\022I\n\rreward_payout\030\206\001 \001(\0132!.ve" +
+      "ga.events.v1.RewardPayoutEventH\000R\014reward" +
+      "Payout\022B\n\ncheckpoint\030\207\001 \001(\0132\037.vega.event" +
+      "s.v1.CheckpointEventH\000R\ncheckpoint\0226\n\006ma" +
+      "rket\030\351\007 \001(\0132\033.vega.events.v1.MarketEvent" +
+      "H\000R\006market\022A\n\014tx_err_event\030\321\017 \001(\0132\034.vega" +
+      ".events.v1.TxErrorEventH\000R\ntxErrEventB\007\n" +
+      "\005event*\343\t\n\014BusEventType\022\036\n\032BUS_EVENT_TYP" +
+      "E_UNSPECIFIED\020\000\022\026\n\022BUS_EVENT_TYPE_ALL\020\001\022" +
+      "\036\n\032BUS_EVENT_TYPE_TIME_UPDATE\020\002\022%\n!BUS_E" +
+      "VENT_TYPE_TRANSFER_RESPONSES\020\003\022&\n\"BUS_EV" +
+      "ENT_TYPE_POSITION_RESOLUTION\020\004\022\030\n\024BUS_EV" +
+      "ENT_TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_TYPE_ACCOU" +
+      "NT\020\006\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007\022\030\n\024BUS_EV" +
+      "ENT_TYPE_TRADE\020\010\022 \n\034BUS_EVENT_TYPE_MARGI" +
+      "N_LEVELS\020\t\022\033\n\027BUS_EVENT_TYPE_PROPOSAL\020\n\022" +
+      "\027\n\023BUS_EVENT_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT_TY" +
+      "PE_MARKET_DATA\020\014\022!\n\035BUS_EVENT_TYPE_NODE_" +
+      "SIGNATURE\020\r\022%\n!BUS_EVENT_TYPE_LOSS_SOCIA" +
+      "LIZATION\020\016\022\"\n\036BUS_EVENT_TYPE_SETTLE_POSI" +
+      "TION\020\017\022$\n BUS_EVENT_TYPE_SETTLE_DISTRESS" +
+      "ED\020\020\022!\n\035BUS_EVENT_TYPE_MARKET_CREATED\020\021\022" +
+      "\030\n\024BUS_EVENT_TYPE_ASSET\020\022\022\036\n\032BUS_EVENT_T" +
+      "YPE_MARKET_TICK\020\023\022\035\n\031BUS_EVENT_TYPE_WITH" +
+      "DRAWAL\020\024\022\032\n\026BUS_EVENT_TYPE_DEPOSIT\020\025\022\032\n\026" +
+      "BUS_EVENT_TYPE_AUCTION\020\026\022\036\n\032BUS_EVENT_TY" +
+      "PE_RISK_FACTOR\020\027\022$\n BUS_EVENT_TYPE_NETWO" +
+      "RK_PARAMETER\020\030\022&\n\"BUS_EVENT_TYPE_LIQUIDI" +
+      "TY_PROVISION\020\031\022!\n\035BUS_EVENT_TYPE_MARKET_" +
+      "UPDATED\020\032\022\036\n\032BUS_EVENT_TYPE_ORACLE_SPEC\020" +
+      "\033\022\036\n\032BUS_EVENT_TYPE_ORACLE_DATA\020\034\022%\n!BUS" +
+      "_EVENT_TYPE_DELEGATION_BALANCE\020\035\022\"\n\036BUS_" +
+      "EVENT_TYPE_VALIDATOR_SCORE\020\036\022\037\n\033BUS_EVEN" +
+      "T_TYPE_EPOCH_UPDATE\020\037\022#\n\037BUS_EVENT_TYPE_" +
+      "VALIDATOR_UPDATE\020 \022 \n\034BUS_EVENT_TYPE_STA" +
+      "KE_LINKING\020!\022&\n\"BUS_EVENT_TYPE_REWARD_PA" +
+      "YOUT_EVENT\020\"\022\035\n\031BUS_EVENT_TYPE_CHECKPOIN" +
+      "T\020#\022\031\n\025BUS_EVENT_TYPE_MARKET\020e\022\034\n\027BUS_EV" +
+      "ENT_TYPE_TX_ERROR\020\311\001BK\n\036io.vegaprotocol." +
+      "vega.events.v1Z)code.vegaprotocol.io/veg" +
+      "a/proto/events/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -33058,7 +33751,7 @@ public final class Events {
     internal_static_vega_events_v1_TxErrorEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_TxErrorEvent_descriptor,
-        new java.lang.String[] { "PartyId", "ErrMsg", "OrderSubmission", "OrderAmendment", "OrderCancellation", "Proposal", "VoteSubmission", "LiquidityProvisionSubmission", "WithdrawSubmission", "Transaction", });
+        new java.lang.String[] { "PartyId", "ErrMsg", "OrderSubmission", "OrderAmendment", "OrderCancellation", "Proposal", "VoteSubmission", "LiquidityProvisionSubmission", "WithdrawSubmission", "DelegateSubmission", "UndelegateSubmission", "RestoreSnapshot", "Transaction", });
     internal_static_vega_events_v1_TimeUpdate_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_vega_events_v1_TimeUpdate_fieldAccessorTable = new

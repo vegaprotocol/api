@@ -138,3 +138,26 @@ func (this *ListVotesResponse) Validate() error {
 	}
 	return nil
 }
+func (this *PartyStake) Validate() error {
+	for _, item := range this.StakeLinkings {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("StakeLinkings", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *ListPartiesStakeRequest) Validate() error {
+	return nil
+}
+func (this *ListPartiesStakeResponse) Validate() error {
+	for _, item := range this.PartiesStake {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("PartiesStake", err)
+			}
+		}
+	}
+	return nil
+}

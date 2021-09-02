@@ -117,6 +117,9 @@ message TxErrorEvent {
     commands.v1.VoteSubmission vote_submission = 105;
     commands.v1.LiquidityProvisionSubmission liquidity_provision_submission = 106;
     commands.v1.WithdrawSubmission withdraw_submission = 107;
+    commands.v1.DelegateSubmission delegate_submission = 108;
+    commands.v1.UndelegateSubmission undelegate_submission = 109;
+    commands.v1.RestoreSnapshot restore_snapshot = 110;
   }
 }
 

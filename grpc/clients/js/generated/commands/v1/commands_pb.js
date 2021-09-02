@@ -276,7 +276,7 @@ proto.vega.commands.v1.OrderSubmission.prototype.toObject = function(opt_include
 proto.vega.commands.v1.OrderSubmission.toObject = function(includeInstance, msg) {
   var f, obj = {
     marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    price: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 2, ""),
     size: jspb.Message.getFieldWithDefault(msg, 3, 0),
     side: jspb.Message.getFieldWithDefault(msg, 4, 0),
     timeInForce: jspb.Message.getFieldWithDefault(msg, 5, 0),
@@ -325,7 +325,7 @@ proto.vega.commands.v1.OrderSubmission.deserializeBinaryFromReader = function(ms
       msg.setMarketId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPrice(value);
       break;
     case 3:
@@ -394,8 +394,8 @@ proto.vega.commands.v1.OrderSubmission.serializeBinaryToWriter = function(messag
     );
   }
   f = message.getPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -472,20 +472,20 @@ proto.vega.commands.v1.OrderSubmission.prototype.setMarketId = function(value) {
 
 
 /**
- * optional uint64 price = 2;
- * @return {number}
+ * optional string price = 2;
+ * @return {string}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
  */
 proto.vega.commands.v1.OrderSubmission.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1237,7 +1237,7 @@ proto.vega.commands.v1.LiquidityProvisionSubmission.prototype.toObject = functio
 proto.vega.commands.v1.LiquidityProvisionSubmission.toObject = function(includeInstance, msg) {
   var f, obj = {
     marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    commitmentAmount: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    commitmentAmount: jspb.Message.getFieldWithDefault(msg, 2, ""),
     fee: jspb.Message.getFieldWithDefault(msg, 3, ""),
     sellsList: jspb.Message.toObjectList(msg.getSellsList(),
     vega_pb.LiquidityOrder.toObject, includeInstance),
@@ -1285,7 +1285,7 @@ proto.vega.commands.v1.LiquidityProvisionSubmission.deserializeBinaryFromReader 
       msg.setMarketId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setCommitmentAmount(value);
       break;
     case 3:
@@ -1343,8 +1343,8 @@ proto.vega.commands.v1.LiquidityProvisionSubmission.serializeBinaryToWriter = fu
     );
   }
   f = message.getCommitmentAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -1401,20 +1401,20 @@ proto.vega.commands.v1.LiquidityProvisionSubmission.prototype.setMarketId = func
 
 
 /**
- * optional uint64 commitment_amount = 2;
- * @return {number}
+ * optional string commitment_amount = 2;
+ * @return {string}
  */
 proto.vega.commands.v1.LiquidityProvisionSubmission.prototype.getCommitmentAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.commands.v1.LiquidityProvisionSubmission} returns this
  */
 proto.vega.commands.v1.LiquidityProvisionSubmission.prototype.setCommitmentAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1562,7 +1562,7 @@ proto.vega.commands.v1.WithdrawSubmission.prototype.toObject = function(opt_incl
  */
 proto.vega.commands.v1.WithdrawSubmission.toObject = function(includeInstance, msg) {
   var f, obj = {
-    amount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    amount: jspb.Message.getFieldWithDefault(msg, 1, ""),
     asset: jspb.Message.getFieldWithDefault(msg, 2, ""),
     ext: (f = msg.getExt()) && vega_pb.WithdrawExt.toObject(includeInstance, f)
   };
@@ -1602,7 +1602,7 @@ proto.vega.commands.v1.WithdrawSubmission.deserializeBinaryFromReader = function
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAmount(value);
       break;
     case 2:
@@ -1644,8 +1644,8 @@ proto.vega.commands.v1.WithdrawSubmission.prototype.serializeBinary = function()
 proto.vega.commands.v1.WithdrawSubmission.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1669,20 +1669,20 @@ proto.vega.commands.v1.WithdrawSubmission.serializeBinaryToWriter = function(mes
 
 
 /**
- * optional uint64 amount = 1;
- * @return {number}
+ * optional string amount = 1;
+ * @return {string}
  */
 proto.vega.commands.v1.WithdrawSubmission.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.commands.v1.WithdrawSubmission} returns this
  */
 proto.vega.commands.v1.WithdrawSubmission.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2115,7 +2115,7 @@ proto.vega.commands.v1.DelegateSubmission.prototype.toObject = function(opt_incl
 proto.vega.commands.v1.DelegateSubmission.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    amount: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2157,7 +2157,7 @@ proto.vega.commands.v1.DelegateSubmission.deserializeBinaryFromReader = function
       msg.setNodeId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAmount(value);
       break;
     default:
@@ -2197,8 +2197,8 @@ proto.vega.commands.v1.DelegateSubmission.serializeBinaryToWriter = function(mes
     );
   }
   f = message.getAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -2225,20 +2225,20 @@ proto.vega.commands.v1.DelegateSubmission.prototype.setNodeId = function(value) 
 
 
 /**
- * optional uint64 amount = 2;
- * @return {number}
+ * optional string amount = 2;
+ * @return {string}
  */
 proto.vega.commands.v1.DelegateSubmission.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.commands.v1.DelegateSubmission} returns this
  */
 proto.vega.commands.v1.DelegateSubmission.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2275,7 +2275,7 @@ proto.vega.commands.v1.UndelegateSubmission.prototype.toObject = function(opt_in
 proto.vega.commands.v1.UndelegateSubmission.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    amount: jspb.Message.getFieldWithDefault(msg, 2, ""),
     method: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -2318,7 +2318,7 @@ proto.vega.commands.v1.UndelegateSubmission.deserializeBinaryFromReader = functi
       msg.setNodeId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAmount(value);
       break;
     case 3:
@@ -2362,8 +2362,8 @@ proto.vega.commands.v1.UndelegateSubmission.serializeBinaryToWriter = function(m
     );
   }
   f = message.getAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -2407,20 +2407,20 @@ proto.vega.commands.v1.UndelegateSubmission.prototype.setNodeId = function(value
 
 
 /**
- * optional uint64 amount = 2;
- * @return {number}
+ * optional string amount = 2;
+ * @return {string}
  */
 proto.vega.commands.v1.UndelegateSubmission.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.commands.v1.UndelegateSubmission} returns this
  */
 proto.vega.commands.v1.UndelegateSubmission.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

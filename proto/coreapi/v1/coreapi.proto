@@ -20,6 +20,7 @@ service CoreApiService {
   rpc ListProposals(ListProposalsRequest) returns (ListProposalsResponse);
   rpc ListMarketsData(ListMarketsDataRequest) returns (ListMarketsDataResponse);
   rpc ListVotes(ListVotesRequest) returns (ListVotesResponse);
+  rpc ListPartiesStake(ListPartiesStakeRequest) returns (ListPartiesStakeResponse);
 }
 
 message Account {
@@ -99,4 +100,18 @@ message ListVotesRequest {
 
 message ListVotesResponse {
   repeated vega.Vote votes = 1;
+}
+
+message PartyStake {
+  string party = 1;
+  string current_stake_available = 2;
+  repeated vega.events.v1.StakeLinking stake_linkings = 3;
+}
+
+message ListPartiesStakeRequest {
+  string party = 1;
+}
+
+message ListPartiesStakeResponse {
+  repeated PartyStake parties_stake = 1;
 }

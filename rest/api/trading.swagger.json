@@ -44,6 +44,16 @@
       "title": "Time In Force for an order\nSee [What order types are available to trade on Vega?](https://docs.testnet.vega.xyz/docs/trading-questions/#what-order-types-are-available-to-trade-on-vega) for more detail",
       "type": "string"
     },
+    "UndelegateSubmissionMethod": {
+      "default": "METHOD_UNSPECIFIED",
+      "enum": [
+        "METHOD_UNSPECIFIED",
+        "METHOD_NOW",
+        "METHOD_AT_END_OF_EPOCH",
+        "METHOD_IN_ANGER"
+      ],
+      "type": "string"
+    },
     "VoteValue": {
       "default": "VALUE_UNSPECIFIED",
       "description": "- VALUE_UNSPECIFIED: Default value, always invalid\n - VALUE_NO: A vote against the proposal\n - VALUE_YES: A vote in favour of the proposal",
@@ -367,6 +377,20 @@
       "title": "Condition describes the condition that must be validated by the",
       "type": "object"
     },
+    "v1DelegateSubmission": {
+      "properties": {
+        "amount": {
+          "title": "The amount of stake to delegate",
+          "type": "string"
+        },
+        "node_id": {
+          "title": "The ID for the node to delegate to",
+          "type": "string"
+        }
+      },
+      "title": "A command to submit an instruction to delegate some stake to a node",
+      "type": "object"
+    },
     "v1DelegationBalanceEvent": {
       "properties": {
         "amount": {
@@ -460,7 +484,6 @@
           "type": "array"
         },
         "commitment_amount": {
-          "format": "uint64",
           "title": "Specified as a unitless number that represents the amount of settlement asset of the market",
           "type": "string"
         },
@@ -749,7 +772,6 @@
           "title": "Used to specify the details for a pegged order\n- See [`PeggedOrder`](#vega.PeggedOrder)"
         },
         "price": {
-          "format": "uint64",
           "title": "Price for the order, the price is an integer, for example `123456` is a correctly\nformatted price of `1.23456` assuming market configured to 5 decimal places,\n, required field for limit orders, however it is not required for market orders",
           "type": "string"
         },
@@ -868,6 +890,16 @@
         }
       },
       "title": "A command to submit a new proposal for the\nvega network governance",
+      "type": "object"
+    },
+    "v1RestoreSnapshot": {
+      "properties": {
+        "data": {
+          "format": "byte",
+          "type": "string"
+        }
+      },
+      "title": "A command that loads the state from a given checkpoint",
       "type": "object"
     },
     "v1RewardPayoutEvent": {
@@ -1296,6 +1328,9 @@
     },
     "v1TxErrorEvent": {
       "properties": {
+        "delegate_submission": {
+          "$ref": "#/definitions/v1DelegateSubmission"
+        },
         "err_msg": {
           "title": "An error message describing what went wrong",
           "type": "string"
@@ -1319,11 +1354,32 @@
         "proposal": {
           "$ref": "#/definitions/v1ProposalSubmission"
         },
+        "restore_snapshot": {
+          "$ref": "#/definitions/v1RestoreSnapshot"
+        },
+        "undelegate_submission": {
+          "$ref": "#/definitions/v1UndelegateSubmission"
+        },
         "vote_submission": {
           "$ref": "#/definitions/v1VoteSubmission"
         },
         "withdraw_submission": {
           "$ref": "#/definitions/v1WithdrawSubmission"
+        }
+      },
+      "type": "object"
+    },
+    "v1UndelegateSubmission": {
+      "properties": {
+        "amount": {
+          "title": "optional, if not specified = ALL",
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/definitions/UndelegateSubmissionMethod"
+        },
+        "node_id": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -1389,7 +1445,6 @@
     "v1WithdrawSubmission": {
       "properties": {
         "amount": {
-          "format": "uint64",
           "title": "The amount to be withdrawn",
           "type": "string"
         },
@@ -1412,7 +1467,6 @@
           "type": "string"
         },
         "balance": {
-          "format": "uint64",
           "title": "Balance of the asset, the balance is an integer, for example `123456` is a correctly\nformatted price of `1.23456` assuming market configured to 5 decimal places\nand importantly balances cannot be negative",
           "type": "string"
         },
@@ -1678,17 +1732,14 @@
     "vegaFee": {
       "properties": {
         "infrastructure_fee": {
-          "format": "uint64",
           "title": "Fee amount paid for maintaining the Vega infrastructure",
           "type": "string"
         },
         "liquidity_fee": {
-          "format": "uint64",
           "title": "Fee amount paid to market makers",
           "type": "string"
         },
         "maker_fee": {
-          "format": "uint64",
           "title": "Fee amount paid to the non-aggressive party of the trade",
           "type": "string"
         }
@@ -1844,7 +1895,6 @@
     "vegaLedgerEntry": {
       "properties": {
         "amount": {
-          "format": "uint64",
           "title": "An amount to transfer",
           "type": "string"
         },
@@ -1955,7 +2005,6 @@
           "type": "array"
         },
         "commitment_amount": {
-          "format": "uint64",
           "title": "Specified as a unitless number that represents the amount of settlement asset of the market",
           "type": "string"
         },
@@ -2081,17 +2130,14 @@
           "type": "string"
         },
         "collateral_release_level": {
-          "format": "uint64",
           "title": "Collateral release level value",
           "type": "string"
         },
         "initial_margin": {
-          "format": "uint64",
           "title": "Initial margin value",
           "type": "string"
         },
         "maintenance_margin": {
-          "format": "uint64",
           "title": "Maintenance margin value",
           "type": "string"
         },
@@ -2104,7 +2150,6 @@
           "type": "string"
         },
         "search_level": {
-          "format": "uint64",
           "title": "Search level value",
           "type": "string"
         },
@@ -2185,7 +2230,6 @@
           "type": "string"
         },
         "best_bid_price": {
-          "format": "uint64",
           "title": "Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly\nformatted price of `1.23456` assuming market configured to 5 decimal places",
           "type": "string"
         },
@@ -2195,7 +2239,6 @@
           "type": "string"
         },
         "best_offer_price": {
-          "format": "uint64",
           "title": "Lowest price level on an order book for offer orders",
           "type": "string"
         },
@@ -2205,7 +2248,6 @@
           "type": "string"
         },
         "best_static_bid_price": {
-          "format": "uint64",
           "title": "Highest price on the order book for buy orders not including pegged orders",
           "type": "string"
         },
@@ -2215,7 +2257,6 @@
           "type": "string"
         },
         "best_static_offer_price": {
-          "format": "uint64",
           "title": "Lowest price on the order book for sell orders not including pegged orders",
           "type": "string"
         },
@@ -2229,7 +2270,6 @@
           "title": "When a market auction is extended, this field indicates what caused the extension"
         },
         "indicative_price": {
-          "format": "uint64",
           "title": "Indicative price (zero if not in auction)",
           "type": "string"
         },
@@ -2246,7 +2286,6 @@
           "type": "array"
         },
         "mark_price": {
-          "format": "uint64",
           "title": "Mark price, as an integer, for example `123456` is a correctly\nformatted price of `1.23456` assuming market configured to 5 decimal places",
           "type": "string"
         },
@@ -2263,7 +2302,6 @@
           "type": "string"
         },
         "mid_price": {
-          "format": "uint64",
           "title": "Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly\nformatted price of `1.23456` assuming market configured to 5 decimal places",
           "type": "string"
         },
@@ -2280,7 +2318,6 @@
           "type": "array"
         },
         "static_mid_price": {
-          "format": "uint64",
           "title": "Arithmetic average of the best static bid price and best static offer price",
           "type": "string"
         },
@@ -2397,7 +2434,6 @@
           "type": "array"
         },
         "commitment_amount": {
-          "format": "uint64",
           "title": "Specified as a unitless number that represents the amount of settlement asset of the market",
           "type": "string"
         },
@@ -2518,7 +2554,6 @@
           "description": "Pegged order details, used only if the order represents a pegged order."
         },
         "price": {
-          "format": "uint64",
           "title": "Price for the order, the price is an integer, for example `123456` is a correctly\nformatted price of `1.23456` assuming market configured to 5 decimal places",
           "type": "string"
         },
@@ -2700,7 +2735,6 @@
     "vegaPrice": {
       "properties": {
         "value": {
-          "format": "uint64",
           "title": "Price value, given as an integer, for example `123456` is a correctly\nformatted price of `1.23456` assuming market configured to 5 decimal places",
           "type": "string"
         }
@@ -2710,12 +2744,10 @@
     "vegaPriceMonitoringBounds": {
       "properties": {
         "max_valid_price": {
-          "format": "uint64",
           "title": "Maximum price that isn't currently breaching the specified price monitoring trigger",
           "type": "string"
         },
         "min_valid_price": {
-          "format": "uint64",
           "title": "Minimum price that isn't currently breaching the specified price monitoring trigger",
           "type": "string"
         },
@@ -3088,7 +3120,6 @@
           "type": "string"
         },
         "price": {
-          "format": "uint64",
           "title": "Price for the trade, the price is an integer, for example `123456` is a correctly\nformatted price of `1.23456` assuming market configured to 5 decimal places",
           "type": "string"
         },
@@ -3146,7 +3177,6 @@
           "title": "The account relating to the transfer"
         },
         "balance": {
-          "format": "uint64",
           "title": "The balance relating to the transfer",
           "type": "string"
         }
@@ -3204,7 +3234,6 @@
           "type": "string"
         },
         "total_governance_token_balance": {
-          "format": "uint64",
           "title": "Total number of governance token for the party that casted the vote",
           "type": "string"
         },
@@ -3233,7 +3262,6 @@
     "vegaWithdrawal": {
       "properties": {
         "amount": {
-          "format": "uint64",
           "title": "The amount to be withdrawn",
           "type": "string"
         },

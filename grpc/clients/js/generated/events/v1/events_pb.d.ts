@@ -284,6 +284,21 @@ export class TxErrorEvent extends jspb.Message {
     getWithdrawSubmission(): commands_v1_commands_pb.WithdrawSubmission | undefined;
     setWithdrawSubmission(value?: commands_v1_commands_pb.WithdrawSubmission): TxErrorEvent;
 
+    hasDelegateSubmission(): boolean;
+    clearDelegateSubmission(): void;
+    getDelegateSubmission(): commands_v1_commands_pb.DelegateSubmission | undefined;
+    setDelegateSubmission(value?: commands_v1_commands_pb.DelegateSubmission): TxErrorEvent;
+
+    hasUndelegateSubmission(): boolean;
+    clearUndelegateSubmission(): void;
+    getUndelegateSubmission(): commands_v1_commands_pb.UndelegateSubmission | undefined;
+    setUndelegateSubmission(value?: commands_v1_commands_pb.UndelegateSubmission): TxErrorEvent;
+
+    hasRestoreSnapshot(): boolean;
+    clearRestoreSnapshot(): void;
+    getRestoreSnapshot(): commands_v1_commands_pb.RestoreSnapshot | undefined;
+    setRestoreSnapshot(value?: commands_v1_commands_pb.RestoreSnapshot): TxErrorEvent;
+
     getTransactionCase(): TxErrorEvent.TransactionCase;
 
     serializeBinary(): Uint8Array;
@@ -307,6 +322,9 @@ export namespace TxErrorEvent {
         voteSubmission?: commands_v1_commands_pb.VoteSubmission.AsObject,
         liquidityProvisionSubmission?: commands_v1_commands_pb.LiquidityProvisionSubmission.AsObject,
         withdrawSubmission?: commands_v1_commands_pb.WithdrawSubmission.AsObject,
+        delegateSubmission?: commands_v1_commands_pb.DelegateSubmission.AsObject,
+        undelegateSubmission?: commands_v1_commands_pb.UndelegateSubmission.AsObject,
+        restoreSnapshot?: commands_v1_commands_pb.RestoreSnapshot.AsObject,
     }
 
     export enum TransactionCase {
@@ -318,6 +336,9 @@ export namespace TxErrorEvent {
         VOTE_SUBMISSION = 105,
         LIQUIDITY_PROVISION_SUBMISSION = 106,
         WITHDRAW_SUBMISSION = 107,
+        DELEGATE_SUBMISSION = 108,
+        UNDELEGATE_SUBMISSION = 109,
+        RESTORE_SNAPSHOT = 110,
     }
 
 }

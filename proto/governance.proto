@@ -71,7 +71,7 @@ message NewMarketConfiguration {
 // A commitment of liquidity to be made by the party which proposes a market
 message NewMarketCommitment {
   // Specified as a unitless number that represents the amount of settlement asset of the market
-  uint64 commitment_amount = 1;
+  string commitment_amount = 1;
   // Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
   string fee = 2;
   // A set of liquidity sell orders to meet the liquidity provision obligation
@@ -300,7 +300,7 @@ message Vote {
   // Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network
   int64 timestamp = 4;
   // Total number of governance token for the party that casted the vote
-  uint64 total_governance_token_balance = 5;
+  string total_governance_token_balance = 5;
   // The weight of this vote based on the total of governance token
   string total_governance_token_weight = 6;
 }

@@ -423,3 +423,73 @@ export namespace ListVotesResponse {
         votesList: Array<governance_pb.Vote.AsObject>,
     }
 }
+
+export class PartyStake extends jspb.Message {
+    getParty(): string;
+    setParty(value: string): PartyStake;
+    getCurrentStakeAvailable(): string;
+    setCurrentStakeAvailable(value: string): PartyStake;
+    clearStakeLinkingsList(): void;
+    getStakeLinkingsList(): Array<events_v1_events_pb.StakeLinking>;
+    setStakeLinkingsList(value: Array<events_v1_events_pb.StakeLinking>): PartyStake;
+    addStakeLinkings(value?: events_v1_events_pb.StakeLinking, index?: number): events_v1_events_pb.StakeLinking;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PartyStake.AsObject;
+    static toObject(includeInstance: boolean, msg: PartyStake): PartyStake.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: PartyStake, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PartyStake;
+    static deserializeBinaryFromReader(message: PartyStake, reader: jspb.BinaryReader): PartyStake;
+}
+
+export namespace PartyStake {
+    export type AsObject = {
+        party: string,
+        currentStakeAvailable: string,
+        stakeLinkingsList: Array<events_v1_events_pb.StakeLinking.AsObject>,
+    }
+}
+
+export class ListPartiesStakeRequest extends jspb.Message {
+    getParty(): string;
+    setParty(value: string): ListPartiesStakeRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListPartiesStakeRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListPartiesStakeRequest): ListPartiesStakeRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListPartiesStakeRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListPartiesStakeRequest;
+    static deserializeBinaryFromReader(message: ListPartiesStakeRequest, reader: jspb.BinaryReader): ListPartiesStakeRequest;
+}
+
+export namespace ListPartiesStakeRequest {
+    export type AsObject = {
+        party: string,
+    }
+}
+
+export class ListPartiesStakeResponse extends jspb.Message {
+    clearPartiesStakeList(): void;
+    getPartiesStakeList(): Array<PartyStake>;
+    setPartiesStakeList(value: Array<PartyStake>): ListPartiesStakeResponse;
+    addPartiesStake(value?: PartyStake, index?: number): PartyStake;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListPartiesStakeResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListPartiesStakeResponse): ListPartiesStakeResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListPartiesStakeResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListPartiesStakeResponse;
+    static deserializeBinaryFromReader(message: ListPartiesStakeResponse, reader: jspb.BinaryReader): ListPartiesStakeResponse;
+}
+
+export namespace ListPartiesStakeResponse {
+    export type AsObject = {
+        partiesStakeList: Array<PartyStake.AsObject>,
+    }
+}

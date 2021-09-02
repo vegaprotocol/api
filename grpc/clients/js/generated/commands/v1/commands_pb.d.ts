@@ -13,8 +13,8 @@ import * as github_com_mwitkow_go_proto_validators_validator_pb from "../../gith
 export class OrderSubmission extends jspb.Message {
     getMarketId(): string;
     setMarketId(value: string): OrderSubmission;
-    getPrice(): number;
-    setPrice(value: number): OrderSubmission;
+    getPrice(): string;
+    setPrice(value: string): OrderSubmission;
     getSize(): number;
     setSize(value: number): OrderSubmission;
     getSide(): vega_pb.Side;
@@ -46,7 +46,7 @@ export class OrderSubmission extends jspb.Message {
 export namespace OrderSubmission {
     export type AsObject = {
         marketId: string,
-        price: number,
+        price: string,
         size: number,
         side: vega_pb.Side,
         timeInForce: vega_pb.Order.TimeInForce,
@@ -133,8 +133,8 @@ export namespace OrderAmendment {
 export class LiquidityProvisionSubmission extends jspb.Message {
     getMarketId(): string;
     setMarketId(value: string): LiquidityProvisionSubmission;
-    getCommitmentAmount(): number;
-    setCommitmentAmount(value: number): LiquidityProvisionSubmission;
+    getCommitmentAmount(): string;
+    setCommitmentAmount(value: string): LiquidityProvisionSubmission;
     getFee(): string;
     setFee(value: string): LiquidityProvisionSubmission;
     clearSellsList(): void;
@@ -161,7 +161,7 @@ export class LiquidityProvisionSubmission extends jspb.Message {
 export namespace LiquidityProvisionSubmission {
     export type AsObject = {
         marketId: string,
-        commitmentAmount: number,
+        commitmentAmount: string,
         fee: string,
         sellsList: Array<vega_pb.LiquidityOrder.AsObject>,
         buysList: Array<vega_pb.LiquidityOrder.AsObject>,
@@ -170,8 +170,8 @@ export namespace LiquidityProvisionSubmission {
 }
 
 export class WithdrawSubmission extends jspb.Message {
-    getAmount(): number;
-    setAmount(value: number): WithdrawSubmission;
+    getAmount(): string;
+    setAmount(value: string): WithdrawSubmission;
     getAsset(): string;
     setAsset(value: string): WithdrawSubmission;
 
@@ -192,7 +192,7 @@ export class WithdrawSubmission extends jspb.Message {
 
 export namespace WithdrawSubmission {
     export type AsObject = {
-        amount: number,
+        amount: string,
         asset: string,
         ext?: vega_pb.WithdrawExt.AsObject,
     }
@@ -250,8 +250,8 @@ export namespace VoteSubmission {
 export class DelegateSubmission extends jspb.Message {
     getNodeId(): string;
     setNodeId(value: string): DelegateSubmission;
-    getAmount(): number;
-    setAmount(value: number): DelegateSubmission;
+    getAmount(): string;
+    setAmount(value: string): DelegateSubmission;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DelegateSubmission.AsObject;
@@ -266,15 +266,15 @@ export class DelegateSubmission extends jspb.Message {
 export namespace DelegateSubmission {
     export type AsObject = {
         nodeId: string,
-        amount: number,
+        amount: string,
     }
 }
 
 export class UndelegateSubmission extends jspb.Message {
     getNodeId(): string;
     setNodeId(value: string): UndelegateSubmission;
-    getAmount(): number;
-    setAmount(value: number): UndelegateSubmission;
+    getAmount(): string;
+    setAmount(value: string): UndelegateSubmission;
     getMethod(): UndelegateSubmission.Method;
     setMethod(value: UndelegateSubmission.Method): UndelegateSubmission;
 
@@ -291,7 +291,7 @@ export class UndelegateSubmission extends jspb.Message {
 export namespace UndelegateSubmission {
     export type AsObject = {
         nodeId: string,
-        amount: number,
+        amount: string,
         method: UndelegateSubmission.Method,
     }
 

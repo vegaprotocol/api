@@ -1209,6 +1209,14 @@
                 </li>
 
                 <li>
+                  <a href="#vega.coreapi.v1.ListPartiesStakeRequest"><span class="badge">M</span>ListPartiesStakeRequest</a>
+                </li>
+
+                <li>
+                  <a href="#vega.coreapi.v1.ListPartiesStakeResponse"><span class="badge">M</span>ListPartiesStakeResponse</a>
+                </li>
+
+                <li>
                   <a href="#vega.coreapi.v1.ListProposalsRequest"><span class="badge">M</span>ListProposalsRequest</a>
                 </li>
 
@@ -1230,6 +1238,10 @@
 
                 <li>
                   <a href="#vega.coreapi.v1.ListVotesResponse"><span class="badge">M</span>ListVotesResponse</a>
+                </li>
+
+                <li>
+                  <a href="#vega.coreapi.v1.PartyStake"><span class="badge">M</span>PartyStake</a>
                 </li>
 
 
@@ -3375,7 +3387,7 @@ most commonly seen during liquidation of distressed trading positions </p></td>
 
                 <tr>
                   <td>balance</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Balance of the asset, the balance is an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places
@@ -3429,7 +3441,7 @@ and importantly balances cannot be negative </p></td>
 
                 <tr>
                   <td>indicative_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now </p></td>
                 </tr>
@@ -3489,28 +3501,28 @@ and importantly balances cannot be negative </p></td>
 
                 <tr>
                   <td>high</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Highest price for trading during the candle interval </p></td>
                 </tr>
 
                 <tr>
                   <td>low</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Lowest price for trading during the candle interval </p></td>
                 </tr>
 
                 <tr>
                   <td>open</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Open trade price </p></td>
                 </tr>
 
                 <tr>
                   <td>close</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Closing trade price </p></td>
                 </tr>
@@ -4009,21 +4021,21 @@ and importantly balances cannot be negative </p></td>
 
                 <tr>
                   <td>maker_fee</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Fee amount paid to the non-aggressive party of the trade </p></td>
                 </tr>
 
                 <tr>
                   <td>infrastructure_fee</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Fee amount paid for maintaining the Vega infrastructure </p></td>
                 </tr>
 
                 <tr>
                   <td>liquidity_fee</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Fee amount paid to market makers </p></td>
                 </tr>
@@ -4047,7 +4059,7 @@ and importantly balances cannot be negative </p></td>
 
                 <tr>
                   <td>amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>A signed integer amount of asset </p></td>
                 </tr>
@@ -4092,7 +4104,7 @@ and importantly balances cannot be negative </p></td>
 
                 <tr>
                   <td>amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>An amount to transfer </p></td>
                 </tr>
@@ -4282,7 +4294,7 @@ and importantly balances cannot be negative </p></td>
 
                 <tr>
                   <td>commitment_amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Specified as a unitless number that represents the amount of settlement asset of the market </p></td>
                 </tr>
@@ -4375,28 +4387,28 @@ and importantly balances cannot be negative </p></td>
 
                 <tr>
                   <td>maintenance_margin</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Maintenance margin value </p></td>
                 </tr>
 
                 <tr>
                   <td>search_level</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Search level value </p></td>
                 </tr>
 
                 <tr>
                   <td>initial_margin</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Initial margin value </p></td>
                 </tr>
 
                 <tr>
                   <td>collateral_release_level</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Collateral release level value </p></td>
                 </tr>
@@ -4449,7 +4461,7 @@ and importantly balances cannot be negative </p></td>
 
                 <tr>
                   <td>mark_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Mark price, as an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places </p></td>
@@ -4457,7 +4469,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>best_bid_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places </p></td>
@@ -4472,7 +4484,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>best_offer_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Lowest price level on an order book for offer orders </p></td>
                 </tr>
@@ -4487,7 +4499,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>best_static_bid_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Highest price on the order book for buy orders not including pegged orders </p></td>
                 </tr>
@@ -4501,7 +4513,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>best_static_offer_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Lowest price on the order book for sell orders not including pegged orders </p></td>
                 </tr>
@@ -4515,7 +4527,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>mid_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places </p></td>
@@ -4523,7 +4535,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>static_mid_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Arithmetic average of the best static bid price and best static offer price </p></td>
                 </tr>
@@ -4566,7 +4578,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>indicative_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Indicative price (zero if not in auction) </p></td>
                 </tr>
@@ -4856,6 +4868,20 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                   <td><p>Node&#39;s delegations </p></td>
                 </tr>
 
+                <tr>
+                  <td>score</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Node score </p></td>
+                </tr>
+
+                <tr>
+                  <td>normalised_score</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Node normalised score </p></td>
+                </tr>
+
             </tbody>
           </table>
 
@@ -5004,7 +5030,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Price for the order, the price is an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places </p></td>
@@ -5307,21 +5333,21 @@ to keep track of the auction batch this order falls under (required for fees cal
 
                 <tr>
                   <td>realised_pnl</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Realised profit and loss for the position, value is signed &#43;ve for long and -ve for short </p></td>
                 </tr>
 
                 <tr>
                   <td>unrealised_pnl</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Unrealised profit and loss for the position, value is signed &#43;ve for long and -ve for short </p></td>
                 </tr>
 
                 <tr>
                   <td>average_entry_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Average entry price for the position, the price is an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places </p></td>
@@ -5360,7 +5386,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Price for the position trade, the price is an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places </p></td>
@@ -5385,7 +5411,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>value</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Price value, given as an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places </p></td>
@@ -5410,7 +5436,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Price for the price level, the price is an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places </p></td>
@@ -5449,14 +5475,14 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>min_valid_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Minimum price that isn&#39;t currently breaching the specified price monitoring trigger </p></td>
                 </tr>
 
                 <tr>
                   <td>max_valid_price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Maximum price that isn&#39;t currently breaching the specified price monitoring trigger </p></td>
                 </tr>
@@ -5774,7 +5800,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Price for the trade, the price is an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places </p></td>
@@ -5929,7 +5955,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>min_amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>A minimum amount </p></td>
                 </tr>
@@ -5960,7 +5986,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>balance</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>The balance relating to the transfer </p></td>
                 </tr>
@@ -5998,14 +6024,14 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>An amount to transfer for the asset </p></td>
                 </tr>
 
                 <tr>
                   <td>min_amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>A minimum amount </p></td>
                 </tr>
@@ -6112,7 +6138,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>The amount to be withdrawn </p></td>
                 </tr>
@@ -7700,7 +7726,7 @@ value (Vote) is the vote cast by the given party </p></td>
 
                 <tr>
                   <td>commitment_amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Specified as a unitless number that represents the amount of settlement asset of the market </p></td>
                 </tr>
@@ -8182,7 +8208,7 @@ constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters </
 
                 <tr>
                   <td>total_governance_token_balance</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Total number of governance token for the party that casted the vote </p></td>
                 </tr>
@@ -8677,7 +8703,7 @@ time. </p></td>
 
                 <tr>
                   <td>amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>The amount of stake to delegate </p></td>
                 </tr>
@@ -8735,7 +8761,7 @@ time. </p></td>
 
                 <tr>
                   <td>commitment_amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Specified as a unitless number that represents the amount of settlement asset of the market </p></td>
                 </tr>
@@ -8958,7 +8984,7 @@ time. </p></td>
 
                 <tr>
                   <td>price</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>Price for the order, the price is an integer, for example `123456` is a correctly
 formatted price of `1.23456` assuming market configured to 5 decimal places,
@@ -9165,7 +9191,7 @@ set internally by the node to return a unique reference identifier for the order
 
                 <tr>
                   <td>amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>optional, if not specified = ALL </p></td>
                 </tr>
@@ -9281,7 +9307,7 @@ set internally by the node to return a unique reference identifier for the order
 
                 <tr>
                   <td>amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>The amount to be withdrawn </p></td>
                 </tr>
@@ -9627,7 +9653,7 @@ set internally by the node to return a unique reference identifier for the order
 
                 <tr>
                   <td>amount</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>The amount to be withdrawn </p></td>
                 </tr>
@@ -11499,6 +11525,27 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                   <td><p> </p></td>
                 </tr>
 
+                <tr>
+                  <td>delegate_submission</td>
+                  <td><a href="#vega.commands.v1.DelegateSubmission">vega.commands.v1.DelegateSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>undelegate_submission</td>
+                  <td><a href="#vega.commands.v1.UndelegateSubmission">vega.commands.v1.UndelegateSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>restore_snapshot</td>
+                  <td><a href="#vega.commands.v1.RestoreSnapshot">vega.commands.v1.RestoreSnapshot</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
             </tbody>
           </table>
 
@@ -13197,6 +13244,54 @@ network will have committed it into a block</p></td>
 
 
 
+        <h3 id="vega.coreapi.v1.ListPartiesStakeRequest">ListPartiesStakeRequest</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>party</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.coreapi.v1.ListPartiesStakeResponse">ListPartiesStakeResponse</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>parties_stake</td>
+                  <td><a href="#vega.coreapi.v1.PartyStake">PartyStake</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
         <h3 id="vega.coreapi.v1.ListProposalsRequest">ListProposalsRequest</h3>
         <p></p>
 
@@ -13338,6 +13433,44 @@ network will have committed it into a block</p></td>
 
 
 
+        <h3 id="vega.coreapi.v1.PartyStake">PartyStake</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>party</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>current_stake_available</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>stake_linkings</td>
+                  <td><a href="#vega.events.v1.StakeLinking">vega.events.v1.StakeLinking</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
 
 
 
@@ -13412,6 +13545,13 @@ network will have committed it into a block</p></td>
                 <td>ListVotes</td>
                 <td><a href="#vega.coreapi.v1.ListVotesRequest">ListVotesRequest</a></td>
                 <td><a href="#vega.coreapi.v1.ListVotesResponse">ListVotesResponse</a></td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ListPartiesStake</td>
+                <td><a href="#vega.coreapi.v1.ListPartiesStakeRequest">ListPartiesStakeRequest</a></td>
+                <td><a href="#vega.coreapi.v1.ListPartiesStakeResponse">ListPartiesStakeResponse</a></td>
                 <td><p></p></td>
               </tr>
 

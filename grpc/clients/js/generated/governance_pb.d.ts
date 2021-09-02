@@ -176,8 +176,8 @@ export namespace NewMarketConfiguration {
 }
 
 export class NewMarketCommitment extends jspb.Message {
-    getCommitmentAmount(): number;
-    setCommitmentAmount(value: number): NewMarketCommitment;
+    getCommitmentAmount(): string;
+    setCommitmentAmount(value: string): NewMarketCommitment;
     getFee(): string;
     setFee(value: string): NewMarketCommitment;
     clearSellsList(): void;
@@ -203,7 +203,7 @@ export class NewMarketCommitment extends jspb.Message {
 
 export namespace NewMarketCommitment {
     export type AsObject = {
-        commitmentAmount: number,
+        commitmentAmount: string,
         fee: string,
         sellsList: Array<vega_pb.LiquidityOrder.AsObject>,
         buysList: Array<vega_pb.LiquidityOrder.AsObject>,
@@ -472,8 +472,8 @@ export class Vote extends jspb.Message {
     setProposalId(value: string): Vote;
     getTimestamp(): number;
     setTimestamp(value: number): Vote;
-    getTotalGovernanceTokenBalance(): number;
-    setTotalGovernanceTokenBalance(value: number): Vote;
+    getTotalGovernanceTokenBalance(): string;
+    setTotalGovernanceTokenBalance(value: string): Vote;
     getTotalGovernanceTokenWeight(): string;
     setTotalGovernanceTokenWeight(value: string): Vote;
 
@@ -493,7 +493,7 @@ export namespace Vote {
         value: Vote.Value,
         proposalId: string,
         timestamp: number,
-        totalGovernanceTokenBalance: number,
+        totalGovernanceTokenBalance: string,
         totalGovernanceTokenWeight: string,
     }
 

@@ -13725,6 +13725,2460 @@ public final class Coreapi {
 
   }
 
+  public interface PartyStakeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.coreapi.v1.PartyStake)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    java.lang.String getParty();
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    com.google.protobuf.ByteString
+        getPartyBytes();
+
+    /**
+     * <code>string current_stake_available = 2 [json_name = "currentStakeAvailable"];</code>
+     * @return The currentStakeAvailable.
+     */
+    java.lang.String getCurrentStakeAvailable();
+    /**
+     * <code>string current_stake_available = 2 [json_name = "currentStakeAvailable"];</code>
+     * @return The bytes for currentStakeAvailable.
+     */
+    com.google.protobuf.ByteString
+        getCurrentStakeAvailableBytes();
+
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    java.util.List<io.vegaprotocol.vega.events.v1.Events.StakeLinking>
+        getStakeLinkingsList();
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    io.vegaprotocol.vega.events.v1.Events.StakeLinking getStakeLinkings(int index);
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    int getStakeLinkingsCount();
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.events.v1.Events.StakeLinkingOrBuilder>
+        getStakeLinkingsOrBuilderList();
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    io.vegaprotocol.vega.events.v1.Events.StakeLinkingOrBuilder getStakeLinkingsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code vega.coreapi.v1.PartyStake}
+   */
+  public static final class PartyStake extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.coreapi.v1.PartyStake)
+      PartyStakeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PartyStake.newBuilder() to construct.
+    private PartyStake(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PartyStake() {
+      party_ = "";
+      currentStakeAvailable_ = "";
+      stakeLinkings_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PartyStake();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PartyStake(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              party_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              currentStakeAvailable_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                stakeLinkings_ = new java.util.ArrayList<io.vegaprotocol.vega.events.v1.Events.StakeLinking>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              stakeLinkings_.add(
+                  input.readMessage(io.vegaprotocol.vega.events.v1.Events.StakeLinking.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          stakeLinkings_ = java.util.Collections.unmodifiableList(stakeLinkings_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_PartyStake_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_PartyStake_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder.class);
+    }
+
+    public static final int PARTY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object party_;
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    @java.lang.Override
+    public java.lang.String getParty() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        party_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPartyBytes() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        party_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURRENT_STAKE_AVAILABLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object currentStakeAvailable_;
+    /**
+     * <code>string current_stake_available = 2 [json_name = "currentStakeAvailable"];</code>
+     * @return The currentStakeAvailable.
+     */
+    @java.lang.Override
+    public java.lang.String getCurrentStakeAvailable() {
+      java.lang.Object ref = currentStakeAvailable_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currentStakeAvailable_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string current_stake_available = 2 [json_name = "currentStakeAvailable"];</code>
+     * @return The bytes for currentStakeAvailable.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCurrentStakeAvailableBytes() {
+      java.lang.Object ref = currentStakeAvailable_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currentStakeAvailable_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STAKE_LINKINGS_FIELD_NUMBER = 3;
+    private java.util.List<io.vegaprotocol.vega.events.v1.Events.StakeLinking> stakeLinkings_;
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<io.vegaprotocol.vega.events.v1.Events.StakeLinking> getStakeLinkingsList() {
+      return stakeLinkings_;
+    }
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends io.vegaprotocol.vega.events.v1.Events.StakeLinkingOrBuilder>
+        getStakeLinkingsOrBuilderList() {
+      return stakeLinkings_;
+    }
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    @java.lang.Override
+    public int getStakeLinkingsCount() {
+      return stakeLinkings_.size();
+    }
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.StakeLinking getStakeLinkings(int index) {
+      return stakeLinkings_.get(index);
+    }
+    /**
+     * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.StakeLinkingOrBuilder getStakeLinkingsOrBuilder(
+        int index) {
+      return stakeLinkings_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPartyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, party_);
+      }
+      if (!getCurrentStakeAvailableBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, currentStakeAvailable_);
+      }
+      for (int i = 0; i < stakeLinkings_.size(); i++) {
+        output.writeMessage(3, stakeLinkings_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPartyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, party_);
+      }
+      if (!getCurrentStakeAvailableBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, currentStakeAvailable_);
+      }
+      for (int i = 0; i < stakeLinkings_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, stakeLinkings_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake other = (io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake) obj;
+
+      if (!getParty()
+          .equals(other.getParty())) return false;
+      if (!getCurrentStakeAvailable()
+          .equals(other.getCurrentStakeAvailable())) return false;
+      if (!getStakeLinkingsList()
+          .equals(other.getStakeLinkingsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PARTY_FIELD_NUMBER;
+      hash = (53 * hash) + getParty().hashCode();
+      hash = (37 * hash) + CURRENT_STAKE_AVAILABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrentStakeAvailable().hashCode();
+      if (getStakeLinkingsCount() > 0) {
+        hash = (37 * hash) + STAKE_LINKINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getStakeLinkingsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.coreapi.v1.PartyStake}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.coreapi.v1.PartyStake)
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_PartyStake_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_PartyStake_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getStakeLinkingsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        party_ = "";
+
+        currentStakeAvailable_ = "";
+
+        if (stakeLinkingsBuilder_ == null) {
+          stakeLinkings_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          stakeLinkingsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_PartyStake_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake build() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake buildPartial() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake result = new io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake(this);
+        int from_bitField0_ = bitField0_;
+        result.party_ = party_;
+        result.currentStakeAvailable_ = currentStakeAvailable_;
+        if (stakeLinkingsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            stakeLinkings_ = java.util.Collections.unmodifiableList(stakeLinkings_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.stakeLinkings_ = stakeLinkings_;
+        } else {
+          result.stakeLinkings_ = stakeLinkingsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake) {
+          return mergeFrom((io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake other) {
+        if (other == io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.getDefaultInstance()) return this;
+        if (!other.getParty().isEmpty()) {
+          party_ = other.party_;
+          onChanged();
+        }
+        if (!other.getCurrentStakeAvailable().isEmpty()) {
+          currentStakeAvailable_ = other.currentStakeAvailable_;
+          onChanged();
+        }
+        if (stakeLinkingsBuilder_ == null) {
+          if (!other.stakeLinkings_.isEmpty()) {
+            if (stakeLinkings_.isEmpty()) {
+              stakeLinkings_ = other.stakeLinkings_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureStakeLinkingsIsMutable();
+              stakeLinkings_.addAll(other.stakeLinkings_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.stakeLinkings_.isEmpty()) {
+            if (stakeLinkingsBuilder_.isEmpty()) {
+              stakeLinkingsBuilder_.dispose();
+              stakeLinkingsBuilder_ = null;
+              stakeLinkings_ = other.stakeLinkings_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              stakeLinkingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getStakeLinkingsFieldBuilder() : null;
+            } else {
+              stakeLinkingsBuilder_.addAllMessages(other.stakeLinkings_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object party_ = "";
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The party.
+       */
+      public java.lang.String getParty() {
+        java.lang.Object ref = party_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          party_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The bytes for party.
+       */
+      public com.google.protobuf.ByteString
+          getPartyBytes() {
+        java.lang.Object ref = party_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          party_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParty(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParty() {
+
+        party_ = getDefaultInstance().getParty();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The bytes for party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object currentStakeAvailable_ = "";
+      /**
+       * <code>string current_stake_available = 2 [json_name = "currentStakeAvailable"];</code>
+       * @return The currentStakeAvailable.
+       */
+      public java.lang.String getCurrentStakeAvailable() {
+        java.lang.Object ref = currentStakeAvailable_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          currentStakeAvailable_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string current_stake_available = 2 [json_name = "currentStakeAvailable"];</code>
+       * @return The bytes for currentStakeAvailable.
+       */
+      public com.google.protobuf.ByteString
+          getCurrentStakeAvailableBytes() {
+        java.lang.Object ref = currentStakeAvailable_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          currentStakeAvailable_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string current_stake_available = 2 [json_name = "currentStakeAvailable"];</code>
+       * @param value The currentStakeAvailable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrentStakeAvailable(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        currentStakeAvailable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string current_stake_available = 2 [json_name = "currentStakeAvailable"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrentStakeAvailable() {
+
+        currentStakeAvailable_ = getDefaultInstance().getCurrentStakeAvailable();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string current_stake_available = 2 [json_name = "currentStakeAvailable"];</code>
+       * @param value The bytes for currentStakeAvailable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrentStakeAvailableBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        currentStakeAvailable_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.events.v1.Events.StakeLinking> stakeLinkings_ =
+        java.util.Collections.emptyList();
+      private void ensureStakeLinkingsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          stakeLinkings_ = new java.util.ArrayList<io.vegaprotocol.vega.events.v1.Events.StakeLinking>(stakeLinkings_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.StakeLinking, io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder, io.vegaprotocol.vega.events.v1.Events.StakeLinkingOrBuilder> stakeLinkingsBuilder_;
+
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.events.v1.Events.StakeLinking> getStakeLinkingsList() {
+        if (stakeLinkingsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(stakeLinkings_);
+        } else {
+          return stakeLinkingsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public int getStakeLinkingsCount() {
+        if (stakeLinkingsBuilder_ == null) {
+          return stakeLinkings_.size();
+        } else {
+          return stakeLinkingsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.StakeLinking getStakeLinkings(int index) {
+        if (stakeLinkingsBuilder_ == null) {
+          return stakeLinkings_.get(index);
+        } else {
+          return stakeLinkingsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public Builder setStakeLinkings(
+          int index, io.vegaprotocol.vega.events.v1.Events.StakeLinking value) {
+        if (stakeLinkingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStakeLinkingsIsMutable();
+          stakeLinkings_.set(index, value);
+          onChanged();
+        } else {
+          stakeLinkingsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public Builder setStakeLinkings(
+          int index, io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder builderForValue) {
+        if (stakeLinkingsBuilder_ == null) {
+          ensureStakeLinkingsIsMutable();
+          stakeLinkings_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          stakeLinkingsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public Builder addStakeLinkings(io.vegaprotocol.vega.events.v1.Events.StakeLinking value) {
+        if (stakeLinkingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStakeLinkingsIsMutable();
+          stakeLinkings_.add(value);
+          onChanged();
+        } else {
+          stakeLinkingsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public Builder addStakeLinkings(
+          int index, io.vegaprotocol.vega.events.v1.Events.StakeLinking value) {
+        if (stakeLinkingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStakeLinkingsIsMutable();
+          stakeLinkings_.add(index, value);
+          onChanged();
+        } else {
+          stakeLinkingsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public Builder addStakeLinkings(
+          io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder builderForValue) {
+        if (stakeLinkingsBuilder_ == null) {
+          ensureStakeLinkingsIsMutable();
+          stakeLinkings_.add(builderForValue.build());
+          onChanged();
+        } else {
+          stakeLinkingsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public Builder addStakeLinkings(
+          int index, io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder builderForValue) {
+        if (stakeLinkingsBuilder_ == null) {
+          ensureStakeLinkingsIsMutable();
+          stakeLinkings_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          stakeLinkingsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public Builder addAllStakeLinkings(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.events.v1.Events.StakeLinking> values) {
+        if (stakeLinkingsBuilder_ == null) {
+          ensureStakeLinkingsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, stakeLinkings_);
+          onChanged();
+        } else {
+          stakeLinkingsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public Builder clearStakeLinkings() {
+        if (stakeLinkingsBuilder_ == null) {
+          stakeLinkings_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          stakeLinkingsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public Builder removeStakeLinkings(int index) {
+        if (stakeLinkingsBuilder_ == null) {
+          ensureStakeLinkingsIsMutable();
+          stakeLinkings_.remove(index);
+          onChanged();
+        } else {
+          stakeLinkingsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder getStakeLinkingsBuilder(
+          int index) {
+        return getStakeLinkingsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.StakeLinkingOrBuilder getStakeLinkingsOrBuilder(
+          int index) {
+        if (stakeLinkingsBuilder_ == null) {
+          return stakeLinkings_.get(index);  } else {
+          return stakeLinkingsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.events.v1.Events.StakeLinkingOrBuilder>
+           getStakeLinkingsOrBuilderList() {
+        if (stakeLinkingsBuilder_ != null) {
+          return stakeLinkingsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(stakeLinkings_);
+        }
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder addStakeLinkingsBuilder() {
+        return getStakeLinkingsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.events.v1.Events.StakeLinking.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder addStakeLinkingsBuilder(
+          int index) {
+        return getStakeLinkingsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.events.v1.Events.StakeLinking.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder>
+           getStakeLinkingsBuilderList() {
+        return getStakeLinkingsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.StakeLinking, io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder, io.vegaprotocol.vega.events.v1.Events.StakeLinkingOrBuilder>
+          getStakeLinkingsFieldBuilder() {
+        if (stakeLinkingsBuilder_ == null) {
+          stakeLinkingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.events.v1.Events.StakeLinking, io.vegaprotocol.vega.events.v1.Events.StakeLinking.Builder, io.vegaprotocol.vega.events.v1.Events.StakeLinkingOrBuilder>(
+                  stakeLinkings_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          stakeLinkings_ = null;
+        }
+        return stakeLinkingsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.coreapi.v1.PartyStake)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.coreapi.v1.PartyStake)
+    private static final io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake();
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PartyStake>
+        PARSER = new com.google.protobuf.AbstractParser<PartyStake>() {
+      @java.lang.Override
+      public PartyStake parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PartyStake(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PartyStake> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PartyStake> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListPartiesStakeRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.coreapi.v1.ListPartiesStakeRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    java.lang.String getParty();
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    com.google.protobuf.ByteString
+        getPartyBytes();
+  }
+  /**
+   * Protobuf type {@code vega.coreapi.v1.ListPartiesStakeRequest}
+   */
+  public static final class ListPartiesStakeRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.coreapi.v1.ListPartiesStakeRequest)
+      ListPartiesStakeRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListPartiesStakeRequest.newBuilder() to construct.
+    private ListPartiesStakeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListPartiesStakeRequest() {
+      party_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListPartiesStakeRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListPartiesStakeRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              party_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest.Builder.class);
+    }
+
+    public static final int PARTY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object party_;
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    @java.lang.Override
+    public java.lang.String getParty() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        party_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPartyBytes() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        party_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPartyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, party_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPartyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, party_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest other = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest) obj;
+
+      if (!getParty()
+          .equals(other.getParty())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PARTY_FIELD_NUMBER;
+      hash = (53 * hash) + getParty().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.coreapi.v1.ListPartiesStakeRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.coreapi.v1.ListPartiesStakeRequest)
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        party_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest build() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest buildPartial() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest result = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest(this);
+        result.party_ = party_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest) {
+          return mergeFrom((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest other) {
+        if (other == io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest.getDefaultInstance()) return this;
+        if (!other.getParty().isEmpty()) {
+          party_ = other.party_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object party_ = "";
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The party.
+       */
+      public java.lang.String getParty() {
+        java.lang.Object ref = party_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          party_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The bytes for party.
+       */
+      public com.google.protobuf.ByteString
+          getPartyBytes() {
+        java.lang.Object ref = party_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          party_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParty(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParty() {
+
+        party_ = getDefaultInstance().getParty();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The bytes for party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.coreapi.v1.ListPartiesStakeRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListPartiesStakeRequest)
+    private static final io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest();
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListPartiesStakeRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListPartiesStakeRequest>() {
+      @java.lang.Override
+      public ListPartiesStakeRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListPartiesStakeRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListPartiesStakeRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListPartiesStakeRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListPartiesStakeResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.coreapi.v1.ListPartiesStakeResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    java.util.List<io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake>
+        getPartiesStakeList();
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake getPartiesStake(int index);
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    int getPartiesStakeCount();
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder>
+        getPartiesStakeOrBuilderList();
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder getPartiesStakeOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code vega.coreapi.v1.ListPartiesStakeResponse}
+   */
+  public static final class ListPartiesStakeResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.coreapi.v1.ListPartiesStakeResponse)
+      ListPartiesStakeResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListPartiesStakeResponse.newBuilder() to construct.
+    private ListPartiesStakeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListPartiesStakeResponse() {
+      partiesStake_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListPartiesStakeResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListPartiesStakeResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                partiesStake_ = new java.util.ArrayList<io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              partiesStake_.add(
+                  input.readMessage(io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          partiesStake_ = java.util.Collections.unmodifiableList(partiesStake_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse.Builder.class);
+    }
+
+    public static final int PARTIES_STAKE_FIELD_NUMBER = 1;
+    private java.util.List<io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake> partiesStake_;
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake> getPartiesStakeList() {
+      return partiesStake_;
+    }
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder>
+        getPartiesStakeOrBuilderList() {
+      return partiesStake_;
+    }
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    @java.lang.Override
+    public int getPartiesStakeCount() {
+      return partiesStake_.size();
+    }
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake getPartiesStake(int index) {
+      return partiesStake_.get(index);
+    }
+    /**
+     * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder getPartiesStakeOrBuilder(
+        int index) {
+      return partiesStake_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < partiesStake_.size(); i++) {
+        output.writeMessage(1, partiesStake_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < partiesStake_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, partiesStake_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse other = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse) obj;
+
+      if (!getPartiesStakeList()
+          .equals(other.getPartiesStakeList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getPartiesStakeCount() > 0) {
+        hash = (37 * hash) + PARTIES_STAKE_FIELD_NUMBER;
+        hash = (53 * hash) + getPartiesStakeList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.coreapi.v1.ListPartiesStakeResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.coreapi.v1.ListPartiesStakeResponse)
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPartiesStakeFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (partiesStakeBuilder_ == null) {
+          partiesStake_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          partiesStakeBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListPartiesStakeResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse build() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse buildPartial() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse result = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (partiesStakeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            partiesStake_ = java.util.Collections.unmodifiableList(partiesStake_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.partiesStake_ = partiesStake_;
+        } else {
+          result.partiesStake_ = partiesStakeBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse) {
+          return mergeFrom((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse other) {
+        if (other == io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse.getDefaultInstance()) return this;
+        if (partiesStakeBuilder_ == null) {
+          if (!other.partiesStake_.isEmpty()) {
+            if (partiesStake_.isEmpty()) {
+              partiesStake_ = other.partiesStake_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePartiesStakeIsMutable();
+              partiesStake_.addAll(other.partiesStake_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.partiesStake_.isEmpty()) {
+            if (partiesStakeBuilder_.isEmpty()) {
+              partiesStakeBuilder_.dispose();
+              partiesStakeBuilder_ = null;
+              partiesStake_ = other.partiesStake_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              partiesStakeBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPartiesStakeFieldBuilder() : null;
+            } else {
+              partiesStakeBuilder_.addAllMessages(other.partiesStake_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake> partiesStake_ =
+        java.util.Collections.emptyList();
+      private void ensurePartiesStakeIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          partiesStake_ = new java.util.ArrayList<io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake>(partiesStake_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder> partiesStakeBuilder_;
+
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake> getPartiesStakeList() {
+        if (partiesStakeBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(partiesStake_);
+        } else {
+          return partiesStakeBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public int getPartiesStakeCount() {
+        if (partiesStakeBuilder_ == null) {
+          return partiesStake_.size();
+        } else {
+          return partiesStakeBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake getPartiesStake(int index) {
+        if (partiesStakeBuilder_ == null) {
+          return partiesStake_.get(index);
+        } else {
+          return partiesStakeBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public Builder setPartiesStake(
+          int index, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake value) {
+        if (partiesStakeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePartiesStakeIsMutable();
+          partiesStake_.set(index, value);
+          onChanged();
+        } else {
+          partiesStakeBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public Builder setPartiesStake(
+          int index, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder builderForValue) {
+        if (partiesStakeBuilder_ == null) {
+          ensurePartiesStakeIsMutable();
+          partiesStake_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          partiesStakeBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public Builder addPartiesStake(io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake value) {
+        if (partiesStakeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePartiesStakeIsMutable();
+          partiesStake_.add(value);
+          onChanged();
+        } else {
+          partiesStakeBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public Builder addPartiesStake(
+          int index, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake value) {
+        if (partiesStakeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePartiesStakeIsMutable();
+          partiesStake_.add(index, value);
+          onChanged();
+        } else {
+          partiesStakeBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public Builder addPartiesStake(
+          io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder builderForValue) {
+        if (partiesStakeBuilder_ == null) {
+          ensurePartiesStakeIsMutable();
+          partiesStake_.add(builderForValue.build());
+          onChanged();
+        } else {
+          partiesStakeBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public Builder addPartiesStake(
+          int index, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder builderForValue) {
+        if (partiesStakeBuilder_ == null) {
+          ensurePartiesStakeIsMutable();
+          partiesStake_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          partiesStakeBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public Builder addAllPartiesStake(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake> values) {
+        if (partiesStakeBuilder_ == null) {
+          ensurePartiesStakeIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, partiesStake_);
+          onChanged();
+        } else {
+          partiesStakeBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public Builder clearPartiesStake() {
+        if (partiesStakeBuilder_ == null) {
+          partiesStake_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          partiesStakeBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public Builder removePartiesStake(int index) {
+        if (partiesStakeBuilder_ == null) {
+          ensurePartiesStakeIsMutable();
+          partiesStake_.remove(index);
+          onChanged();
+        } else {
+          partiesStakeBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder getPartiesStakeBuilder(
+          int index) {
+        return getPartiesStakeFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder getPartiesStakeOrBuilder(
+          int index) {
+        if (partiesStakeBuilder_ == null) {
+          return partiesStake_.get(index);  } else {
+          return partiesStakeBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder>
+           getPartiesStakeOrBuilderList() {
+        if (partiesStakeBuilder_ != null) {
+          return partiesStakeBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(partiesStake_);
+        }
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder addPartiesStakeBuilder() {
+        return getPartiesStakeFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder addPartiesStakeBuilder(
+          int index) {
+        return getPartiesStakeFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder>
+           getPartiesStakeBuilderList() {
+        return getPartiesStakeFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder>
+          getPartiesStakeFieldBuilder() {
+        if (partiesStakeBuilder_ == null) {
+          partiesStakeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStake.Builder, io.vegaprotocol.vega.coreapi.v1.Coreapi.PartyStakeOrBuilder>(
+                  partiesStake_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          partiesStake_ = null;
+        }
+        return partiesStakeBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.coreapi.v1.ListPartiesStakeResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListPartiesStakeResponse)
+    private static final io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse();
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListPartiesStakeResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListPartiesStakeResponse>() {
+      @java.lang.Override
+      public ListPartiesStakeResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListPartiesStakeResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListPartiesStakeResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListPartiesStakeResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_coreapi_v1_Account_descriptor;
   private static final
@@ -13820,6 +16274,21 @@ public final class Coreapi {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_coreapi_v1_ListVotesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_coreapi_v1_PartyStake_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_coreapi_v1_PartyStake_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_coreapi_v1_ListPartiesStakeRequest_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_coreapi_v1_ListPartiesStakeRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_coreapi_v1_ListPartiesStakeResponse_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_coreapi_v1_ListPartiesStakeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -13864,31 +16333,41 @@ public final class Coreapi {
       "\n\020ListVotesRequest\022\032\n\010proposal\030\001 \001(\tR\010pr" +
       "oposal\022\024\n\005party\030\002 \001(\tR\005party\"5\n\021ListVote" +
       "sResponse\022 \n\005votes\030\001 \003(\0132\n.vega.VoteR\005vo" +
-      "tes2\355\006\n\016CoreApiService\022[\n\014ListAccounts\022$" +
-      ".vega.coreapi.v1.ListAccountsRequest\032%.v" +
-      "ega.coreapi.v1.ListAccountsResponse\022U\n\nL" +
-      "istAssets\022\".vega.coreapi.v1.ListAssetsRe" +
-      "quest\032#.vega.coreapi.v1.ListAssetsRespon" +
-      "se\022v\n\025ListNetworkParameters\022-.vega.corea" +
-      "pi.v1.ListNetworkParametersRequest\032..veg" +
-      "a.coreapi.v1.ListNetworkParametersRespon" +
-      "se\022X\n\013ListParties\022#.vega.coreapi.v1.List" +
-      "PartiesRequest\032$.vega.coreapi.v1.ListPar" +
-      "tiesResponse\022a\n\016ListValidators\022&.vega.co" +
-      "reapi.v1.ListValidatorsRequest\032\'.vega.co" +
-      "reapi.v1.ListValidatorsResponse\022X\n\013ListM" +
-      "arkets\022#.vega.coreapi.v1.ListMarketsRequ" +
-      "est\032$.vega.coreapi.v1.ListMarketsRespons" +
-      "e\022^\n\rListProposals\022%.vega.coreapi.v1.Lis" +
-      "tProposalsRequest\032&.vega.coreapi.v1.List" +
-      "ProposalsResponse\022d\n\017ListMarketsData\022\'.v" +
-      "ega.coreapi.v1.ListMarketsDataRequest\032(." +
-      "vega.coreapi.v1.ListMarketsDataResponse\022" +
-      "R\n\tListVotes\022!.vega.coreapi.v1.ListVotes" +
-      "Request\032\".vega.coreapi.v1.ListVotesRespo" +
-      "nseBM\n\037io.vegaprotocol.vega.coreapi.v1Z*" +
-      "code.vegaprotocol.io/vega/proto/coreapi/" +
-      "v1b\006proto3"
+      "tes\"\237\001\n\nPartyStake\022\024\n\005party\030\001 \001(\tR\005party" +
+      "\0226\n\027current_stake_available\030\002 \001(\tR\025curre" +
+      "ntStakeAvailable\022C\n\016stake_linkings\030\003 \003(\013" +
+      "2\034.vega.events.v1.StakeLinkingR\rstakeLin" +
+      "kings\"/\n\027ListPartiesStakeRequest\022\024\n\005part" +
+      "y\030\001 \001(\tR\005party\"\\\n\030ListPartiesStakeRespon" +
+      "se\022@\n\rparties_stake\030\001 \003(\0132\033.vega.coreapi" +
+      ".v1.PartyStakeR\014partiesStake2\326\007\n\016CoreApi" +
+      "Service\022[\n\014ListAccounts\022$.vega.coreapi.v" +
+      "1.ListAccountsRequest\032%.vega.coreapi.v1." +
+      "ListAccountsResponse\022U\n\nListAssets\022\".veg" +
+      "a.coreapi.v1.ListAssetsRequest\032#.vega.co" +
+      "reapi.v1.ListAssetsResponse\022v\n\025ListNetwo" +
+      "rkParameters\022-.vega.coreapi.v1.ListNetwo" +
+      "rkParametersRequest\032..vega.coreapi.v1.Li" +
+      "stNetworkParametersResponse\022X\n\013ListParti" +
+      "es\022#.vega.coreapi.v1.ListPartiesRequest\032" +
+      "$.vega.coreapi.v1.ListPartiesResponse\022a\n" +
+      "\016ListValidators\022&.vega.coreapi.v1.ListVa" +
+      "lidatorsRequest\032\'.vega.coreapi.v1.ListVa" +
+      "lidatorsResponse\022X\n\013ListMarkets\022#.vega.c" +
+      "oreapi.v1.ListMarketsRequest\032$.vega.core" +
+      "api.v1.ListMarketsResponse\022^\n\rListPropos" +
+      "als\022%.vega.coreapi.v1.ListProposalsReque" +
+      "st\032&.vega.coreapi.v1.ListProposalsRespon" +
+      "se\022d\n\017ListMarketsData\022\'.vega.coreapi.v1." +
+      "ListMarketsDataRequest\032(.vega.coreapi.v1" +
+      ".ListMarketsDataResponse\022R\n\tListVotes\022!." +
+      "vega.coreapi.v1.ListVotesRequest\032\".vega." +
+      "coreapi.v1.ListVotesResponse\022g\n\020ListPart" +
+      "iesStake\022(.vega.coreapi.v1.ListPartiesSt" +
+      "akeRequest\032).vega.coreapi.v1.ListParties" +
+      "StakeResponseBM\n\037io.vegaprotocol.vega.co" +
+      "reapi.v1Z*code.vegaprotocol.io/vega/prot" +
+      "o/coreapi/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14013,6 +16492,24 @@ public final class Coreapi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_coreapi_v1_ListVotesResponse_descriptor,
         new java.lang.String[] { "Votes", });
+    internal_static_vega_coreapi_v1_PartyStake_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_vega_coreapi_v1_PartyStake_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_coreapi_v1_PartyStake_descriptor,
+        new java.lang.String[] { "Party", "CurrentStakeAvailable", "StakeLinkings", });
+    internal_static_vega_coreapi_v1_ListPartiesStakeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_vega_coreapi_v1_ListPartiesStakeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_coreapi_v1_ListPartiesStakeRequest_descriptor,
+        new java.lang.String[] { "Party", });
+    internal_static_vega_coreapi_v1_ListPartiesStakeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_vega_coreapi_v1_ListPartiesStakeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_coreapi_v1_ListPartiesStakeResponse_descriptor,
+        new java.lang.String[] { "PartiesStake", });
     io.vegaprotocol.vega.Assets.getDescriptor();
     io.vegaprotocol.vega.Governance.getDescriptor();
     io.vegaprotocol.vega.Markets.getDescriptor();

@@ -21,7 +21,7 @@ message BuiltinAssetWithdrawal {
   // A Vega network party identifier (pub-key)
   string party_id = 2;
   // The amount to be withdrawn
-  uint64 amount = 3;
+  string amount = 3;
 }
 
 // An event related to a Vega built-in asset

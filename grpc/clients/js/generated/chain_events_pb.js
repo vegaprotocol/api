@@ -684,7 +684,7 @@ proto.vega.BuiltinAssetWithdrawal.toObject = function(includeInstance, msg) {
   var f, obj = {
     vegaAssetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    amount: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -730,7 +730,7 @@ proto.vega.BuiltinAssetWithdrawal.deserializeBinaryFromReader = function(msg, re
       msg.setPartyId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAmount(value);
       break;
     default:
@@ -777,8 +777,8 @@ proto.vega.BuiltinAssetWithdrawal.serializeBinaryToWriter = function(message, wr
     );
   }
   f = message.getAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -823,20 +823,20 @@ proto.vega.BuiltinAssetWithdrawal.prototype.setPartyId = function(value) {
 
 
 /**
- * optional uint64 amount = 3;
- * @return {number}
+ * optional string amount = 3;
+ * @return {string}
  */
 proto.vega.BuiltinAssetWithdrawal.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.BuiltinAssetWithdrawal} returns this
  */
 proto.vega.BuiltinAssetWithdrawal.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

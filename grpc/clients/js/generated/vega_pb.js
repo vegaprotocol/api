@@ -1147,7 +1147,7 @@ proto.vega.Price.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.Price.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    value: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1185,7 +1185,7 @@ proto.vega.Price.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setValue(value);
       break;
     default:
@@ -1218,8 +1218,8 @@ proto.vega.Price.prototype.serializeBinary = function() {
 proto.vega.Price.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getValue();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1228,20 +1228,20 @@ proto.vega.Price.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 value = 1;
- * @return {number}
+ * optional string value = 1;
+ * @return {string}
  */
 proto.vega.Price.prototype.getValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Price} returns this
  */
 proto.vega.Price.prototype.setValue = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2177,7 +2177,7 @@ proto.vega.Order.toObject = function(includeInstance, msg) {
     marketId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     partyId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     side: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 5, ""),
     size: jspb.Message.getFieldWithDefault(msg, 6, 0),
     remaining: jspb.Message.getFieldWithDefault(msg, 7, 0),
     timeInForce: jspb.Message.getFieldWithDefault(msg, 8, 0),
@@ -2245,7 +2245,7 @@ proto.vega.Order.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSide(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPrice(value);
       break;
     case 6:
@@ -2363,8 +2363,8 @@ proto.vega.Order.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
@@ -2582,20 +2582,20 @@ proto.vega.Order.prototype.setSide = function(value) {
 
 
 /**
- * optional uint64 price = 5;
- * @return {number}
+ * optional string price = 5;
+ * @return {string}
  */
 proto.vega.Order.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Order} returns this
  */
 proto.vega.Order.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -3318,7 +3318,7 @@ proto.vega.AuctionIndicativeState.prototype.toObject = function(opt_includeInsta
 proto.vega.AuctionIndicativeState.toObject = function(includeInstance, msg) {
   var f, obj = {
     marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    indicativePrice: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    indicativePrice: jspb.Message.getFieldWithDefault(msg, 2, ""),
     indicativeVolume: jspb.Message.getFieldWithDefault(msg, 3, 0),
     auctionStart: jspb.Message.getFieldWithDefault(msg, 4, 0),
     auctionEnd: jspb.Message.getFieldWithDefault(msg, 5, 0)
@@ -3363,7 +3363,7 @@ proto.vega.AuctionIndicativeState.deserializeBinaryFromReader = function(msg, re
       msg.setMarketId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setIndicativePrice(value);
       break;
     case 3:
@@ -3415,8 +3415,8 @@ proto.vega.AuctionIndicativeState.serializeBinaryToWriter = function(message, wr
     );
   }
   f = message.getIndicativePrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -3464,20 +3464,20 @@ proto.vega.AuctionIndicativeState.prototype.setMarketId = function(value) {
 
 
 /**
- * optional uint64 indicative_price = 2;
- * @return {number}
+ * optional string indicative_price = 2;
+ * @return {string}
  */
 proto.vega.AuctionIndicativeState.prototype.getIndicativePrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.AuctionIndicativeState} returns this
  */
 proto.vega.AuctionIndicativeState.prototype.setIndicativePrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3569,7 +3569,7 @@ proto.vega.Trade.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     marketId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    price: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 3, ""),
     size: jspb.Message.getFieldWithDefault(msg, 4, 0),
     buyer: jspb.Message.getFieldWithDefault(msg, 5, ""),
     seller: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -3627,7 +3627,7 @@ proto.vega.Trade.deserializeBinaryFromReader = function(msg, reader) {
       msg.setMarketId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPrice(value);
       break;
     case 4:
@@ -3724,8 +3724,8 @@ proto.vega.Trade.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -3866,20 +3866,20 @@ proto.vega.Trade.prototype.setMarketId = function(value) {
 
 
 /**
- * optional uint64 price = 3;
- * @return {number}
+ * optional string price = 3;
+ * @return {string}
  */
 proto.vega.Trade.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Trade} returns this
  */
 proto.vega.Trade.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -4169,9 +4169,9 @@ proto.vega.Fee.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.Fee.toObject = function(includeInstance, msg) {
   var f, obj = {
-    makerFee: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    infrastructureFee: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    liquidityFee: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    makerFee: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    infrastructureFee: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    liquidityFee: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4209,15 +4209,15 @@ proto.vega.Fee.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setMakerFee(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setInfrastructureFee(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setLiquidityFee(value);
       break;
     default:
@@ -4250,22 +4250,22 @@ proto.vega.Fee.prototype.serializeBinary = function() {
 proto.vega.Fee.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMakerFee();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getInfrastructureFee();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
   f = message.getLiquidityFee();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -4274,56 +4274,56 @@ proto.vega.Fee.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 maker_fee = 1;
- * @return {number}
+ * optional string maker_fee = 1;
+ * @return {string}
  */
 proto.vega.Fee.prototype.getMakerFee = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Fee} returns this
  */
 proto.vega.Fee.prototype.setMakerFee = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint64 infrastructure_fee = 2;
- * @return {number}
+ * optional string infrastructure_fee = 2;
+ * @return {string}
  */
 proto.vega.Fee.prototype.getInfrastructureFee = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Fee} returns this
  */
 proto.vega.Fee.prototype.setInfrastructureFee = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional uint64 liquidity_fee = 3;
- * @return {number}
+ * optional string liquidity_fee = 3;
+ * @return {string}
  */
 proto.vega.Fee.prototype.getLiquidityFee = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Fee} returns this
  */
 proto.vega.Fee.prototype.setLiquidityFee = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -4521,10 +4521,10 @@ proto.vega.Candle.toObject = function(includeInstance, msg) {
   var f, obj = {
     timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
     datetime: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    high: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    low: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    open: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    close: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    high: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    low: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    open: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    close: jspb.Message.getFieldWithDefault(msg, 6, ""),
     volume: jspb.Message.getFieldWithDefault(msg, 7, 0),
     interval: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
@@ -4572,19 +4572,19 @@ proto.vega.Candle.deserializeBinaryFromReader = function(msg, reader) {
       msg.setDatetime(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setHigh(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setLow(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOpen(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setClose(value);
       break;
     case 7:
@@ -4639,29 +4639,29 @@ proto.vega.Candle.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getHigh();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getLow();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
   }
   f = message.getOpen();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
   }
   f = message.getClose();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       6,
       f
     );
@@ -4720,74 +4720,74 @@ proto.vega.Candle.prototype.setDatetime = function(value) {
 
 
 /**
- * optional uint64 high = 3;
- * @return {number}
+ * optional string high = 3;
+ * @return {string}
  */
 proto.vega.Candle.prototype.getHigh = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Candle} returns this
  */
 proto.vega.Candle.prototype.setHigh = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional uint64 low = 4;
- * @return {number}
+ * optional string low = 4;
+ * @return {string}
  */
 proto.vega.Candle.prototype.getLow = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Candle} returns this
  */
 proto.vega.Candle.prototype.setLow = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional uint64 open = 5;
- * @return {number}
+ * optional string open = 5;
+ * @return {string}
  */
 proto.vega.Candle.prototype.getOpen = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Candle} returns this
  */
 proto.vega.Candle.prototype.setOpen = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional uint64 close = 6;
- * @return {number}
+ * optional string close = 6;
+ * @return {string}
  */
 proto.vega.Candle.prototype.getClose = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Candle} returns this
  */
 proto.vega.Candle.prototype.setClose = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -4859,7 +4859,7 @@ proto.vega.PriceLevel.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.PriceLevel.toObject = function(includeInstance, msg) {
   var f, obj = {
-    price: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 1, ""),
     numberOfOrders: jspb.Message.getFieldWithDefault(msg, 2, 0),
     volume: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
@@ -4899,7 +4899,7 @@ proto.vega.PriceLevel.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPrice(value);
       break;
     case 2:
@@ -4940,8 +4940,8 @@ proto.vega.PriceLevel.prototype.serializeBinary = function() {
 proto.vega.PriceLevel.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -4964,20 +4964,20 @@ proto.vega.PriceLevel.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 price = 1;
- * @return {number}
+ * optional string price = 1;
+ * @return {string}
  */
 proto.vega.PriceLevel.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.PriceLevel} returns this
  */
 proto.vega.PriceLevel.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -5598,9 +5598,9 @@ proto.vega.Position.toObject = function(includeInstance, msg) {
     marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     openVolume: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    realisedPnl: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    unrealisedPnl: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    averageEntryPrice: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    realisedPnl: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    unrealisedPnl: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    averageEntryPrice: jspb.Message.getFieldWithDefault(msg, 6, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
@@ -5651,15 +5651,15 @@ proto.vega.Position.deserializeBinaryFromReader = function(msg, reader) {
       msg.setOpenVolume(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setRealisedPnl(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setUnrealisedPnl(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAverageEntryPrice(value);
       break;
     case 7:
@@ -5717,22 +5717,22 @@ proto.vega.Position.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getRealisedPnl();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
   }
   f = message.getUnrealisedPnl();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
   }
   f = message.getAverageEntryPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       6,
       f
     );
@@ -5802,56 +5802,56 @@ proto.vega.Position.prototype.setOpenVolume = function(value) {
 
 
 /**
- * optional int64 realised_pnl = 4;
- * @return {number}
+ * optional string realised_pnl = 4;
+ * @return {string}
  */
 proto.vega.Position.prototype.getRealisedPnl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Position} returns this
  */
 proto.vega.Position.prototype.setRealisedPnl = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional int64 unrealised_pnl = 5;
- * @return {number}
+ * optional string unrealised_pnl = 5;
+ * @return {string}
  */
 proto.vega.Position.prototype.getUnrealisedPnl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Position} returns this
  */
 proto.vega.Position.prototype.setUnrealisedPnl = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional uint64 average_entry_price = 6;
- * @return {number}
+ * optional string average_entry_price = 6;
+ * @return {string}
  */
 proto.vega.Position.prototype.getAverageEntryPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Position} returns this
  */
 proto.vega.Position.prototype.setAverageEntryPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -5906,7 +5906,7 @@ proto.vega.PositionTrade.prototype.toObject = function(opt_includeInstance) {
 proto.vega.PositionTrade.toObject = function(includeInstance, msg) {
   var f, obj = {
     volume: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    price: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -5948,7 +5948,7 @@ proto.vega.PositionTrade.deserializeBinaryFromReader = function(msg, reader) {
       msg.setVolume(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPrice(value);
       break;
     default:
@@ -5988,8 +5988,8 @@ proto.vega.PositionTrade.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -6016,20 +6016,20 @@ proto.vega.PositionTrade.prototype.setVolume = function(value) {
 
 
 /**
- * optional uint64 price = 2;
- * @return {number}
+ * optional string price = 2;
+ * @return {string}
  */
 proto.vega.PositionTrade.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.PositionTrade} returns this
  */
 proto.vega.PositionTrade.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6417,7 +6417,7 @@ proto.vega.Withdrawal.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    amount: jspb.Message.getFieldWithDefault(msg, 3, ""),
     asset: jspb.Message.getFieldWithDefault(msg, 4, ""),
     status: jspb.Message.getFieldWithDefault(msg, 5, 0),
     ref: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -6471,7 +6471,7 @@ proto.vega.Withdrawal.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPartyId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAmount(value);
       break;
     case 4:
@@ -6551,8 +6551,8 @@ proto.vega.Withdrawal.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -6664,20 +6664,20 @@ proto.vega.Withdrawal.prototype.setPartyId = function(value) {
 
 
 /**
- * optional uint64 amount = 3;
- * @return {number}
+ * optional string amount = 3;
+ * @return {string}
  */
 proto.vega.Withdrawal.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Withdrawal} returns this
  */
 proto.vega.Withdrawal.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -7184,7 +7184,7 @@ proto.vega.Account.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     owner: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    balance: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    balance: jspb.Message.getFieldWithDefault(msg, 3, ""),
     asset: jspb.Message.getFieldWithDefault(msg, 4, ""),
     marketId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     type: jspb.Message.getFieldWithDefault(msg, 6, 0)
@@ -7233,7 +7233,7 @@ proto.vega.Account.deserializeBinaryFromReader = function(msg, reader) {
       msg.setOwner(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setBalance(value);
       break;
     case 4:
@@ -7292,8 +7292,8 @@ proto.vega.Account.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getBalance();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -7359,20 +7359,20 @@ proto.vega.Account.prototype.setOwner = function(value) {
 
 
 /**
- * optional uint64 balance = 3;
- * @return {number}
+ * optional string balance = 3;
+ * @return {string}
  */
 proto.vega.Account.prototype.getBalance = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Account} returns this
  */
 proto.vega.Account.prototype.setBalance = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -7462,7 +7462,7 @@ proto.vega.FinancialAmount.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.FinancialAmount.toObject = function(includeInstance, msg) {
   var f, obj = {
-    amount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    amount: jspb.Message.getFieldWithDefault(msg, 1, ""),
     asset: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -7501,7 +7501,7 @@ proto.vega.FinancialAmount.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAmount(value);
       break;
     case 2:
@@ -7538,8 +7538,8 @@ proto.vega.FinancialAmount.prototype.serializeBinary = function() {
 proto.vega.FinancialAmount.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -7555,20 +7555,20 @@ proto.vega.FinancialAmount.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 amount = 1;
- * @return {number}
+ * optional string amount = 1;
+ * @return {string}
  */
 proto.vega.FinancialAmount.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.FinancialAmount} returns this
  */
 proto.vega.FinancialAmount.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -7625,7 +7625,7 @@ proto.vega.Transfer.toObject = function(includeInstance, msg) {
     owner: jspb.Message.getFieldWithDefault(msg, 1, ""),
     amount: (f = msg.getAmount()) && proto.vega.FinancialAmount.toObject(includeInstance, f),
     type: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    minAmount: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    minAmount: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -7676,7 +7676,7 @@ proto.vega.Transfer.deserializeBinaryFromReader = function(msg, reader) {
       msg.setType(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setMinAmount(value);
       break;
     default:
@@ -7731,8 +7731,8 @@ proto.vega.Transfer.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getMinAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -7814,20 +7814,20 @@ proto.vega.Transfer.prototype.setType = function(value) {
 
 
 /**
- * optional uint64 min_amount = 4;
- * @return {number}
+ * optional string min_amount = 4;
+ * @return {string}
  */
 proto.vega.Transfer.prototype.getMinAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Transfer} returns this
  */
 proto.vega.Transfer.prototype.setMinAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -7874,8 +7874,8 @@ proto.vega.TransferRequest.toObject = function(includeInstance, msg) {
     proto.vega.Account.toObject, includeInstance),
     toAccountList: jspb.Message.toObjectList(msg.getToAccountList(),
     proto.vega.Account.toObject, includeInstance),
-    amount: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    minAmount: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    amount: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    minAmount: jspb.Message.getFieldWithDefault(msg, 4, ""),
     asset: jspb.Message.getFieldWithDefault(msg, 5, ""),
     reference: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
@@ -7925,11 +7925,11 @@ proto.vega.TransferRequest.deserializeBinaryFromReader = function(msg, reader) {
       msg.addToAccount(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAmount(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setMinAmount(value);
       break;
     case 5:
@@ -7986,15 +7986,15 @@ proto.vega.TransferRequest.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getMinAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -8093,38 +8093,38 @@ proto.vega.TransferRequest.prototype.clearToAccountList = function() {
 
 
 /**
- * optional uint64 amount = 3;
- * @return {number}
+ * optional string amount = 3;
+ * @return {string}
  */
 proto.vega.TransferRequest.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.TransferRequest} returns this
  */
 proto.vega.TransferRequest.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional uint64 min_amount = 4;
- * @return {number}
+ * optional string min_amount = 4;
+ * @return {string}
  */
 proto.vega.TransferRequest.prototype.getMinAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.TransferRequest} returns this
  */
 proto.vega.TransferRequest.prototype.setMinAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -8198,7 +8198,7 @@ proto.vega.LedgerEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
     fromAccount: jspb.Message.getFieldWithDefault(msg, 1, ""),
     toAccount: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    amount: jspb.Message.getFieldWithDefault(msg, 3, ""),
     reference: jspb.Message.getFieldWithDefault(msg, 4, ""),
     type: jspb.Message.getFieldWithDefault(msg, 5, ""),
     timestamp: jspb.Message.getFieldWithDefault(msg, 6, 0)
@@ -8247,7 +8247,7 @@ proto.vega.LedgerEntry.deserializeBinaryFromReader = function(msg, reader) {
       msg.setToAccount(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAmount(value);
       break;
     case 4:
@@ -8306,8 +8306,8 @@ proto.vega.LedgerEntry.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -8373,20 +8373,20 @@ proto.vega.LedgerEntry.prototype.setToAccount = function(value) {
 
 
 /**
- * optional uint64 amount = 3;
- * @return {number}
+ * optional string amount = 3;
+ * @return {string}
  */
 proto.vega.LedgerEntry.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.LedgerEntry} returns this
  */
 proto.vega.LedgerEntry.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -8477,7 +8477,7 @@ proto.vega.TransferBalance.prototype.toObject = function(opt_includeInstance) {
 proto.vega.TransferBalance.toObject = function(includeInstance, msg) {
   var f, obj = {
     account: (f = msg.getAccount()) && proto.vega.Account.toObject(includeInstance, f),
-    balance: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    balance: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -8520,7 +8520,7 @@ proto.vega.TransferBalance.deserializeBinaryFromReader = function(msg, reader) {
       msg.setAccount(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setBalance(value);
       break;
     default:
@@ -8561,8 +8561,8 @@ proto.vega.TransferBalance.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getBalance();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -8608,20 +8608,20 @@ proto.vega.TransferBalance.prototype.hasAccount = function() {
 
 
 /**
- * optional uint64 balance = 2;
- * @return {number}
+ * optional string balance = 2;
+ * @return {string}
  */
 proto.vega.TransferBalance.prototype.getBalance = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.TransferBalance} returns this
  */
 proto.vega.TransferBalance.prototype.setBalance = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -8870,10 +8870,10 @@ proto.vega.MarginLevels.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.MarginLevels.toObject = function(includeInstance, msg) {
   var f, obj = {
-    maintenanceMargin: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    searchLevel: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    initialMargin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    collateralReleaseLevel: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    maintenanceMargin: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    searchLevel: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    initialMargin: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    collateralReleaseLevel: jspb.Message.getFieldWithDefault(msg, 4, ""),
     partyId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     marketId: jspb.Message.getFieldWithDefault(msg, 6, ""),
     asset: jspb.Message.getFieldWithDefault(msg, 7, ""),
@@ -8915,19 +8915,19 @@ proto.vega.MarginLevels.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setMaintenanceMargin(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSearchLevel(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setInitialMargin(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setCollateralReleaseLevel(value);
       break;
     case 5:
@@ -8976,29 +8976,29 @@ proto.vega.MarginLevels.prototype.serializeBinary = function() {
 proto.vega.MarginLevels.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMaintenanceMargin();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getSearchLevel();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
   f = message.getInitialMargin();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getCollateralReleaseLevel();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -9035,74 +9035,74 @@ proto.vega.MarginLevels.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 maintenance_margin = 1;
- * @return {number}
+ * optional string maintenance_margin = 1;
+ * @return {string}
  */
 proto.vega.MarginLevels.prototype.getMaintenanceMargin = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarginLevels} returns this
  */
 proto.vega.MarginLevels.prototype.setMaintenanceMargin = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint64 search_level = 2;
- * @return {number}
+ * optional string search_level = 2;
+ * @return {string}
  */
 proto.vega.MarginLevels.prototype.getSearchLevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarginLevels} returns this
  */
 proto.vega.MarginLevels.prototype.setSearchLevel = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional uint64 initial_margin = 3;
- * @return {number}
+ * optional string initial_margin = 3;
+ * @return {string}
  */
 proto.vega.MarginLevels.prototype.getInitialMargin = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarginLevels} returns this
  */
 proto.vega.MarginLevels.prototype.setInitialMargin = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional uint64 collateral_release_level = 4;
- * @return {number}
+ * optional string collateral_release_level = 4;
+ * @return {string}
  */
 proto.vega.MarginLevels.prototype.getCollateralReleaseLevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarginLevels} returns this
  */
 proto.vega.MarginLevels.prototype.setCollateralReleaseLevel = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -9217,23 +9217,23 @@ proto.vega.MarketData.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.MarketData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    markPrice: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    bestBidPrice: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    markPrice: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    bestBidPrice: jspb.Message.getFieldWithDefault(msg, 2, ""),
     bestBidVolume: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    bestOfferPrice: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    bestOfferPrice: jspb.Message.getFieldWithDefault(msg, 4, ""),
     bestOfferVolume: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    bestStaticBidPrice: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    bestStaticBidPrice: jspb.Message.getFieldWithDefault(msg, 6, ""),
     bestStaticBidVolume: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    bestStaticOfferPrice: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    bestStaticOfferPrice: jspb.Message.getFieldWithDefault(msg, 8, ""),
     bestStaticOfferVolume: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    midPrice: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    staticMidPrice: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    midPrice: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    staticMidPrice: jspb.Message.getFieldWithDefault(msg, 11, ""),
     market: jspb.Message.getFieldWithDefault(msg, 12, ""),
     timestamp: jspb.Message.getFieldWithDefault(msg, 13, 0),
     openInterest: jspb.Message.getFieldWithDefault(msg, 14, 0),
     auctionEnd: jspb.Message.getFieldWithDefault(msg, 15, 0),
     auctionStart: jspb.Message.getFieldWithDefault(msg, 16, 0),
-    indicativePrice: jspb.Message.getFieldWithDefault(msg, 17, 0),
+    indicativePrice: jspb.Message.getFieldWithDefault(msg, 17, ""),
     indicativeVolume: jspb.Message.getFieldWithDefault(msg, 18, 0),
     marketTradingMode: jspb.Message.getFieldWithDefault(msg, 19, 0),
     trigger: jspb.Message.getFieldWithDefault(msg, 20, 0),
@@ -9282,11 +9282,11 @@ proto.vega.MarketData.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setMarkPrice(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setBestBidPrice(value);
       break;
     case 3:
@@ -9294,7 +9294,7 @@ proto.vega.MarketData.deserializeBinaryFromReader = function(msg, reader) {
       msg.setBestBidVolume(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setBestOfferPrice(value);
       break;
     case 5:
@@ -9302,7 +9302,7 @@ proto.vega.MarketData.deserializeBinaryFromReader = function(msg, reader) {
       msg.setBestOfferVolume(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setBestStaticBidPrice(value);
       break;
     case 7:
@@ -9310,7 +9310,7 @@ proto.vega.MarketData.deserializeBinaryFromReader = function(msg, reader) {
       msg.setBestStaticBidVolume(value);
       break;
     case 8:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setBestStaticOfferPrice(value);
       break;
     case 9:
@@ -9318,11 +9318,11 @@ proto.vega.MarketData.deserializeBinaryFromReader = function(msg, reader) {
       msg.setBestStaticOfferVolume(value);
       break;
     case 10:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setMidPrice(value);
       break;
     case 11:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setStaticMidPrice(value);
       break;
     case 12:
@@ -9346,7 +9346,7 @@ proto.vega.MarketData.deserializeBinaryFromReader = function(msg, reader) {
       msg.setAuctionStart(value);
       break;
     case 17:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setIndicativePrice(value);
       break;
     case 18:
@@ -9417,15 +9417,15 @@ proto.vega.MarketData.prototype.serializeBinary = function() {
 proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMarkPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getBestBidPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -9438,8 +9438,8 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getBestOfferPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -9452,8 +9452,8 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getBestStaticBidPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       6,
       f
     );
@@ -9466,8 +9466,8 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getBestStaticOfferPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       8,
       f
     );
@@ -9480,15 +9480,15 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getMidPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       10,
       f
     );
   }
   f = message.getStaticMidPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       11,
       f
     );
@@ -9529,8 +9529,8 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getIndicativePrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       17,
       f
     );
@@ -9604,38 +9604,38 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 mark_price = 1;
- * @return {number}
+ * optional string mark_price = 1;
+ * @return {string}
  */
 proto.vega.MarketData.prototype.getMarkPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarketData} returns this
  */
 proto.vega.MarketData.prototype.setMarkPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint64 best_bid_price = 2;
- * @return {number}
+ * optional string best_bid_price = 2;
+ * @return {string}
  */
 proto.vega.MarketData.prototype.getBestBidPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarketData} returns this
  */
 proto.vega.MarketData.prototype.setBestBidPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -9658,20 +9658,20 @@ proto.vega.MarketData.prototype.setBestBidVolume = function(value) {
 
 
 /**
- * optional uint64 best_offer_price = 4;
- * @return {number}
+ * optional string best_offer_price = 4;
+ * @return {string}
  */
 proto.vega.MarketData.prototype.getBestOfferPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarketData} returns this
  */
 proto.vega.MarketData.prototype.setBestOfferPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -9694,20 +9694,20 @@ proto.vega.MarketData.prototype.setBestOfferVolume = function(value) {
 
 
 /**
- * optional uint64 best_static_bid_price = 6;
- * @return {number}
+ * optional string best_static_bid_price = 6;
+ * @return {string}
  */
 proto.vega.MarketData.prototype.getBestStaticBidPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarketData} returns this
  */
 proto.vega.MarketData.prototype.setBestStaticBidPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -9730,20 +9730,20 @@ proto.vega.MarketData.prototype.setBestStaticBidVolume = function(value) {
 
 
 /**
- * optional uint64 best_static_offer_price = 8;
- * @return {number}
+ * optional string best_static_offer_price = 8;
+ * @return {string}
  */
 proto.vega.MarketData.prototype.getBestStaticOfferPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarketData} returns this
  */
 proto.vega.MarketData.prototype.setBestStaticOfferPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -9766,38 +9766,38 @@ proto.vega.MarketData.prototype.setBestStaticOfferVolume = function(value) {
 
 
 /**
- * optional uint64 mid_price = 10;
- * @return {number}
+ * optional string mid_price = 10;
+ * @return {string}
  */
 proto.vega.MarketData.prototype.getMidPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarketData} returns this
  */
 proto.vega.MarketData.prototype.setMidPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional uint64 static_mid_price = 11;
- * @return {number}
+ * optional string static_mid_price = 11;
+ * @return {string}
  */
 proto.vega.MarketData.prototype.getStaticMidPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarketData} returns this
  */
 proto.vega.MarketData.prototype.setStaticMidPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 11, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
@@ -9892,20 +9892,20 @@ proto.vega.MarketData.prototype.setAuctionStart = function(value) {
 
 
 /**
- * optional uint64 indicative_price = 17;
- * @return {number}
+ * optional string indicative_price = 17;
+ * @return {string}
  */
 proto.vega.MarketData.prototype.getIndicativePrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.MarketData} returns this
  */
 proto.vega.MarketData.prototype.setIndicativePrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 17, value);
+  return jspb.Message.setProto3StringField(this, 17, value);
 };
 
 
@@ -10333,8 +10333,8 @@ proto.vega.PriceMonitoringBounds.prototype.toObject = function(opt_includeInstan
  */
 proto.vega.PriceMonitoringBounds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    minValidPrice: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    maxValidPrice: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    minValidPrice: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    maxValidPrice: jspb.Message.getFieldWithDefault(msg, 2, ""),
     trigger: (f = msg.getTrigger()) && markets_pb.PriceMonitoringTrigger.toObject(includeInstance, f),
     referencePrice: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
   };
@@ -10374,11 +10374,11 @@ proto.vega.PriceMonitoringBounds.deserializeBinaryFromReader = function(msg, rea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setMinValidPrice(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setMaxValidPrice(value);
       break;
     case 3:
@@ -10420,15 +10420,15 @@ proto.vega.PriceMonitoringBounds.prototype.serializeBinary = function() {
 proto.vega.PriceMonitoringBounds.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMinValidPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getMaxValidPrice();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -10452,38 +10452,38 @@ proto.vega.PriceMonitoringBounds.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional uint64 min_valid_price = 1;
- * @return {number}
+ * optional string min_valid_price = 1;
+ * @return {string}
  */
 proto.vega.PriceMonitoringBounds.prototype.getMinValidPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.PriceMonitoringBounds} returns this
  */
 proto.vega.PriceMonitoringBounds.prototype.setMinValidPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint64 max_valid_price = 2;
- * @return {number}
+ * optional string max_valid_price = 2;
+ * @return {string}
  */
 proto.vega.PriceMonitoringBounds.prototype.getMaxValidPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.PriceMonitoringBounds} returns this
  */
 proto.vega.PriceMonitoringBounds.prototype.setMaxValidPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -11307,7 +11307,7 @@ proto.vega.LiquidityProvision.toObject = function(includeInstance, msg) {
     createdAt: jspb.Message.getFieldWithDefault(msg, 3, 0),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 4, 0),
     marketId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    commitmentAmount: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    commitmentAmount: jspb.Message.getFieldWithDefault(msg, 6, ""),
     fee: jspb.Message.getFieldWithDefault(msg, 7, ""),
     sellsList: jspb.Message.toObjectList(msg.getSellsList(),
     proto.vega.LiquidityOrderReference.toObject, includeInstance),
@@ -11373,7 +11373,7 @@ proto.vega.LiquidityProvision.deserializeBinaryFromReader = function(msg, reader
       msg.setMarketId(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setCommitmentAmount(value);
       break;
     case 7:
@@ -11467,8 +11467,8 @@ proto.vega.LiquidityProvision.serializeBinaryToWriter = function(message, writer
     );
   }
   f = message.getCommitmentAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       6,
       f
     );
@@ -11624,20 +11624,20 @@ proto.vega.LiquidityProvision.prototype.setMarketId = function(value) {
 
 
 /**
- * optional uint64 commitment_amount = 6;
- * @return {number}
+ * optional string commitment_amount = 6;
+ * @return {string}
  */
 proto.vega.LiquidityProvision.prototype.getCommitmentAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.LiquidityProvision} returns this
  */
 proto.vega.LiquidityProvision.prototype.setCommitmentAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -13061,7 +13061,9 @@ proto.vega.Node.toObject = function(includeInstance, msg) {
     epochData: (f = msg.getEpochData()) && proto.vega.EpochData.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 11, 0),
     delagationsList: jspb.Message.toObjectList(msg.getDelagationsList(),
-    proto.vega.Delegation.toObject, includeInstance)
+    proto.vega.Delegation.toObject, includeInstance),
+    score: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    normalisedScore: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -13147,6 +13149,14 @@ proto.vega.Node.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.vega.Delegation;
       reader.readMessage(value,proto.vega.Delegation.deserializeBinaryFromReader);
       msg.addDelagations(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setScore(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNormalisedScore(value);
       break;
     default:
       reader.skipField();
@@ -13261,6 +13271,20 @@ proto.vega.Node.serializeBinaryToWriter = function(message, writer) {
       12,
       f,
       proto.vega.Delegation.serializeBinaryToWriter
+    );
+  }
+  f = message.getScore();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getNormalisedScore();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
     );
   }
 };
@@ -13518,6 +13542,42 @@ proto.vega.Node.prototype.addDelagations = function(opt_value, opt_index) {
  */
 proto.vega.Node.prototype.clearDelagationsList = function() {
   return this.setDelagationsList([]);
+};
+
+
+/**
+ * optional string score = 13;
+ * @return {string}
+ */
+proto.vega.Node.prototype.getScore = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.Node} returns this
+ */
+proto.vega.Node.prototype.setScore = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string normalised_score = 14;
+ * @return {string}
+ */
+proto.vega.Node.prototype.getNormalisedScore = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.Node} returns this
+ */
+proto.vega.Node.prototype.setNormalisedScore = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 

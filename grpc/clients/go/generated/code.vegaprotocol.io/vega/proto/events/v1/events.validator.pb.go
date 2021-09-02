@@ -90,6 +90,27 @@ func (this *TxErrorEvent) Validate() error {
 			}
 		}
 	}
+	if oneOfNester, ok := this.GetTransaction().(*TxErrorEvent_DelegateSubmission); ok {
+		if oneOfNester.DelegateSubmission != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.DelegateSubmission); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("DelegateSubmission", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetTransaction().(*TxErrorEvent_UndelegateSubmission); ok {
+		if oneOfNester.UndelegateSubmission != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.UndelegateSubmission); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("UndelegateSubmission", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetTransaction().(*TxErrorEvent_RestoreSnapshot); ok {
+		if oneOfNester.RestoreSnapshot != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.RestoreSnapshot); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("RestoreSnapshot", err)
+			}
+		}
+	}
 	return nil
 }
 func (this *TimeUpdate) Validate() error {

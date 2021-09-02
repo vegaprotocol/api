@@ -22,6 +22,8 @@ extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Proposal_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vote_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_coreapi_2fv1_2fcoreapi_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Account_coreapi_2fv1_2fcoreapi_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_coreapi_2fv1_2fcoreapi_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PartyStake_coreapi_2fv1_2fcoreapi_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_events_2fv1_2fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StakeLinking_events_2fv1_2fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_events_2fv1_2fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ValidatorUpdate_events_2fv1_2fevents_2eproto;
 namespace vega {
 namespace coreapi {
@@ -102,6 +104,18 @@ class ListVotesResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListVotesResponse> _instance;
 } _ListVotesResponse_default_instance_;
+class PartyStakeDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PartyStake> _instance;
+} _PartyStake_default_instance_;
+class ListPartiesStakeRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListPartiesStakeRequest> _instance;
+} _ListPartiesStakeRequest_default_instance_;
+class ListPartiesStakeResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListPartiesStakeResponse> _instance;
+} _ListPartiesStakeResponse_default_instance_;
 }  // namespace v1
 }  // namespace coreapi
 }  // namespace vega
@@ -280,6 +294,33 @@ static void InitDefaultsscc_info_ListPartiesResponse_coreapi_2fv1_2fcoreapi_2epr
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListPartiesResponse_coreapi_2fv1_2fcoreapi_2eproto}, {
       &scc_info_Party_vega_2eproto.base,}};
 
+static void InitDefaultsscc_info_ListPartiesStakeRequest_coreapi_2fv1_2fcoreapi_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::coreapi::v1::_ListPartiesStakeRequest_default_instance_;
+    new (ptr) ::vega::coreapi::v1::ListPartiesStakeRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListPartiesStakeRequest_coreapi_2fv1_2fcoreapi_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ListPartiesStakeRequest_coreapi_2fv1_2fcoreapi_2eproto}, {}};
+
+static void InitDefaultsscc_info_ListPartiesStakeResponse_coreapi_2fv1_2fcoreapi_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::coreapi::v1::_ListPartiesStakeResponse_default_instance_;
+    new (ptr) ::vega::coreapi::v1::ListPartiesStakeResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ListPartiesStakeResponse_coreapi_2fv1_2fcoreapi_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListPartiesStakeResponse_coreapi_2fv1_2fcoreapi_2eproto}, {
+      &scc_info_PartyStake_coreapi_2fv1_2fcoreapi_2eproto.base,}};
+
 static void InitDefaultsscc_info_ListProposalsRequest_coreapi_2fv1_2fcoreapi_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -361,7 +402,21 @@ static void InitDefaultsscc_info_ListVotesResponse_coreapi_2fv1_2fcoreapi_2eprot
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListVotesResponse_coreapi_2fv1_2fcoreapi_2eproto}, {
       &scc_info_Vote_governance_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_coreapi_2fv1_2fcoreapi_2eproto[19];
+static void InitDefaultsscc_info_PartyStake_coreapi_2fv1_2fcoreapi_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::coreapi::v1::_PartyStake_default_instance_;
+    new (ptr) ::vega::coreapi::v1::PartyStake();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PartyStake_coreapi_2fv1_2fcoreapi_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PartyStake_coreapi_2fv1_2fcoreapi_2eproto}, {
+      &scc_info_StakeLinking_events_2fv1_2fevents_2eproto.base,}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_coreapi_2fv1_2fcoreapi_2eproto[22];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_coreapi_2fv1_2fcoreapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_coreapi_2fv1_2fcoreapi_2eproto = nullptr;
 
@@ -485,6 +540,26 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_coreapi_2fv1_2fcoreapi_2eproto
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListVotesResponse, votes_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::PartyStake, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::PartyStake, party_),
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::PartyStake, current_stake_available_),
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::PartyStake, stake_linkings_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListPartiesStakeRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListPartiesStakeRequest, party_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListPartiesStakeResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListPartiesStakeResponse, parties_stake_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::coreapi::v1::Account)},
@@ -506,6 +581,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 100, -1, sizeof(::vega::coreapi::v1::ListMarketsDataResponse)},
   { 106, -1, sizeof(::vega::coreapi::v1::ListVotesRequest)},
   { 113, -1, sizeof(::vega::coreapi::v1::ListVotesResponse)},
+  { 119, -1, sizeof(::vega::coreapi::v1::PartyStake)},
+  { 127, -1, sizeof(::vega::coreapi::v1::ListPartiesStakeRequest)},
+  { 133, -1, sizeof(::vega::coreapi::v1::ListPartiesStakeResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -528,6 +606,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListMarketsDataResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListVotesRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListVotesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_PartyStake_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListPartiesStakeRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListPartiesStakeResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_coreapi_2fv1_2fcoreapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -566,31 +647,41 @@ const char descriptor_table_protodef_coreapi_2fv1_2fcoreapi_2eproto[] PROTOBUF_S
   "\n\020ListVotesRequest\022\032\n\010proposal\030\001 \001(\tR\010pr"
   "oposal\022\024\n\005party\030\002 \001(\tR\005party\"5\n\021ListVote"
   "sResponse\022 \n\005votes\030\001 \003(\0132\n.vega.VoteR\005vo"
-  "tes2\355\006\n\016CoreApiService\022[\n\014ListAccounts\022$"
-  ".vega.coreapi.v1.ListAccountsRequest\032%.v"
-  "ega.coreapi.v1.ListAccountsResponse\022U\n\nL"
-  "istAssets\022\".vega.coreapi.v1.ListAssetsRe"
-  "quest\032#.vega.coreapi.v1.ListAssetsRespon"
-  "se\022v\n\025ListNetworkParameters\022-.vega.corea"
-  "pi.v1.ListNetworkParametersRequest\032..veg"
-  "a.coreapi.v1.ListNetworkParametersRespon"
-  "se\022X\n\013ListParties\022#.vega.coreapi.v1.List"
-  "PartiesRequest\032$.vega.coreapi.v1.ListPar"
-  "tiesResponse\022a\n\016ListValidators\022&.vega.co"
-  "reapi.v1.ListValidatorsRequest\032\'.vega.co"
-  "reapi.v1.ListValidatorsResponse\022X\n\013ListM"
-  "arkets\022#.vega.coreapi.v1.ListMarketsRequ"
-  "est\032$.vega.coreapi.v1.ListMarketsRespons"
-  "e\022^\n\rListProposals\022%.vega.coreapi.v1.Lis"
-  "tProposalsRequest\032&.vega.coreapi.v1.List"
-  "ProposalsResponse\022d\n\017ListMarketsData\022\'.v"
-  "ega.coreapi.v1.ListMarketsDataRequest\032(."
-  "vega.coreapi.v1.ListMarketsDataResponse\022"
-  "R\n\tListVotes\022!.vega.coreapi.v1.ListVotes"
-  "Request\032\".vega.coreapi.v1.ListVotesRespo"
-  "nseBM\n\037io.vegaprotocol.vega.coreapi.v1Z*"
-  "code.vegaprotocol.io/vega/proto/coreapi/"
-  "v1b\006proto3"
+  "tes\"\237\001\n\nPartyStake\022\024\n\005party\030\001 \001(\tR\005party"
+  "\0226\n\027current_stake_available\030\002 \001(\tR\025curre"
+  "ntStakeAvailable\022C\n\016stake_linkings\030\003 \003(\013"
+  "2\034.vega.events.v1.StakeLinkingR\rstakeLin"
+  "kings\"/\n\027ListPartiesStakeRequest\022\024\n\005part"
+  "y\030\001 \001(\tR\005party\"\\\n\030ListPartiesStakeRespon"
+  "se\022@\n\rparties_stake\030\001 \003(\0132\033.vega.coreapi"
+  ".v1.PartyStakeR\014partiesStake2\326\007\n\016CoreApi"
+  "Service\022[\n\014ListAccounts\022$.vega.coreapi.v"
+  "1.ListAccountsRequest\032%.vega.coreapi.v1."
+  "ListAccountsResponse\022U\n\nListAssets\022\".veg"
+  "a.coreapi.v1.ListAssetsRequest\032#.vega.co"
+  "reapi.v1.ListAssetsResponse\022v\n\025ListNetwo"
+  "rkParameters\022-.vega.coreapi.v1.ListNetwo"
+  "rkParametersRequest\032..vega.coreapi.v1.Li"
+  "stNetworkParametersResponse\022X\n\013ListParti"
+  "es\022#.vega.coreapi.v1.ListPartiesRequest\032"
+  "$.vega.coreapi.v1.ListPartiesResponse\022a\n"
+  "\016ListValidators\022&.vega.coreapi.v1.ListVa"
+  "lidatorsRequest\032\'.vega.coreapi.v1.ListVa"
+  "lidatorsResponse\022X\n\013ListMarkets\022#.vega.c"
+  "oreapi.v1.ListMarketsRequest\032$.vega.core"
+  "api.v1.ListMarketsResponse\022^\n\rListPropos"
+  "als\022%.vega.coreapi.v1.ListProposalsReque"
+  "st\032&.vega.coreapi.v1.ListProposalsRespon"
+  "se\022d\n\017ListMarketsData\022\'.vega.coreapi.v1."
+  "ListMarketsDataRequest\032(.vega.coreapi.v1"
+  ".ListMarketsDataResponse\022R\n\tListVotes\022!."
+  "vega.coreapi.v1.ListVotesRequest\032\".vega."
+  "coreapi.v1.ListVotesResponse\022g\n\020ListPart"
+  "iesStake\022(.vega.coreapi.v1.ListPartiesSt"
+  "akeRequest\032).vega.coreapi.v1.ListParties"
+  "StakeResponseBM\n\037io.vegaprotocol.vega.co"
+  "reapi.v1Z*code.vegaprotocol.io/vega/prot"
+  "o/coreapi/v1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_deps[5] = {
   &::descriptor_table_assets_2eproto,
@@ -599,7 +690,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_markets_2eproto,
   &::descriptor_table_vega_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_sccs[19] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_sccs[22] = {
   &scc_info_Account_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListAccountsRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListAccountsResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
@@ -613,19 +704,22 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_cor
   &scc_info_ListNetworkParametersResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListPartiesRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListPartiesResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
+  &scc_info_ListPartiesStakeRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
+  &scc_info_ListPartiesStakeResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListProposalsRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListProposalsResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListValidatorsRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListValidatorsResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListVotesRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListVotesResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
+  &scc_info_PartyStake_coreapi_2fv1_2fcoreapi_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_coreapi_2fv1_2fcoreapi_2eproto = {
-  false, false, descriptor_table_protodef_coreapi_2fv1_2fcoreapi_2eproto, "coreapi/v1/coreapi.proto", 2370,
-  &descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_once, descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_sccs, descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_deps, 19, 5,
+  false, false, descriptor_table_protodef_coreapi_2fv1_2fcoreapi_2eproto, "coreapi/v1/coreapi.proto", 2780,
+  &descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_once, descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_sccs, descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_deps, 22, 5,
   schemas, file_default_instances, TableStruct_coreapi_2fv1_2fcoreapi_2eproto::offsets,
-  file_level_metadata_coreapi_2fv1_2fcoreapi_2eproto, 19, file_level_enum_descriptors_coreapi_2fv1_2fcoreapi_2eproto, file_level_service_descriptors_coreapi_2fv1_2fcoreapi_2eproto,
+  file_level_metadata_coreapi_2fv1_2fcoreapi_2eproto, 22, file_level_enum_descriptors_coreapi_2fv1_2fcoreapi_2eproto, file_level_service_descriptors_coreapi_2fv1_2fcoreapi_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -4696,6 +4790,691 @@ void ListVotesResponse::InternalSwap(ListVotesResponse* other) {
 }
 
 
+// ===================================================================
+
+class PartyStake::_Internal {
+ public:
+};
+
+void PartyStake::clear_stake_linkings() {
+  stake_linkings_.Clear();
+}
+PartyStake::PartyStake(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  stake_linkings_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.coreapi.v1.PartyStake)
+}
+PartyStake::PartyStake(const PartyStake& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      stake_linkings_(from.stake_linkings_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  party_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_party().empty()) {
+    party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_party(),
+      GetArena());
+  }
+  current_stake_available_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_current_stake_available().empty()) {
+    current_stake_available_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_current_stake_available(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:vega.coreapi.v1.PartyStake)
+}
+
+void PartyStake::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PartyStake_coreapi_2fv1_2fcoreapi_2eproto.base);
+  party_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  current_stake_available_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+PartyStake::~PartyStake() {
+  // @@protoc_insertion_point(destructor:vega.coreapi.v1.PartyStake)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void PartyStake::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  party_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  current_stake_available_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void PartyStake::ArenaDtor(void* object) {
+  PartyStake* _this = reinterpret_cast< PartyStake* >(object);
+  (void)_this;
+}
+void PartyStake::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void PartyStake::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const PartyStake& PartyStake::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PartyStake_coreapi_2fv1_2fcoreapi_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void PartyStake::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.coreapi.v1.PartyStake)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  stake_linkings_.Clear();
+  party_.ClearToEmpty();
+  current_stake_available_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* PartyStake::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string party = 1 [json_name = "party"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_party();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.coreapi.v1.PartyStake.party"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string current_stake_available = 2 [json_name = "currentStakeAvailable"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_current_stake_available();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.coreapi.v1.PartyStake.current_stake_available"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_stake_linkings(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* PartyStake::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.coreapi.v1.PartyStake)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string party = 1 [json_name = "party"];
+  if (this->party().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_party().data(), static_cast<int>(this->_internal_party().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.coreapi.v1.PartyStake.party");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_party(), target);
+  }
+
+  // string current_stake_available = 2 [json_name = "currentStakeAvailable"];
+  if (this->current_stake_available().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_current_stake_available().data(), static_cast<int>(this->_internal_current_stake_available().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.coreapi.v1.PartyStake.current_stake_available");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_current_stake_available(), target);
+  }
+
+  // repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_stake_linkings_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, this->_internal_stake_linkings(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.coreapi.v1.PartyStake)
+  return target;
+}
+
+size_t PartyStake::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.coreapi.v1.PartyStake)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .vega.events.v1.StakeLinking stake_linkings = 3 [json_name = "stakeLinkings"];
+  total_size += 1UL * this->_internal_stake_linkings_size();
+  for (const auto& msg : this->stake_linkings_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string party = 1 [json_name = "party"];
+  if (this->party().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_party());
+  }
+
+  // string current_stake_available = 2 [json_name = "currentStakeAvailable"];
+  if (this->current_stake_available().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_current_stake_available());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PartyStake::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.coreapi.v1.PartyStake)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PartyStake* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PartyStake>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.coreapi.v1.PartyStake)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.coreapi.v1.PartyStake)
+    MergeFrom(*source);
+  }
+}
+
+void PartyStake::MergeFrom(const PartyStake& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.coreapi.v1.PartyStake)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  stake_linkings_.MergeFrom(from.stake_linkings_);
+  if (from.party().size() > 0) {
+    _internal_set_party(from._internal_party());
+  }
+  if (from.current_stake_available().size() > 0) {
+    _internal_set_current_stake_available(from._internal_current_stake_available());
+  }
+}
+
+void PartyStake::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.coreapi.v1.PartyStake)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PartyStake::CopyFrom(const PartyStake& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.coreapi.v1.PartyStake)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PartyStake::IsInitialized() const {
+  return true;
+}
+
+void PartyStake::InternalSwap(PartyStake* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  stake_linkings_.InternalSwap(&other->stake_linkings_);
+  party_.Swap(&other->party_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  current_stake_available_.Swap(&other->current_stake_available_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PartyStake::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class ListPartiesStakeRequest::_Internal {
+ public:
+};
+
+ListPartiesStakeRequest::ListPartiesStakeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.coreapi.v1.ListPartiesStakeRequest)
+}
+ListPartiesStakeRequest::ListPartiesStakeRequest(const ListPartiesStakeRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  party_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_party().empty()) {
+    party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_party(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:vega.coreapi.v1.ListPartiesStakeRequest)
+}
+
+void ListPartiesStakeRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ListPartiesStakeRequest_coreapi_2fv1_2fcoreapi_2eproto.base);
+  party_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ListPartiesStakeRequest::~ListPartiesStakeRequest() {
+  // @@protoc_insertion_point(destructor:vega.coreapi.v1.ListPartiesStakeRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ListPartiesStakeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  party_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ListPartiesStakeRequest::ArenaDtor(void* object) {
+  ListPartiesStakeRequest* _this = reinterpret_cast< ListPartiesStakeRequest* >(object);
+  (void)_this;
+}
+void ListPartiesStakeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListPartiesStakeRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ListPartiesStakeRequest& ListPartiesStakeRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListPartiesStakeRequest_coreapi_2fv1_2fcoreapi_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ListPartiesStakeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.coreapi.v1.ListPartiesStakeRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  party_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListPartiesStakeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string party = 1 [json_name = "party"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_party();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.coreapi.v1.ListPartiesStakeRequest.party"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ListPartiesStakeRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.coreapi.v1.ListPartiesStakeRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string party = 1 [json_name = "party"];
+  if (this->party().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_party().data(), static_cast<int>(this->_internal_party().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.coreapi.v1.ListPartiesStakeRequest.party");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_party(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.coreapi.v1.ListPartiesStakeRequest)
+  return target;
+}
+
+size_t ListPartiesStakeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.coreapi.v1.ListPartiesStakeRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string party = 1 [json_name = "party"];
+  if (this->party().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_party());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ListPartiesStakeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.coreapi.v1.ListPartiesStakeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ListPartiesStakeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListPartiesStakeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.coreapi.v1.ListPartiesStakeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.coreapi.v1.ListPartiesStakeRequest)
+    MergeFrom(*source);
+  }
+}
+
+void ListPartiesStakeRequest::MergeFrom(const ListPartiesStakeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.coreapi.v1.ListPartiesStakeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.party().size() > 0) {
+    _internal_set_party(from._internal_party());
+  }
+}
+
+void ListPartiesStakeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.coreapi.v1.ListPartiesStakeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ListPartiesStakeRequest::CopyFrom(const ListPartiesStakeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.coreapi.v1.ListPartiesStakeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListPartiesStakeRequest::IsInitialized() const {
+  return true;
+}
+
+void ListPartiesStakeRequest::InternalSwap(ListPartiesStakeRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  party_.Swap(&other->party_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListPartiesStakeRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class ListPartiesStakeResponse::_Internal {
+ public:
+};
+
+ListPartiesStakeResponse::ListPartiesStakeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  parties_stake_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.coreapi.v1.ListPartiesStakeResponse)
+}
+ListPartiesStakeResponse::ListPartiesStakeResponse(const ListPartiesStakeResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      parties_stake_(from.parties_stake_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:vega.coreapi.v1.ListPartiesStakeResponse)
+}
+
+void ListPartiesStakeResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ListPartiesStakeResponse_coreapi_2fv1_2fcoreapi_2eproto.base);
+}
+
+ListPartiesStakeResponse::~ListPartiesStakeResponse() {
+  // @@protoc_insertion_point(destructor:vega.coreapi.v1.ListPartiesStakeResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ListPartiesStakeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void ListPartiesStakeResponse::ArenaDtor(void* object) {
+  ListPartiesStakeResponse* _this = reinterpret_cast< ListPartiesStakeResponse* >(object);
+  (void)_this;
+}
+void ListPartiesStakeResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListPartiesStakeResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ListPartiesStakeResponse& ListPartiesStakeResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListPartiesStakeResponse_coreapi_2fv1_2fcoreapi_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ListPartiesStakeResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.coreapi.v1.ListPartiesStakeResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  parties_stake_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListPartiesStakeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_parties_stake(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ListPartiesStakeResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.coreapi.v1.ListPartiesStakeResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_parties_stake_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_parties_stake(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.coreapi.v1.ListPartiesStakeResponse)
+  return target;
+}
+
+size_t ListPartiesStakeResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.coreapi.v1.ListPartiesStakeResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .vega.coreapi.v1.PartyStake parties_stake = 1 [json_name = "partiesStake"];
+  total_size += 1UL * this->_internal_parties_stake_size();
+  for (const auto& msg : this->parties_stake_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ListPartiesStakeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.coreapi.v1.ListPartiesStakeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ListPartiesStakeResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListPartiesStakeResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.coreapi.v1.ListPartiesStakeResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.coreapi.v1.ListPartiesStakeResponse)
+    MergeFrom(*source);
+  }
+}
+
+void ListPartiesStakeResponse::MergeFrom(const ListPartiesStakeResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.coreapi.v1.ListPartiesStakeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  parties_stake_.MergeFrom(from.parties_stake_);
+}
+
+void ListPartiesStakeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.coreapi.v1.ListPartiesStakeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ListPartiesStakeResponse::CopyFrom(const ListPartiesStakeResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.coreapi.v1.ListPartiesStakeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListPartiesStakeResponse::IsInitialized() const {
+  return true;
+}
+
+void ListPartiesStakeResponse::InternalSwap(ListPartiesStakeResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  parties_stake_.InternalSwap(&other->parties_stake_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListPartiesStakeResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace coreapi
@@ -4757,6 +5536,15 @@ template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListVotesRequest* Arena::Creat
 }
 template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListVotesResponse* Arena::CreateMaybeMessage< ::vega::coreapi::v1::ListVotesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::coreapi::v1::ListVotesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::PartyStake* Arena::CreateMaybeMessage< ::vega::coreapi::v1::PartyStake >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::coreapi::v1::PartyStake >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListPartiesStakeRequest* Arena::CreateMaybeMessage< ::vega::coreapi::v1::ListPartiesStakeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::coreapi::v1::ListPartiesStakeRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListPartiesStakeResponse* Arena::CreateMaybeMessage< ::vega::coreapi::v1::ListPartiesStakeResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::coreapi::v1::ListPartiesStakeResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

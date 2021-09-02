@@ -22,6 +22,7 @@ interface ICoreApiServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
     listProposals: ICoreApiServiceService_IListProposals;
     listMarketsData: ICoreApiServiceService_IListMarketsData;
     listVotes: ICoreApiServiceService_IListVotes;
+    listPartiesStake: ICoreApiServiceService_IListPartiesStake;
 }
 
 interface ICoreApiServiceService_IListAccounts extends grpc.MethodDefinition<coreapi_v1_coreapi_pb.ListAccountsRequest, coreapi_v1_coreapi_pb.ListAccountsResponse> {
@@ -105,6 +106,15 @@ interface ICoreApiServiceService_IListVotes extends grpc.MethodDefinition<coreap
     responseSerialize: grpc.serialize<coreapi_v1_coreapi_pb.ListVotesResponse>;
     responseDeserialize: grpc.deserialize<coreapi_v1_coreapi_pb.ListVotesResponse>;
 }
+interface ICoreApiServiceService_IListPartiesStake extends grpc.MethodDefinition<coreapi_v1_coreapi_pb.ListPartiesStakeRequest, coreapi_v1_coreapi_pb.ListPartiesStakeResponse> {
+    path: "/vega.coreapi.v1.CoreApiService/ListPartiesStake";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<coreapi_v1_coreapi_pb.ListPartiesStakeRequest>;
+    requestDeserialize: grpc.deserialize<coreapi_v1_coreapi_pb.ListPartiesStakeRequest>;
+    responseSerialize: grpc.serialize<coreapi_v1_coreapi_pb.ListPartiesStakeResponse>;
+    responseDeserialize: grpc.deserialize<coreapi_v1_coreapi_pb.ListPartiesStakeResponse>;
+}
 
 export const CoreApiServiceService: ICoreApiServiceService;
 
@@ -118,6 +128,7 @@ export interface ICoreApiServiceServer extends grpc.UntypedServiceImplementation
     listProposals: grpc.handleUnaryCall<coreapi_v1_coreapi_pb.ListProposalsRequest, coreapi_v1_coreapi_pb.ListProposalsResponse>;
     listMarketsData: grpc.handleUnaryCall<coreapi_v1_coreapi_pb.ListMarketsDataRequest, coreapi_v1_coreapi_pb.ListMarketsDataResponse>;
     listVotes: grpc.handleUnaryCall<coreapi_v1_coreapi_pb.ListVotesRequest, coreapi_v1_coreapi_pb.ListVotesResponse>;
+    listPartiesStake: grpc.handleUnaryCall<coreapi_v1_coreapi_pb.ListPartiesStakeRequest, coreapi_v1_coreapi_pb.ListPartiesStakeResponse>;
 }
 
 export interface ICoreApiServiceClient {
@@ -148,6 +159,9 @@ export interface ICoreApiServiceClient {
     listVotes(request: coreapi_v1_coreapi_pb.ListVotesRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListVotesResponse) => void): grpc.ClientUnaryCall;
     listVotes(request: coreapi_v1_coreapi_pb.ListVotesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListVotesResponse) => void): grpc.ClientUnaryCall;
     listVotes(request: coreapi_v1_coreapi_pb.ListVotesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListVotesResponse) => void): grpc.ClientUnaryCall;
+    listPartiesStake(request: coreapi_v1_coreapi_pb.ListPartiesStakeRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListPartiesStakeResponse) => void): grpc.ClientUnaryCall;
+    listPartiesStake(request: coreapi_v1_coreapi_pb.ListPartiesStakeRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListPartiesStakeResponse) => void): grpc.ClientUnaryCall;
+    listPartiesStake(request: coreapi_v1_coreapi_pb.ListPartiesStakeRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListPartiesStakeResponse) => void): grpc.ClientUnaryCall;
 }
 
 export class CoreApiServiceClient extends grpc.Client implements ICoreApiServiceClient {
@@ -179,4 +193,7 @@ export class CoreApiServiceClient extends grpc.Client implements ICoreApiService
     public listVotes(request: coreapi_v1_coreapi_pb.ListVotesRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListVotesResponse) => void): grpc.ClientUnaryCall;
     public listVotes(request: coreapi_v1_coreapi_pb.ListVotesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListVotesResponse) => void): grpc.ClientUnaryCall;
     public listVotes(request: coreapi_v1_coreapi_pb.ListVotesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListVotesResponse) => void): grpc.ClientUnaryCall;
+    public listPartiesStake(request: coreapi_v1_coreapi_pb.ListPartiesStakeRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListPartiesStakeResponse) => void): grpc.ClientUnaryCall;
+    public listPartiesStake(request: coreapi_v1_coreapi_pb.ListPartiesStakeRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListPartiesStakeResponse) => void): grpc.ClientUnaryCall;
+    public listPartiesStake(request: coreapi_v1_coreapi_pb.ListPartiesStakeRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListPartiesStakeResponse) => void): grpc.ClientUnaryCall;
 }

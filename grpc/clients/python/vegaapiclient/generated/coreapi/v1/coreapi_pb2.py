@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\037io.vegaprotocol.vega.coreapi.v1Z*code.vegaprotocol.io/vega/proto/coreapi/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18\x63oreapi/v1/coreapi.proto\x12\x0fvega.coreapi.v1\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\x1a\rmarkets.proto\x1a\nvega.proto\x1a\x16\x65vents/v1/events.proto\"{\n\x07\x41\x63\x63ount\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x16\n\x06market\x18\x02 \x01(\tR\x06market\x12\x18\n\x07\x62\x61lance\x18\x03 \x01(\tR\x07\x62\x61lance\x12\x14\n\x05\x61sset\x18\x05 \x01(\tR\x05\x61sset\x12\x12\n\x04type\x18\x06 \x01(\tR\x04type\"C\n\x13ListAccountsRequest\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x16\n\x06market\x18\x02 \x01(\tR\x06market\"L\n\x14ListAccountsResponse\x12\x34\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x18.vega.coreapi.v1.AccountR\x08\x61\x63\x63ounts\")\n\x11ListAssetsRequest\x12\x14\n\x05\x61sset\x18\x01 \x01(\tR\x05\x61sset\"9\n\x12ListAssetsResponse\x12#\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x0b.vega.AssetR\x06\x61ssets\"R\n\x1cListNetworkParametersRequest\x12\x32\n\x15network_parameter_key\x18\x01 \x01(\tR\x13networkParameterKey\"f\n\x1dListNetworkParametersResponse\x12\x45\n\x12network_parameters\x18\x01 \x03(\x0b\x32\x16.vega.NetworkParameterR\x11networkParameters\"\x14\n\x12ListPartiesRequest\"<\n\x13ListPartiesResponse\x12%\n\x07parties\x18\x01 \x03(\x0b\x32\x0b.vega.PartyR\x07parties\"\x17\n\x15ListValidatorsRequest\"Y\n\x16ListValidatorsResponse\x12?\n\nvalidators\x18\x01 \x03(\x0b\x32\x1f.vega.events.v1.ValidatorUpdateR\nvalidators\",\n\x12ListMarketsRequest\x12\x16\n\x06market\x18\x01 \x01(\tR\x06market\"=\n\x13ListMarketsResponse\x12&\n\x07markets\x18\x01 \x03(\x0b\x32\x0c.vega.MarketR\x07markets\"N\n\x14ListProposalsRequest\x12\x1a\n\x08proposal\x18\x01 \x01(\tR\x08proposal\x12\x1a\n\x08proposer\x18\x02 \x01(\tR\x08proposer\"E\n\x15ListProposalsResponse\x12,\n\tproposals\x18\x01 \x03(\x0b\x32\x0e.vega.ProposalR\tproposals\"0\n\x16ListMarketsDataRequest\x12\x16\n\x06market\x18\x01 \x01(\tR\x06market\"N\n\x17ListMarketsDataResponse\x12\x33\n\x0cmarkets_data\x18\x01 \x03(\x0b\x32\x10.vega.MarketDataR\x0bmarketsData\"D\n\x10ListVotesRequest\x12\x1a\n\x08proposal\x18\x01 \x01(\tR\x08proposal\x12\x14\n\x05party\x18\x02 \x01(\tR\x05party\"5\n\x11ListVotesResponse\x12 \n\x05votes\x18\x01 \x03(\x0b\x32\n.vega.VoteR\x05votes2\xed\x06\n\x0e\x43oreApiService\x12[\n\x0cListAccounts\x12$.vega.coreapi.v1.ListAccountsRequest\x1a%.vega.coreapi.v1.ListAccountsResponse\x12U\n\nListAssets\x12\".vega.coreapi.v1.ListAssetsRequest\x1a#.vega.coreapi.v1.ListAssetsResponse\x12v\n\x15ListNetworkParameters\x12-.vega.coreapi.v1.ListNetworkParametersRequest\x1a..vega.coreapi.v1.ListNetworkParametersResponse\x12X\n\x0bListParties\x12#.vega.coreapi.v1.ListPartiesRequest\x1a$.vega.coreapi.v1.ListPartiesResponse\x12\x61\n\x0eListValidators\x12&.vega.coreapi.v1.ListValidatorsRequest\x1a\'.vega.coreapi.v1.ListValidatorsResponse\x12X\n\x0bListMarkets\x12#.vega.coreapi.v1.ListMarketsRequest\x1a$.vega.coreapi.v1.ListMarketsResponse\x12^\n\rListProposals\x12%.vega.coreapi.v1.ListProposalsRequest\x1a&.vega.coreapi.v1.ListProposalsResponse\x12\x64\n\x0fListMarketsData\x12\'.vega.coreapi.v1.ListMarketsDataRequest\x1a(.vega.coreapi.v1.ListMarketsDataResponse\x12R\n\tListVotes\x12!.vega.coreapi.v1.ListVotesRequest\x1a\".vega.coreapi.v1.ListVotesResponseBM\n\x1fio.vegaprotocol.vega.coreapi.v1Z*code.vegaprotocol.io/vega/proto/coreapi/v1b\x06proto3'
+  serialized_pb=b'\n\x18\x63oreapi/v1/coreapi.proto\x12\x0fvega.coreapi.v1\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\x1a\rmarkets.proto\x1a\nvega.proto\x1a\x16\x65vents/v1/events.proto\"{\n\x07\x41\x63\x63ount\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x16\n\x06market\x18\x02 \x01(\tR\x06market\x12\x18\n\x07\x62\x61lance\x18\x03 \x01(\tR\x07\x62\x61lance\x12\x14\n\x05\x61sset\x18\x05 \x01(\tR\x05\x61sset\x12\x12\n\x04type\x18\x06 \x01(\tR\x04type\"C\n\x13ListAccountsRequest\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x16\n\x06market\x18\x02 \x01(\tR\x06market\"L\n\x14ListAccountsResponse\x12\x34\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x18.vega.coreapi.v1.AccountR\x08\x61\x63\x63ounts\")\n\x11ListAssetsRequest\x12\x14\n\x05\x61sset\x18\x01 \x01(\tR\x05\x61sset\"9\n\x12ListAssetsResponse\x12#\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x0b.vega.AssetR\x06\x61ssets\"R\n\x1cListNetworkParametersRequest\x12\x32\n\x15network_parameter_key\x18\x01 \x01(\tR\x13networkParameterKey\"f\n\x1dListNetworkParametersResponse\x12\x45\n\x12network_parameters\x18\x01 \x03(\x0b\x32\x16.vega.NetworkParameterR\x11networkParameters\"\x14\n\x12ListPartiesRequest\"<\n\x13ListPartiesResponse\x12%\n\x07parties\x18\x01 \x03(\x0b\x32\x0b.vega.PartyR\x07parties\"\x17\n\x15ListValidatorsRequest\"Y\n\x16ListValidatorsResponse\x12?\n\nvalidators\x18\x01 \x03(\x0b\x32\x1f.vega.events.v1.ValidatorUpdateR\nvalidators\",\n\x12ListMarketsRequest\x12\x16\n\x06market\x18\x01 \x01(\tR\x06market\"=\n\x13ListMarketsResponse\x12&\n\x07markets\x18\x01 \x03(\x0b\x32\x0c.vega.MarketR\x07markets\"N\n\x14ListProposalsRequest\x12\x1a\n\x08proposal\x18\x01 \x01(\tR\x08proposal\x12\x1a\n\x08proposer\x18\x02 \x01(\tR\x08proposer\"E\n\x15ListProposalsResponse\x12,\n\tproposals\x18\x01 \x03(\x0b\x32\x0e.vega.ProposalR\tproposals\"0\n\x16ListMarketsDataRequest\x12\x16\n\x06market\x18\x01 \x01(\tR\x06market\"N\n\x17ListMarketsDataResponse\x12\x33\n\x0cmarkets_data\x18\x01 \x03(\x0b\x32\x10.vega.MarketDataR\x0bmarketsData\"D\n\x10ListVotesRequest\x12\x1a\n\x08proposal\x18\x01 \x01(\tR\x08proposal\x12\x14\n\x05party\x18\x02 \x01(\tR\x05party\"5\n\x11ListVotesResponse\x12 \n\x05votes\x18\x01 \x03(\x0b\x32\n.vega.VoteR\x05votes\"\x9f\x01\n\nPartyStake\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x36\n\x17\x63urrent_stake_available\x18\x02 \x01(\tR\x15\x63urrentStakeAvailable\x12\x43\n\x0estake_linkings\x18\x03 \x03(\x0b\x32\x1c.vega.events.v1.StakeLinkingR\rstakeLinkings\"/\n\x17ListPartiesStakeRequest\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\"\\\n\x18ListPartiesStakeResponse\x12@\n\rparties_stake\x18\x01 \x03(\x0b\x32\x1b.vega.coreapi.v1.PartyStakeR\x0cpartiesStake2\xd6\x07\n\x0e\x43oreApiService\x12[\n\x0cListAccounts\x12$.vega.coreapi.v1.ListAccountsRequest\x1a%.vega.coreapi.v1.ListAccountsResponse\x12U\n\nListAssets\x12\".vega.coreapi.v1.ListAssetsRequest\x1a#.vega.coreapi.v1.ListAssetsResponse\x12v\n\x15ListNetworkParameters\x12-.vega.coreapi.v1.ListNetworkParametersRequest\x1a..vega.coreapi.v1.ListNetworkParametersResponse\x12X\n\x0bListParties\x12#.vega.coreapi.v1.ListPartiesRequest\x1a$.vega.coreapi.v1.ListPartiesResponse\x12\x61\n\x0eListValidators\x12&.vega.coreapi.v1.ListValidatorsRequest\x1a\'.vega.coreapi.v1.ListValidatorsResponse\x12X\n\x0bListMarkets\x12#.vega.coreapi.v1.ListMarketsRequest\x1a$.vega.coreapi.v1.ListMarketsResponse\x12^\n\rListProposals\x12%.vega.coreapi.v1.ListProposalsRequest\x1a&.vega.coreapi.v1.ListProposalsResponse\x12\x64\n\x0fListMarketsData\x12\'.vega.coreapi.v1.ListMarketsDataRequest\x1a(.vega.coreapi.v1.ListMarketsDataResponse\x12R\n\tListVotes\x12!.vega.coreapi.v1.ListVotesRequest\x1a\".vega.coreapi.v1.ListVotesResponse\x12g\n\x10ListPartiesStake\x12(.vega.coreapi.v1.ListPartiesStakeRequest\x1a).vega.coreapi.v1.ListPartiesStakeResponseBM\n\x1fio.vegaprotocol.vega.coreapi.v1Z*code.vegaprotocol.io/vega/proto/coreapi/v1b\x06proto3'
   ,
   dependencies=[assets__pb2.DESCRIPTOR,governance__pb2.DESCRIPTOR,markets__pb2.DESCRIPTOR,vega__pb2.DESCRIPTOR,events_dot_v1_dot_events__pb2.DESCRIPTOR,])
 
@@ -673,6 +673,116 @@ _LISTVOTESRESPONSE = _descriptor.Descriptor(
   serialized_end=1403,
 )
 
+
+_PARTYSTAKE = _descriptor.Descriptor(
+  name='PartyStake',
+  full_name='vega.coreapi.v1.PartyStake',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='party', full_name='vega.coreapi.v1.PartyStake.party', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='party', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='current_stake_available', full_name='vega.coreapi.v1.PartyStake.current_stake_available', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='currentStakeAvailable', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stake_linkings', full_name='vega.coreapi.v1.PartyStake.stake_linkings', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='stakeLinkings', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1406,
+  serialized_end=1565,
+)
+
+
+_LISTPARTIESSTAKEREQUEST = _descriptor.Descriptor(
+  name='ListPartiesStakeRequest',
+  full_name='vega.coreapi.v1.ListPartiesStakeRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='party', full_name='vega.coreapi.v1.ListPartiesStakeRequest.party', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='party', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1567,
+  serialized_end=1614,
+)
+
+
+_LISTPARTIESSTAKERESPONSE = _descriptor.Descriptor(
+  name='ListPartiesStakeResponse',
+  full_name='vega.coreapi.v1.ListPartiesStakeResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='parties_stake', full_name='vega.coreapi.v1.ListPartiesStakeResponse.parties_stake', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='partiesStake', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1616,
+  serialized_end=1708,
+)
+
 _LISTACCOUNTSRESPONSE.fields_by_name['accounts'].message_type = _ACCOUNT
 _LISTASSETSRESPONSE.fields_by_name['assets'].message_type = assets__pb2._ASSET
 _LISTNETWORKPARAMETERSRESPONSE.fields_by_name['network_parameters'].message_type = vega__pb2._NETWORKPARAMETER
@@ -682,6 +792,8 @@ _LISTMARKETSRESPONSE.fields_by_name['markets'].message_type = markets__pb2._MARK
 _LISTPROPOSALSRESPONSE.fields_by_name['proposals'].message_type = governance__pb2._PROPOSAL
 _LISTMARKETSDATARESPONSE.fields_by_name['markets_data'].message_type = vega__pb2._MARKETDATA
 _LISTVOTESRESPONSE.fields_by_name['votes'].message_type = governance__pb2._VOTE
+_PARTYSTAKE.fields_by_name['stake_linkings'].message_type = events_dot_v1_dot_events__pb2._STAKELINKING
+_LISTPARTIESSTAKERESPONSE.fields_by_name['parties_stake'].message_type = _PARTYSTAKE
 DESCRIPTOR.message_types_by_name['Account'] = _ACCOUNT
 DESCRIPTOR.message_types_by_name['ListAccountsRequest'] = _LISTACCOUNTSREQUEST
 DESCRIPTOR.message_types_by_name['ListAccountsResponse'] = _LISTACCOUNTSRESPONSE
@@ -701,6 +813,9 @@ DESCRIPTOR.message_types_by_name['ListMarketsDataRequest'] = _LISTMARKETSDATAREQ
 DESCRIPTOR.message_types_by_name['ListMarketsDataResponse'] = _LISTMARKETSDATARESPONSE
 DESCRIPTOR.message_types_by_name['ListVotesRequest'] = _LISTVOTESREQUEST
 DESCRIPTOR.message_types_by_name['ListVotesResponse'] = _LISTVOTESRESPONSE
+DESCRIPTOR.message_types_by_name['PartyStake'] = _PARTYSTAKE
+DESCRIPTOR.message_types_by_name['ListPartiesStakeRequest'] = _LISTPARTIESSTAKEREQUEST
+DESCRIPTOR.message_types_by_name['ListPartiesStakeResponse'] = _LISTPARTIESSTAKERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Account = _reflection.GeneratedProtocolMessageType('Account', (_message.Message,), {
@@ -836,6 +951,27 @@ ListVotesResponse = _reflection.GeneratedProtocolMessageType('ListVotesResponse'
   })
 _sym_db.RegisterMessage(ListVotesResponse)
 
+PartyStake = _reflection.GeneratedProtocolMessageType('PartyStake', (_message.Message,), {
+  'DESCRIPTOR' : _PARTYSTAKE,
+  '__module__' : 'coreapi.v1.coreapi_pb2'
+  # @@protoc_insertion_point(class_scope:vega.coreapi.v1.PartyStake)
+  })
+_sym_db.RegisterMessage(PartyStake)
+
+ListPartiesStakeRequest = _reflection.GeneratedProtocolMessageType('ListPartiesStakeRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTPARTIESSTAKEREQUEST,
+  '__module__' : 'coreapi.v1.coreapi_pb2'
+  # @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListPartiesStakeRequest)
+  })
+_sym_db.RegisterMessage(ListPartiesStakeRequest)
+
+ListPartiesStakeResponse = _reflection.GeneratedProtocolMessageType('ListPartiesStakeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTPARTIESSTAKERESPONSE,
+  '__module__' : 'coreapi.v1.coreapi_pb2'
+  # @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListPartiesStakeResponse)
+  })
+_sym_db.RegisterMessage(ListPartiesStakeResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -846,8 +982,8 @@ _COREAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1406,
-  serialized_end=2283,
+  serialized_start=1711,
+  serialized_end=2693,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccounts',
@@ -936,6 +1072,16 @@ _COREAPISERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTVOTESREQUEST,
     output_type=_LISTVOTESRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListPartiesStake',
+    full_name='vega.coreapi.v1.CoreApiService.ListPartiesStake',
+    index=9,
+    containing_service=None,
+    input_type=_LISTPARTIESSTAKEREQUEST,
+    output_type=_LISTPARTIESSTAKERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

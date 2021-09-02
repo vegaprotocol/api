@@ -16,7 +16,7 @@ message OrderSubmission {
   // Price for the order, the price is an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places,
   // , required field for limit orders, however it is not required for market orders
-  uint64 price = 2;
+  string price = 2;
   // Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
   uint64 size = 3 [(validator.field) = {int_gt: 0}];
   // Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
@@ -82,7 +82,7 @@ message LiquidityProvisionSubmission {
   // Market identifier for the order, required field
   string market_id = 1 [(validator.field) = {string_not_empty: true}];
   // Specified as a unitless number that represents the amount of settlement asset of the market
-  uint64 commitment_amount = 2;
+  string commitment_amount = 2;
   // Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
   string fee = 3;
   // A set of liquidity sell orders to meet the liquidity provision obligation
@@ -96,7 +96,7 @@ message LiquidityProvisionSubmission {
 // Represents the submission request to withdraw funds for a party on Vega
 message WithdrawSubmission {
   // The amount to be withdrawn
-  uint64 amount = 1;
+  string amount = 1;
   // The asset we want to withdraw
   string asset = 2;
   // Foreign chain specifics
@@ -126,7 +126,7 @@ message DelegateSubmission {
   // The ID for the node to delegate to
   string node_id = 1 [(validator.field) = {string_not_empty : true}];
   // The amount of stake to delegate
-  uint64 amount = 2;
+  string amount = 2;
 }
 
 message UndelegateSubmission {
@@ -138,7 +138,7 @@ message UndelegateSubmission {
   }
   string node_id = 1 [(validator.field) = {string_not_empty : true}];
   // optional, if not specified = ALL
-  uint64 amount = 2;
+  string amount = 2;
   Method method = 3;
 }
 

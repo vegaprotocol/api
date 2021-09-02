@@ -33,6 +33,7 @@ static const char* CoreApiService_method_names[] = {
   "/vega.coreapi.v1.CoreApiService/ListProposals",
   "/vega.coreapi.v1.CoreApiService/ListMarketsData",
   "/vega.coreapi.v1.CoreApiService/ListVotes",
+  "/vega.coreapi.v1.CoreApiService/ListPartiesStake",
 };
 
 std::unique_ptr< CoreApiService::Stub> CoreApiService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -51,6 +52,7 @@ CoreApiService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_ListProposals_(CoreApiService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListMarketsData_(CoreApiService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListVotes_(CoreApiService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListPartiesStake_(CoreApiService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status CoreApiService::Stub::ListAccounts(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListAccountsRequest& request, ::vega::coreapi::v1::ListAccountsResponse* response) {
@@ -260,6 +262,29 @@ void CoreApiService::Stub::experimental_async::ListVotes(::grpc::ClientContext* 
   return result;
 }
 
+::grpc::Status CoreApiService::Stub::ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::vega::coreapi::v1::ListPartiesStakeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::vega::coreapi::v1::ListPartiesStakeRequest, ::vega::coreapi::v1::ListPartiesStakeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListPartiesStake_, context, request, response);
+}
+
+void CoreApiService::Stub::experimental_async::ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::vega::coreapi::v1::ListPartiesStakeRequest, ::vega::coreapi::v1::ListPartiesStakeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListPartiesStake_, context, request, response, std::move(f));
+}
+
+void CoreApiService::Stub::experimental_async::ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListPartiesStake_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListPartiesStakeResponse>* CoreApiService::Stub::PrepareAsyncListPartiesStakeRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::vega::coreapi::v1::ListPartiesStakeResponse, ::vega::coreapi::v1::ListPartiesStakeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListPartiesStake_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListPartiesStakeResponse>* CoreApiService::Stub::AsyncListPartiesStakeRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncListPartiesStakeRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 CoreApiService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       CoreApiService_method_names[0],
@@ -351,6 +376,16 @@ CoreApiService::Service::Service() {
              ::vega::coreapi::v1::ListVotesResponse* resp) {
                return service->ListVotes(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CoreApiService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CoreApiService::Service, ::vega::coreapi::v1::ListPartiesStakeRequest, ::vega::coreapi::v1::ListPartiesStakeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CoreApiService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::vega::coreapi::v1::ListPartiesStakeRequest* req,
+             ::vega::coreapi::v1::ListPartiesStakeResponse* resp) {
+               return service->ListPartiesStake(ctx, req, resp);
+             }, this)));
 }
 
 CoreApiService::Service::~Service() {
@@ -413,6 +448,13 @@ CoreApiService::Service::~Service() {
 }
 
 ::grpc::Status CoreApiService::Service::ListVotes(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListVotesRequest* request, ::vega::coreapi::v1::ListVotesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CoreApiService::Service::ListPartiesStake(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -45,10 +45,22 @@ public final class Commands {
      * , required field for limit orders, however it is not required for market orders
      * </pre>
      *
-     * <code>uint64 price = 2 [json_name = "price"];</code>
+     * <code>string price = 2 [json_name = "price"];</code>
      * @return The price.
      */
-    long getPrice();
+    java.lang.String getPrice();
+    /**
+     * <pre>
+     * Price for the order, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places,
+     * , required field for limit orders, however it is not required for market orders
+     * </pre>
+     *
+     * <code>string price = 2 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    com.google.protobuf.ByteString
+        getPriceBytes();
 
     /**
      * <pre>
@@ -201,6 +213,7 @@ public final class Commands {
     }
     private OrderSubmission() {
       marketId_ = "";
+      price_ = "";
       side_ = 0;
       timeInForce_ = 0;
       type_ = 0;
@@ -243,9 +256,10 @@ public final class Commands {
               marketId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              price_ = input.readUInt64();
+              price_ = s;
               break;
             }
             case 24: {
@@ -374,7 +388,7 @@ public final class Commands {
     }
 
     public static final int PRICE_FIELD_NUMBER = 2;
-    private long price_;
+    private volatile java.lang.Object price_;
     /**
      * <pre>
      * Price for the order, the price is an integer, for example `123456` is a correctly
@@ -382,12 +396,45 @@ public final class Commands {
      * , required field for limit orders, however it is not required for market orders
      * </pre>
      *
-     * <code>uint64 price = 2 [json_name = "price"];</code>
+     * <code>string price = 2 [json_name = "price"];</code>
      * @return The price.
      */
     @java.lang.Override
-    public long getPrice() {
-      return price_;
+    public java.lang.String getPrice() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        price_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Price for the order, the price is an integer, for example `123456` is a correctly
+     * formatted price of `1.23456` assuming market configured to 5 decimal places,
+     * , required field for limit orders, however it is not required for market orders
+     * </pre>
+     *
+     * <code>string price = 2 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPriceBytes() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        price_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int SIZE_FIELD_NUMBER = 3;
@@ -611,8 +658,8 @@ public final class Commands {
       if (!getMarketIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
-      if (price_ != 0L) {
-        output.writeUInt64(2, price_);
+      if (!getPriceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, price_);
       }
       if (size_ != 0L) {
         output.writeUInt64(3, size_);
@@ -647,9 +694,8 @@ public final class Commands {
       if (!getMarketIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
-      if (price_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, price_);
+      if (!getPriceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, price_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -695,8 +741,8 @@ public final class Commands {
 
       if (!getMarketId()
           .equals(other.getMarketId())) return false;
-      if (getPrice()
-          != other.getPrice()) return false;
+      if (!getPrice()
+          .equals(other.getPrice())) return false;
       if (getSize()
           != other.getSize()) return false;
       if (side_ != other.side_) return false;
@@ -725,8 +771,7 @@ public final class Commands {
       hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMarketId().hashCode();
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPrice());
+      hash = (53 * hash) + getPrice().hashCode();
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
@@ -884,7 +929,7 @@ public final class Commands {
         super.clear();
         marketId_ = "";
 
-        price_ = 0L;
+        price_ = "";
 
         size_ = 0L;
 
@@ -995,8 +1040,9 @@ public final class Commands {
           marketId_ = other.marketId_;
           onChanged();
         }
-        if (other.getPrice() != 0L) {
-          setPrice(other.getPrice());
+        if (!other.getPrice().isEmpty()) {
+          price_ = other.price_;
+          onChanged();
         }
         if (other.getSize() != 0L) {
           setSize(other.getSize());
@@ -1145,7 +1191,7 @@ public final class Commands {
         return this;
       }
 
-      private long price_ ;
+      private java.lang.Object price_ = "";
       /**
        * <pre>
        * Price for the order, the price is an integer, for example `123456` is a correctly
@@ -1153,12 +1199,20 @@ public final class Commands {
        * , required field for limit orders, however it is not required for market orders
        * </pre>
        *
-       * <code>uint64 price = 2 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
        * @return The price.
        */
-      @java.lang.Override
-      public long getPrice() {
-        return price_;
+      public java.lang.String getPrice() {
+        java.lang.Object ref = price_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          price_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -1167,11 +1221,38 @@ public final class Commands {
        * , required field for limit orders, however it is not required for market orders
        * </pre>
        *
-       * <code>uint64 price = 2 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
+       * @return The bytes for price.
+       */
+      public com.google.protobuf.ByteString
+          getPriceBytes() {
+        java.lang.Object ref = price_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          price_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Price for the order, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places,
+       * , required field for limit orders, however it is not required for market orders
+       * </pre>
+       *
+       * <code>string price = 2 [json_name = "price"];</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
-      public Builder setPrice(long value) {
+      public Builder setPrice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         price_ = value;
         onChanged();
@@ -1184,12 +1265,34 @@ public final class Commands {
        * , required field for limit orders, however it is not required for market orders
        * </pre>
        *
-       * <code>uint64 price = 2 [json_name = "price"];</code>
+       * <code>string price = 2 [json_name = "price"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
 
-        price_ = 0L;
+        price_ = getDefaultInstance().getPrice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Price for the order, the price is an integer, for example `123456` is a correctly
+       * formatted price of `1.23456` assuming market configured to 5 decimal places,
+       * , required field for limit orders, however it is not required for market orders
+       * </pre>
+       *
+       * <code>string price = 2 [json_name = "price"];</code>
+       * @param value The bytes for price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        price_ = value;
         onChanged();
         return this;
       }
@@ -4669,10 +4772,20 @@ public final class Commands {
      * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
+     * <code>string commitment_amount = 2 [json_name = "commitmentAmount"];</code>
      * @return The commitmentAmount.
      */
-    long getCommitmentAmount();
+    java.lang.String getCommitmentAmount();
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market
+     * </pre>
+     *
+     * <code>string commitment_amount = 2 [json_name = "commitmentAmount"];</code>
+     * @return The bytes for commitmentAmount.
+     */
+    com.google.protobuf.ByteString
+        getCommitmentAmountBytes();
 
     /**
      * <pre>
@@ -4820,6 +4933,7 @@ public final class Commands {
     }
     private LiquidityProvisionSubmission() {
       marketId_ = "";
+      commitmentAmount_ = "";
       fee_ = "";
       sells_ = java.util.Collections.emptyList();
       buys_ = java.util.Collections.emptyList();
@@ -4863,9 +4977,10 @@ public final class Commands {
               marketId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              commitmentAmount_ = input.readUInt64();
+              commitmentAmount_ = s;
               break;
             }
             case 26: {
@@ -4983,18 +5098,49 @@ public final class Commands {
     }
 
     public static final int COMMITMENT_AMOUNT_FIELD_NUMBER = 2;
-    private long commitmentAmount_;
+    private volatile java.lang.Object commitmentAmount_;
     /**
      * <pre>
      * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
+     * <code>string commitment_amount = 2 [json_name = "commitmentAmount"];</code>
      * @return The commitmentAmount.
      */
     @java.lang.Override
-    public long getCommitmentAmount() {
-      return commitmentAmount_;
+    public java.lang.String getCommitmentAmount() {
+      java.lang.Object ref = commitmentAmount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        commitmentAmount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market
+     * </pre>
+     *
+     * <code>string commitment_amount = 2 [json_name = "commitmentAmount"];</code>
+     * @return The bytes for commitmentAmount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCommitmentAmountBytes() {
+      java.lang.Object ref = commitmentAmount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        commitmentAmount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int FEE_FIELD_NUMBER = 3;
@@ -5226,8 +5372,8 @@ public final class Commands {
       if (!getMarketIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
-      if (commitmentAmount_ != 0L) {
-        output.writeUInt64(2, commitmentAmount_);
+      if (!getCommitmentAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, commitmentAmount_);
       }
       if (!getFeeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fee_);
@@ -5253,9 +5399,8 @@ public final class Commands {
       if (!getMarketIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
-      if (commitmentAmount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, commitmentAmount_);
+      if (!getCommitmentAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, commitmentAmount_);
       }
       if (!getFeeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fee_);
@@ -5288,8 +5433,8 @@ public final class Commands {
 
       if (!getMarketId()
           .equals(other.getMarketId())) return false;
-      if (getCommitmentAmount()
-          != other.getCommitmentAmount()) return false;
+      if (!getCommitmentAmount()
+          .equals(other.getCommitmentAmount())) return false;
       if (!getFee()
           .equals(other.getFee())) return false;
       if (!getSellsList()
@@ -5312,8 +5457,7 @@ public final class Commands {
       hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMarketId().hashCode();
       hash = (37 * hash) + COMMITMENT_AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCommitmentAmount());
+      hash = (53 * hash) + getCommitmentAmount().hashCode();
       hash = (37 * hash) + FEE_FIELD_NUMBER;
       hash = (53 * hash) + getFee().hashCode();
       if (getSellsCount() > 0) {
@@ -5467,7 +5611,7 @@ public final class Commands {
         super.clear();
         marketId_ = "";
 
-        commitmentAmount_ = 0L;
+        commitmentAmount_ = "";
 
         fee_ = "";
 
@@ -5586,8 +5730,9 @@ public final class Commands {
           marketId_ = other.marketId_;
           onChanged();
         }
-        if (other.getCommitmentAmount() != 0L) {
-          setCommitmentAmount(other.getCommitmentAmount());
+        if (!other.getCommitmentAmount().isEmpty()) {
+          commitmentAmount_ = other.commitmentAmount_;
+          onChanged();
         }
         if (!other.getFee().isEmpty()) {
           fee_ = other.fee_;
@@ -5775,29 +5920,62 @@ public final class Commands {
         return this;
       }
 
-      private long commitmentAmount_ ;
+      private java.lang.Object commitmentAmount_ = "";
       /**
        * <pre>
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
+       * <code>string commitment_amount = 2 [json_name = "commitmentAmount"];</code>
        * @return The commitmentAmount.
        */
-      @java.lang.Override
-      public long getCommitmentAmount() {
-        return commitmentAmount_;
+      public java.lang.String getCommitmentAmount() {
+        java.lang.Object ref = commitmentAmount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          commitmentAmount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
+       * <code>string commitment_amount = 2 [json_name = "commitmentAmount"];</code>
+       * @return The bytes for commitmentAmount.
+       */
+      public com.google.protobuf.ByteString
+          getCommitmentAmountBytes() {
+        java.lang.Object ref = commitmentAmount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          commitmentAmount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market
+       * </pre>
+       *
+       * <code>string commitment_amount = 2 [json_name = "commitmentAmount"];</code>
        * @param value The commitmentAmount to set.
        * @return This builder for chaining.
        */
-      public Builder setCommitmentAmount(long value) {
+      public Builder setCommitmentAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         commitmentAmount_ = value;
         onChanged();
@@ -5808,12 +5986,32 @@ public final class Commands {
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
+       * <code>string commitment_amount = 2 [json_name = "commitmentAmount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCommitmentAmount() {
 
-        commitmentAmount_ = 0L;
+        commitmentAmount_ = getDefaultInstance().getCommitmentAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market
+       * </pre>
+       *
+       * <code>string commitment_amount = 2 [json_name = "commitmentAmount"];</code>
+       * @param value The bytes for commitmentAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCommitmentAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        commitmentAmount_ = value;
         onChanged();
         return this;
       }
@@ -6695,10 +6893,20 @@ public final class Commands {
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 1 [json_name = "amount"];</code>
+     * <code>string amount = 1 [json_name = "amount"];</code>
      * @return The amount.
      */
-    long getAmount();
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * The amount to be withdrawn
+     * </pre>
+     *
+     * <code>string amount = 1 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
 
     /**
      * <pre>
@@ -6764,6 +6972,7 @@ public final class Commands {
       super(builder);
     }
     private WithdrawSubmission() {
+      amount_ = "";
       asset_ = "";
     }
 
@@ -6797,9 +7006,10 @@ public final class Commands {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readUInt64();
+              amount_ = s;
               break;
             }
             case 18: {
@@ -6854,18 +7064,49 @@ public final class Commands {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 1;
-    private long amount_;
+    private volatile java.lang.Object amount_;
     /**
      * <pre>
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 1 [json_name = "amount"];</code>
+     * <code>string amount = 1 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
-      return amount_;
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount to be withdrawn
+     * </pre>
+     *
+     * <code>string amount = 1 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ASSET_FIELD_NUMBER = 2;
@@ -6966,8 +7207,8 @@ public final class Commands {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (amount_ != 0L) {
-        output.writeUInt64(1, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, amount_);
       }
       if (!getAssetBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, asset_);
@@ -6984,9 +7225,8 @@ public final class Commands {
       if (size != -1) return size;
 
       size = 0;
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, amount_);
       }
       if (!getAssetBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, asset_);
@@ -7010,8 +7250,8 @@ public final class Commands {
       }
       io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission other = (io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission) obj;
 
-      if (getAmount()
-          != other.getAmount()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
       if (!getAsset()
           .equals(other.getAsset())) return false;
       if (hasExt() != other.hasExt()) return false;
@@ -7031,8 +7271,7 @@ public final class Commands {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
+      hash = (53 * hash) + getAmount().hashCode();
       hash = (37 * hash) + ASSET_FIELD_NUMBER;
       hash = (53 * hash) + getAsset().hashCode();
       if (hasExt()) {
@@ -7176,7 +7415,7 @@ public final class Commands {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        amount_ = 0L;
+        amount_ = "";
 
         asset_ = "";
 
@@ -7267,8 +7506,9 @@ public final class Commands {
 
       public Builder mergeFrom(io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission other) {
         if (other == io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission.getDefaultInstance()) return this;
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
         }
         if (!other.getAsset().isEmpty()) {
           asset_ = other.asset_;
@@ -7306,29 +7546,62 @@ public final class Commands {
         return this;
       }
 
-      private long amount_ ;
+      private java.lang.Object amount_ = "";
       /**
        * <pre>
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 1 [json_name = "amount"];</code>
+       * <code>string amount = 1 [json_name = "amount"];</code>
        * @return The amount.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 1 [json_name = "amount"];</code>
+       * <code>string amount = 1 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount to be withdrawn
+       * </pre>
+       *
+       * <code>string amount = 1 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         amount_ = value;
         onChanged();
@@ -7339,12 +7612,32 @@ public final class Commands {
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 1 [json_name = "amount"];</code>
+       * <code>string amount = 1 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
 
-        amount_ = 0L;
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount to be withdrawn
+       * </pre>
+       *
+       * <code>string amount = 1 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
         onChanged();
         return this;
       }
@@ -9315,10 +9608,20 @@ public final class Commands {
      * The amount of stake to delegate
      * </pre>
      *
-     * <code>uint64 amount = 2 [json_name = "amount"];</code>
+     * <code>string amount = 2 [json_name = "amount"];</code>
      * @return The amount.
      */
-    long getAmount();
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * The amount of stake to delegate
+     * </pre>
+     *
+     * <code>string amount = 2 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
   }
   /**
    * <pre>
@@ -9338,6 +9641,7 @@ public final class Commands {
     }
     private DelegateSubmission() {
       nodeId_ = "";
+      amount_ = "";
     }
 
     @java.lang.Override
@@ -9376,9 +9680,10 @@ public final class Commands {
               nodeId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readUInt64();
+              amount_ = s;
               break;
             }
             default: {
@@ -9460,18 +9765,49 @@ public final class Commands {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 2;
-    private long amount_;
+    private volatile java.lang.Object amount_;
     /**
      * <pre>
      * The amount of stake to delegate
      * </pre>
      *
-     * <code>uint64 amount = 2 [json_name = "amount"];</code>
+     * <code>string amount = 2 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
-      return amount_;
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount of stake to delegate
+     * </pre>
+     *
+     * <code>string amount = 2 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9491,8 +9827,8 @@ public final class Commands {
       if (!getNodeIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeId_);
       }
-      if (amount_ != 0L) {
-        output.writeUInt64(2, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, amount_);
       }
       unknownFields.writeTo(output);
     }
@@ -9506,9 +9842,8 @@ public final class Commands {
       if (!getNodeIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeId_);
       }
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, amount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9527,8 +9862,8 @@ public final class Commands {
 
       if (!getNodeId()
           .equals(other.getNodeId())) return false;
-      if (getAmount()
-          != other.getAmount()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9543,8 +9878,7 @@ public final class Commands {
       hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNodeId().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
+      hash = (53 * hash) + getAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9684,7 +10018,7 @@ public final class Commands {
         super.clear();
         nodeId_ = "";
 
-        amount_ = 0L;
+        amount_ = "";
 
         return this;
       }
@@ -9766,8 +10100,9 @@ public final class Commands {
           nodeId_ = other.nodeId_;
           onChanged();
         }
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9894,29 +10229,62 @@ public final class Commands {
         return this;
       }
 
-      private long amount_ ;
+      private java.lang.Object amount_ = "";
       /**
        * <pre>
        * The amount of stake to delegate
        * </pre>
        *
-       * <code>uint64 amount = 2 [json_name = "amount"];</code>
+       * <code>string amount = 2 [json_name = "amount"];</code>
        * @return The amount.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * The amount of stake to delegate
        * </pre>
        *
-       * <code>uint64 amount = 2 [json_name = "amount"];</code>
+       * <code>string amount = 2 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount of stake to delegate
+       * </pre>
+       *
+       * <code>string amount = 2 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         amount_ = value;
         onChanged();
@@ -9927,12 +10295,32 @@ public final class Commands {
        * The amount of stake to delegate
        * </pre>
        *
-       * <code>uint64 amount = 2 [json_name = "amount"];</code>
+       * <code>string amount = 2 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
 
-        amount_ = 0L;
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount of stake to delegate
+       * </pre>
+       *
+       * <code>string amount = 2 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
         onChanged();
         return this;
       }
@@ -10010,10 +10398,20 @@ public final class Commands {
      * optional, if not specified = ALL
      * </pre>
      *
-     * <code>uint64 amount = 2 [json_name = "amount"];</code>
+     * <code>string amount = 2 [json_name = "amount"];</code>
      * @return The amount.
      */
-    long getAmount();
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * optional, if not specified = ALL
+     * </pre>
+     *
+     * <code>string amount = 2 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
 
     /**
      * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
@@ -10040,6 +10438,7 @@ public final class Commands {
     }
     private UndelegateSubmission() {
       nodeId_ = "";
+      amount_ = "";
       method_ = 0;
     }
 
@@ -10079,9 +10478,10 @@ public final class Commands {
               nodeId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readUInt64();
+              amount_ = s;
               break;
             }
             case 24: {
@@ -10287,18 +10687,49 @@ public final class Commands {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 2;
-    private long amount_;
+    private volatile java.lang.Object amount_;
     /**
      * <pre>
      * optional, if not specified = ALL
      * </pre>
      *
-     * <code>uint64 amount = 2 [json_name = "amount"];</code>
+     * <code>string amount = 2 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
-      return amount_;
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * optional, if not specified = ALL
+     * </pre>
+     *
+     * <code>string amount = 2 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int METHOD_FIELD_NUMBER = 3;
@@ -10337,8 +10768,8 @@ public final class Commands {
       if (!getNodeIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeId_);
       }
-      if (amount_ != 0L) {
-        output.writeUInt64(2, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, amount_);
       }
       if (method_ != io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method.METHOD_UNSPECIFIED.getNumber()) {
         output.writeEnum(3, method_);
@@ -10355,9 +10786,8 @@ public final class Commands {
       if (!getNodeIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeId_);
       }
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, amount_);
       }
       if (method_ != io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method.METHOD_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -10380,8 +10810,8 @@ public final class Commands {
 
       if (!getNodeId()
           .equals(other.getNodeId())) return false;
-      if (getAmount()
-          != other.getAmount()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
       if (method_ != other.method_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -10397,8 +10827,7 @@ public final class Commands {
       hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNodeId().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
+      hash = (53 * hash) + getAmount().hashCode();
       hash = (37 * hash) + METHOD_FIELD_NUMBER;
       hash = (53 * hash) + method_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -10536,7 +10965,7 @@ public final class Commands {
         super.clear();
         nodeId_ = "";
 
-        amount_ = 0L;
+        amount_ = "";
 
         method_ = 0;
 
@@ -10621,8 +11050,9 @@ public final class Commands {
           nodeId_ = other.nodeId_;
           onChanged();
         }
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
         }
         if (other.method_ != 0) {
           setMethodValue(other.getMethodValue());
@@ -10732,29 +11162,62 @@ public final class Commands {
         return this;
       }
 
-      private long amount_ ;
+      private java.lang.Object amount_ = "";
       /**
        * <pre>
        * optional, if not specified = ALL
        * </pre>
        *
-       * <code>uint64 amount = 2 [json_name = "amount"];</code>
+       * <code>string amount = 2 [json_name = "amount"];</code>
        * @return The amount.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * optional, if not specified = ALL
        * </pre>
        *
-       * <code>uint64 amount = 2 [json_name = "amount"];</code>
+       * <code>string amount = 2 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * optional, if not specified = ALL
+       * </pre>
+       *
+       * <code>string amount = 2 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         amount_ = value;
         onChanged();
@@ -10765,12 +11228,32 @@ public final class Commands {
        * optional, if not specified = ALL
        * </pre>
        *
-       * <code>uint64 amount = 2 [json_name = "amount"];</code>
+       * <code>string amount = 2 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
 
-        amount_ = 0L;
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional, if not specified = ALL
+       * </pre>
+       *
+       * <code>string amount = 2 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
         onChanged();
         return this;
       }
@@ -11445,7 +11928,7 @@ public final class Commands {
       "ogle/protobuf/wrappers.proto\0326github.com" +
       "/mwitkow/go-proto-validators/validator.p" +
       "roto\"\336\002\n\017OrderSubmission\022#\n\tmarket_id\030\001 " +
-      "\001(\tB\006\342\337\037\002X\001R\010marketId\022\024\n\005price\030\002 \001(\004R\005pr" +
+      "\001(\tB\006\342\337\037\002X\001R\010marketId\022\024\n\005price\030\002 \001(\tR\005pr" +
       "ice\022\032\n\004size\030\003 \001(\004B\006\342\337\037\002\020\000R\004size\022\036\n\004side\030" +
       "\004 \001(\0162\n.vega.SideR\004side\022;\n\rtime_in_force" +
       "\030\005 \001(\0162\027.vega.Order.TimeInForceR\013timeInF" +
@@ -11467,11 +11950,11 @@ public final class Commands {
       "ferenceR\017peggedReference\"\366\001\n\034LiquidityPr" +
       "ovisionSubmission\022#\n\tmarket_id\030\001 \001(\tB\006\342\337" +
       "\037\002X\001R\010marketId\022+\n\021commitment_amount\030\002 \001(" +
-      "\004R\020commitmentAmount\022\020\n\003fee\030\003 \001(\tR\003fee\022*\n" +
+      "\tR\020commitmentAmount\022\020\n\003fee\030\003 \001(\tR\003fee\022*\n" +
       "\005sells\030\004 \003(\0132\024.vega.LiquidityOrderR\005sell" +
       "s\022(\n\004buys\030\005 \003(\0132\024.vega.LiquidityOrderR\004b" +
       "uys\022\034\n\treference\030\006 \001(\tR\treference\"g\n\022Wit" +
-      "hdrawSubmission\022\026\n\006amount\030\001 \001(\004R\006amount\022" +
+      "hdrawSubmission\022\026\n\006amount\030\001 \001(\tR\006amount\022" +
       "\024\n\005asset\030\002 \001(\tR\005asset\022#\n\003ext\030\003 \001(\0132\021.veg" +
       "a.WithdrawExtR\003ext\"e\n\022ProposalSubmission" +
       "\022\034\n\treference\030\001 \001(\tR\treference\0221\n\005terms\030" +
@@ -11480,9 +11963,9 @@ public final class Commands {
       "B\006\342\337\037\002X\001R\nproposalId\022&\n\005value\030\002 \001(\0162\020.ve" +
       "ga.Vote.ValueR\005value\"M\n\022DelegateSubmissi" +
       "on\022\037\n\007node_id\030\001 \001(\tB\006\342\337\037\002X\001R\006nodeId\022\026\n\006a" +
-      "mount\030\002 \001(\004R\006amount\"\371\001\n\024UndelegateSubmis" +
+      "mount\030\002 \001(\tR\006amount\"\371\001\n\024UndelegateSubmis" +
       "sion\022\037\n\007node_id\030\001 \001(\tB\006\342\337\037\002X\001R\006nodeId\022\026\n" +
-      "\006amount\030\002 \001(\004R\006amount\022E\n\006method\030\003 \001(\0162-." +
+      "\006amount\030\002 \001(\tR\006amount\022E\n\006method\030\003 \001(\0162-." +
       "vega.commands.v1.UndelegateSubmission.Me" +
       "thodR\006method\"a\n\006Method\022\026\n\022METHOD_UNSPECI" +
       "FIED\020\000\022\016\n\nMETHOD_NOW\020\001\022\032\n\026METHOD_AT_END_" +

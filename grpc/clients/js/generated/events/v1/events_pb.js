@@ -2163,7 +2163,7 @@ proto.vega.events.v1.MarketEvent.prototype.setPayload = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.vega.events.v1.TxErrorEvent.oneofGroups_ = [[101,102,103,104,105,106,107]];
+proto.vega.events.v1.TxErrorEvent.oneofGroups_ = [[101,102,103,104,105,106,107,108,109,110]];
 
 /**
  * @enum {number}
@@ -2176,7 +2176,10 @@ proto.vega.events.v1.TxErrorEvent.TransactionCase = {
   PROPOSAL: 104,
   VOTE_SUBMISSION: 105,
   LIQUIDITY_PROVISION_SUBMISSION: 106,
-  WITHDRAW_SUBMISSION: 107
+  WITHDRAW_SUBMISSION: 107,
+  DELEGATE_SUBMISSION: 108,
+  UNDELEGATE_SUBMISSION: 109,
+  RESTORE_SNAPSHOT: 110
 };
 
 /**
@@ -2225,7 +2228,10 @@ proto.vega.events.v1.TxErrorEvent.toObject = function(includeInstance, msg) {
     proposal: (f = msg.getProposal()) && commands_v1_commands_pb.ProposalSubmission.toObject(includeInstance, f),
     voteSubmission: (f = msg.getVoteSubmission()) && commands_v1_commands_pb.VoteSubmission.toObject(includeInstance, f),
     liquidityProvisionSubmission: (f = msg.getLiquidityProvisionSubmission()) && commands_v1_commands_pb.LiquidityProvisionSubmission.toObject(includeInstance, f),
-    withdrawSubmission: (f = msg.getWithdrawSubmission()) && commands_v1_commands_pb.WithdrawSubmission.toObject(includeInstance, f)
+    withdrawSubmission: (f = msg.getWithdrawSubmission()) && commands_v1_commands_pb.WithdrawSubmission.toObject(includeInstance, f),
+    delegateSubmission: (f = msg.getDelegateSubmission()) && commands_v1_commands_pb.DelegateSubmission.toObject(includeInstance, f),
+    undelegateSubmission: (f = msg.getUndelegateSubmission()) && commands_v1_commands_pb.UndelegateSubmission.toObject(includeInstance, f),
+    restoreSnapshot: (f = msg.getRestoreSnapshot()) && commands_v1_commands_pb.RestoreSnapshot.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2304,6 +2310,21 @@ proto.vega.events.v1.TxErrorEvent.deserializeBinaryFromReader = function(msg, re
       var value = new commands_v1_commands_pb.WithdrawSubmission;
       reader.readMessage(value,commands_v1_commands_pb.WithdrawSubmission.deserializeBinaryFromReader);
       msg.setWithdrawSubmission(value);
+      break;
+    case 108:
+      var value = new commands_v1_commands_pb.DelegateSubmission;
+      reader.readMessage(value,commands_v1_commands_pb.DelegateSubmission.deserializeBinaryFromReader);
+      msg.setDelegateSubmission(value);
+      break;
+    case 109:
+      var value = new commands_v1_commands_pb.UndelegateSubmission;
+      reader.readMessage(value,commands_v1_commands_pb.UndelegateSubmission.deserializeBinaryFromReader);
+      msg.setUndelegateSubmission(value);
+      break;
+    case 110:
+      var value = new commands_v1_commands_pb.RestoreSnapshot;
+      reader.readMessage(value,commands_v1_commands_pb.RestoreSnapshot.deserializeBinaryFromReader);
+      msg.setRestoreSnapshot(value);
       break;
     default:
       reader.skipField();
@@ -2402,6 +2423,30 @@ proto.vega.events.v1.TxErrorEvent.serializeBinaryToWriter = function(message, wr
       107,
       f,
       commands_v1_commands_pb.WithdrawSubmission.serializeBinaryToWriter
+    );
+  }
+  f = message.getDelegateSubmission();
+  if (f != null) {
+    writer.writeMessage(
+      108,
+      f,
+      commands_v1_commands_pb.DelegateSubmission.serializeBinaryToWriter
+    );
+  }
+  f = message.getUndelegateSubmission();
+  if (f != null) {
+    writer.writeMessage(
+      109,
+      f,
+      commands_v1_commands_pb.UndelegateSubmission.serializeBinaryToWriter
+    );
+  }
+  f = message.getRestoreSnapshot();
+  if (f != null) {
+    writer.writeMessage(
+      110,
+      f,
+      commands_v1_commands_pb.RestoreSnapshot.serializeBinaryToWriter
     );
   }
 };
@@ -2699,6 +2744,117 @@ proto.vega.events.v1.TxErrorEvent.prototype.clearWithdrawSubmission = function()
  */
 proto.vega.events.v1.TxErrorEvent.prototype.hasWithdrawSubmission = function() {
   return jspb.Message.getField(this, 107) != null;
+};
+
+
+/**
+ * optional vega.commands.v1.DelegateSubmission delegate_submission = 108;
+ * @return {?proto.vega.commands.v1.DelegateSubmission}
+ */
+proto.vega.events.v1.TxErrorEvent.prototype.getDelegateSubmission = function() {
+  return /** @type{?proto.vega.commands.v1.DelegateSubmission} */ (
+    jspb.Message.getWrapperField(this, commands_v1_commands_pb.DelegateSubmission, 108));
+};
+
+
+/**
+ * @param {?proto.vega.commands.v1.DelegateSubmission|undefined} value
+ * @return {!proto.vega.events.v1.TxErrorEvent} returns this
+*/
+proto.vega.events.v1.TxErrorEvent.prototype.setDelegateSubmission = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 108, proto.vega.events.v1.TxErrorEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.events.v1.TxErrorEvent} returns this
+ */
+proto.vega.events.v1.TxErrorEvent.prototype.clearDelegateSubmission = function() {
+  return this.setDelegateSubmission(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.events.v1.TxErrorEvent.prototype.hasDelegateSubmission = function() {
+  return jspb.Message.getField(this, 108) != null;
+};
+
+
+/**
+ * optional vega.commands.v1.UndelegateSubmission undelegate_submission = 109;
+ * @return {?proto.vega.commands.v1.UndelegateSubmission}
+ */
+proto.vega.events.v1.TxErrorEvent.prototype.getUndelegateSubmission = function() {
+  return /** @type{?proto.vega.commands.v1.UndelegateSubmission} */ (
+    jspb.Message.getWrapperField(this, commands_v1_commands_pb.UndelegateSubmission, 109));
+};
+
+
+/**
+ * @param {?proto.vega.commands.v1.UndelegateSubmission|undefined} value
+ * @return {!proto.vega.events.v1.TxErrorEvent} returns this
+*/
+proto.vega.events.v1.TxErrorEvent.prototype.setUndelegateSubmission = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 109, proto.vega.events.v1.TxErrorEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.events.v1.TxErrorEvent} returns this
+ */
+proto.vega.events.v1.TxErrorEvent.prototype.clearUndelegateSubmission = function() {
+  return this.setUndelegateSubmission(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.events.v1.TxErrorEvent.prototype.hasUndelegateSubmission = function() {
+  return jspb.Message.getField(this, 109) != null;
+};
+
+
+/**
+ * optional vega.commands.v1.RestoreSnapshot restore_snapshot = 110;
+ * @return {?proto.vega.commands.v1.RestoreSnapshot}
+ */
+proto.vega.events.v1.TxErrorEvent.prototype.getRestoreSnapshot = function() {
+  return /** @type{?proto.vega.commands.v1.RestoreSnapshot} */ (
+    jspb.Message.getWrapperField(this, commands_v1_commands_pb.RestoreSnapshot, 110));
+};
+
+
+/**
+ * @param {?proto.vega.commands.v1.RestoreSnapshot|undefined} value
+ * @return {!proto.vega.events.v1.TxErrorEvent} returns this
+*/
+proto.vega.events.v1.TxErrorEvent.prototype.setRestoreSnapshot = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 110, proto.vega.events.v1.TxErrorEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.events.v1.TxErrorEvent} returns this
+ */
+proto.vega.events.v1.TxErrorEvent.prototype.clearRestoreSnapshot = function() {
+  return this.setRestoreSnapshot(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.events.v1.TxErrorEvent.prototype.hasRestoreSnapshot = function() {
+  return jspb.Message.getField(this, 110) != null;
 };
 
 

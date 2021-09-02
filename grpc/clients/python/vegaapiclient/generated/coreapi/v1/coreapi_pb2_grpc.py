@@ -59,6 +59,11 @@ class CoreApiServiceStub(object):
                 request_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListVotesRequest.SerializeToString,
                 response_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListVotesResponse.FromString,
                 )
+        self.ListPartiesStake = channel.unary_unary(
+                '/vega.coreapi.v1.CoreApiService/ListPartiesStake',
+                request_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListPartiesStakeRequest.SerializeToString,
+                response_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListPartiesStakeResponse.FromString,
+                )
 
 
 class CoreApiServiceServicer(object):
@@ -118,6 +123,12 @@ class CoreApiServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListPartiesStake(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoreApiServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -165,6 +176,11 @@ def add_CoreApiServiceServicer_to_server(servicer, server):
                     servicer.ListVotes,
                     request_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListVotesRequest.FromString,
                     response_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListVotesResponse.SerializeToString,
+            ),
+            'ListPartiesStake': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPartiesStake,
+                    request_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListPartiesStakeRequest.FromString,
+                    response_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListPartiesStakeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -326,5 +342,22 @@ class CoreApiService(object):
         return grpc.experimental.unary_unary(request, target, '/vega.coreapi.v1.CoreApiService/ListVotes',
             coreapi_dot_v1_dot_coreapi__pb2.ListVotesRequest.SerializeToString,
             coreapi_dot_v1_dot_coreapi__pb2.ListVotesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListPartiesStake(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/vega.coreapi.v1.CoreApiService/ListPartiesStake',
+            coreapi_dot_v1_dot_coreapi__pb2.ListPartiesStakeRequest.SerializeToString,
+            coreapi_dot_v1_dot_coreapi__pb2.ListPartiesStakeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

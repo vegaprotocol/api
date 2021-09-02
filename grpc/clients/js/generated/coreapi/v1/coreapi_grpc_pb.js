@@ -141,6 +141,28 @@ function deserialize_vega_coreapi_v1_ListPartiesResponse(buffer_arg) {
   return coreapi_v1_coreapi_pb.ListPartiesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_vega_coreapi_v1_ListPartiesStakeRequest(arg) {
+  if (!(arg instanceof coreapi_v1_coreapi_pb.ListPartiesStakeRequest)) {
+    throw new Error('Expected argument of type vega.coreapi.v1.ListPartiesStakeRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_vega_coreapi_v1_ListPartiesStakeRequest(buffer_arg) {
+  return coreapi_v1_coreapi_pb.ListPartiesStakeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vega_coreapi_v1_ListPartiesStakeResponse(arg) {
+  if (!(arg instanceof coreapi_v1_coreapi_pb.ListPartiesStakeResponse)) {
+    throw new Error('Expected argument of type vega.coreapi.v1.ListPartiesStakeResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_vega_coreapi_v1_ListPartiesStakeResponse(buffer_arg) {
+  return coreapi_v1_coreapi_pb.ListPartiesStakeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_vega_coreapi_v1_ListProposalsRequest(arg) {
   if (!(arg instanceof coreapi_v1_coreapi_pb.ListProposalsRequest)) {
     throw new Error('Expected argument of type vega.coreapi.v1.ListProposalsRequest');
@@ -307,6 +329,17 @@ var CoreApiServiceService = exports.CoreApiServiceService = {
     requestDeserialize: deserialize_vega_coreapi_v1_ListVotesRequest,
     responseSerialize: serialize_vega_coreapi_v1_ListVotesResponse,
     responseDeserialize: deserialize_vega_coreapi_v1_ListVotesResponse,
+  },
+  listPartiesStake: {
+    path: '/vega.coreapi.v1.CoreApiService/ListPartiesStake',
+    requestStream: false,
+    responseStream: false,
+    requestType: coreapi_v1_coreapi_pb.ListPartiesStakeRequest,
+    responseType: coreapi_v1_coreapi_pb.ListPartiesStakeResponse,
+    requestSerialize: serialize_vega_coreapi_v1_ListPartiesStakeRequest,
+    requestDeserialize: deserialize_vega_coreapi_v1_ListPartiesStakeRequest,
+    responseSerialize: serialize_vega_coreapi_v1_ListPartiesStakeResponse,
+    responseDeserialize: deserialize_vega_coreapi_v1_ListPartiesStakeResponse,
   },
 };
 

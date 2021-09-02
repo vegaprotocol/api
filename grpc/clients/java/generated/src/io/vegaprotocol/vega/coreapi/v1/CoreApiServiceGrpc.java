@@ -293,6 +293,37 @@ public final class CoreApiServiceGrpc {
     return getListVotesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest,
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse> getListPartiesStakeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPartiesStake",
+      requestType = io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest.class,
+      responseType = io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest,
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse> getListPartiesStakeMethod() {
+    io.grpc.MethodDescriptor<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse> getListPartiesStakeMethod;
+    if ((getListPartiesStakeMethod = CoreApiServiceGrpc.getListPartiesStakeMethod) == null) {
+      synchronized (CoreApiServiceGrpc.class) {
+        if ((getListPartiesStakeMethod = CoreApiServiceGrpc.getListPartiesStakeMethod) == null) {
+          CoreApiServiceGrpc.getListPartiesStakeMethod = getListPartiesStakeMethod =
+              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPartiesStake"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreApiServiceMethodDescriptorSupplier("ListPartiesStake"))
+              .build();
+        }
+      }
+    }
+    return getListPartiesStakeMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -404,6 +435,13 @@ public final class CoreApiServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListVotesMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void listPartiesStake(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPartiesStakeMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -469,6 +507,13 @@ public final class CoreApiServiceGrpc {
                 io.vegaprotocol.vega.coreapi.v1.Coreapi.ListVotesRequest,
                 io.vegaprotocol.vega.coreapi.v1.Coreapi.ListVotesResponse>(
                   this, METHODID_LIST_VOTES)))
+          .addMethod(
+            getListPartiesStakeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest,
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse>(
+                  this, METHODID_LIST_PARTIES_STAKE)))
           .build();
     }
   }
@@ -558,6 +603,14 @@ public final class CoreApiServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListVotesMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listPartiesStake(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPartiesStakeMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -635,6 +688,13 @@ public final class CoreApiServiceGrpc {
     public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListVotesResponse listVotes(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListVotesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListVotesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse listPartiesStake(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPartiesStakeMethod(), getCallOptions(), request);
     }
   }
 
@@ -723,6 +783,14 @@ public final class CoreApiServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListVotesMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse> listPartiesStake(
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPartiesStakeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ACCOUNTS = 0;
@@ -734,6 +802,7 @@ public final class CoreApiServiceGrpc {
   private static final int METHODID_LIST_PROPOSALS = 6;
   private static final int METHODID_LIST_MARKETS_DATA = 7;
   private static final int METHODID_LIST_VOTES = 8;
+  private static final int METHODID_LIST_PARTIES_STAKE = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -787,6 +856,10 @@ public final class CoreApiServiceGrpc {
         case METHODID_LIST_VOTES:
           serviceImpl.listVotes((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListVotesRequest) request,
               (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListVotesResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PARTIES_STAKE:
+          serviceImpl.listPartiesStake((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeRequest) request,
+              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListPartiesStakeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -858,6 +931,7 @@ public final class CoreApiServiceGrpc {
               .addMethod(getListProposalsMethod())
               .addMethod(getListMarketsDataMethod())
               .addMethod(getListVotesMethod())
+              .addMethod(getListPartiesStakeMethod())
               .build();
         }
       }

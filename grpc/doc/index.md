@@ -262,12 +262,15 @@
     - [ListNetworkParametersResponse](#vega.coreapi.v1.ListNetworkParametersResponse)
     - [ListPartiesRequest](#vega.coreapi.v1.ListPartiesRequest)
     - [ListPartiesResponse](#vega.coreapi.v1.ListPartiesResponse)
+    - [ListPartiesStakeRequest](#vega.coreapi.v1.ListPartiesStakeRequest)
+    - [ListPartiesStakeResponse](#vega.coreapi.v1.ListPartiesStakeResponse)
     - [ListProposalsRequest](#vega.coreapi.v1.ListProposalsRequest)
     - [ListProposalsResponse](#vega.coreapi.v1.ListProposalsResponse)
     - [ListValidatorsRequest](#vega.coreapi.v1.ListValidatorsRequest)
     - [ListValidatorsResponse](#vega.coreapi.v1.ListValidatorsResponse)
     - [ListVotesRequest](#vega.coreapi.v1.ListVotesRequest)
     - [ListVotesResponse](#vega.coreapi.v1.ListVotesResponse)
+    - [PartyStake](#vega.coreapi.v1.PartyStake)
 
     - [CoreApiService](#vega.coreapi.v1.CoreApiService)
 
@@ -1088,7 +1091,7 @@ Represents an account for an asset on Vega for a particular owner or party
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | Unique account identifier (used internally by Vega) |
 | owner | [string](#string) |  | The party that the account belongs to, special values include `network`, which represents the Vega network and is most commonly seen during liquidation of distressed trading positions |
-| balance | [uint64](#uint64) |  | Balance of the asset, the balance is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places and importantly balances cannot be negative |
+| balance | [string](#string) |  | Balance of the asset, the balance is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places and importantly balances cannot be negative |
 | asset | [string](#string) |  | Asset identifier for the account |
 | market_id | [string](#string) |  | Market identifier for the account, if [`AccountType`](#vega.AccountType).`ACCOUNT_TYPE_GENERAL` this will be empty |
 | type | [AccountType](#vega.AccountType) |  | The account type related to this account |
@@ -1107,7 +1110,7 @@ AuctionIndicativeState is used to emit an event with the indicative price/volume
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | market_id | [string](#string) |  | The market identifier for which this state relates to |
-| indicative_price | [uint64](#uint64) |  | The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now |
+| indicative_price | [string](#string) |  | The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now |
 | indicative_volume | [uint64](#uint64) |  | The Indicative Uncrossing Volume is the volume available at the Indicative crossing price if we uncrossed the auction now |
 | auction_start | [int64](#int64) |  | The timestamp at which the auction started |
 | auction_end | [int64](#int64) |  | The timestamp at which the auction is meant to stop |
@@ -1128,10 +1131,10 @@ referred to commonly as a candlestick or candle
 | ----- | ---- | ----- | ----------- |
 | timestamp | [int64](#int64) |  | Timestamp for the point in time when the candle was initially created/opened, in nanoseconds since the epoch - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
 | datetime | [string](#string) |  | An ISO-8601 datetime with nanosecond precision for when the candle was last updated |
-| high | [uint64](#uint64) |  | Highest price for trading during the candle interval |
-| low | [uint64](#uint64) |  | Lowest price for trading during the candle interval |
-| open | [uint64](#uint64) |  | Open trade price |
-| close | [uint64](#uint64) |  | Closing trade price |
+| high | [string](#string) |  | Highest price for trading during the candle interval |
+| low | [string](#string) |  | Lowest price for trading during the candle interval |
+| open | [string](#string) |  | Open trade price |
+| close | [string](#string) |  | Closing trade price |
 | volume | [uint64](#uint64) |  | Total trading volume during the candle interval |
 | interval | [Interval](#vega.Interval) |  | Time interval for the candle - See [`Interval`](#vega.Interval) |
 
@@ -1310,9 +1313,9 @@ Represents any fees paid by a party, resulting from a trade
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| maker_fee | [uint64](#uint64) |  | Fee amount paid to the non-aggressive party of the trade |
-| infrastructure_fee | [uint64](#uint64) |  | Fee amount paid for maintaining the Vega infrastructure |
-| liquidity_fee | [uint64](#uint64) |  | Fee amount paid to market makers |
+| maker_fee | [string](#string) |  | Fee amount paid to the non-aggressive party of the trade |
+| infrastructure_fee | [string](#string) |  | Fee amount paid for maintaining the Vega infrastructure |
+| liquidity_fee | [string](#string) |  | Fee amount paid to market makers |
 
 
 
@@ -1327,7 +1330,7 @@ Asset value information used within a transfer
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| amount | [uint64](#uint64) |  | A signed integer amount of asset |
+| amount | [string](#string) |  | A signed integer amount of asset |
 | asset | [string](#string) |  | Asset identifier |
 
 
@@ -1345,7 +1348,7 @@ Represents a ledger entry on Vega
 | ----- | ---- | ----- | ----------- |
 | from_account | [string](#string) |  | One or more accounts to transfer from |
 | to_account | [string](#string) |  | One or more accounts to transfer to |
-| amount | [uint64](#uint64) |  | An amount to transfer |
+| amount | [string](#string) |  | An amount to transfer |
 | reference | [string](#string) |  | A reference for auditing purposes |
 | type | [string](#string) |  | Type of ledger entry |
 | timestamp | [int64](#int64) |  | Timestamp for the time the ledger entry was created, in nanoseconds since the epoch - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
@@ -1418,7 +1421,7 @@ An Liquidity provider commitment
 | created_at | [int64](#int64) |  | Timestamp for when the order was created at, in nanoseconds since the epoch - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
 | updated_at | [int64](#int64) |  | Timestamp for when the order was updated at, in nanoseconds since the epoch - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
 | market_id | [string](#string) |  | Market identifier for the order, required field |
-| commitment_amount | [uint64](#uint64) |  | Specified as a unitless number that represents the amount of settlement asset of the market |
+| commitment_amount | [string](#string) |  | Specified as a unitless number that represents the amount of settlement asset of the market |
 | fee | [string](#string) |  | Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers |
 | sells | [LiquidityOrderReference](#vega.LiquidityOrderReference) | repeated | A set of liquidity sell orders to meet the liquidity provision obligation |
 | buys | [LiquidityOrderReference](#vega.LiquidityOrderReference) | repeated | A set of liquidity buy orders to meet the liquidity provision obligation |
@@ -1439,10 +1442,10 @@ Represents the margin levels for a party on a market at a given time
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| maintenance_margin | [uint64](#uint64) |  | Maintenance margin value |
-| search_level | [uint64](#uint64) |  | Search level value |
-| initial_margin | [uint64](#uint64) |  | Initial margin value |
-| collateral_release_level | [uint64](#uint64) |  | Collateral release level value |
+| maintenance_margin | [string](#string) |  | Maintenance margin value |
+| search_level | [string](#string) |  | Search level value |
+| initial_margin | [string](#string) |  | Initial margin value |
+| collateral_release_level | [string](#string) |  | Collateral release level value |
 | party_id | [string](#string) |  | Party identifier |
 | market_id | [string](#string) |  | Market identifier |
 | asset | [string](#string) |  | Asset identifier |
@@ -1461,23 +1464,23 @@ Represents data generated by a market when open
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| mark_price | [uint64](#uint64) |  | Mark price, as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
-| best_bid_price | [uint64](#uint64) |  | Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+| mark_price | [string](#string) |  | Mark price, as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+| best_bid_price | [string](#string) |  | Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
 | best_bid_volume | [uint64](#uint64) |  | Aggregated volume being bid at the best bid price |
-| best_offer_price | [uint64](#uint64) |  | Lowest price level on an order book for offer orders |
+| best_offer_price | [string](#string) |  | Lowest price level on an order book for offer orders |
 | best_offer_volume | [uint64](#uint64) |  | Aggregated volume being offered at the best offer price, as an integer, for example `123456` is a correctly // formatted price of `1.23456` assuming market configured to 5 decimal places |
-| best_static_bid_price | [uint64](#uint64) |  | Highest price on the order book for buy orders not including pegged orders |
+| best_static_bid_price | [string](#string) |  | Highest price on the order book for buy orders not including pegged orders |
 | best_static_bid_volume | [uint64](#uint64) |  | Total volume at the best static bid price excluding pegged orders |
-| best_static_offer_price | [uint64](#uint64) |  | Lowest price on the order book for sell orders not including pegged orders |
+| best_static_offer_price | [string](#string) |  | Lowest price on the order book for sell orders not including pegged orders |
 | best_static_offer_volume | [uint64](#uint64) |  | Total volume at the best static offer price excluding pegged orders |
-| mid_price | [uint64](#uint64) |  | Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
-| static_mid_price | [uint64](#uint64) |  | Arithmetic average of the best static bid price and best static offer price |
+| mid_price | [string](#string) |  | Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+| static_mid_price | [string](#string) |  | Arithmetic average of the best static bid price and best static offer price |
 | market | [string](#string) |  | Market identifier for the data |
 | timestamp | [int64](#int64) |  | Timestamp at which this mark price was relevant, in nanoseconds since the epoch - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
 | open_interest | [uint64](#uint64) |  | The sum of the size of all positions greater than 0 on the market |
 | auction_end | [int64](#int64) |  | Time in seconds until the end of the auction (0 if currently not in auction period) |
 | auction_start | [int64](#int64) |  | Time until next auction (used in FBA&#39;s) - currently always 0 |
-| indicative_price | [uint64](#uint64) |  | Indicative price (zero if not in auction) |
+| indicative_price | [string](#string) |  | Indicative price (zero if not in auction) |
 | indicative_volume | [uint64](#uint64) |  | Indicative volume (zero if not in auction) |
 | market_trading_mode | [Market.TradingMode](#vega.Market.TradingMode) |  | The current trading mode for the market |
 | trigger | [AuctionTrigger](#vega.AuctionTrigger) |  | When a market is in an auction trading mode, this field indicates what triggered the auction |
@@ -1565,6 +1568,8 @@ Represents a network parameter on Vega
 | epoch_data | [EpochData](#vega.EpochData) |  | Informantion about epoch |
 | status | [NodeStatus](#vega.NodeStatus) |  | Node status |
 | delagations | [Delegation](#vega.Delegation) | repeated | Node&#39;s delegations |
+| score | [string](#string) |  | Node score |
+| normalised_score | [string](#string) |  | Node normalised score |
 
 
 
@@ -1602,7 +1607,7 @@ An order can be submitted, amended and cancelled on Vega in an attempt to make t
 | market_id | [string](#string) |  | Market identifier for the order |
 | party_id | [string](#string) |  | Party identifier for the order |
 | side | [Side](#vega.Side) |  | Side for the order, e.g. SIDE_BUY or SIDE_SELL - See [`Side`](#vega.Side) |
-| price | [uint64](#uint64) |  | Price for the order, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+| price | [string](#string) |  | Price for the order, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
 | size | [uint64](#uint64) |  | Size for the order, for example, in a futures market the size equals the number of contracts |
 | remaining | [uint64](#uint64) |  | Size remaining, when this reaches 0 then the order is fully filled and status becomes STATUS_FILLED |
 | time_in_force | [Order.TimeInForce](#vega.Order.TimeInForce) |  | Time in force indicates how long an order will remain active before it is executed or expires. - See [`Order.TimeInForce`](#vega.Order.TimeInForce) |
@@ -1699,9 +1704,9 @@ Represents position data for a party on the specified market on Vega
 | market_id | [string](#string) |  | Market identifier |
 | party_id | [string](#string) |  | Party identifier |
 | open_volume | [int64](#int64) |  | Open volume for the position, value is signed &#43;ve for long and -ve for short |
-| realised_pnl | [int64](#int64) |  | Realised profit and loss for the position, value is signed &#43;ve for long and -ve for short |
-| unrealised_pnl | [int64](#int64) |  | Unrealised profit and loss for the position, value is signed &#43;ve for long and -ve for short |
-| average_entry_price | [uint64](#uint64) |  | Average entry price for the position, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+| realised_pnl | [string](#string) |  | Realised profit and loss for the position, value is signed &#43;ve for long and -ve for short |
+| unrealised_pnl | [string](#string) |  | Unrealised profit and loss for the position, value is signed &#43;ve for long and -ve for short |
+| average_entry_price | [string](#string) |  | Average entry price for the position, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
 | updated_at | [int64](#int64) |  | Timestamp for the latest time the position was updated |
 
 
@@ -1718,7 +1723,7 @@ Represents position data for a party on the specified market on Vega
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | volume | [int64](#int64) |  | Volume for the position trade, value is signed &#43;ve for long and -ve for short |
-| price | [uint64](#uint64) |  | Price for the position trade, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+| price | [string](#string) |  | Price for the position trade, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
 
 
 
@@ -1733,7 +1738,7 @@ Represents position data for a party on the specified market on Vega
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| value | [uint64](#uint64) |  | Price value, given as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+| value | [string](#string) |  | Price value, given as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
 
 
 
@@ -1748,7 +1753,7 @@ Represents a price level from market depth or order book data
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| price | [uint64](#uint64) |  | Price for the price level, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+| price | [string](#string) |  | Price for the price level, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
 | number_of_orders | [uint64](#uint64) |  | Number of orders at the price level |
 | volume | [uint64](#uint64) |  | Volume at the price level |
 
@@ -1765,8 +1770,8 @@ Represents a list of valid (at the current timestamp) price ranges per associate
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| min_valid_price | [uint64](#uint64) |  | Minimum price that isn&#39;t currently breaching the specified price monitoring trigger |
-| max_valid_price | [uint64](#uint64) |  | Maximum price that isn&#39;t currently breaching the specified price monitoring trigger |
+| min_valid_price | [string](#string) |  | Minimum price that isn&#39;t currently breaching the specified price monitoring trigger |
+| max_valid_price | [string](#string) |  | Maximum price that isn&#39;t currently breaching the specified price monitoring trigger |
 | trigger | [PriceMonitoringTrigger](#vega.PriceMonitoringTrigger) |  | Price monitoring trigger associated with the bounds |
 | reference_price | [double](#double) |  | Reference price used to calculate the valid price range |
 
@@ -1905,7 +1910,7 @@ A trade occurs when an aggressive order crosses one or more passive orders on th
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | Unique identifier for the trade (generated by Vega) |
 | market_id | [string](#string) |  | Market identifier (the market that the trade occurred on) |
-| price | [uint64](#uint64) |  | Price for the trade, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+| price | [string](#string) |  | Price for the trade, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
 | size | [uint64](#uint64) |  | Size filled for the trade |
 | buyer | [string](#string) |  | Unique party identifier for the buyer |
 | seller | [string](#string) |  | Unique party identifier for the seller |
@@ -1950,7 +1955,7 @@ Represents a financial transfer within Vega
 | owner | [string](#string) |  | Party identifier for the owner of the transfer |
 | amount | [FinancialAmount](#vega.FinancialAmount) |  | A financial amount (of an asset) to transfer |
 | type | [TransferType](#vega.TransferType) |  | The type of transfer, gives the reason for the transfer |
-| min_amount | [uint64](#uint64) |  | A minimum amount |
+| min_amount | [string](#string) |  | A minimum amount |
 
 
 
@@ -1966,7 +1971,7 @@ Represents the balance for an account during a transfer
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | account | [Account](#vega.Account) |  | The account relating to the transfer |
-| balance | [uint64](#uint64) |  | The balance relating to the transfer |
+| balance | [string](#string) |  | The balance relating to the transfer |
 
 
 
@@ -1983,8 +1988,8 @@ Represents a request to transfer from one set of accounts to another
 | ----- | ---- | ----- | ----------- |
 | from_account | [Account](#vega.Account) | repeated | One or more accounts to transfer from |
 | to_account | [Account](#vega.Account) | repeated | One or more accounts to transfer to |
-| amount | [uint64](#uint64) |  | An amount to transfer for the asset |
-| min_amount | [uint64](#uint64) |  | A minimum amount |
+| amount | [string](#string) |  | An amount to transfer for the asset |
+| min_amount | [string](#string) |  | A minimum amount |
 | asset | [string](#string) |  | Asset identifier |
 | reference | [string](#string) |  | A reference for auditing purposes |
 
@@ -2034,7 +2039,7 @@ A withdrawal from the Vega network
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | Unique identifier for the withdrawal |
 | party_id | [string](#string) |  | Unique party identifier of the user initiating the withdrawal |
-| amount | [uint64](#uint64) |  | The amount to be withdrawn |
+| amount | [string](#string) |  | The amount to be withdrawn |
 | asset | [string](#string) |  | The asset we want to withdraw funds from |
 | status | [Withdrawal.Status](#vega.Withdrawal.Status) |  | The status of the withdrawal |
 | ref | [string](#string) |  | The reference which is used by the foreign chain to refer to this withdrawal |
@@ -2508,7 +2513,7 @@ A commitment of liquidity to be made by the party which proposes a market
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| commitment_amount | [uint64](#uint64) |  | Specified as a unitless number that represents the amount of settlement asset of the market |
+| commitment_amount | [string](#string) |  | Specified as a unitless number that represents the amount of settlement asset of the market |
 | fee | [string](#string) |  | Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers |
 | sells | [LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity sell orders to meet the liquidity provision obligation |
 | buys | [LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity buy orders to meet the liquidity provision obligation |
@@ -2622,7 +2627,7 @@ Governance vote
 | value | [Vote.Value](#vega.Vote.Value) |  | Actual vote |
 | proposal_id | [string](#string) |  | Identifier of the proposal being voted on |
 | timestamp | [int64](#int64) |  | Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network |
-| total_governance_token_balance | [uint64](#uint64) |  | Total number of governance token for the party that casted the vote |
+| total_governance_token_balance | [string](#string) |  | Total number of governance token for the party that casted the vote |
 | total_governance_token_weight | [string](#string) |  | The weight of this vote based on the total of governance token |
 
 
@@ -2786,7 +2791,7 @@ A command to submit an instruction to delegate some stake to a node
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | node_id | [string](#string) |  | The ID for the node to delegate to |
-| amount | [uint64](#uint64) |  | The amount of stake to delegate |
+| amount | [string](#string) |  | The amount of stake to delegate |
 
 
 
@@ -2802,7 +2807,7 @@ A liquidity provision submitted for a given market
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | market_id | [string](#string) |  | Market identifier for the order, required field |
-| commitment_amount | [uint64](#uint64) |  | Specified as a unitless number that represents the amount of settlement asset of the market |
+| commitment_amount | [string](#string) |  | Specified as a unitless number that represents the amount of settlement asset of the market |
 | fee | [string](#string) |  | Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers |
 | sells | [vega.LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity sell orders to meet the liquidity provision obligation |
 | buys | [vega.LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity buy orders to meet the liquidity provision obligation |
@@ -2860,7 +2865,7 @@ An order submission is a request to submit or create a new order on Vega
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | market_id | [string](#string) |  | Market identifier for the order, required field |
-| price | [uint64](#uint64) |  | Price for the order, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places, , required field for limit orders, however it is not required for market orders |
+| price | [string](#string) |  | Price for the order, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places, , required field for limit orders, however it is not required for market orders |
 | size | [uint64](#uint64) |  | Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative |
 | side | [vega.Side](#vega.Side) |  | Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side) |
 | time_in_force | [vega.Order.TimeInForce](#vega.Order.TimeInForce) |  | Time in force indicates how long an order will remain active before it is executed or expires, required field - See [`Order.TimeInForce`](#vega.Order.TimeInForce) |
@@ -2915,7 +2920,7 @@ A command that loads the state from a given checkpoint
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | node_id | [string](#string) |  |  |
-| amount | [uint64](#uint64) |  | optional, if not specified = ALL |
+| amount | [string](#string) |  | optional, if not specified = ALL |
 | method | [UndelegateSubmission.Method](#vega.commands.v1.UndelegateSubmission.Method) |  |  |
 
 
@@ -2948,7 +2953,7 @@ Represents the submission request to withdraw funds for a party on Vega
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| amount | [uint64](#uint64) |  | The amount to be withdrawn |
+| amount | [string](#string) |  | The amount to be withdrawn |
 | asset | [string](#string) |  | The asset we want to withdraw |
 | ext | [vega.WithdrawExt](#vega.WithdrawExt) |  | Foreign chain specifics |
 
@@ -3113,7 +3118,7 @@ A withdrawal for a Vega built-in asset
 | ----- | ---- | ----- | ----------- |
 | vega_asset_id | [string](#string) |  | A Vega network internal asset identifier |
 | party_id | [string](#string) |  | A Vega network party identifier (pub-key) |
-| amount | [uint64](#uint64) |  | The amount to be withdrawn |
+| amount | [string](#string) |  | The amount to be withdrawn |
 
 
 
@@ -3797,6 +3802,9 @@ A transfer responses event contains a collection of transfer information
 | vote_submission | [vega.commands.v1.VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
 | liquidity_provision_submission | [vega.commands.v1.LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
 | withdraw_submission | [vega.commands.v1.WithdrawSubmission](#vega.commands.v1.WithdrawSubmission) |  |  |
+| delegate_submission | [vega.commands.v1.DelegateSubmission](#vega.commands.v1.DelegateSubmission) |  |  |
+| undelegate_submission | [vega.commands.v1.UndelegateSubmission](#vega.commands.v1.UndelegateSubmission) |  |  |
+| restore_snapshot | [vega.commands.v1.RestoreSnapshot](#vega.commands.v1.RestoreSnapshot) |  |  |
 
 
 
@@ -4521,6 +4529,36 @@ Blockchain transaction type
 
 
 
+<a name="vega.coreapi.v1.ListPartiesStakeRequest"></a>
+
+### ListPartiesStakeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListPartiesStakeResponse"></a>
+
+### ListPartiesStakeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parties_stake | [PartyStake](#vega.coreapi.v1.PartyStake) | repeated |  |
+
+
+
+
+
+
 <a name="vega.coreapi.v1.ListProposalsRequest"></a>
 
 ### ListProposalsRequest
@@ -4608,6 +4646,23 @@ Blockchain transaction type
 
 
 
+<a name="vega.coreapi.v1.PartyStake"></a>
+
+### PartyStake
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+| current_stake_available | [string](#string) |  |  |
+| stake_linkings | [vega.events.v1.StakeLinking](#vega.events.v1.StakeLinking) | repeated |  |
+
+
+
+
+
+
 
 
 
@@ -4630,6 +4685,7 @@ Blockchain transaction type
 | ListProposals | [ListProposalsRequest](#vega.coreapi.v1.ListProposalsRequest) | [ListProposalsResponse](#vega.coreapi.v1.ListProposalsResponse) |  |
 | ListMarketsData | [ListMarketsDataRequest](#vega.coreapi.v1.ListMarketsDataRequest) | [ListMarketsDataResponse](#vega.coreapi.v1.ListMarketsDataResponse) |  |
 | ListVotes | [ListVotesRequest](#vega.coreapi.v1.ListVotesRequest) | [ListVotesResponse](#vega.coreapi.v1.ListVotesResponse) |  |
+| ListPartiesStake | [ListPartiesStakeRequest](#vega.coreapi.v1.ListPartiesStakeRequest) | [ListPartiesStakeResponse](#vega.coreapi.v1.ListPartiesStakeResponse) |  |
 
 
 

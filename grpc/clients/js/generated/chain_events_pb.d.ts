@@ -37,8 +37,8 @@ export class BuiltinAssetWithdrawal extends jspb.Message {
     setVegaAssetId(value: string): BuiltinAssetWithdrawal;
     getPartyId(): string;
     setPartyId(value: string): BuiltinAssetWithdrawal;
-    getAmount(): number;
-    setAmount(value: number): BuiltinAssetWithdrawal;
+    getAmount(): string;
+    setAmount(value: string): BuiltinAssetWithdrawal;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): BuiltinAssetWithdrawal.AsObject;
@@ -54,7 +54,7 @@ export namespace BuiltinAssetWithdrawal {
     export type AsObject = {
         vegaAssetId: string,
         partyId: string,
-        amount: number,
+        amount: string,
     }
 }
 

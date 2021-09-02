@@ -48,7 +48,7 @@ enum Interval {
 message Price {
   // Price value, given as an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
-  uint64 value = 1;
+  string value = 1;
 }
 
 // A timestamp in nanoseconds since epoch
@@ -202,7 +202,7 @@ message Order {
   Side side = 4;
   // Price for the order, the price is an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
-  uint64 price = 5;
+  string price = 5;
   // Size for the order, for example, in a futures market the size equals the number of contracts
   uint64 size = 6;
   // Size remaining, when this reaches 0 then the order is fully filled and status becomes STATUS_FILLED
@@ -262,7 +262,7 @@ message AuctionIndicativeState {
   // The market identifier for which this state relates to
   string market_id = 1;
   // The Indicative Uncrossing Price is the price at which all trades would occur if we uncrossed the auction now
-  uint64 indicative_price = 2;
+  string indicative_price = 2;
   // The Indicative Uncrossing Volume is the volume available at the Indicative crossing price if we uncrossed the auction now
   uint64 indicative_volume = 3;
   // The timestamp at which the auction started
@@ -406,7 +406,7 @@ message Trade {
   string market_id = 2;
   // Price for the trade, the price is an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
-  uint64 price = 3;
+  string price = 3;
   // Size filled for the trade
   uint64 size = 4;
   // Unique party identifier for the buyer
@@ -437,11 +437,11 @@ message Trade {
 // Represents any fees paid by a party, resulting from a trade
 message Fee {
   // Fee amount paid to the non-aggressive party of the trade
-  uint64 maker_fee = 1;
+  string maker_fee = 1;
   // Fee amount paid for maintaining the Vega infrastructure
-  uint64 infrastructure_fee = 2;
+  string infrastructure_fee = 2;
   // Fee amount paid to market makers
-  uint64 liquidity_fee = 3;
+  string liquidity_fee = 3;
 }
 
 message TradeSet {
@@ -458,13 +458,13 @@ message Candle {
   // An ISO-8601 datetime with nanosecond precision for when the candle was last updated
   string datetime = 2;
   // Highest price for trading during the candle interval
-  uint64 high = 3;
+  string high = 3;
   // Lowest price for trading during the candle interval
-  uint64 low = 4;
+  string low = 4;
   // Open trade price
-  uint64 open = 5;
+  string open = 5;
   // Closing trade price
-  uint64 close = 6;
+  string close = 6;
   // Total trading volume during the candle interval
   uint64 volume = 7;
   // Time interval for the candle - See [`Interval`](#vega.Interval)
@@ -475,7 +475,7 @@ message Candle {
 message PriceLevel {
   // Price for the price level, the price is an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
-  uint64 price = 1;
+  string price = 1;
   // Number of orders at the price level
   uint64 number_of_orders = 2;
   // Volume at the price level
@@ -507,7 +507,7 @@ message MarketDepthUpdate {
 }
 
 // Represents position data for a party on the specified market on Vega
-message Position{
+message Position {
   // Market identifier
   string market_id = 1;
   // Party identifier
@@ -515,12 +515,12 @@ message Position{
   // Open volume for the position, value is signed +ve for long and -ve for short
   int64 open_volume = 3;
   // Realised profit and loss for the position, value is signed +ve for long and -ve for short
-  int64 realised_pnl  = 4;
+  string realised_pnl  = 4;
   // Unrealised profit and loss for the position, value is signed +ve for long and -ve for short
-  int64 unrealised_pnl = 5;
+  string unrealised_pnl = 5;
   // Average entry price for the position, the price is an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
-  uint64 average_entry_price = 6;
+  string average_entry_price = 6;
   // Timestamp for the latest time the position was updated
   int64 updated_at = 7;
 }
@@ -530,7 +530,7 @@ message PositionTrade {
   int64 volume = 1;
   // Price for the position trade, the price is an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
-  uint64 price = 2;
+  string price = 2;
 }
 
 // The Vega blockchain status as reported by the node the caller is connected to
@@ -599,7 +599,7 @@ message Withdrawal {
   // Unique party identifier of the user initiating the withdrawal
   string party_id = 2;
   // The amount to be withdrawn
-  uint64 amount = 3;
+  string amount = 3;
   // The asset we want to withdraw funds from
   string asset = 4;
   // The status of the withdrawal
@@ -691,7 +691,7 @@ message Account {
   // Balance of the asset, the balance is an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
   // and importantly balances cannot be negative
-  uint64 balance = 3;
+  string balance = 3;
   // Asset identifier for the account
   string asset = 4;
   // Market identifier for the account, if [`AccountType`](#vega.AccountType).`ACCOUNT_TYPE_GENERAL` this will be empty
@@ -703,7 +703,7 @@ message Account {
 // Asset value information used within a transfer
 message FinancialAmount {
   // A signed integer amount of asset
-  uint64 amount = 1;
+  string amount = 1;
   // Asset identifier
   string asset = 2;
 }
@@ -765,7 +765,7 @@ message Transfer {
   // The type of transfer, gives the reason for the transfer
   TransferType type = 3;
   // A minimum amount
-  uint64 min_amount = 4;
+  string min_amount = 4;
 }
 
 // Represents a request to transfer from one set of accounts to another
@@ -775,9 +775,9 @@ message TransferRequest {
   // One or more accounts to transfer to
   repeated Account to_account = 2;
   // An amount to transfer for the asset
-  uint64 amount = 3;
+  string amount = 3;
   // A minimum amount
-  uint64 min_amount = 4;
+  string min_amount = 4;
   // Asset identifier
   string asset = 5;
   // A reference for auditing purposes
@@ -791,7 +791,7 @@ message LedgerEntry {
   // One or more accounts to transfer to
   string to_account = 2;
   // An amount to transfer
-  uint64 amount = 3;
+  string amount = 3;
   // A reference for auditing purposes
   string reference = 4;
   // Type of ledger entry
@@ -806,7 +806,7 @@ message TransferBalance {
   // The account relating to the transfer
   Account account = 1;
   // The balance relating to the transfer
-  uint64 balance = 2;
+  string balance = 2;
 }
 
 // Represents the response from a transfer
@@ -820,13 +820,13 @@ message TransferResponse {
 // Represents the margin levels for a party on a market at a given time
 message MarginLevels {
   // Maintenance margin value
-  uint64 maintenance_margin = 1;
+  string maintenance_margin = 1;
   // Search level value
-  uint64 search_level = 2;
+  string search_level = 2;
   // Initial margin value
-  uint64 initial_margin = 3;
+  string initial_margin = 3;
   // Collateral release level value
-  uint64 collateral_release_level = 4;
+  string collateral_release_level = 4;
   // Party identifier
   string party_id = 5;
   // Market identifier
@@ -842,30 +842,30 @@ message MarginLevels {
 message MarketData {
   // Mark price, as an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
-  uint64 mark_price = 1;
+  string mark_price = 1;
   // Highest price level on an order book for buy orders, as an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
-  uint64 best_bid_price = 2;
+  string best_bid_price = 2;
   // Aggregated volume being bid at the best bid price
   uint64 best_bid_volume = 3;
   // Lowest price level on an order book for offer orders
-  uint64 best_offer_price = 4;
+  string best_offer_price = 4;
   // Aggregated volume being offered at the best offer price, as an integer, for example `123456` is a correctly
   //  // formatted price of `1.23456` assuming market configured to 5 decimal places
   uint64 best_offer_volume = 5;
   // Highest price on the order book for buy orders not including pegged orders
-  uint64 best_static_bid_price = 6;
+  string best_static_bid_price = 6;
   // Total volume at the best static bid price excluding pegged orders
   uint64 best_static_bid_volume = 7;
   // Lowest price on the order book for sell orders not including pegged orders
-  uint64 best_static_offer_price = 8;
+  string best_static_offer_price = 8;
   // Total volume at the best static offer price excluding pegged orders
   uint64 best_static_offer_volume = 9;
   // Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly
   // formatted price of `1.23456` assuming market configured to 5 decimal places
-  uint64 mid_price = 10;
+  string mid_price = 10;
   // Arithmetic average of the best static bid price and best static offer price
-  uint64 static_mid_price = 11;
+  string static_mid_price = 11;
   // Market identifier for the data
   string market = 12;
   // Timestamp at which this mark price was relevant, in nanoseconds since the epoch
@@ -878,7 +878,7 @@ message MarketData {
   // Time until next auction (used in FBA's) - currently always 0
   int64 auction_start = 16;
   // Indicative price (zero if not in auction)
-  uint64 indicative_price = 17;
+  string indicative_price = 17;
   // Indicative volume (zero if not in auction)
   uint64 indicative_volume = 18;
   // The current trading mode for the market
@@ -913,9 +913,9 @@ message LiquidityProviderFeeShare {
 // Represents a list of valid (at the current timestamp) price ranges per associated trigger
 message PriceMonitoringBounds {
   // Minimum price that isn't currently breaching the specified price monitoring trigger
-  uint64 min_valid_price = 1;
+  string min_valid_price = 1;
   // Maximum price that isn't currently breaching the specified price monitoring trigger
-  uint64 max_valid_price = 2;
+  string max_valid_price = 2;
   // Price monitoring trigger associated with the bounds
   PriceMonitoringTrigger trigger = 3;
   // Reference price used to calculate the valid price range
@@ -993,7 +993,7 @@ message LiquidityProvision {
   // Market identifier for the order, required field
   string market_id = 5 [(validator.field) = {string_not_empty: true}];
   // Specified as a unitless number that represents the amount of settlement asset of the market
-  uint64 commitment_amount = 6;
+  string commitment_amount = 6;
   // Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
   string fee = 7;
   // A set of liquidity sell orders to meet the liquidity provision obligation
@@ -1097,6 +1097,10 @@ message Node {
   NodeStatus status = 11 [(validator.field) = {msg_exists : true}];
   // Node's delegations
   repeated Delegation delagations = 12;
+  // Node score
+  string score = 13;
+  // Node normalised score
+  string normalised_score = 14;
 }
 
 message NodeData {

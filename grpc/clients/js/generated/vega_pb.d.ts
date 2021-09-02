@@ -10,8 +10,8 @@ import * as markets_pb from "./markets_pb";
 import * as assets_pb from "./assets_pb";
 
 export class Price extends jspb.Message {
-    getValue(): number;
-    setValue(value: number): Price;
+    getValue(): string;
+    setValue(value: string): Price;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Price.AsObject;
@@ -25,7 +25,7 @@ export class Price extends jspb.Message {
 
 export namespace Price {
     export type AsObject = {
-        value: number,
+        value: string,
     }
 }
 
@@ -165,8 +165,8 @@ export class Order extends jspb.Message {
     setPartyId(value: string): Order;
     getSide(): Side;
     setSide(value: Side): Order;
-    getPrice(): number;
-    setPrice(value: number): Order;
+    getPrice(): string;
+    setPrice(value: string): Order;
     getSize(): number;
     setSize(value: number): Order;
     getRemaining(): number;
@@ -215,7 +215,7 @@ export namespace Order {
         marketId: string,
         partyId: string,
         side: Side,
-        price: number,
+        price: string,
         size: number,
         remaining: number,
         timeInForce: Order.TimeInForce,
@@ -322,8 +322,8 @@ export namespace OrderConfirmation {
 export class AuctionIndicativeState extends jspb.Message {
     getMarketId(): string;
     setMarketId(value: string): AuctionIndicativeState;
-    getIndicativePrice(): number;
-    setIndicativePrice(value: number): AuctionIndicativeState;
+    getIndicativePrice(): string;
+    setIndicativePrice(value: string): AuctionIndicativeState;
     getIndicativeVolume(): number;
     setIndicativeVolume(value: number): AuctionIndicativeState;
     getAuctionStart(): number;
@@ -344,7 +344,7 @@ export class AuctionIndicativeState extends jspb.Message {
 export namespace AuctionIndicativeState {
     export type AsObject = {
         marketId: string,
-        indicativePrice: number,
+        indicativePrice: string,
         indicativeVolume: number,
         auctionStart: number,
         auctionEnd: number,
@@ -356,8 +356,8 @@ export class Trade extends jspb.Message {
     setId(value: string): Trade;
     getMarketId(): string;
     setMarketId(value: string): Trade;
-    getPrice(): number;
-    setPrice(value: number): Trade;
+    getPrice(): string;
+    setPrice(value: string): Trade;
     getSize(): number;
     setSize(value: number): Trade;
     getBuyer(): string;
@@ -403,7 +403,7 @@ export namespace Trade {
     export type AsObject = {
         id: string,
         marketId: string,
-        price: number,
+        price: string,
         size: number,
         buyer: string,
         seller: string,
@@ -428,12 +428,12 @@ export namespace Trade {
 }
 
 export class Fee extends jspb.Message {
-    getMakerFee(): number;
-    setMakerFee(value: number): Fee;
-    getInfrastructureFee(): number;
-    setInfrastructureFee(value: number): Fee;
-    getLiquidityFee(): number;
-    setLiquidityFee(value: number): Fee;
+    getMakerFee(): string;
+    setMakerFee(value: string): Fee;
+    getInfrastructureFee(): string;
+    setInfrastructureFee(value: string): Fee;
+    getLiquidityFee(): string;
+    setLiquidityFee(value: string): Fee;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Fee.AsObject;
@@ -447,9 +447,9 @@ export class Fee extends jspb.Message {
 
 export namespace Fee {
     export type AsObject = {
-        makerFee: number,
-        infrastructureFee: number,
-        liquidityFee: number,
+        makerFee: string,
+        infrastructureFee: string,
+        liquidityFee: string,
     }
 }
 
@@ -480,14 +480,14 @@ export class Candle extends jspb.Message {
     setTimestamp(value: number): Candle;
     getDatetime(): string;
     setDatetime(value: string): Candle;
-    getHigh(): number;
-    setHigh(value: number): Candle;
-    getLow(): number;
-    setLow(value: number): Candle;
-    getOpen(): number;
-    setOpen(value: number): Candle;
-    getClose(): number;
-    setClose(value: number): Candle;
+    getHigh(): string;
+    setHigh(value: string): Candle;
+    getLow(): string;
+    setLow(value: string): Candle;
+    getOpen(): string;
+    setOpen(value: string): Candle;
+    getClose(): string;
+    setClose(value: string): Candle;
     getVolume(): number;
     setVolume(value: number): Candle;
     getInterval(): Interval;
@@ -507,18 +507,18 @@ export namespace Candle {
     export type AsObject = {
         timestamp: number,
         datetime: string,
-        high: number,
-        low: number,
-        open: number,
-        close: number,
+        high: string,
+        low: string,
+        open: string,
+        close: string,
         volume: number,
         interval: Interval,
     }
 }
 
 export class PriceLevel extends jspb.Message {
-    getPrice(): number;
-    setPrice(value: number): PriceLevel;
+    getPrice(): string;
+    setPrice(value: string): PriceLevel;
     getNumberOfOrders(): number;
     setNumberOfOrders(value: number): PriceLevel;
     getVolume(): number;
@@ -536,7 +536,7 @@ export class PriceLevel extends jspb.Message {
 
 export namespace PriceLevel {
     export type AsObject = {
-        price: number,
+        price: string,
         numberOfOrders: number,
         volume: number,
     }
@@ -615,12 +615,12 @@ export class Position extends jspb.Message {
     setPartyId(value: string): Position;
     getOpenVolume(): number;
     setOpenVolume(value: number): Position;
-    getRealisedPnl(): number;
-    setRealisedPnl(value: number): Position;
-    getUnrealisedPnl(): number;
-    setUnrealisedPnl(value: number): Position;
-    getAverageEntryPrice(): number;
-    setAverageEntryPrice(value: number): Position;
+    getRealisedPnl(): string;
+    setRealisedPnl(value: string): Position;
+    getUnrealisedPnl(): string;
+    setUnrealisedPnl(value: string): Position;
+    getAverageEntryPrice(): string;
+    setAverageEntryPrice(value: string): Position;
     getUpdatedAt(): number;
     setUpdatedAt(value: number): Position;
 
@@ -639,9 +639,9 @@ export namespace Position {
         marketId: string,
         partyId: string,
         openVolume: number,
-        realisedPnl: number,
-        unrealisedPnl: number,
-        averageEntryPrice: number,
+        realisedPnl: string,
+        unrealisedPnl: string,
+        averageEntryPrice: string,
         updatedAt: number,
     }
 }
@@ -649,8 +649,8 @@ export namespace Position {
 export class PositionTrade extends jspb.Message {
     getVolume(): number;
     setVolume(value: number): PositionTrade;
-    getPrice(): number;
-    setPrice(value: number): PositionTrade;
+    getPrice(): string;
+    setPrice(value: string): PositionTrade;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PositionTrade.AsObject;
@@ -665,7 +665,7 @@ export class PositionTrade extends jspb.Message {
 export namespace PositionTrade {
     export type AsObject = {
         volume: number,
-        price: number,
+        price: string,
     }
 }
 
@@ -723,8 +723,8 @@ export class Withdrawal extends jspb.Message {
     setId(value: string): Withdrawal;
     getPartyId(): string;
     setPartyId(value: string): Withdrawal;
-    getAmount(): number;
-    setAmount(value: number): Withdrawal;
+    getAmount(): string;
+    setAmount(value: string): Withdrawal;
     getAsset(): string;
     setAsset(value: string): Withdrawal;
     getStatus(): Withdrawal.Status;
@@ -759,7 +759,7 @@ export namespace Withdrawal {
     export type AsObject = {
         id: string,
         partyId: string,
-        amount: number,
+        amount: string,
         asset: string,
         status: Withdrawal.Status,
         ref: string,
@@ -835,8 +835,8 @@ export class Account extends jspb.Message {
     setId(value: string): Account;
     getOwner(): string;
     setOwner(value: string): Account;
-    getBalance(): number;
-    setBalance(value: number): Account;
+    getBalance(): string;
+    setBalance(value: string): Account;
     getAsset(): string;
     setAsset(value: string): Account;
     getMarketId(): string;
@@ -858,7 +858,7 @@ export namespace Account {
     export type AsObject = {
         id: string,
         owner: string,
-        balance: number,
+        balance: string,
         asset: string,
         marketId: string,
         type: AccountType,
@@ -866,8 +866,8 @@ export namespace Account {
 }
 
 export class FinancialAmount extends jspb.Message {
-    getAmount(): number;
-    setAmount(value: number): FinancialAmount;
+    getAmount(): string;
+    setAmount(value: string): FinancialAmount;
     getAsset(): string;
     setAsset(value: string): FinancialAmount;
 
@@ -883,7 +883,7 @@ export class FinancialAmount extends jspb.Message {
 
 export namespace FinancialAmount {
     export type AsObject = {
-        amount: number,
+        amount: string,
         asset: string,
     }
 }
@@ -898,8 +898,8 @@ export class Transfer extends jspb.Message {
     setAmount(value?: FinancialAmount): Transfer;
     getType(): TransferType;
     setType(value: TransferType): Transfer;
-    getMinAmount(): number;
-    setMinAmount(value: number): Transfer;
+    getMinAmount(): string;
+    setMinAmount(value: string): Transfer;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Transfer.AsObject;
@@ -916,7 +916,7 @@ export namespace Transfer {
         owner: string,
         amount?: FinancialAmount.AsObject,
         type: TransferType,
-        minAmount: number,
+        minAmount: string,
     }
 }
 
@@ -929,10 +929,10 @@ export class TransferRequest extends jspb.Message {
     getToAccountList(): Array<Account>;
     setToAccountList(value: Array<Account>): TransferRequest;
     addToAccount(value?: Account, index?: number): Account;
-    getAmount(): number;
-    setAmount(value: number): TransferRequest;
-    getMinAmount(): number;
-    setMinAmount(value: number): TransferRequest;
+    getAmount(): string;
+    setAmount(value: string): TransferRequest;
+    getMinAmount(): string;
+    setMinAmount(value: string): TransferRequest;
     getAsset(): string;
     setAsset(value: string): TransferRequest;
     getReference(): string;
@@ -952,8 +952,8 @@ export namespace TransferRequest {
     export type AsObject = {
         fromAccountList: Array<Account.AsObject>,
         toAccountList: Array<Account.AsObject>,
-        amount: number,
-        minAmount: number,
+        amount: string,
+        minAmount: string,
         asset: string,
         reference: string,
     }
@@ -964,8 +964,8 @@ export class LedgerEntry extends jspb.Message {
     setFromAccount(value: string): LedgerEntry;
     getToAccount(): string;
     setToAccount(value: string): LedgerEntry;
-    getAmount(): number;
-    setAmount(value: number): LedgerEntry;
+    getAmount(): string;
+    setAmount(value: string): LedgerEntry;
     getReference(): string;
     setReference(value: string): LedgerEntry;
     getType(): string;
@@ -987,7 +987,7 @@ export namespace LedgerEntry {
     export type AsObject = {
         fromAccount: string,
         toAccount: string,
-        amount: number,
+        amount: string,
         reference: string,
         type: string,
         timestamp: number,
@@ -1000,8 +1000,8 @@ export class TransferBalance extends jspb.Message {
     clearAccount(): void;
     getAccount(): Account | undefined;
     setAccount(value?: Account): TransferBalance;
-    getBalance(): number;
-    setBalance(value: number): TransferBalance;
+    getBalance(): string;
+    setBalance(value: string): TransferBalance;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferBalance.AsObject;
@@ -1016,7 +1016,7 @@ export class TransferBalance extends jspb.Message {
 export namespace TransferBalance {
     export type AsObject = {
         account?: Account.AsObject,
-        balance: number,
+        balance: string,
     }
 }
 
@@ -1048,14 +1048,14 @@ export namespace TransferResponse {
 }
 
 export class MarginLevels extends jspb.Message {
-    getMaintenanceMargin(): number;
-    setMaintenanceMargin(value: number): MarginLevels;
-    getSearchLevel(): number;
-    setSearchLevel(value: number): MarginLevels;
-    getInitialMargin(): number;
-    setInitialMargin(value: number): MarginLevels;
-    getCollateralReleaseLevel(): number;
-    setCollateralReleaseLevel(value: number): MarginLevels;
+    getMaintenanceMargin(): string;
+    setMaintenanceMargin(value: string): MarginLevels;
+    getSearchLevel(): string;
+    setSearchLevel(value: string): MarginLevels;
+    getInitialMargin(): string;
+    setInitialMargin(value: string): MarginLevels;
+    getCollateralReleaseLevel(): string;
+    setCollateralReleaseLevel(value: string): MarginLevels;
     getPartyId(): string;
     setPartyId(value: string): MarginLevels;
     getMarketId(): string;
@@ -1077,10 +1077,10 @@ export class MarginLevels extends jspb.Message {
 
 export namespace MarginLevels {
     export type AsObject = {
-        maintenanceMargin: number,
-        searchLevel: number,
-        initialMargin: number,
-        collateralReleaseLevel: number,
+        maintenanceMargin: string,
+        searchLevel: string,
+        initialMargin: string,
+        collateralReleaseLevel: string,
         partyId: string,
         marketId: string,
         asset: string,
@@ -1089,28 +1089,28 @@ export namespace MarginLevels {
 }
 
 export class MarketData extends jspb.Message {
-    getMarkPrice(): number;
-    setMarkPrice(value: number): MarketData;
-    getBestBidPrice(): number;
-    setBestBidPrice(value: number): MarketData;
+    getMarkPrice(): string;
+    setMarkPrice(value: string): MarketData;
+    getBestBidPrice(): string;
+    setBestBidPrice(value: string): MarketData;
     getBestBidVolume(): number;
     setBestBidVolume(value: number): MarketData;
-    getBestOfferPrice(): number;
-    setBestOfferPrice(value: number): MarketData;
+    getBestOfferPrice(): string;
+    setBestOfferPrice(value: string): MarketData;
     getBestOfferVolume(): number;
     setBestOfferVolume(value: number): MarketData;
-    getBestStaticBidPrice(): number;
-    setBestStaticBidPrice(value: number): MarketData;
+    getBestStaticBidPrice(): string;
+    setBestStaticBidPrice(value: string): MarketData;
     getBestStaticBidVolume(): number;
     setBestStaticBidVolume(value: number): MarketData;
-    getBestStaticOfferPrice(): number;
-    setBestStaticOfferPrice(value: number): MarketData;
+    getBestStaticOfferPrice(): string;
+    setBestStaticOfferPrice(value: string): MarketData;
     getBestStaticOfferVolume(): number;
     setBestStaticOfferVolume(value: number): MarketData;
-    getMidPrice(): number;
-    setMidPrice(value: number): MarketData;
-    getStaticMidPrice(): number;
-    setStaticMidPrice(value: number): MarketData;
+    getMidPrice(): string;
+    setMidPrice(value: string): MarketData;
+    getStaticMidPrice(): string;
+    setStaticMidPrice(value: string): MarketData;
     getMarket(): string;
     setMarket(value: string): MarketData;
     getTimestamp(): number;
@@ -1121,8 +1121,8 @@ export class MarketData extends jspb.Message {
     setAuctionEnd(value: number): MarketData;
     getAuctionStart(): number;
     setAuctionStart(value: number): MarketData;
-    getIndicativePrice(): number;
-    setIndicativePrice(value: number): MarketData;
+    getIndicativePrice(): string;
+    setIndicativePrice(value: string): MarketData;
     getIndicativeVolume(): number;
     setIndicativeVolume(value: number): MarketData;
     getMarketTradingMode(): markets_pb.Market.TradingMode;
@@ -1158,23 +1158,23 @@ export class MarketData extends jspb.Message {
 
 export namespace MarketData {
     export type AsObject = {
-        markPrice: number,
-        bestBidPrice: number,
+        markPrice: string,
+        bestBidPrice: string,
         bestBidVolume: number,
-        bestOfferPrice: number,
+        bestOfferPrice: string,
         bestOfferVolume: number,
-        bestStaticBidPrice: number,
+        bestStaticBidPrice: string,
         bestStaticBidVolume: number,
-        bestStaticOfferPrice: number,
+        bestStaticOfferPrice: string,
         bestStaticOfferVolume: number,
-        midPrice: number,
-        staticMidPrice: number,
+        midPrice: string,
+        staticMidPrice: string,
         market: string,
         timestamp: number,
         openInterest: number,
         auctionEnd: number,
         auctionStart: number,
-        indicativePrice: number,
+        indicativePrice: string,
         indicativeVolume: number,
         marketTradingMode: markets_pb.Market.TradingMode,
         trigger: AuctionTrigger,
@@ -1214,10 +1214,10 @@ export namespace LiquidityProviderFeeShare {
 }
 
 export class PriceMonitoringBounds extends jspb.Message {
-    getMinValidPrice(): number;
-    setMinValidPrice(value: number): PriceMonitoringBounds;
-    getMaxValidPrice(): number;
-    setMaxValidPrice(value: number): PriceMonitoringBounds;
+    getMinValidPrice(): string;
+    setMinValidPrice(value: string): PriceMonitoringBounds;
+    getMaxValidPrice(): string;
+    setMaxValidPrice(value: string): PriceMonitoringBounds;
 
     hasTrigger(): boolean;
     clearTrigger(): void;
@@ -1238,8 +1238,8 @@ export class PriceMonitoringBounds extends jspb.Message {
 
 export namespace PriceMonitoringBounds {
     export type AsObject = {
-        minValidPrice: number,
-        maxValidPrice: number,
+        minValidPrice: string,
+        maxValidPrice: string,
         trigger?: markets_pb.PriceMonitoringTrigger.AsObject,
         referencePrice: number,
     }
@@ -1357,8 +1357,8 @@ export class LiquidityProvision extends jspb.Message {
     setUpdatedAt(value: number): LiquidityProvision;
     getMarketId(): string;
     setMarketId(value: string): LiquidityProvision;
-    getCommitmentAmount(): number;
-    setCommitmentAmount(value: number): LiquidityProvision;
+    getCommitmentAmount(): string;
+    setCommitmentAmount(value: string): LiquidityProvision;
     getFee(): string;
     setFee(value: string): LiquidityProvision;
     clearSellsList(): void;
@@ -1393,7 +1393,7 @@ export namespace LiquidityProvision {
         createdAt: number,
         updatedAt: number,
         marketId: string,
-        commitmentAmount: number,
+        commitmentAmount: string,
         fee: string,
         sellsList: Array<LiquidityOrderReference.AsObject>,
         buysList: Array<LiquidityOrderReference.AsObject>,
@@ -1601,6 +1601,10 @@ export class Node extends jspb.Message {
     getDelagationsList(): Array<Delegation>;
     setDelagationsList(value: Array<Delegation>): Node;
     addDelagations(value?: Delegation, index?: number): Delegation;
+    getScore(): string;
+    setScore(value: string): Node;
+    getNormalisedScore(): string;
+    setNormalisedScore(value: string): Node;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Node.AsObject;
@@ -1626,6 +1630,8 @@ export namespace Node {
         epochData?: EpochData.AsObject,
         status: NodeStatus,
         delagationsList: Array<Delegation.AsObject>,
+        score: string,
+        normalisedScore: string,
     }
 }
 

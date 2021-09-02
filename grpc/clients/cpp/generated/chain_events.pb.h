@@ -461,13 +461,20 @@ class BuiltinAssetWithdrawal PROTOBUF_FINAL :
   std::string* _internal_mutable_party_id();
   public:
 
-  // uint64 amount = 3 [json_name = "amount"];
+  // string amount = 3 [json_name = "amount"];
   void clear_amount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount() const;
-  void set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& amount() const;
+  void set_amount(const std::string& value);
+  void set_amount(std::string&& value);
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  std::string* mutable_amount();
+  std::string* release_amount();
+  void set_allocated_amount(std::string* amount);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_amount() const;
-  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& _internal_amount() const;
+  void _internal_set_amount(const std::string& value);
+  std::string* _internal_mutable_amount();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.BuiltinAssetWithdrawal)
@@ -479,7 +486,7 @@ class BuiltinAssetWithdrawal PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
 };
@@ -3982,24 +3989,65 @@ inline void BuiltinAssetWithdrawal::set_allocated_party_id(std::string* party_id
   // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetWithdrawal.party_id)
 }
 
-// uint64 amount = 3 [json_name = "amount"];
+// string amount = 3 [json_name = "amount"];
 inline void BuiltinAssetWithdrawal::clear_amount() {
-  amount_ = PROTOBUF_ULONGLONG(0);
+  amount_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BuiltinAssetWithdrawal::_internal_amount() const {
-  return amount_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BuiltinAssetWithdrawal::amount() const {
+inline const std::string& BuiltinAssetWithdrawal::amount() const {
   // @@protoc_insertion_point(field_get:vega.BuiltinAssetWithdrawal.amount)
   return _internal_amount();
 }
-inline void BuiltinAssetWithdrawal::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  amount_ = value;
-}
-inline void BuiltinAssetWithdrawal::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void BuiltinAssetWithdrawal::set_amount(const std::string& value) {
   _internal_set_amount(value);
   // @@protoc_insertion_point(field_set:vega.BuiltinAssetWithdrawal.amount)
+}
+inline std::string* BuiltinAssetWithdrawal::mutable_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetWithdrawal.amount)
+  return _internal_mutable_amount();
+}
+inline const std::string& BuiltinAssetWithdrawal::_internal_amount() const {
+  return amount_.Get();
+}
+inline void BuiltinAssetWithdrawal::_internal_set_amount(const std::string& value) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void BuiltinAssetWithdrawal::set_amount(std::string&& value) {
+
+  amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetWithdrawal.amount)
+}
+inline void BuiltinAssetWithdrawal::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetWithdrawal.amount)
+}
+inline void BuiltinAssetWithdrawal::set_amount(const char* value,
+    size_t size) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetWithdrawal.amount)
+}
+inline std::string* BuiltinAssetWithdrawal::_internal_mutable_amount() {
+
+  return amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* BuiltinAssetWithdrawal::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.BuiltinAssetWithdrawal.amount)
+  return amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void BuiltinAssetWithdrawal::set_allocated_amount(std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetWithdrawal.amount)
 }
 
 // -------------------------------------------------------------------

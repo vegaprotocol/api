@@ -101,6 +101,13 @@ class CoreApiService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListVotesResponse>> PrepareAsyncListVotes(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListVotesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListVotesResponse>>(PrepareAsyncListVotesRaw(context, request, cq));
     }
+    virtual ::grpc::Status ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::vega::coreapi::v1::ListPartiesStakeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListPartiesStakeResponse>> AsyncListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListPartiesStakeResponse>>(AsyncListPartiesStakeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListPartiesStakeResponse>> PrepareAsyncListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListPartiesStakeResponse>>(PrepareAsyncListPartiesStakeRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -158,6 +165,12 @@ class CoreApiService final {
       #else
       virtual void ListVotes(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListVotesRequest* request, ::vega::coreapi::v1::ListVotesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -185,6 +198,8 @@ class CoreApiService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListMarketsDataResponse>* PrepareAsyncListMarketsDataRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListVotesResponse>* AsyncListVotesRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListVotesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListVotesResponse>* PrepareAsyncListVotesRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListVotesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListPartiesStakeResponse>* AsyncListPartiesStakeRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListPartiesStakeResponse>* PrepareAsyncListPartiesStakeRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -252,6 +267,13 @@ class CoreApiService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListVotesResponse>> PrepareAsyncListVotes(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListVotesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListVotesResponse>>(PrepareAsyncListVotesRaw(context, request, cq));
     }
+    ::grpc::Status ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::vega::coreapi::v1::ListPartiesStakeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListPartiesStakeResponse>> AsyncListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListPartiesStakeResponse>>(AsyncListPartiesStakeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListPartiesStakeResponse>> PrepareAsyncListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListPartiesStakeResponse>>(PrepareAsyncListPartiesStakeRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -309,6 +331,12 @@ class CoreApiService final {
       #else
       void ListVotes(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListVotesRequest* request, ::vega::coreapi::v1::ListVotesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void ListPartiesStake(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -338,6 +366,8 @@ class CoreApiService final {
     ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListMarketsDataResponse>* PrepareAsyncListMarketsDataRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsDataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListVotesResponse>* AsyncListVotesRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListVotesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListVotesResponse>* PrepareAsyncListVotesRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListVotesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListPartiesStakeResponse>* AsyncListPartiesStakeRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListPartiesStakeResponse>* PrepareAsyncListPartiesStakeRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_ListAccounts_;
     const ::grpc::internal::RpcMethod rpcmethod_ListAssets_;
     const ::grpc::internal::RpcMethod rpcmethod_ListNetworkParameters_;
@@ -347,6 +377,7 @@ class CoreApiService final {
     const ::grpc::internal::RpcMethod rpcmethod_ListProposals_;
     const ::grpc::internal::RpcMethod rpcmethod_ListMarketsData_;
     const ::grpc::internal::RpcMethod rpcmethod_ListVotes_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListPartiesStake_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -363,6 +394,7 @@ class CoreApiService final {
     virtual ::grpc::Status ListProposals(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response);
     virtual ::grpc::Status ListMarketsData(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListMarketsDataRequest* request, ::vega::coreapi::v1::ListMarketsDataResponse* response);
     virtual ::grpc::Status ListVotes(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListVotesRequest* request, ::vega::coreapi::v1::ListVotesResponse* response);
+    virtual ::grpc::Status ListPartiesStake(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_ListAccounts : public BaseClass {
@@ -544,7 +576,27 @@ class CoreApiService final {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ListAccounts<WithAsyncMethod_ListAssets<WithAsyncMethod_ListNetworkParameters<WithAsyncMethod_ListParties<WithAsyncMethod_ListValidators<WithAsyncMethod_ListMarkets<WithAsyncMethod_ListProposals<WithAsyncMethod_ListMarketsData<WithAsyncMethod_ListVotes<Service > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_ListPartiesStake : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ListPartiesStake() {
+      ::grpc::Service::MarkMethodAsync(9);
+    }
+    ~WithAsyncMethod_ListPartiesStake() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListPartiesStake(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListPartiesStakeRequest* /*request*/, ::vega::coreapi::v1::ListPartiesStakeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListPartiesStake(::grpc::ServerContext* context, ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::grpc::ServerAsyncResponseWriter< ::vega::coreapi::v1::ListPartiesStakeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ListAccounts<WithAsyncMethod_ListAssets<WithAsyncMethod_ListNetworkParameters<WithAsyncMethod_ListParties<WithAsyncMethod_ListValidators<WithAsyncMethod_ListMarkets<WithAsyncMethod_ListProposals<WithAsyncMethod_ListMarketsData<WithAsyncMethod_ListVotes<WithAsyncMethod_ListPartiesStake<Service > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_ListAccounts : public BaseClass {
    private:
@@ -968,11 +1020,58 @@ class CoreApiService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_ListPartiesStake : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_ListPartiesStake() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::vega::coreapi::v1::ListPartiesStakeRequest, ::vega::coreapi::v1::ListPartiesStakeResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::vega::coreapi::v1::ListPartiesStakeRequest* request, ::vega::coreapi::v1::ListPartiesStakeResponse* response) { return this->ListPartiesStake(context, request, response); }));}
+    void SetMessageAllocatorFor_ListPartiesStake(
+        ::grpc::experimental::MessageAllocator< ::vega::coreapi::v1::ListPartiesStakeRequest, ::vega::coreapi::v1::ListPartiesStakeResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::vega::coreapi::v1::ListPartiesStakeRequest, ::vega::coreapi::v1::ListPartiesStakeResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_ListPartiesStake() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListPartiesStake(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListPartiesStakeRequest* /*request*/, ::vega::coreapi::v1::ListPartiesStakeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ListPartiesStake(
+      ::grpc::CallbackServerContext* /*context*/, const ::vega::coreapi::v1::ListPartiesStakeRequest* /*request*/, ::vega::coreapi::v1::ListPartiesStakeResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ListPartiesStake(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::vega::coreapi::v1::ListPartiesStakeRequest* /*request*/, ::vega::coreapi::v1::ListPartiesStakeResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_ListAccounts<ExperimentalWithCallbackMethod_ListAssets<ExperimentalWithCallbackMethod_ListNetworkParameters<ExperimentalWithCallbackMethod_ListParties<ExperimentalWithCallbackMethod_ListValidators<ExperimentalWithCallbackMethod_ListMarkets<ExperimentalWithCallbackMethod_ListProposals<ExperimentalWithCallbackMethod_ListMarketsData<ExperimentalWithCallbackMethod_ListVotes<Service > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_ListAccounts<ExperimentalWithCallbackMethod_ListAssets<ExperimentalWithCallbackMethod_ListNetworkParameters<ExperimentalWithCallbackMethod_ListParties<ExperimentalWithCallbackMethod_ListValidators<ExperimentalWithCallbackMethod_ListMarkets<ExperimentalWithCallbackMethod_ListProposals<ExperimentalWithCallbackMethod_ListMarketsData<ExperimentalWithCallbackMethod_ListVotes<ExperimentalWithCallbackMethod_ListPartiesStake<Service > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_ListAccounts<ExperimentalWithCallbackMethod_ListAssets<ExperimentalWithCallbackMethod_ListNetworkParameters<ExperimentalWithCallbackMethod_ListParties<ExperimentalWithCallbackMethod_ListValidators<ExperimentalWithCallbackMethod_ListMarkets<ExperimentalWithCallbackMethod_ListProposals<ExperimentalWithCallbackMethod_ListMarketsData<ExperimentalWithCallbackMethod_ListVotes<Service > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_ListAccounts<ExperimentalWithCallbackMethod_ListAssets<ExperimentalWithCallbackMethod_ListNetworkParameters<ExperimentalWithCallbackMethod_ListParties<ExperimentalWithCallbackMethod_ListValidators<ExperimentalWithCallbackMethod_ListMarkets<ExperimentalWithCallbackMethod_ListProposals<ExperimentalWithCallbackMethod_ListMarketsData<ExperimentalWithCallbackMethod_ListVotes<ExperimentalWithCallbackMethod_ListPartiesStake<Service > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_ListAccounts : public BaseClass {
    private:
@@ -1122,6 +1221,23 @@ class CoreApiService final {
     }
     // disable synchronous version of this method
     ::grpc::Status ListVotes(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListVotesRequest* /*request*/, ::vega::coreapi::v1::ListVotesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListPartiesStake : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ListPartiesStake() {
+      ::grpc::Service::MarkMethodGeneric(9);
+    }
+    ~WithGenericMethod_ListPartiesStake() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListPartiesStake(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListPartiesStakeRequest* /*request*/, ::vega::coreapi::v1::ListPartiesStakeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1304,6 +1420,26 @@ class CoreApiService final {
     }
     void RequestListVotes(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ListPartiesStake : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ListPartiesStake() {
+      ::grpc::Service::MarkMethodRaw(9);
+    }
+    ~WithRawMethod_ListPartiesStake() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListPartiesStake(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListPartiesStakeRequest* /*request*/, ::vega::coreapi::v1::ListPartiesStakeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListPartiesStake(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1649,6 +1785,44 @@ class CoreApiService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_ListPartiesStake : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_ListPartiesStake() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListPartiesStake(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_ListPartiesStake() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListPartiesStake(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListPartiesStakeRequest* /*request*/, ::vega::coreapi::v1::ListPartiesStakeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ListPartiesStake(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ListPartiesStake(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_ListAccounts : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1891,9 +2065,36 @@ class CoreApiService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedListVotes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vega::coreapi::v1::ListVotesRequest,::vega::coreapi::v1::ListVotesResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_ListAccounts<WithStreamedUnaryMethod_ListAssets<WithStreamedUnaryMethod_ListNetworkParameters<WithStreamedUnaryMethod_ListParties<WithStreamedUnaryMethod_ListValidators<WithStreamedUnaryMethod_ListMarkets<WithStreamedUnaryMethod_ListProposals<WithStreamedUnaryMethod_ListMarketsData<WithStreamedUnaryMethod_ListVotes<Service > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListPartiesStake : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ListPartiesStake() {
+      ::grpc::Service::MarkMethodStreamed(9,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::vega::coreapi::v1::ListPartiesStakeRequest, ::vega::coreapi::v1::ListPartiesStakeResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::vega::coreapi::v1::ListPartiesStakeRequest, ::vega::coreapi::v1::ListPartiesStakeResponse>* streamer) {
+                       return this->StreamedListPartiesStake(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ListPartiesStake() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListPartiesStake(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListPartiesStakeRequest* /*request*/, ::vega::coreapi::v1::ListPartiesStakeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListPartiesStake(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vega::coreapi::v1::ListPartiesStakeRequest,::vega::coreapi::v1::ListPartiesStakeResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_ListAccounts<WithStreamedUnaryMethod_ListAssets<WithStreamedUnaryMethod_ListNetworkParameters<WithStreamedUnaryMethod_ListParties<WithStreamedUnaryMethod_ListValidators<WithStreamedUnaryMethod_ListMarkets<WithStreamedUnaryMethod_ListProposals<WithStreamedUnaryMethod_ListMarketsData<WithStreamedUnaryMethod_ListVotes<WithStreamedUnaryMethod_ListPartiesStake<Service > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ListAccounts<WithStreamedUnaryMethod_ListAssets<WithStreamedUnaryMethod_ListNetworkParameters<WithStreamedUnaryMethod_ListParties<WithStreamedUnaryMethod_ListValidators<WithStreamedUnaryMethod_ListMarkets<WithStreamedUnaryMethod_ListProposals<WithStreamedUnaryMethod_ListMarketsData<WithStreamedUnaryMethod_ListVotes<Service > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_ListAccounts<WithStreamedUnaryMethod_ListAssets<WithStreamedUnaryMethod_ListNetworkParameters<WithStreamedUnaryMethod_ListParties<WithStreamedUnaryMethod_ListValidators<WithStreamedUnaryMethod_ListMarkets<WithStreamedUnaryMethod_ListProposals<WithStreamedUnaryMethod_ListMarketsData<WithStreamedUnaryMethod_ListVotes<WithStreamedUnaryMethod_ListPartiesStake<Service > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1

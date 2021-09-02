@@ -952,10 +952,20 @@ public final class ChainEvents {
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
-    long getAmount();
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * The amount to be withdrawn
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
   }
   /**
    * <pre>
@@ -976,6 +986,7 @@ public final class ChainEvents {
     private BuiltinAssetWithdrawal() {
       vegaAssetId_ = "";
       partyId_ = "";
+      amount_ = "";
     }
 
     @java.lang.Override
@@ -1020,9 +1031,10 @@ public final class ChainEvents {
               partyId_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readUInt64();
+              amount_ = s;
               break;
             }
             default: {
@@ -1150,18 +1162,49 @@ public final class ChainEvents {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 3;
-    private long amount_;
+    private volatile java.lang.Object amount_;
     /**
      * <pre>
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
-      return amount_;
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount to be withdrawn
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1184,8 +1227,8 @@ public final class ChainEvents {
       if (!getPartyIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyId_);
       }
-      if (amount_ != 0L) {
-        output.writeUInt64(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, amount_);
       }
       unknownFields.writeTo(output);
     }
@@ -1202,9 +1245,8 @@ public final class ChainEvents {
       if (!getPartyIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyId_);
       }
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, amount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1225,8 +1267,8 @@ public final class ChainEvents {
           .equals(other.getVegaAssetId())) return false;
       if (!getPartyId()
           .equals(other.getPartyId())) return false;
-      if (getAmount()
-          != other.getAmount()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1243,8 +1285,7 @@ public final class ChainEvents {
       hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
+      hash = (53 * hash) + getAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1386,7 +1427,7 @@ public final class ChainEvents {
 
         partyId_ = "";
 
-        amount_ = 0L;
+        amount_ = "";
 
         return this;
       }
@@ -1473,8 +1514,9 @@ public final class ChainEvents {
           partyId_ = other.partyId_;
           onChanged();
         }
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1697,29 +1739,62 @@ public final class ChainEvents {
         return this;
       }
 
-      private long amount_ ;
+      private java.lang.Object amount_ = "";
       /**
        * <pre>
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return The amount.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount to be withdrawn
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         amount_ = value;
         onChanged();
@@ -1730,12 +1805,32 @@ public final class ChainEvents {
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
 
-        amount_ = 0L;
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount to be withdrawn
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
         onChanged();
         return this;
       }
@@ -19827,7 +19922,7 @@ public final class ChainEvents {
       "nt\030\003 \001(\004R\006amount\"o\n\026BuiltinAssetWithdraw" +
       "al\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAssetId\022\031" +
       "\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(" +
-      "\004R\006amount\"\226\001\n\021BuiltinAssetEvent\0226\n\007depos" +
+      "\tR\006amount\"\226\001\n\021BuiltinAssetEvent\0226\n\007depos" +
       "it\030\351\007 \001(\0132\031.vega.BuiltinAssetDepositH\000R\007" +
       "deposit\022?\n\nwithdrawal\030\352\007 \001(\0132\034.vega.Buil" +
       "tinAssetWithdrawalH\000R\nwithdrawalB\010\n\006acti" +

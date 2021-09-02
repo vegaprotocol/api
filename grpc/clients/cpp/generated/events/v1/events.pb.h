@@ -1768,6 +1768,9 @@ class TxErrorEvent PROTOBUF_FINAL :
     kVoteSubmission = 105,
     kLiquidityProvisionSubmission = 106,
     kWithdrawSubmission = 107,
+    kDelegateSubmission = 108,
+    kUndelegateSubmission = 109,
+    kRestoreSnapshot = 110,
     TRANSACTION_NOT_SET = 0,
   };
 
@@ -1856,6 +1859,9 @@ class TxErrorEvent PROTOBUF_FINAL :
     kVoteSubmissionFieldNumber = 105,
     kLiquidityProvisionSubmissionFieldNumber = 106,
     kWithdrawSubmissionFieldNumber = 107,
+    kDelegateSubmissionFieldNumber = 108,
+    kUndelegateSubmissionFieldNumber = 109,
+    kRestoreSnapshotFieldNumber = 110,
   };
   // string party_id = 1 [json_name = "partyId"];
   void clear_party_id();
@@ -2015,6 +2021,60 @@ class TxErrorEvent PROTOBUF_FINAL :
       ::vega::commands::v1::WithdrawSubmission* withdraw_submission);
   ::vega::commands::v1::WithdrawSubmission* unsafe_arena_release_withdraw_submission();
 
+  // .vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];
+  bool has_delegate_submission() const;
+  private:
+  bool _internal_has_delegate_submission() const;
+  public:
+  void clear_delegate_submission();
+  const ::vega::commands::v1::DelegateSubmission& delegate_submission() const;
+  ::vega::commands::v1::DelegateSubmission* release_delegate_submission();
+  ::vega::commands::v1::DelegateSubmission* mutable_delegate_submission();
+  void set_allocated_delegate_submission(::vega::commands::v1::DelegateSubmission* delegate_submission);
+  private:
+  const ::vega::commands::v1::DelegateSubmission& _internal_delegate_submission() const;
+  ::vega::commands::v1::DelegateSubmission* _internal_mutable_delegate_submission();
+  public:
+  void unsafe_arena_set_allocated_delegate_submission(
+      ::vega::commands::v1::DelegateSubmission* delegate_submission);
+  ::vega::commands::v1::DelegateSubmission* unsafe_arena_release_delegate_submission();
+
+  // .vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];
+  bool has_undelegate_submission() const;
+  private:
+  bool _internal_has_undelegate_submission() const;
+  public:
+  void clear_undelegate_submission();
+  const ::vega::commands::v1::UndelegateSubmission& undelegate_submission() const;
+  ::vega::commands::v1::UndelegateSubmission* release_undelegate_submission();
+  ::vega::commands::v1::UndelegateSubmission* mutable_undelegate_submission();
+  void set_allocated_undelegate_submission(::vega::commands::v1::UndelegateSubmission* undelegate_submission);
+  private:
+  const ::vega::commands::v1::UndelegateSubmission& _internal_undelegate_submission() const;
+  ::vega::commands::v1::UndelegateSubmission* _internal_mutable_undelegate_submission();
+  public:
+  void unsafe_arena_set_allocated_undelegate_submission(
+      ::vega::commands::v1::UndelegateSubmission* undelegate_submission);
+  ::vega::commands::v1::UndelegateSubmission* unsafe_arena_release_undelegate_submission();
+
+  // .vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];
+  bool has_restore_snapshot() const;
+  private:
+  bool _internal_has_restore_snapshot() const;
+  public:
+  void clear_restore_snapshot();
+  const ::vega::commands::v1::RestoreSnapshot& restore_snapshot() const;
+  ::vega::commands::v1::RestoreSnapshot* release_restore_snapshot();
+  ::vega::commands::v1::RestoreSnapshot* mutable_restore_snapshot();
+  void set_allocated_restore_snapshot(::vega::commands::v1::RestoreSnapshot* restore_snapshot);
+  private:
+  const ::vega::commands::v1::RestoreSnapshot& _internal_restore_snapshot() const;
+  ::vega::commands::v1::RestoreSnapshot* _internal_mutable_restore_snapshot();
+  public:
+  void unsafe_arena_set_allocated_restore_snapshot(
+      ::vega::commands::v1::RestoreSnapshot* restore_snapshot);
+  ::vega::commands::v1::RestoreSnapshot* unsafe_arena_release_restore_snapshot();
+
   void clear_transaction();
   TransactionCase transaction_case() const;
   // @@protoc_insertion_point(class_scope:vega.events.v1.TxErrorEvent)
@@ -2027,6 +2087,9 @@ class TxErrorEvent PROTOBUF_FINAL :
   void set_has_vote_submission();
   void set_has_liquidity_provision_submission();
   void set_has_withdraw_submission();
+  void set_has_delegate_submission();
+  void set_has_undelegate_submission();
+  void set_has_restore_snapshot();
 
   inline bool has_transaction() const;
   inline void clear_has_transaction();
@@ -2045,6 +2108,9 @@ class TxErrorEvent PROTOBUF_FINAL :
     ::vega::commands::v1::VoteSubmission* vote_submission_;
     ::vega::commands::v1::LiquidityProvisionSubmission* liquidity_provision_submission_;
     ::vega::commands::v1::WithdrawSubmission* withdraw_submission_;
+    ::vega::commands::v1::DelegateSubmission* delegate_submission_;
+    ::vega::commands::v1::UndelegateSubmission* undelegate_submission_;
+    ::vega::commands::v1::RestoreSnapshot* restore_snapshot_;
   } transaction_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -7124,6 +7190,201 @@ inline ::vega::commands::v1::WithdrawSubmission* TxErrorEvent::_internal_mutable
 inline ::vega::commands::v1::WithdrawSubmission* TxErrorEvent::mutable_withdraw_submission() {
   // @@protoc_insertion_point(field_mutable:vega.events.v1.TxErrorEvent.withdraw_submission)
   return _internal_mutable_withdraw_submission();
+}
+
+// .vega.commands.v1.DelegateSubmission delegate_submission = 108 [json_name = "delegateSubmission"];
+inline bool TxErrorEvent::_internal_has_delegate_submission() const {
+  return transaction_case() == kDelegateSubmission;
+}
+inline bool TxErrorEvent::has_delegate_submission() const {
+  return _internal_has_delegate_submission();
+}
+inline void TxErrorEvent::set_has_delegate_submission() {
+  _oneof_case_[0] = kDelegateSubmission;
+}
+inline ::vega::commands::v1::DelegateSubmission* TxErrorEvent::release_delegate_submission() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.TxErrorEvent.delegate_submission)
+  if (_internal_has_delegate_submission()) {
+    clear_has_transaction();
+      ::vega::commands::v1::DelegateSubmission* temp = transaction_.delegate_submission_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    transaction_.delegate_submission_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::commands::v1::DelegateSubmission& TxErrorEvent::_internal_delegate_submission() const {
+  return _internal_has_delegate_submission()
+      ? *transaction_.delegate_submission_
+      : reinterpret_cast< ::vega::commands::v1::DelegateSubmission&>(::vega::commands::v1::_DelegateSubmission_default_instance_);
+}
+inline const ::vega::commands::v1::DelegateSubmission& TxErrorEvent::delegate_submission() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.TxErrorEvent.delegate_submission)
+  return _internal_delegate_submission();
+}
+inline ::vega::commands::v1::DelegateSubmission* TxErrorEvent::unsafe_arena_release_delegate_submission() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.events.v1.TxErrorEvent.delegate_submission)
+  if (_internal_has_delegate_submission()) {
+    clear_has_transaction();
+    ::vega::commands::v1::DelegateSubmission* temp = transaction_.delegate_submission_;
+    transaction_.delegate_submission_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TxErrorEvent::unsafe_arena_set_allocated_delegate_submission(::vega::commands::v1::DelegateSubmission* delegate_submission) {
+  clear_transaction();
+  if (delegate_submission) {
+    set_has_delegate_submission();
+    transaction_.delegate_submission_ = delegate_submission;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.events.v1.TxErrorEvent.delegate_submission)
+}
+inline ::vega::commands::v1::DelegateSubmission* TxErrorEvent::_internal_mutable_delegate_submission() {
+  if (!_internal_has_delegate_submission()) {
+    clear_transaction();
+    set_has_delegate_submission();
+    transaction_.delegate_submission_ = CreateMaybeMessage< ::vega::commands::v1::DelegateSubmission >(GetArena());
+  }
+  return transaction_.delegate_submission_;
+}
+inline ::vega::commands::v1::DelegateSubmission* TxErrorEvent::mutable_delegate_submission() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.TxErrorEvent.delegate_submission)
+  return _internal_mutable_delegate_submission();
+}
+
+// .vega.commands.v1.UndelegateSubmission undelegate_submission = 109 [json_name = "undelegateSubmission"];
+inline bool TxErrorEvent::_internal_has_undelegate_submission() const {
+  return transaction_case() == kUndelegateSubmission;
+}
+inline bool TxErrorEvent::has_undelegate_submission() const {
+  return _internal_has_undelegate_submission();
+}
+inline void TxErrorEvent::set_has_undelegate_submission() {
+  _oneof_case_[0] = kUndelegateSubmission;
+}
+inline ::vega::commands::v1::UndelegateSubmission* TxErrorEvent::release_undelegate_submission() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.TxErrorEvent.undelegate_submission)
+  if (_internal_has_undelegate_submission()) {
+    clear_has_transaction();
+      ::vega::commands::v1::UndelegateSubmission* temp = transaction_.undelegate_submission_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    transaction_.undelegate_submission_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::commands::v1::UndelegateSubmission& TxErrorEvent::_internal_undelegate_submission() const {
+  return _internal_has_undelegate_submission()
+      ? *transaction_.undelegate_submission_
+      : reinterpret_cast< ::vega::commands::v1::UndelegateSubmission&>(::vega::commands::v1::_UndelegateSubmission_default_instance_);
+}
+inline const ::vega::commands::v1::UndelegateSubmission& TxErrorEvent::undelegate_submission() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.TxErrorEvent.undelegate_submission)
+  return _internal_undelegate_submission();
+}
+inline ::vega::commands::v1::UndelegateSubmission* TxErrorEvent::unsafe_arena_release_undelegate_submission() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.events.v1.TxErrorEvent.undelegate_submission)
+  if (_internal_has_undelegate_submission()) {
+    clear_has_transaction();
+    ::vega::commands::v1::UndelegateSubmission* temp = transaction_.undelegate_submission_;
+    transaction_.undelegate_submission_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TxErrorEvent::unsafe_arena_set_allocated_undelegate_submission(::vega::commands::v1::UndelegateSubmission* undelegate_submission) {
+  clear_transaction();
+  if (undelegate_submission) {
+    set_has_undelegate_submission();
+    transaction_.undelegate_submission_ = undelegate_submission;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.events.v1.TxErrorEvent.undelegate_submission)
+}
+inline ::vega::commands::v1::UndelegateSubmission* TxErrorEvent::_internal_mutable_undelegate_submission() {
+  if (!_internal_has_undelegate_submission()) {
+    clear_transaction();
+    set_has_undelegate_submission();
+    transaction_.undelegate_submission_ = CreateMaybeMessage< ::vega::commands::v1::UndelegateSubmission >(GetArena());
+  }
+  return transaction_.undelegate_submission_;
+}
+inline ::vega::commands::v1::UndelegateSubmission* TxErrorEvent::mutable_undelegate_submission() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.TxErrorEvent.undelegate_submission)
+  return _internal_mutable_undelegate_submission();
+}
+
+// .vega.commands.v1.RestoreSnapshot restore_snapshot = 110 [json_name = "restoreSnapshot"];
+inline bool TxErrorEvent::_internal_has_restore_snapshot() const {
+  return transaction_case() == kRestoreSnapshot;
+}
+inline bool TxErrorEvent::has_restore_snapshot() const {
+  return _internal_has_restore_snapshot();
+}
+inline void TxErrorEvent::set_has_restore_snapshot() {
+  _oneof_case_[0] = kRestoreSnapshot;
+}
+inline ::vega::commands::v1::RestoreSnapshot* TxErrorEvent::release_restore_snapshot() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.TxErrorEvent.restore_snapshot)
+  if (_internal_has_restore_snapshot()) {
+    clear_has_transaction();
+      ::vega::commands::v1::RestoreSnapshot* temp = transaction_.restore_snapshot_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    transaction_.restore_snapshot_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::commands::v1::RestoreSnapshot& TxErrorEvent::_internal_restore_snapshot() const {
+  return _internal_has_restore_snapshot()
+      ? *transaction_.restore_snapshot_
+      : reinterpret_cast< ::vega::commands::v1::RestoreSnapshot&>(::vega::commands::v1::_RestoreSnapshot_default_instance_);
+}
+inline const ::vega::commands::v1::RestoreSnapshot& TxErrorEvent::restore_snapshot() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.TxErrorEvent.restore_snapshot)
+  return _internal_restore_snapshot();
+}
+inline ::vega::commands::v1::RestoreSnapshot* TxErrorEvent::unsafe_arena_release_restore_snapshot() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.events.v1.TxErrorEvent.restore_snapshot)
+  if (_internal_has_restore_snapshot()) {
+    clear_has_transaction();
+    ::vega::commands::v1::RestoreSnapshot* temp = transaction_.restore_snapshot_;
+    transaction_.restore_snapshot_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TxErrorEvent::unsafe_arena_set_allocated_restore_snapshot(::vega::commands::v1::RestoreSnapshot* restore_snapshot) {
+  clear_transaction();
+  if (restore_snapshot) {
+    set_has_restore_snapshot();
+    transaction_.restore_snapshot_ = restore_snapshot;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.events.v1.TxErrorEvent.restore_snapshot)
+}
+inline ::vega::commands::v1::RestoreSnapshot* TxErrorEvent::_internal_mutable_restore_snapshot() {
+  if (!_internal_has_restore_snapshot()) {
+    clear_transaction();
+    set_has_restore_snapshot();
+    transaction_.restore_snapshot_ = CreateMaybeMessage< ::vega::commands::v1::RestoreSnapshot >(GetArena());
+  }
+  return transaction_.restore_snapshot_;
+}
+inline ::vega::commands::v1::RestoreSnapshot* TxErrorEvent::mutable_restore_snapshot() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.TxErrorEvent.restore_snapshot)
+  return _internal_mutable_restore_snapshot();
 }
 
 inline bool TxErrorEvent::has_transaction() const {

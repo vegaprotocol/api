@@ -28,6 +28,7 @@ type CoreApiServiceClient interface {
 	ListProposals(ctx context.Context, in *ListProposalsRequest, opts ...grpc.CallOption) (*ListProposalsResponse, error)
 	ListMarketsData(ctx context.Context, in *ListMarketsDataRequest, opts ...grpc.CallOption) (*ListMarketsDataResponse, error)
 	ListVotes(ctx context.Context, in *ListVotesRequest, opts ...grpc.CallOption) (*ListVotesResponse, error)
+	ListPartiesStake(ctx context.Context, in *ListPartiesStakeRequest, opts ...grpc.CallOption) (*ListPartiesStakeResponse, error)
 }
 
 type coreApiServiceClient struct {
@@ -119,6 +120,15 @@ func (c *coreApiServiceClient) ListVotes(ctx context.Context, in *ListVotesReque
 	return out, nil
 }
 
+func (c *coreApiServiceClient) ListPartiesStake(ctx context.Context, in *ListPartiesStakeRequest, opts ...grpc.CallOption) (*ListPartiesStakeResponse, error) {
+	out := new(ListPartiesStakeResponse)
+	err := c.cc.Invoke(ctx, "/vega.coreapi.v1.CoreApiService/ListPartiesStake", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CoreApiServiceServer is the server API for CoreApiService service.
 // All implementations must embed UnimplementedCoreApiServiceServer
 // for forward compatibility
@@ -132,6 +142,7 @@ type CoreApiServiceServer interface {
 	ListProposals(context.Context, *ListProposalsRequest) (*ListProposalsResponse, error)
 	ListMarketsData(context.Context, *ListMarketsDataRequest) (*ListMarketsDataResponse, error)
 	ListVotes(context.Context, *ListVotesRequest) (*ListVotesResponse, error)
+	ListPartiesStake(context.Context, *ListPartiesStakeRequest) (*ListPartiesStakeResponse, error)
 	mustEmbedUnimplementedCoreApiServiceServer()
 }
 
@@ -165,6 +176,9 @@ func (UnimplementedCoreApiServiceServer) ListMarketsData(context.Context, *ListM
 }
 func (UnimplementedCoreApiServiceServer) ListVotes(context.Context, *ListVotesRequest) (*ListVotesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListVotes not implemented")
+}
+func (UnimplementedCoreApiServiceServer) ListPartiesStake(context.Context, *ListPartiesStakeRequest) (*ListPartiesStakeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListPartiesStake not implemented")
 }
 func (UnimplementedCoreApiServiceServer) mustEmbedUnimplementedCoreApiServiceServer() {}
 
@@ -341,6 +355,24 @@ func _CoreApiService_ListVotes_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CoreApiService_ListPartiesStake_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPartiesStakeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CoreApiServiceServer).ListPartiesStake(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vega.coreapi.v1.CoreApiService/ListPartiesStake",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CoreApiServiceServer).ListPartiesStake(ctx, req.(*ListPartiesStakeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CoreApiService_ServiceDesc is the grpc.ServiceDesc for CoreApiService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -383,6 +415,10 @@ var CoreApiService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListVotes",
 			Handler:    _CoreApiService_ListVotes_Handler,
+		},
+		{
+			MethodName: "ListPartiesStake",
+			Handler:    _CoreApiService_ListPartiesStake_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
