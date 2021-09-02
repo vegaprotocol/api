@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-VERSION = "0.42.0-pre4"
+VERSION = "0.42.0-pre6"
 
 setuptools.setup(
     name="Vega API client",

@@ -1,6 +1,6 @@
 # Vega API
 
-Version: 0.42.0-pre4
+Version: 0.42.0-pre6
 
 This repository contains everything you need for interacting with the Vega APIs.
 

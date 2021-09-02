@@ -6,7 +6,7 @@
 
     <groupId>io.vegaprotocol</groupId>
     <artifactId>vega</artifactId>
-    <version>0.42.0-pre4</version>
+    <version>0.42.0-pre6</version>
     <packaging>jar</packaging>
     <properties>
         <src.dir>src</src.dir>
