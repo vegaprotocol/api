@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n io.vegaprotocol.vega.commands.v1Z+code.vegaprotocol.io/vega/proto/commands/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1d\x63ommands/v1/transaction.proto\x12\x10vega.commands.v1\x1a\x1a\x63ommands/v1/commands.proto\x1a$commands/v1/validator_commands.proto\x1a\x19\x63ommands/v1/oracles.proto\"\xf8\t\n\tInputData\x12\x14\n\x05nonce\x18\x01 \x01(\x04R\x05nonce\x12!\n\x0c\x62lock_height\x18\x02 \x01(\x04R\x0b\x62lockHeight\x12O\n\x10order_submission\x18\xe9\x07 \x01(\x0b\x32!.vega.commands.v1.OrderSubmissionH\x00R\x0forderSubmission\x12U\n\x12order_cancellation\x18\xea\x07 \x01(\x0b\x32#.vega.commands.v1.OrderCancellationH\x00R\x11orderCancellation\x12L\n\x0forder_amendment\x18\xeb\x07 \x01(\x0b\x32 .vega.commands.v1.OrderAmendmentH\x00R\x0eorderAmendment\x12X\n\x13withdraw_submission\x18\xec\x07 \x01(\x0b\x32$.vega.commands.v1.WithdrawSubmissionH\x00R\x12withdrawSubmission\x12X\n\x13proposal_submission\x18\xed\x07 \x01(\x0b\x32$.vega.commands.v1.ProposalSubmissionH\x00R\x12proposalSubmission\x12L\n\x0fvote_submission\x18\xee\x07 \x01(\x0b\x32 .vega.commands.v1.VoteSubmissionH\x00R\x0evoteSubmission\x12w\n\x1eliquidity_provision_submission\x18\xef\x07 \x01(\x0b\x32..vega.commands.v1.LiquidityProvisionSubmissionH\x00R\x1cliquidityProvisionSubmission\x12X\n\x13\x64\x65legate_submission\x18\xf0\x07 \x01(\x0b\x32$.vega.commands.v1.DelegateSubmissionH\x00R\x12\x64\x65legateSubmission\x12^\n\x15undelegate_submission\x18\xf1\x07 \x01(\x0b\x32&.vega.commands.v1.UndelegateSubmissionH\x00R\x14undelegateSubmission\x12R\n\x11node_registration\x18\xd1\x0f \x01(\x0b\x32\".vega.commands.v1.NodeRegistrationH\x00R\x10nodeRegistration\x12:\n\tnode_vote\x18\xd2\x0f \x01(\x0b\x32\x1a.vega.commands.v1.NodeVoteH\x00R\x08nodeVote\x12I\n\x0enode_signature\x18\xd3\x0f \x01(\x0b\x32\x1f.vega.commands.v1.NodeSignatureH\x00R\rnodeSignature\x12@\n\x0b\x63hain_event\x18\xd4\x0f \x01(\x0b\x32\x1c.vega.commands.v1.ChainEventH\x00R\nchainEvent\x12_\n\x16oracle_data_submission\x18\xb9\x17 \x01(\x0b\x32&.vega.commands.v1.OracleDataSubmissionH\x00R\x14oracleDataSubmissionB\t\n\x07\x63ommand\"\xc3\x01\n\x0bTransaction\x12\x1d\n\ninput_data\x18\x01 \x01(\x0cR\tinputData\x12\x39\n\tsignature\x18\x02 \x01(\x0b\x32\x1b.vega.commands.v1.SignatureR\tsignature\x12\x1b\n\x07\x61\x64\x64ress\x18\xe9\x07 \x01(\tH\x00R\x07\x61\x64\x64ress\x12\x1a\n\x07pub_key\x18\xea\x07 \x01(\tH\x00R\x06pubKey\x12\x19\n\x07version\x18\xd0\x0f \x01(\rR\x07versionB\x06\n\x04\x66rom\"O\n\tSignature\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\x12\x12\n\x04\x61lgo\x18\x02 \x01(\tR\x04\x61lgo\x12\x18\n\x07version\x18\x03 \x01(\rR\x07versionBO\n io.vegaprotocol.vega.commands.v1Z+code.vegaprotocol.io/vega/proto/commands/v1b\x06proto3'
+  serialized_pb=b'\n\x1d\x63ommands/v1/transaction.proto\x12\x10vega.commands.v1\x1a\x1a\x63ommands/v1/commands.proto\x1a$commands/v1/validator_commands.proto\x1a\x19\x63ommands/v1/oracles.proto\"\xde\n\n\tInputData\x12\x14\n\x05nonce\x18\x01 \x01(\x04R\x05nonce\x12!\n\x0c\x62lock_height\x18\x02 \x01(\x04R\x0b\x62lockHeight\x12O\n\x10order_submission\x18\xe9\x07 \x01(\x0b\x32!.vega.commands.v1.OrderSubmissionH\x00R\x0forderSubmission\x12U\n\x12order_cancellation\x18\xea\x07 \x01(\x0b\x32#.vega.commands.v1.OrderCancellationH\x00R\x11orderCancellation\x12L\n\x0forder_amendment\x18\xeb\x07 \x01(\x0b\x32 .vega.commands.v1.OrderAmendmentH\x00R\x0eorderAmendment\x12X\n\x13withdraw_submission\x18\xec\x07 \x01(\x0b\x32$.vega.commands.v1.WithdrawSubmissionH\x00R\x12withdrawSubmission\x12X\n\x13proposal_submission\x18\xed\x07 \x01(\x0b\x32$.vega.commands.v1.ProposalSubmissionH\x00R\x12proposalSubmission\x12L\n\x0fvote_submission\x18\xee\x07 \x01(\x0b\x32 .vega.commands.v1.VoteSubmissionH\x00R\x0evoteSubmission\x12w\n\x1eliquidity_provision_submission\x18\xef\x07 \x01(\x0b\x32..vega.commands.v1.LiquidityProvisionSubmissionH\x00R\x1cliquidityProvisionSubmission\x12X\n\x13\x64\x65legate_submission\x18\xf0\x07 \x01(\x0b\x32$.vega.commands.v1.DelegateSubmissionH\x00R\x12\x64\x65legateSubmission\x12^\n\x15undelegate_submission\x18\xf1\x07 \x01(\x0b\x32&.vega.commands.v1.UndelegateSubmissionH\x00R\x14undelegateSubmission\x12R\n\x11node_registration\x18\xd1\x0f \x01(\x0b\x32\".vega.commands.v1.NodeRegistrationH\x00R\x10nodeRegistration\x12:\n\tnode_vote\x18\xd2\x0f \x01(\x0b\x32\x1a.vega.commands.v1.NodeVoteH\x00R\x08nodeVote\x12I\n\x0enode_signature\x18\xd3\x0f \x01(\x0b\x32\x1f.vega.commands.v1.NodeSignatureH\x00R\rnodeSignature\x12@\n\x0b\x63hain_event\x18\xd4\x0f \x01(\x0b\x32\x1c.vega.commands.v1.ChainEventH\x00R\nchainEvent\x12_\n\x16oracle_data_submission\x18\xb9\x17 \x01(\x0b\x32&.vega.commands.v1.OracleDataSubmissionH\x00R\x14oracleDataSubmission\x12\x64\n\x1brestore_snapshot_submission\x18\xa1\x1f \x01(\x0b\x32!.vega.commands.v1.RestoreSnapshotH\x00R\x19restoreSnapshotSubmissionB\t\n\x07\x63ommand\"\xc3\x01\n\x0bTransaction\x12\x1d\n\ninput_data\x18\x01 \x01(\x0cR\tinputData\x12\x39\n\tsignature\x18\x02 \x01(\x0b\x32\x1b.vega.commands.v1.SignatureR\tsignature\x12\x1b\n\x07\x61\x64\x64ress\x18\xe9\x07 \x01(\tH\x00R\x07\x61\x64\x64ress\x12\x1a\n\x07pub_key\x18\xea\x07 \x01(\tH\x00R\x06pubKey\x12\x19\n\x07version\x18\xd0\x0f \x01(\rR\x07versionB\x06\n\x04\x66rom\"O\n\tSignature\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\x12\x12\n\x04\x61lgo\x18\x02 \x01(\tR\x04\x61lgo\x12\x18\n\x07version\x18\x03 \x01(\rR\x07versionBO\n io.vegaprotocol.vega.commands.v1Z+code.vegaprotocol.io/vega/proto/commands/v1b\x06proto3'
   ,
   dependencies=[commands_dot_v1_dot_commands__pb2.DESCRIPTOR,commands_dot_v1_dot_validator__commands__pb2.DESCRIPTOR,commands_dot_v1_dot_oracles__pb2.DESCRIPTOR,])
 
@@ -149,6 +149,13 @@ _INPUTDATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='oracleDataSubmission', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='restore_snapshot_submission', full_name='vega.commands.v1.InputData.restore_snapshot_submission', index=16,
+      number=4001, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='restoreSnapshotSubmission', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -167,7 +174,7 @@ _INPUTDATA = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=145,
-  serialized_end=1417,
+  serialized_end=1519,
 )
 
 
@@ -231,8 +238,8 @@ _TRANSACTION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1420,
-  serialized_end=1615,
+  serialized_start=1522,
+  serialized_end=1717,
 )
 
 
@@ -277,8 +284,8 @@ _SIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1617,
-  serialized_end=1696,
+  serialized_start=1719,
+  serialized_end=1798,
 )
 
 _INPUTDATA.fields_by_name['order_submission'].message_type = commands_dot_v1_dot_commands__pb2._ORDERSUBMISSION
@@ -295,6 +302,7 @@ _INPUTDATA.fields_by_name['node_vote'].message_type = commands_dot_v1_dot_valida
 _INPUTDATA.fields_by_name['node_signature'].message_type = commands_dot_v1_dot_validator__commands__pb2._NODESIGNATURE
 _INPUTDATA.fields_by_name['chain_event'].message_type = commands_dot_v1_dot_validator__commands__pb2._CHAINEVENT
 _INPUTDATA.fields_by_name['oracle_data_submission'].message_type = commands_dot_v1_dot_oracles__pb2._ORACLEDATASUBMISSION
+_INPUTDATA.fields_by_name['restore_snapshot_submission'].message_type = commands_dot_v1_dot_commands__pb2._RESTORESNAPSHOT
 _INPUTDATA.oneofs_by_name['command'].fields.append(
   _INPUTDATA.fields_by_name['order_submission'])
 _INPUTDATA.fields_by_name['order_submission'].containing_oneof = _INPUTDATA.oneofs_by_name['command']
@@ -337,6 +345,9 @@ _INPUTDATA.fields_by_name['chain_event'].containing_oneof = _INPUTDATA.oneofs_by
 _INPUTDATA.oneofs_by_name['command'].fields.append(
   _INPUTDATA.fields_by_name['oracle_data_submission'])
 _INPUTDATA.fields_by_name['oracle_data_submission'].containing_oneof = _INPUTDATA.oneofs_by_name['command']
+_INPUTDATA.oneofs_by_name['command'].fields.append(
+  _INPUTDATA.fields_by_name['restore_snapshot_submission'])
+_INPUTDATA.fields_by_name['restore_snapshot_submission'].containing_oneof = _INPUTDATA.oneofs_by_name['command']
 _TRANSACTION.fields_by_name['signature'].message_type = _SIGNATURE
 _TRANSACTION.oneofs_by_name['from'].fields.append(
   _TRANSACTION.fields_by_name['address'])

@@ -19,6 +19,15 @@ var _ = fmt.Errorf
 var _ = math.Inf
 
 func (this *NodeRegistration) Validate() error {
+	if this.VegaPubKey == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("VegaPubKey", fmt.Errorf(`value '%v' must not be an empty string`, this.VegaPubKey))
+	}
+	if this.EthereumAddress == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("EthereumAddress", fmt.Errorf(`value '%v' must not be an empty string`, this.EthereumAddress))
+	}
+	if this.ChainPubKey == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("ChainPubKey", fmt.Errorf(`value '%v' must not be an empty string`, this.ChainPubKey))
+	}
 	if this.InfoUrl == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("InfoUrl", fmt.Errorf(`value '%v' must not be an empty string`, this.InfoUrl))
 	}
@@ -62,6 +71,13 @@ func (this *ChainEvent) Validate() error {
 		if oneOfNester.Validator != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Validator); err != nil {
 				return github_com_mwitkow_go_proto_validators.FieldError("Validator", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetEvent().(*ChainEvent_StakingEvent); ok {
+		if oneOfNester.StakingEvent != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.StakingEvent); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("StakingEvent", err)
 			}
 		}
 	}

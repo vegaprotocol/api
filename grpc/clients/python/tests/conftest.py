@@ -17,14 +17,14 @@ def trading():
     return vac.VegaTradingClient(grpc_node)
 
 
-@pytest.fixture(scope="module")
-def tradingdata():
-    """
-    Provide a `VegaTradingDataClient`, connected to $GRPC_NODE.
-    """
-    grpc_node = os.getenv("GRPC_NODE")
-    assert grpc_node is not None and grpc_node != ""
-    return vac.VegaTradingDataClient(grpc_node)
+# @pytest.fixture(scope="module")
+# def tradingdata():
+#     """
+#     Provide a `VegaTradingDataClient`, connected to $GRPC_NODE.
+#     """
+#     grpc_node = os.getenv("GRPC_NODE")
+#     assert grpc_node is not None and grpc_node != ""
+#     return vac.VegaTradingDataClient(grpc_node)
 
 
 @pytest.fixture(scope="module")

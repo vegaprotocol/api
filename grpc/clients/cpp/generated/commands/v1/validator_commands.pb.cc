@@ -17,6 +17,7 @@
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_BTCEvent_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_BuiltinAssetEvent_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ERC20Event_chain_5fevents_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_StakingEvent_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ValidatorEvent_chain_5fevents_2eproto;
 namespace vega {
 namespace commands {
@@ -50,12 +51,13 @@ static void InitDefaultsscc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<5> scc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 5, 0, InitDefaultsscc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto}, {
       &scc_info_BuiltinAssetEvent_chain_5fevents_2eproto.base,
       &scc_info_ERC20Event_chain_5fevents_2eproto.base,
       &scc_info_BTCEvent_chain_5fevents_2eproto.base,
-      &scc_info_ValidatorEvent_chain_5fevents_2eproto.base,}};
+      &scc_info_ValidatorEvent_chain_5fevents_2eproto.base,
+      &scc_info_StakingEvent_chain_5fevents_2eproto.base,}};
 
 static void InitDefaultsscc_info_NodeRegistration_commands_2fv1_2fvalidator_5fcommands_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -106,7 +108,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2fvalidator_5fco
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, pub_key_),
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, vega_pub_key_),
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, ethereum_address_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, chain_pub_key_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, info_url_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, country_),
@@ -136,13 +139,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2fvalidator_5fco
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::ChainEvent, event_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::commands::v1::NodeRegistration)},
-  { 9, -1, sizeof(::vega::commands::v1::NodeVote)},
-  { 16, -1, sizeof(::vega::commands::v1::NodeSignature)},
-  { 24, -1, sizeof(::vega::commands::v1::ChainEvent)},
+  { 10, -1, sizeof(::vega::commands::v1::NodeVote)},
+  { 17, -1, sizeof(::vega::commands::v1::NodeSignature)},
+  { 25, -1, sizeof(::vega::commands::v1::ChainEvent)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -156,22 +160,25 @@ const char descriptor_table_protodef_commands_2fv1_2fvalidator_5fcommands_2eprot
   "\n$commands/v1/validator_commands.proto\022\020"
   "vega.commands.v1\032\022chain_events.proto\0326gi"
   "thub.com/mwitkow/go-proto-validators/val"
-  "idator.proto\"\244\001\n\020NodeRegistration\022\037\n\007pub"
-  "_key\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022*\n\rchain_pub_"
-  "key\030\002 \001(\014B\006\342\337\037\002X\001R\013chainPubKey\022!\n\010info_u"
-  "rl\030\003 \001(\tB\006\342\337\037\002X\001R\007infoUrl\022 \n\007country\030\004 \001"
-  "(\tB\006\342\337\037\002X\001R\007country\"Q\n\010NodeVote\022\037\n\007pub_k"
-  "ey\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022$\n\treference\030\002 "
-  "\001(\tB\006\342\337\037\002X\001R\treference\"j\n\rNodeSignature\022"
-  "\016\n\002id\030\001 \001(\tR\002id\022\020\n\003sig\030\002 \001(\014R\003sig\0227\n\004kin"
-  "d\030\003 \001(\0162#.vega.commands.v1.NodeSignature"
-  "KindR\004kind\"\375\001\n\nChainEvent\022\023\n\005tx_id\030\001 \001(\t"
-  "R\004txId\022\024\n\005nonce\030\002 \001(\004R\005nonce\0224\n\007builtin\030"
-  "\351\007 \001(\0132\027.vega.BuiltinAssetEventH\000R\007built"
-  "in\022)\n\005erc20\030\352\007 \001(\0132\020.vega.ERC20EventH\000R\005"
-  "erc20\022#\n\003btc\030\353\007 \001(\0132\016.vega.BTCEventH\000R\003b"
-  "tc\0225\n\tvalidator\030\354\007 \001(\0132\024.vega.ValidatorE"
-  "ventH\000R\tvalidatorB\007\n\005event*\205\001\n\021NodeSigna"
+  "idator.proto\"\340\001\n\020NodeRegistration\022(\n\014veg"
+  "a_pub_key\030\001 \001(\tB\006\342\337\037\002X\001R\nvegaPubKey\0221\n\020e"
+  "thereum_address\030\002 \001(\tB\006\342\337\037\002X\001R\017ethereumA"
+  "ddress\022*\n\rchain_pub_key\030\003 \001(\tB\006\342\337\037\002X\001R\013c"
+  "hainPubKey\022!\n\010info_url\030\004 \001(\tB\006\342\337\037\002X\001R\007in"
+  "foUrl\022 \n\007country\030\005 \001(\tB\006\342\337\037\002X\001R\007country\""
+  "Q\n\010NodeVote\022\037\n\007pub_key\030\001 \001(\014B\006\342\337\037\002X\001R\006pu"
+  "bKey\022$\n\treference\030\002 \001(\tB\006\342\337\037\002X\001R\treferen"
+  "ce\"j\n\rNodeSignature\022\016\n\002id\030\001 \001(\tR\002id\022\020\n\003s"
+  "ig\030\002 \001(\014R\003sig\0227\n\004kind\030\003 \001(\0162#.vega.comma"
+  "nds.v1.NodeSignatureKindR\004kind\"\271\002\n\nChain"
+  "Event\022\023\n\005tx_id\030\001 \001(\tR\004txId\022\024\n\005nonce\030\002 \001("
+  "\004R\005nonce\0224\n\007builtin\030\351\007 \001(\0132\027.vega.Builti"
+  "nAssetEventH\000R\007builtin\022)\n\005erc20\030\352\007 \001(\0132\020"
+  ".vega.ERC20EventH\000R\005erc20\022#\n\003btc\030\353\007 \001(\0132"
+  "\016.vega.BTCEventH\000R\003btc\0225\n\tvalidator\030\354\007 \001"
+  "(\0132\024.vega.ValidatorEventH\000R\tvalidator\022:\n"
+  "\rstaking_event\030\355\007 \001(\0132\022.vega.StakingEven"
+  "tH\000R\014stakingEventB\007\n\005event*\205\001\n\021NodeSigna"
   "tureKind\022#\n\037NODE_SIGNATURE_KIND_UNSPECIF"
   "IED\020\000\022!\n\035NODE_SIGNATURE_KIND_ASSET_NEW\020\001"
   "\022(\n$NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL"
@@ -191,7 +198,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto = {
-  false, false, descriptor_table_protodef_commands_2fv1_2fvalidator_5fcommands_2eproto, "commands/v1/validator_commands.proto", 971,
+  false, false, descriptor_table_protodef_commands_2fv1_2fvalidator_5fcommands_2eproto, "commands/v1/validator_commands.proto", 1091,
   &descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto_once, descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto_sccs, descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto_deps, 4, 2,
   schemas, file_default_instances, TableStruct_commands_2fv1_2fvalidator_5fcommands_2eproto::offsets,
   file_level_metadata_commands_2fv1_2fvalidator_5fcommands_2eproto, 4, file_level_enum_descriptors_commands_2fv1_2fvalidator_5fcommands_2eproto, file_level_service_descriptors_commands_2fv1_2fvalidator_5fcommands_2eproto,
@@ -233,9 +240,14 @@ NodeRegistration::NodeRegistration(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 NodeRegistration::NodeRegistration(const NodeRegistration& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_pub_key().empty()) {
-    pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pub_key(),
+  vega_pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vega_pub_key().empty()) {
+    vega_pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vega_pub_key(),
+      GetArena());
+  }
+  ethereum_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_ethereum_address().empty()) {
+    ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ethereum_address(),
       GetArena());
   }
   chain_pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -258,7 +270,8 @@ NodeRegistration::NodeRegistration(const NodeRegistration& from)
 
 void NodeRegistration::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NodeRegistration_commands_2fv1_2fvalidator_5fcommands_2eproto.base);
-  pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ethereum_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   chain_pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   info_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -272,7 +285,8 @@ NodeRegistration::~NodeRegistration() {
 
 void NodeRegistration::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  pub_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_pub_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ethereum_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   chain_pub_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   info_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -299,7 +313,8 @@ void NodeRegistration::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pub_key_.ClearToEmpty();
+  vega_pub_key_.ClearToEmpty();
+  ethereum_address_.ClearToEmpty();
   chain_pub_key_.ClearToEmpty();
   info_url_.ClearToEmpty();
   country_.ClearToEmpty();
@@ -313,34 +328,45 @@ const char* NodeRegistration::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = {
+      // string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_pub_key();
+          auto str = _internal_mutable_vega_pub_key();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.NodeRegistration.vega_pub_key"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = {
+      // string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = {
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_chain_pub_key();
+          auto str = _internal_mutable_ethereum_address();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.NodeRegistration.ethereum_address"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string info_url = 3 [json_name = "infoUrl", (.validator.field) = {
+      // string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = {
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_chain_pub_key();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.NodeRegistration.chain_pub_key"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string info_url = 4 [json_name = "infoUrl", (.validator.field) = {
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_info_url();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.NodeRegistration.info_url"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string country = 4 [json_name = "country", (.validator.field) = {
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // string country = 5 [json_name = "country", (.validator.field) = {
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_country();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.NodeRegistration.country"));
@@ -375,36 +401,54 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = {
-  if (this->pub_key().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_pub_key(), target);
+  // string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = {
+  if (this->vega_pub_key().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vega_pub_key().data(), static_cast<int>(this->_internal_vega_pub_key().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.NodeRegistration.vega_pub_key");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_vega_pub_key(), target);
   }
 
-  // bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = {
+  // string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = {
+  if (this->ethereum_address().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ethereum_address().data(), static_cast<int>(this->_internal_ethereum_address().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.NodeRegistration.ethereum_address");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_ethereum_address(), target);
+  }
+
+  // string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = {
   if (this->chain_pub_key().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_chain_pub_key(), target);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_chain_pub_key().data(), static_cast<int>(this->_internal_chain_pub_key().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.NodeRegistration.chain_pub_key");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_chain_pub_key(), target);
   }
 
-  // string info_url = 3 [json_name = "infoUrl", (.validator.field) = {
+  // string info_url = 4 [json_name = "infoUrl", (.validator.field) = {
   if (this->info_url().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_info_url().data(), static_cast<int>(this->_internal_info_url().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.commands.v1.NodeRegistration.info_url");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_info_url(), target);
+        4, this->_internal_info_url(), target);
   }
 
-  // string country = 4 [json_name = "country", (.validator.field) = {
+  // string country = 5 [json_name = "country", (.validator.field) = {
   if (this->country().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_country().data(), static_cast<int>(this->_internal_country().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.commands.v1.NodeRegistration.country");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_country(), target);
+        5, this->_internal_country(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -423,28 +467,35 @@ size_t NodeRegistration::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = {
-  if (this->pub_key().size() > 0) {
+  // string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = {
+  if (this->vega_pub_key().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_pub_key());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_vega_pub_key());
   }
 
-  // bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = {
+  // string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = {
+  if (this->ethereum_address().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ethereum_address());
+  }
+
+  // string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = {
   if (this->chain_pub_key().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_chain_pub_key());
   }
 
-  // string info_url = 3 [json_name = "infoUrl", (.validator.field) = {
+  // string info_url = 4 [json_name = "infoUrl", (.validator.field) = {
   if (this->info_url().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_info_url());
   }
 
-  // string country = 4 [json_name = "country", (.validator.field) = {
+  // string country = 5 [json_name = "country", (.validator.field) = {
   if (this->country().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -482,8 +533,11 @@ void NodeRegistration::MergeFrom(const NodeRegistration& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.pub_key().size() > 0) {
-    _internal_set_pub_key(from._internal_pub_key());
+  if (from.vega_pub_key().size() > 0) {
+    _internal_set_vega_pub_key(from._internal_vega_pub_key());
+  }
+  if (from.ethereum_address().size() > 0) {
+    _internal_set_ethereum_address(from._internal_ethereum_address());
   }
   if (from.chain_pub_key().size() > 0) {
     _internal_set_chain_pub_key(from._internal_chain_pub_key());
@@ -517,7 +571,8 @@ bool NodeRegistration::IsInitialized() const {
 void NodeRegistration::InternalSwap(NodeRegistration* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  pub_key_.Swap(&other->pub_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vega_pub_key_.Swap(&other->vega_pub_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ethereum_address_.Swap(&other->ethereum_address_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   chain_pub_key_.Swap(&other->chain_pub_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   info_url_.Swap(&other->info_url_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   country_.Swap(&other->country_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
@@ -1042,6 +1097,7 @@ class ChainEvent::_Internal {
   static const ::vega::ERC20Event& erc20(const ChainEvent* msg);
   static const ::vega::BTCEvent& btc(const ChainEvent* msg);
   static const ::vega::ValidatorEvent& validator(const ChainEvent* msg);
+  static const ::vega::StakingEvent& staking_event(const ChainEvent* msg);
 };
 
 const ::vega::BuiltinAssetEvent&
@@ -1059,6 +1115,10 @@ ChainEvent::_Internal::btc(const ChainEvent* msg) {
 const ::vega::ValidatorEvent&
 ChainEvent::_Internal::validator(const ChainEvent* msg) {
   return *msg->event_.validator_;
+}
+const ::vega::StakingEvent&
+ChainEvent::_Internal::staking_event(const ChainEvent* msg) {
+  return *msg->event_.staking_event_;
 }
 void ChainEvent::set_allocated_builtin(::vega::BuiltinAssetEvent* builtin) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
@@ -1152,6 +1212,29 @@ void ChainEvent::clear_validator() {
     clear_has_event();
   }
 }
+void ChainEvent::set_allocated_staking_event(::vega::StakingEvent* staking_event) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_event();
+  if (staking_event) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(staking_event)->GetArena();
+    if (message_arena != submessage_arena) {
+      staking_event = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, staking_event, submessage_arena);
+    }
+    set_has_staking_event();
+    event_.staking_event_ = staking_event;
+  }
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.ChainEvent.staking_event)
+}
+void ChainEvent::clear_staking_event() {
+  if (_internal_has_staking_event()) {
+    if (GetArena() == nullptr) {
+      delete event_.staking_event_;
+    }
+    clear_has_event();
+  }
+}
 ChainEvent::ChainEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -1183,6 +1266,10 @@ ChainEvent::ChainEvent(const ChainEvent& from)
     }
     case kValidator: {
       _internal_mutable_validator()->::vega::ValidatorEvent::MergeFrom(from._internal_validator());
+      break;
+    }
+    case kStakingEvent: {
+      _internal_mutable_staking_event()->::vega::StakingEvent::MergeFrom(from._internal_staking_event());
       break;
     }
     case EVENT_NOT_SET: {
@@ -1255,6 +1342,12 @@ void ChainEvent::clear_event() {
       }
       break;
     }
+    case kStakingEvent: {
+      if (GetArena() == nullptr) {
+        delete event_.staking_event_;
+      }
+      break;
+    }
     case EVENT_NOT_SET: {
       break;
     }
@@ -1323,6 +1416,13 @@ const char* ChainEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 1004:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
           ptr = ctx->ParseMessage(_internal_mutable_validator(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];
+      case 1005:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          ptr = ctx->ParseMessage(_internal_mutable_staking_event(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1402,6 +1502,14 @@ failure:
         1004, _Internal::validator(this), target, stream);
   }
 
+  // .vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];
+  if (_internal_has_staking_event()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1005, _Internal::staking_event(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1461,6 +1569,13 @@ size_t ChainEvent::ByteSizeLong() const {
           *event_.validator_);
       break;
     }
+    // .vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];
+    case kStakingEvent: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *event_.staking_event_);
+      break;
+    }
     case EVENT_NOT_SET: {
       break;
     }
@@ -1517,6 +1632,10 @@ void ChainEvent::MergeFrom(const ChainEvent& from) {
     }
     case kValidator: {
       _internal_mutable_validator()->::vega::ValidatorEvent::MergeFrom(from._internal_validator());
+      break;
+    }
+    case kStakingEvent: {
+      _internal_mutable_staking_event()->::vega::StakingEvent::MergeFrom(from._internal_staking_event());
       break;
     }
     case EVENT_NOT_SET: {

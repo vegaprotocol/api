@@ -9,14 +9,16 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 
 // Used to Register a node as a validator during network start-up
 message NodeRegistration {
-  // Public key, required field
-  bytes pub_key = 1 [(validator.field) = {string_not_empty: true}];
+  // Vega public key, required field
+  string vega_pub_key = 1 [(validator.field) = {string_not_empty: true}];
+  // Ethereum public key, required field
+  string ethereum_address = 2 [(validator.field) = {string_not_empty: true}];
   // Public key for the blockchain, required field
-  bytes chain_pub_key = 2 [(validator.field) = {string_not_empty: true}];
+  string chain_pub_key = 3 [(validator.field) = {string_not_empty: true}];
   // URL with more info on the node
-  string info_url = 3 [(validator.field) = {string_not_empty: true}];
+  string info_url = 4 [(validator.field) = {string_not_empty: true}];
   // Country code (ISO 3166-1 alpha-2) for the location of the node
-  string country = 4 [(validator.field) = {string_not_empty: true}];
+  string country = 5 [(validator.field) = {string_not_empty: true}];
 }
 
 // Used when a node votes for validating a given resource exists or is valid,
@@ -64,5 +66,7 @@ message ChainEvent {
     vega.BTCEvent btc = 1003;
     // Validator event
     vega.ValidatorEvent validator = 1004;
+    // Ethereum Staking event
+    vega.StakingEvent staking_event = 1005;
   }
 }

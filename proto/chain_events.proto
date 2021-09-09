@@ -171,3 +171,41 @@ message ValidatorEvent {
     RemoveValidator rm = 1002;
   }
 }
+
+message StakingEvent {
+  // Index of the transaction
+  uint64 index = 1;
+  // The block in which the transaction was added
+  uint64 block = 2;
+
+  oneof action {
+    StakeDeposited stake_deposited = 1001;
+    StakeRemoved stake_removed = 1002;
+  }
+}
+
+message StakeDeposited {
+  // Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+  string ethereum_address = 1;
+  // The public of the party receiving the stake deposit (hex encode)
+  string vega_public_key = 2;
+  // The amount deposited (base 10)
+  string amount = 3;
+  // The time at which the block was produced
+  // will be used to inform the core at what time
+  // the stake started to be available.
+  int64 block_time = 4;
+}
+
+message StakeRemoved {
+  // Ethereum address of the user removing stake (hex encode with 0x prefix)
+  string ethereum_address = 1;
+  // The public key of the party from which to remove stake (hex encode)
+  string vega_public_key = 2;
+  // The amount removed (base 10)
+  string amount = 3;
+  // The time at which the block was produced
+  // will be used to inform the core at what time
+  // the stake was made unavailable.
+  int64 block_time = 4;
+}

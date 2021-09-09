@@ -13,16 +13,27 @@ import "oracles/v1/data.proto";
 import "commands/v1/commands.proto";
 import "commands/v1/validator_commands.proto";
 
-// StakingEvent - an event notifying of stake being deposited or removed for a given party
+// StakeLinking - an event notifying of stake being deposited or removed for a given party
 // These events are emitted for every Staking deposit or removed accepted by the network
-message StakingEvent {
+message StakeLinking {
   enum Type {
     // Default value
     TYPE_UNSPECIFIED = 0;
     // Indicate of a stake deposit instruction
-    TYPE_DEPOSIT = 1;
+    TYPE_LINK = 1;
     // Indicate of a stake remove instruction
-    TYPE_REMOVE = 2;
+    TYPE_UNLINK = 2;
+  }
+
+  enum Status {
+    // Default value
+    STATUS_UNSPECIFIED = 0;
+    // Indicate an event waiting for confirmation from the vega network
+    STATUS_PENDING = 1;
+    // Indicate of an event accepted by the vega network
+    STATUS_ACCEPTED = 2;
+    // Indaicate of an event rejected by the vega network
+    STATUS_REJECTED = 3;
   }
 
   // The internal ID for this staking event
@@ -35,6 +46,27 @@ message StakingEvent {
   string party = 4;
   // The amount of stake deposited or removed
   string amount = 5;
+  // The status of the event
+  Status status = 6;
+  // The time at which the vega network finalized the state of the event
+  int64 finalized_at = 7;
+  // The hash of the transaction from which the events happen
+  string tx_hash = 8;
+}
+
+message CheckpointEvent {
+  string hash = 1;
+  string block_hash = 2;
+  uint64 block_height = 3;
+}
+
+message RewardPayoutEvent {
+  string party = 1;
+  string epoch_seq = 2;
+  string asset = 3;
+  string amount = 4;
+  string percent_of_total_reward = 5;
+  int64  timestamp = 6;
 }
 
 //DelegationBalanceEvent - updates on the delegation balance of a party to a node in the current epoch in effect
@@ -42,6 +74,7 @@ message DelegationBalanceEvent {
   string party = 1;
   string node_id = 2;
   uint64 amount = 3;
+  string epoch_seq = 4;
 }
 
 //PendingDelegationBalanceEvent - updates on the delegation/undelegation balance of a party to a node for the next epoch
@@ -50,6 +83,7 @@ message PendingDelegationBalanceEvent {
   string node_id = 2;
   uint64 delegation_amount = 3;
   uint64 undelegation_amount = 4;
+  string epoch_seq = 5;
 }
 
 // MarketEvent - the common denominator for all market events
@@ -86,14 +120,14 @@ message TimeUpdate {
 
 // Epoch details
 message EpochEvent {
-	// Sequence number that increases by one each epoch
-	uint64 seq = 1;
-	// What time did this epoch start
-	int64  start_time = 2;
-	// What time should this epoch end
-	int64  expire_time = 3;
-	// What time did it actually end
-	int64  end_time = 4;
+  // Sequence number that increases by one each epoch
+  uint64 seq = 1;
+  // What time did this epoch start
+  int64  start_time = 2;
+  // What time should this epoch end
+  int64  expire_time = 3;
+  // What time did it actually end
+  int64  end_time = 4;
 }
 
 // A transfer responses event contains a collection of transfer information
@@ -192,14 +226,16 @@ message AuctionEvent {
 
 // A validator update event contains information about validator node
 message ValidatorUpdate {
-  // Public key of validator node
-  string pub_key = 1;
+  // Vega public key of validator node
+  string vega_pub_key = 1;
+  // Ethereum public key of validator node
+  string ethereum_address = 2;
   // Public key of Tendermint
-  string tm_pub_key = 2;
+  string tm_pub_key = 3;
   // URL with more info on the node
-  string info_url = 3;
+  string info_url = 4;
   // Country code (ISO 3166-1 alpha-2) for the location of the node
-  string country = 4;
+  string country = 5;
 }
 
 // An (event) bus event type is used to specify a type of event
@@ -207,78 +243,82 @@ message ValidatorUpdate {
 // Single values (e.g. BUS_EVENT_TYPE_ORDER) where they represent one data item
 // Group values (e.g. BUS_EVENT_TYPE_AUCTION) where they represent a group of data items
 enum BusEventType {
-    // Default value, always invalid
-    BUS_EVENT_TYPE_UNSPECIFIED = 0;
-    // Events of ALL event types, used when filtering stream from event bus
-    BUS_EVENT_TYPE_ALL = 1;
-    // Event for blockchain time updates
-    BUS_EVENT_TYPE_TIME_UPDATE = 2;
-    // Event for when a transfer happens internally, contains the transfer information
-    BUS_EVENT_TYPE_TRANSFER_RESPONSES = 3;
-    // Event indicating position resolution has occurred
-    BUS_EVENT_TYPE_POSITION_RESOLUTION = 4;
-    // Event for order updates, both new and existing orders
-    BUS_EVENT_TYPE_ORDER = 5;
-    // Event for account updates
-    BUS_EVENT_TYPE_ACCOUNT = 6;
-    // Event for party updates
-    BUS_EVENT_TYPE_PARTY = 7;
-    // Event indicating a new trade has occurred
-    BUS_EVENT_TYPE_TRADE = 8;
-    // Event indicating margin levels have changed for a party
-    BUS_EVENT_TYPE_MARGIN_LEVELS = 9;
-    // Event for proposal updates (for governance)
-    BUS_EVENT_TYPE_PROPOSAL = 10;
-    // Event indicating a new vote has occurred (for governance)
-    BUS_EVENT_TYPE_VOTE = 11;
-    // Event for market data updates
-    BUS_EVENT_TYPE_MARKET_DATA = 12;
-    // Event for a new signature for a Vega node
-    BUS_EVENT_TYPE_NODE_SIGNATURE = 13;
-    // Event indicating loss socialisation occurred for a party
-    BUS_EVENT_TYPE_LOSS_SOCIALIZATION = 14;
-    // Event for when a position is being settled
-    BUS_EVENT_TYPE_SETTLE_POSITION = 15;
-    // Event for when a position is distressed
-    BUS_EVENT_TYPE_SETTLE_DISTRESSED = 16;
-    // Event indicating a new market was created
-    BUS_EVENT_TYPE_MARKET_CREATED = 17;
-    // Event for when an asset is added to Vega
-    BUS_EVENT_TYPE_ASSET = 18;
-    // Event indicating a market tick event
-    BUS_EVENT_TYPE_MARKET_TICK = 19;
-    // Event for when a withdrawal occurs
-    BUS_EVENT_TYPE_WITHDRAWAL = 20;
-    // Event for when a deposit occurs
-    BUS_EVENT_TYPE_DEPOSIT = 21;
-    // Event indicating a change in auction state, for example starting or ending an auction
-    BUS_EVENT_TYPE_AUCTION = 22;
-    // Event indicating a risk factor has been updated
-    BUS_EVENT_TYPE_RISK_FACTOR = 23;
-    // Event indicating a network parameter has been added or updated
-    BUS_EVENT_TYPE_NETWORK_PARAMETER = 24;
-    // Event indicating a liquidity provision has been created or updated
-    BUS_EVENT_TYPE_LIQUIDITY_PROVISION = 25;
-    // Event indicating a new market was created
-    BUS_EVENT_TYPE_MARKET_UPDATED = 26;
-    // Event indicating an oracle spec has been created or updated
-    BUS_EVENT_TYPE_ORACLE_SPEC = 27;
-    // Event indicating that an oracle data has been broadcast
-    BUS_EVENT_TYPE_ORACLE_DATA = 28;
-    // Event indicating that an delegation balance of a party to a node for current epoch has changed
-    BUS_EVENT_TYPE_DELEGATION_BALANCE = 29;
-    // Event indicating that an delegation balance of a party to a node for next epoch has changed
-    BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE = 30;
-    // Event indicating the start or end of an epoch
-    BUS_EVENT_TYPE_EPOCH_UPDATE = 31;
-    // Event indicating that validator node has been updated
-    BUS_EVENT_TYPE_VALIDATOR_UPDATE = 32;
-    // Event indicating a new staking event have been processed by the network
-    BUS_EVENT_TYPE_STAKING_EVENT = 33;
-    // Event indicating a market related event, for example when a market opens
-    BUS_EVENT_TYPE_MARKET = 101;
-    // Event used to report failed transactions back to a user, this is excluded from the ALL type
-    BUS_EVENT_TYPE_TX_ERROR = 201;
+  // Default value, always invalid
+  BUS_EVENT_TYPE_UNSPECIFIED = 0;
+  // Events of ALL event types, used when filtering stream from event bus
+  BUS_EVENT_TYPE_ALL = 1;
+  // Event for blockchain time updates
+  BUS_EVENT_TYPE_TIME_UPDATE = 2;
+  // Event for when a transfer happens internally, contains the transfer information
+  BUS_EVENT_TYPE_TRANSFER_RESPONSES = 3;
+  // Event indicating position resolution has occurred
+  BUS_EVENT_TYPE_POSITION_RESOLUTION = 4;
+  // Event for order updates, both new and existing orders
+  BUS_EVENT_TYPE_ORDER = 5;
+  // Event for account updates
+  BUS_EVENT_TYPE_ACCOUNT = 6;
+  // Event for party updates
+  BUS_EVENT_TYPE_PARTY = 7;
+  // Event indicating a new trade has occurred
+  BUS_EVENT_TYPE_TRADE = 8;
+  // Event indicating margin levels have changed for a party
+  BUS_EVENT_TYPE_MARGIN_LEVELS = 9;
+  // Event for proposal updates (for governance)
+  BUS_EVENT_TYPE_PROPOSAL = 10;
+  // Event indicating a new vote has occurred (for governance)
+  BUS_EVENT_TYPE_VOTE = 11;
+  // Event for market data updates
+  BUS_EVENT_TYPE_MARKET_DATA = 12;
+  // Event for a new signature for a Vega node
+  BUS_EVENT_TYPE_NODE_SIGNATURE = 13;
+  // Event indicating loss socialisation occurred for a party
+  BUS_EVENT_TYPE_LOSS_SOCIALIZATION = 14;
+  // Event for when a position is being settled
+  BUS_EVENT_TYPE_SETTLE_POSITION = 15;
+  // Event for when a position is distressed
+  BUS_EVENT_TYPE_SETTLE_DISTRESSED = 16;
+  // Event indicating a new market was created
+  BUS_EVENT_TYPE_MARKET_CREATED = 17;
+  // Event for when an asset is added to Vega
+  BUS_EVENT_TYPE_ASSET = 18;
+  // Event indicating a market tick event
+  BUS_EVENT_TYPE_MARKET_TICK = 19;
+  // Event for when a withdrawal occurs
+  BUS_EVENT_TYPE_WITHDRAWAL = 20;
+  // Event for when a deposit occurs
+  BUS_EVENT_TYPE_DEPOSIT = 21;
+  // Event indicating a change in auction state, for example starting or ending an auction
+  BUS_EVENT_TYPE_AUCTION = 22;
+  // Event indicating a risk factor has been updated
+  BUS_EVENT_TYPE_RISK_FACTOR = 23;
+  // Event indicating a network parameter has been added or updated
+  BUS_EVENT_TYPE_NETWORK_PARAMETER = 24;
+  // Event indicating a liquidity provision has been created or updated
+  BUS_EVENT_TYPE_LIQUIDITY_PROVISION = 25;
+  // Event indicating a new market was created
+  BUS_EVENT_TYPE_MARKET_UPDATED = 26;
+  // Event indicating an oracle spec has been created or updated
+  BUS_EVENT_TYPE_ORACLE_SPEC = 27;
+  // Event indicating that an oracle data has been broadcast
+  BUS_EVENT_TYPE_ORACLE_DATA = 28;
+  // Event indicating that an delegation balance of a party to a node for current epoch has changed
+  BUS_EVENT_TYPE_DELEGATION_BALANCE = 29;
+  // Event indicating that an delegation balance of a party to a node for next epoch has changed
+  BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE = 30;
+  // Event indicating the start or end of an epoch
+  BUS_EVENT_TYPE_EPOCH_UPDATE = 31;
+  // Event indicating that validator node has been updated
+  BUS_EVENT_TYPE_VALIDATOR_UPDATE = 32;
+  // Event indicating a new staking event have been processed by the network
+  BUS_EVENT_TYPE_STAKE_LINKING = 33;
+  // Event indicating the payout of a reward has been initiated
+  BUS_EVENT_TYPE_REWARD_PAYOUT_EVENT = 34;
+  // Event indicating a new checkpoint was created
+  BUS_EVENT_TYPE_CHECKPOINT = 35;
+  // Event indicating a market related event, for example when a market opens
+  BUS_EVENT_TYPE_MARKET = 101;
+  // Event used to report failed transactions back to a user, this is excluded from the ALL type
+  BUS_EVENT_TYPE_TX_ERROR = 201;
 }
 
 // A bus event is a container for event bus events emitted by Vega
@@ -353,7 +393,11 @@ message BusEvent {
     // Validator update events
     ValidatorUpdate validator_update = 132;
     // Staking event
-    StakingEvent staking_event = 133;
+    StakeLinking stake_linking = 133;
+    // Reward payout event
+    RewardPayoutEvent reward_payout = 134;
+    // Checkpoint was created
+    CheckpointEvent checkpoint = 135;
     // Market tick events - See [MarketEvent](#vega.MarketEvent)
     MarketEvent market = 1001;
     // Transaction error events, not included in the ALL event type

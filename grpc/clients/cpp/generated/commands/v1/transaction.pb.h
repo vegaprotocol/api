@@ -133,6 +133,7 @@ class InputData PROTOBUF_FINAL :
     kNodeSignature = 2003,
     kChainEvent = 2004,
     kOracleDataSubmission = 3001,
+    kRestoreSnapshotSubmission = 4001,
     COMMAND_NOT_SET = 0,
   };
 
@@ -228,6 +229,7 @@ class InputData PROTOBUF_FINAL :
     kNodeSignatureFieldNumber = 2003,
     kChainEventFieldNumber = 2004,
     kOracleDataSubmissionFieldNumber = 3001,
+    kRestoreSnapshotSubmissionFieldNumber = 4001,
   };
   // uint64 nonce = 1 [json_name = "nonce"];
   void clear_nonce();
@@ -499,6 +501,24 @@ class InputData PROTOBUF_FINAL :
       ::vega::commands::v1::OracleDataSubmission* oracle_data_submission);
   ::vega::commands::v1::OracleDataSubmission* unsafe_arena_release_oracle_data_submission();
 
+  // .vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];
+  bool has_restore_snapshot_submission() const;
+  private:
+  bool _internal_has_restore_snapshot_submission() const;
+  public:
+  void clear_restore_snapshot_submission();
+  const ::vega::commands::v1::RestoreSnapshot& restore_snapshot_submission() const;
+  ::vega::commands::v1::RestoreSnapshot* release_restore_snapshot_submission();
+  ::vega::commands::v1::RestoreSnapshot* mutable_restore_snapshot_submission();
+  void set_allocated_restore_snapshot_submission(::vega::commands::v1::RestoreSnapshot* restore_snapshot_submission);
+  private:
+  const ::vega::commands::v1::RestoreSnapshot& _internal_restore_snapshot_submission() const;
+  ::vega::commands::v1::RestoreSnapshot* _internal_mutable_restore_snapshot_submission();
+  public:
+  void unsafe_arena_set_allocated_restore_snapshot_submission(
+      ::vega::commands::v1::RestoreSnapshot* restore_snapshot_submission);
+  ::vega::commands::v1::RestoreSnapshot* unsafe_arena_release_restore_snapshot_submission();
+
   void clear_command();
   CommandCase command_case() const;
   // @@protoc_insertion_point(class_scope:vega.commands.v1.InputData)
@@ -518,6 +538,7 @@ class InputData PROTOBUF_FINAL :
   void set_has_node_signature();
   void set_has_chain_event();
   void set_has_oracle_data_submission();
+  void set_has_restore_snapshot_submission();
 
   inline bool has_command() const;
   inline void clear_has_command();
@@ -543,6 +564,7 @@ class InputData PROTOBUF_FINAL :
     ::vega::commands::v1::NodeSignature* node_signature_;
     ::vega::commands::v1::ChainEvent* chain_event_;
     ::vega::commands::v1::OracleDataSubmission* oracle_data_submission_;
+    ::vega::commands::v1::RestoreSnapshot* restore_snapshot_submission_;
   } command_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1914,6 +1936,71 @@ inline ::vega::commands::v1::OracleDataSubmission* InputData::_internal_mutable_
 inline ::vega::commands::v1::OracleDataSubmission* InputData::mutable_oracle_data_submission() {
   // @@protoc_insertion_point(field_mutable:vega.commands.v1.InputData.oracle_data_submission)
   return _internal_mutable_oracle_data_submission();
+}
+
+// .vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];
+inline bool InputData::_internal_has_restore_snapshot_submission() const {
+  return command_case() == kRestoreSnapshotSubmission;
+}
+inline bool InputData::has_restore_snapshot_submission() const {
+  return _internal_has_restore_snapshot_submission();
+}
+inline void InputData::set_has_restore_snapshot_submission() {
+  _oneof_case_[0] = kRestoreSnapshotSubmission;
+}
+inline ::vega::commands::v1::RestoreSnapshot* InputData::release_restore_snapshot_submission() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.InputData.restore_snapshot_submission)
+  if (_internal_has_restore_snapshot_submission()) {
+    clear_has_command();
+      ::vega::commands::v1::RestoreSnapshot* temp = command_.restore_snapshot_submission_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    command_.restore_snapshot_submission_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::commands::v1::RestoreSnapshot& InputData::_internal_restore_snapshot_submission() const {
+  return _internal_has_restore_snapshot_submission()
+      ? *command_.restore_snapshot_submission_
+      : reinterpret_cast< ::vega::commands::v1::RestoreSnapshot&>(::vega::commands::v1::_RestoreSnapshot_default_instance_);
+}
+inline const ::vega::commands::v1::RestoreSnapshot& InputData::restore_snapshot_submission() const {
+  // @@protoc_insertion_point(field_get:vega.commands.v1.InputData.restore_snapshot_submission)
+  return _internal_restore_snapshot_submission();
+}
+inline ::vega::commands::v1::RestoreSnapshot* InputData::unsafe_arena_release_restore_snapshot_submission() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.commands.v1.InputData.restore_snapshot_submission)
+  if (_internal_has_restore_snapshot_submission()) {
+    clear_has_command();
+    ::vega::commands::v1::RestoreSnapshot* temp = command_.restore_snapshot_submission_;
+    command_.restore_snapshot_submission_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InputData::unsafe_arena_set_allocated_restore_snapshot_submission(::vega::commands::v1::RestoreSnapshot* restore_snapshot_submission) {
+  clear_command();
+  if (restore_snapshot_submission) {
+    set_has_restore_snapshot_submission();
+    command_.restore_snapshot_submission_ = restore_snapshot_submission;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.commands.v1.InputData.restore_snapshot_submission)
+}
+inline ::vega::commands::v1::RestoreSnapshot* InputData::_internal_mutable_restore_snapshot_submission() {
+  if (!_internal_has_restore_snapshot_submission()) {
+    clear_command();
+    set_has_restore_snapshot_submission();
+    command_.restore_snapshot_submission_ = CreateMaybeMessage< ::vega::commands::v1::RestoreSnapshot >(GetArena());
+  }
+  return command_.restore_snapshot_submission_;
+}
+inline ::vega::commands::v1::RestoreSnapshot* InputData::mutable_restore_snapshot_submission() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.InputData.restore_snapshot_submission)
+  return _internal_mutable_restore_snapshot_submission();
 }
 
 inline bool InputData::has_command() const {
