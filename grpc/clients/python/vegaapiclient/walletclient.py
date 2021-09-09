@@ -99,21 +99,6 @@ class WalletClient:
         url = "{}/api/v1/keys".format(self.url)
         return self._httpsession.post(url, headers=self._header(), json=req)
 
-    def signtx(self, txn, pub_key, propagate) -> requests.Response:
-        """
-        Sign a transaction.
-
-        `txn` must be a base64-encoded string, e.g.
-        ```
-        txn = base64.b64encode(b"someblob").decode("ascii")
-        ```
-
-        pub_key must be a hex-encoded string.
-        """
-        req = {"tx": txn, "pubKey": pub_key, "propagate": propagate}
-        url = "{}/api/v1/messages".format(self.url)
-        return self._httpsession.post(url, headers=self._header(), json=req)
-
     def signtxv2(self, txn) -> requests.Response:
         """Sign a transaction V2."""
         # `https://googleapis.dev/python/protobuf/latest/google/protobuf`

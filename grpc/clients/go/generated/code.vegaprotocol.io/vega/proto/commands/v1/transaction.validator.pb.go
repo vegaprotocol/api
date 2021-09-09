@@ -115,6 +115,13 @@ func (this *InputData) Validate() error {
 			}
 		}
 	}
+	if oneOfNester, ok := this.GetCommand().(*InputData_RestoreSnapshotSubmission); ok {
+		if oneOfNester.RestoreSnapshotSubmission != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.RestoreSnapshotSubmission); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("RestoreSnapshotSubmission", err)
+			}
+		}
+	}
 	return nil
 }
 func (this *Transaction) Validate() error {

@@ -46,7 +46,7 @@ struct TableStruct_chain_5fevents_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[17]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -102,6 +102,15 @@ extern IdentifierDefaultTypeInternal _Identifier_default_instance_;
 class RemoveValidator;
 class RemoveValidatorDefaultTypeInternal;
 extern RemoveValidatorDefaultTypeInternal _RemoveValidator_default_instance_;
+class StakeDeposited;
+class StakeDepositedDefaultTypeInternal;
+extern StakeDepositedDefaultTypeInternal _StakeDeposited_default_instance_;
+class StakeRemoved;
+class StakeRemovedDefaultTypeInternal;
+extern StakeRemovedDefaultTypeInternal _StakeRemoved_default_instance_;
+class StakingEvent;
+class StakingEventDefaultTypeInternal;
+extern StakingEventDefaultTypeInternal _StakingEvent_default_instance_;
 class ValidatorEvent;
 class ValidatorEventDefaultTypeInternal;
 extern ValidatorEventDefaultTypeInternal _ValidatorEvent_default_instance_;
@@ -123,6 +132,9 @@ template<> ::vega::ERC20Withdrawal* Arena::CreateMaybeMessage<::vega::ERC20Withd
 template<> ::vega::EthereumAddress* Arena::CreateMaybeMessage<::vega::EthereumAddress>(Arena*);
 template<> ::vega::Identifier* Arena::CreateMaybeMessage<::vega::Identifier>(Arena*);
 template<> ::vega::RemoveValidator* Arena::CreateMaybeMessage<::vega::RemoveValidator>(Arena*);
+template<> ::vega::StakeDeposited* Arena::CreateMaybeMessage<::vega::StakeDeposited>(Arena*);
+template<> ::vega::StakeRemoved* Arena::CreateMaybeMessage<::vega::StakeRemoved>(Arena*);
+template<> ::vega::StakingEvent* Arena::CreateMaybeMessage<::vega::StakingEvent>(Arena*);
 template<> ::vega::ValidatorEvent* Arena::CreateMaybeMessage<::vega::ValidatorEvent>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace vega {
@@ -449,13 +461,20 @@ class BuiltinAssetWithdrawal PROTOBUF_FINAL :
   std::string* _internal_mutable_party_id();
   public:
 
-  // uint64 amount = 3 [json_name = "amount"];
+  // string amount = 3 [json_name = "amount"];
   void clear_amount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount() const;
-  void set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& amount() const;
+  void set_amount(const std::string& value);
+  void set_amount(std::string&& value);
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  std::string* mutable_amount();
+  std::string* release_amount();
+  void set_allocated_amount(std::string* amount);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_amount() const;
-  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& _internal_amount() const;
+  void _internal_set_amount(const std::string& value);
+  std::string* _internal_mutable_amount();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.BuiltinAssetWithdrawal)
@@ -467,7 +486,7 @@ class BuiltinAssetWithdrawal PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
 };
@@ -3106,6 +3125,591 @@ class ValidatorEvent PROTOBUF_FINAL :
 
   friend struct ::TableStruct_chain_5fevents_2eproto;
 };
+// -------------------------------------------------------------------
+
+class StakingEvent PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.StakingEvent) */ {
+ public:
+  inline StakingEvent() : StakingEvent(nullptr) {}
+  virtual ~StakingEvent();
+
+  StakingEvent(const StakingEvent& from);
+  StakingEvent(StakingEvent&& from) noexcept
+    : StakingEvent() {
+    *this = ::std::move(from);
+  }
+
+  inline StakingEvent& operator=(const StakingEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StakingEvent& operator=(StakingEvent&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const StakingEvent& default_instance();
+
+  enum ActionCase {
+    kStakeDeposited = 1001,
+    kStakeRemoved = 1002,
+    ACTION_NOT_SET = 0,
+  };
+
+  static inline const StakingEvent* internal_default_instance() {
+    return reinterpret_cast<const StakingEvent*>(
+               &_StakingEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(StakingEvent& a, StakingEvent& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StakingEvent* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StakingEvent* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StakingEvent* New() const final {
+    return CreateMaybeMessage<StakingEvent>(nullptr);
+  }
+
+  StakingEvent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StakingEvent>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const StakingEvent& from);
+  void MergeFrom(const StakingEvent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StakingEvent* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.StakingEvent";
+  }
+  protected:
+  explicit StakingEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_chain_5fevents_2eproto);
+    return ::descriptor_table_chain_5fevents_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIndexFieldNumber = 1,
+    kBlockFieldNumber = 2,
+    kStakeDepositedFieldNumber = 1001,
+    kStakeRemovedFieldNumber = 1002,
+  };
+  // uint64 index = 1 [json_name = "index"];
+  void clear_index();
+  ::PROTOBUF_NAMESPACE_ID::uint64 index() const;
+  void set_index(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_index() const;
+  void _internal_set_index(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 block = 2 [json_name = "block"];
+  void clear_block();
+  ::PROTOBUF_NAMESPACE_ID::uint64 block() const;
+  void set_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_block() const;
+  void _internal_set_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // .vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];
+  bool has_stake_deposited() const;
+  private:
+  bool _internal_has_stake_deposited() const;
+  public:
+  void clear_stake_deposited();
+  const ::vega::StakeDeposited& stake_deposited() const;
+  ::vega::StakeDeposited* release_stake_deposited();
+  ::vega::StakeDeposited* mutable_stake_deposited();
+  void set_allocated_stake_deposited(::vega::StakeDeposited* stake_deposited);
+  private:
+  const ::vega::StakeDeposited& _internal_stake_deposited() const;
+  ::vega::StakeDeposited* _internal_mutable_stake_deposited();
+  public:
+  void unsafe_arena_set_allocated_stake_deposited(
+      ::vega::StakeDeposited* stake_deposited);
+  ::vega::StakeDeposited* unsafe_arena_release_stake_deposited();
+
+  // .vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];
+  bool has_stake_removed() const;
+  private:
+  bool _internal_has_stake_removed() const;
+  public:
+  void clear_stake_removed();
+  const ::vega::StakeRemoved& stake_removed() const;
+  ::vega::StakeRemoved* release_stake_removed();
+  ::vega::StakeRemoved* mutable_stake_removed();
+  void set_allocated_stake_removed(::vega::StakeRemoved* stake_removed);
+  private:
+  const ::vega::StakeRemoved& _internal_stake_removed() const;
+  ::vega::StakeRemoved* _internal_mutable_stake_removed();
+  public:
+  void unsafe_arena_set_allocated_stake_removed(
+      ::vega::StakeRemoved* stake_removed);
+  ::vega::StakeRemoved* unsafe_arena_release_stake_removed();
+
+  void clear_action();
+  ActionCase action_case() const;
+  // @@protoc_insertion_point(class_scope:vega.StakingEvent)
+ private:
+  class _Internal;
+  void set_has_stake_deposited();
+  void set_has_stake_removed();
+
+  inline bool has_action() const;
+  inline void clear_has_action();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 index_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 block_;
+  union ActionUnion {
+    ActionUnion() {}
+    ::vega::StakeDeposited* stake_deposited_;
+    ::vega::StakeRemoved* stake_removed_;
+  } action_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_chain_5fevents_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StakeDeposited PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.StakeDeposited) */ {
+ public:
+  inline StakeDeposited() : StakeDeposited(nullptr) {}
+  virtual ~StakeDeposited();
+
+  StakeDeposited(const StakeDeposited& from);
+  StakeDeposited(StakeDeposited&& from) noexcept
+    : StakeDeposited() {
+    *this = ::std::move(from);
+  }
+
+  inline StakeDeposited& operator=(const StakeDeposited& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StakeDeposited& operator=(StakeDeposited&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const StakeDeposited& default_instance();
+
+  static inline const StakeDeposited* internal_default_instance() {
+    return reinterpret_cast<const StakeDeposited*>(
+               &_StakeDeposited_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(StakeDeposited& a, StakeDeposited& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StakeDeposited* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StakeDeposited* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StakeDeposited* New() const final {
+    return CreateMaybeMessage<StakeDeposited>(nullptr);
+  }
+
+  StakeDeposited* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StakeDeposited>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const StakeDeposited& from);
+  void MergeFrom(const StakeDeposited& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StakeDeposited* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.StakeDeposited";
+  }
+  protected:
+  explicit StakeDeposited(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_chain_5fevents_2eproto);
+    return ::descriptor_table_chain_5fevents_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEthereumAddressFieldNumber = 1,
+    kVegaPublicKeyFieldNumber = 2,
+    kAmountFieldNumber = 3,
+    kBlockTimeFieldNumber = 4,
+  };
+  // string ethereum_address = 1 [json_name = "ethereumAddress"];
+  void clear_ethereum_address();
+  const std::string& ethereum_address() const;
+  void set_ethereum_address(const std::string& value);
+  void set_ethereum_address(std::string&& value);
+  void set_ethereum_address(const char* value);
+  void set_ethereum_address(const char* value, size_t size);
+  std::string* mutable_ethereum_address();
+  std::string* release_ethereum_address();
+  void set_allocated_ethereum_address(std::string* ethereum_address);
+  private:
+  const std::string& _internal_ethereum_address() const;
+  void _internal_set_ethereum_address(const std::string& value);
+  std::string* _internal_mutable_ethereum_address();
+  public:
+
+  // string vega_public_key = 2 [json_name = "vegaPublicKey"];
+  void clear_vega_public_key();
+  const std::string& vega_public_key() const;
+  void set_vega_public_key(const std::string& value);
+  void set_vega_public_key(std::string&& value);
+  void set_vega_public_key(const char* value);
+  void set_vega_public_key(const char* value, size_t size);
+  std::string* mutable_vega_public_key();
+  std::string* release_vega_public_key();
+  void set_allocated_vega_public_key(std::string* vega_public_key);
+  private:
+  const std::string& _internal_vega_public_key() const;
+  void _internal_set_vega_public_key(const std::string& value);
+  std::string* _internal_mutable_vega_public_key();
+  public:
+
+  // string amount = 3 [json_name = "amount"];
+  void clear_amount();
+  const std::string& amount() const;
+  void set_amount(const std::string& value);
+  void set_amount(std::string&& value);
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  std::string* mutable_amount();
+  std::string* release_amount();
+  void set_allocated_amount(std::string* amount);
+  private:
+  const std::string& _internal_amount() const;
+  void _internal_set_amount(const std::string& value);
+  std::string* _internal_mutable_amount();
+  public:
+
+  // int64 block_time = 4 [json_name = "blockTime"];
+  void clear_block_time();
+  ::PROTOBUF_NAMESPACE_ID::int64 block_time() const;
+  void set_block_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_block_time() const;
+  void _internal_set_block_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.StakeDeposited)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ethereum_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_public_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
+  ::PROTOBUF_NAMESPACE_ID::int64 block_time_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_chain_5fevents_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StakeRemoved PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.StakeRemoved) */ {
+ public:
+  inline StakeRemoved() : StakeRemoved(nullptr) {}
+  virtual ~StakeRemoved();
+
+  StakeRemoved(const StakeRemoved& from);
+  StakeRemoved(StakeRemoved&& from) noexcept
+    : StakeRemoved() {
+    *this = ::std::move(from);
+  }
+
+  inline StakeRemoved& operator=(const StakeRemoved& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StakeRemoved& operator=(StakeRemoved&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const StakeRemoved& default_instance();
+
+  static inline const StakeRemoved* internal_default_instance() {
+    return reinterpret_cast<const StakeRemoved*>(
+               &_StakeRemoved_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(StakeRemoved& a, StakeRemoved& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StakeRemoved* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StakeRemoved* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StakeRemoved* New() const final {
+    return CreateMaybeMessage<StakeRemoved>(nullptr);
+  }
+
+  StakeRemoved* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StakeRemoved>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const StakeRemoved& from);
+  void MergeFrom(const StakeRemoved& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StakeRemoved* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.StakeRemoved";
+  }
+  protected:
+  explicit StakeRemoved(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_chain_5fevents_2eproto);
+    return ::descriptor_table_chain_5fevents_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEthereumAddressFieldNumber = 1,
+    kVegaPublicKeyFieldNumber = 2,
+    kAmountFieldNumber = 3,
+    kBlockTimeFieldNumber = 4,
+  };
+  // string ethereum_address = 1 [json_name = "ethereumAddress"];
+  void clear_ethereum_address();
+  const std::string& ethereum_address() const;
+  void set_ethereum_address(const std::string& value);
+  void set_ethereum_address(std::string&& value);
+  void set_ethereum_address(const char* value);
+  void set_ethereum_address(const char* value, size_t size);
+  std::string* mutable_ethereum_address();
+  std::string* release_ethereum_address();
+  void set_allocated_ethereum_address(std::string* ethereum_address);
+  private:
+  const std::string& _internal_ethereum_address() const;
+  void _internal_set_ethereum_address(const std::string& value);
+  std::string* _internal_mutable_ethereum_address();
+  public:
+
+  // string vega_public_key = 2 [json_name = "vegaPublicKey"];
+  void clear_vega_public_key();
+  const std::string& vega_public_key() const;
+  void set_vega_public_key(const std::string& value);
+  void set_vega_public_key(std::string&& value);
+  void set_vega_public_key(const char* value);
+  void set_vega_public_key(const char* value, size_t size);
+  std::string* mutable_vega_public_key();
+  std::string* release_vega_public_key();
+  void set_allocated_vega_public_key(std::string* vega_public_key);
+  private:
+  const std::string& _internal_vega_public_key() const;
+  void _internal_set_vega_public_key(const std::string& value);
+  std::string* _internal_mutable_vega_public_key();
+  public:
+
+  // string amount = 3 [json_name = "amount"];
+  void clear_amount();
+  const std::string& amount() const;
+  void set_amount(const std::string& value);
+  void set_amount(std::string&& value);
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  std::string* mutable_amount();
+  std::string* release_amount();
+  void set_allocated_amount(std::string* amount);
+  private:
+  const std::string& _internal_amount() const;
+  void _internal_set_amount(const std::string& value);
+  std::string* _internal_mutable_amount();
+  public:
+
+  // int64 block_time = 4 [json_name = "blockTime"];
+  void clear_block_time();
+  ::PROTOBUF_NAMESPACE_ID::int64 block_time() const;
+  void set_block_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_block_time() const;
+  void _internal_set_block_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.StakeRemoved)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ethereum_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_public_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
+  ::PROTOBUF_NAMESPACE_ID::int64 block_time_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_chain_5fevents_2eproto;
+};
 // ===================================================================
 
 
@@ -3385,24 +3989,65 @@ inline void BuiltinAssetWithdrawal::set_allocated_party_id(std::string* party_id
   // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetWithdrawal.party_id)
 }
 
-// uint64 amount = 3 [json_name = "amount"];
+// string amount = 3 [json_name = "amount"];
 inline void BuiltinAssetWithdrawal::clear_amount() {
-  amount_ = PROTOBUF_ULONGLONG(0);
+  amount_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BuiltinAssetWithdrawal::_internal_amount() const {
-  return amount_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BuiltinAssetWithdrawal::amount() const {
+inline const std::string& BuiltinAssetWithdrawal::amount() const {
   // @@protoc_insertion_point(field_get:vega.BuiltinAssetWithdrawal.amount)
   return _internal_amount();
 }
-inline void BuiltinAssetWithdrawal::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  amount_ = value;
-}
-inline void BuiltinAssetWithdrawal::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void BuiltinAssetWithdrawal::set_amount(const std::string& value) {
   _internal_set_amount(value);
   // @@protoc_insertion_point(field_set:vega.BuiltinAssetWithdrawal.amount)
+}
+inline std::string* BuiltinAssetWithdrawal::mutable_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetWithdrawal.amount)
+  return _internal_mutable_amount();
+}
+inline const std::string& BuiltinAssetWithdrawal::_internal_amount() const {
+  return amount_.Get();
+}
+inline void BuiltinAssetWithdrawal::_internal_set_amount(const std::string& value) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void BuiltinAssetWithdrawal::set_amount(std::string&& value) {
+
+  amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetWithdrawal.amount)
+}
+inline void BuiltinAssetWithdrawal::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetWithdrawal.amount)
+}
+inline void BuiltinAssetWithdrawal::set_amount(const char* value,
+    size_t size) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetWithdrawal.amount)
+}
+inline std::string* BuiltinAssetWithdrawal::_internal_mutable_amount() {
+
+  return amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* BuiltinAssetWithdrawal::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.BuiltinAssetWithdrawal.amount)
+  return amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void BuiltinAssetWithdrawal::set_allocated_amount(std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetWithdrawal.amount)
 }
 
 // -------------------------------------------------------------------
@@ -5791,9 +6436,628 @@ inline void ValidatorEvent::clear_has_action() {
 inline ValidatorEvent::ActionCase ValidatorEvent::action_case() const {
   return ValidatorEvent::ActionCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// StakingEvent
+
+// uint64 index = 1 [json_name = "index"];
+inline void StakingEvent::clear_index() {
+  index_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 StakingEvent::_internal_index() const {
+  return index_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 StakingEvent::index() const {
+  // @@protoc_insertion_point(field_get:vega.StakingEvent.index)
+  return _internal_index();
+}
+inline void StakingEvent::_internal_set_index(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  index_ = value;
+}
+inline void StakingEvent::set_index(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_index(value);
+  // @@protoc_insertion_point(field_set:vega.StakingEvent.index)
+}
+
+// uint64 block = 2 [json_name = "block"];
+inline void StakingEvent::clear_block() {
+  block_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 StakingEvent::_internal_block() const {
+  return block_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 StakingEvent::block() const {
+  // @@protoc_insertion_point(field_get:vega.StakingEvent.block)
+  return _internal_block();
+}
+inline void StakingEvent::_internal_set_block(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  block_ = value;
+}
+inline void StakingEvent::set_block(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_block(value);
+  // @@protoc_insertion_point(field_set:vega.StakingEvent.block)
+}
+
+// .vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];
+inline bool StakingEvent::_internal_has_stake_deposited() const {
+  return action_case() == kStakeDeposited;
+}
+inline bool StakingEvent::has_stake_deposited() const {
+  return _internal_has_stake_deposited();
+}
+inline void StakingEvent::set_has_stake_deposited() {
+  _oneof_case_[0] = kStakeDeposited;
+}
+inline void StakingEvent::clear_stake_deposited() {
+  if (_internal_has_stake_deposited()) {
+    if (GetArena() == nullptr) {
+      delete action_.stake_deposited_;
+    }
+    clear_has_action();
+  }
+}
+inline ::vega::StakeDeposited* StakingEvent::release_stake_deposited() {
+  // @@protoc_insertion_point(field_release:vega.StakingEvent.stake_deposited)
+  if (_internal_has_stake_deposited()) {
+    clear_has_action();
+      ::vega::StakeDeposited* temp = action_.stake_deposited_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    action_.stake_deposited_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::StakeDeposited& StakingEvent::_internal_stake_deposited() const {
+  return _internal_has_stake_deposited()
+      ? *action_.stake_deposited_
+      : reinterpret_cast< ::vega::StakeDeposited&>(::vega::_StakeDeposited_default_instance_);
+}
+inline const ::vega::StakeDeposited& StakingEvent::stake_deposited() const {
+  // @@protoc_insertion_point(field_get:vega.StakingEvent.stake_deposited)
+  return _internal_stake_deposited();
+}
+inline ::vega::StakeDeposited* StakingEvent::unsafe_arena_release_stake_deposited() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.StakingEvent.stake_deposited)
+  if (_internal_has_stake_deposited()) {
+    clear_has_action();
+    ::vega::StakeDeposited* temp = action_.stake_deposited_;
+    action_.stake_deposited_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void StakingEvent::unsafe_arena_set_allocated_stake_deposited(::vega::StakeDeposited* stake_deposited) {
+  clear_action();
+  if (stake_deposited) {
+    set_has_stake_deposited();
+    action_.stake_deposited_ = stake_deposited;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.StakingEvent.stake_deposited)
+}
+inline ::vega::StakeDeposited* StakingEvent::_internal_mutable_stake_deposited() {
+  if (!_internal_has_stake_deposited()) {
+    clear_action();
+    set_has_stake_deposited();
+    action_.stake_deposited_ = CreateMaybeMessage< ::vega::StakeDeposited >(GetArena());
+  }
+  return action_.stake_deposited_;
+}
+inline ::vega::StakeDeposited* StakingEvent::mutable_stake_deposited() {
+  // @@protoc_insertion_point(field_mutable:vega.StakingEvent.stake_deposited)
+  return _internal_mutable_stake_deposited();
+}
+
+// .vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];
+inline bool StakingEvent::_internal_has_stake_removed() const {
+  return action_case() == kStakeRemoved;
+}
+inline bool StakingEvent::has_stake_removed() const {
+  return _internal_has_stake_removed();
+}
+inline void StakingEvent::set_has_stake_removed() {
+  _oneof_case_[0] = kStakeRemoved;
+}
+inline void StakingEvent::clear_stake_removed() {
+  if (_internal_has_stake_removed()) {
+    if (GetArena() == nullptr) {
+      delete action_.stake_removed_;
+    }
+    clear_has_action();
+  }
+}
+inline ::vega::StakeRemoved* StakingEvent::release_stake_removed() {
+  // @@protoc_insertion_point(field_release:vega.StakingEvent.stake_removed)
+  if (_internal_has_stake_removed()) {
+    clear_has_action();
+      ::vega::StakeRemoved* temp = action_.stake_removed_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    action_.stake_removed_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::StakeRemoved& StakingEvent::_internal_stake_removed() const {
+  return _internal_has_stake_removed()
+      ? *action_.stake_removed_
+      : reinterpret_cast< ::vega::StakeRemoved&>(::vega::_StakeRemoved_default_instance_);
+}
+inline const ::vega::StakeRemoved& StakingEvent::stake_removed() const {
+  // @@protoc_insertion_point(field_get:vega.StakingEvent.stake_removed)
+  return _internal_stake_removed();
+}
+inline ::vega::StakeRemoved* StakingEvent::unsafe_arena_release_stake_removed() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.StakingEvent.stake_removed)
+  if (_internal_has_stake_removed()) {
+    clear_has_action();
+    ::vega::StakeRemoved* temp = action_.stake_removed_;
+    action_.stake_removed_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void StakingEvent::unsafe_arena_set_allocated_stake_removed(::vega::StakeRemoved* stake_removed) {
+  clear_action();
+  if (stake_removed) {
+    set_has_stake_removed();
+    action_.stake_removed_ = stake_removed;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.StakingEvent.stake_removed)
+}
+inline ::vega::StakeRemoved* StakingEvent::_internal_mutable_stake_removed() {
+  if (!_internal_has_stake_removed()) {
+    clear_action();
+    set_has_stake_removed();
+    action_.stake_removed_ = CreateMaybeMessage< ::vega::StakeRemoved >(GetArena());
+  }
+  return action_.stake_removed_;
+}
+inline ::vega::StakeRemoved* StakingEvent::mutable_stake_removed() {
+  // @@protoc_insertion_point(field_mutable:vega.StakingEvent.stake_removed)
+  return _internal_mutable_stake_removed();
+}
+
+inline bool StakingEvent::has_action() const {
+  return action_case() != ACTION_NOT_SET;
+}
+inline void StakingEvent::clear_has_action() {
+  _oneof_case_[0] = ACTION_NOT_SET;
+}
+inline StakingEvent::ActionCase StakingEvent::action_case() const {
+  return StakingEvent::ActionCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// StakeDeposited
+
+// string ethereum_address = 1 [json_name = "ethereumAddress"];
+inline void StakeDeposited::clear_ethereum_address() {
+  ethereum_address_.ClearToEmpty();
+}
+inline const std::string& StakeDeposited::ethereum_address() const {
+  // @@protoc_insertion_point(field_get:vega.StakeDeposited.ethereum_address)
+  return _internal_ethereum_address();
+}
+inline void StakeDeposited::set_ethereum_address(const std::string& value) {
+  _internal_set_ethereum_address(value);
+  // @@protoc_insertion_point(field_set:vega.StakeDeposited.ethereum_address)
+}
+inline std::string* StakeDeposited::mutable_ethereum_address() {
+  // @@protoc_insertion_point(field_mutable:vega.StakeDeposited.ethereum_address)
+  return _internal_mutable_ethereum_address();
+}
+inline const std::string& StakeDeposited::_internal_ethereum_address() const {
+  return ethereum_address_.Get();
+}
+inline void StakeDeposited::_internal_set_ethereum_address(const std::string& value) {
+
+  ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void StakeDeposited::set_ethereum_address(std::string&& value) {
+
+  ethereum_address_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.StakeDeposited.ethereum_address)
+}
+inline void StakeDeposited::set_ethereum_address(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.StakeDeposited.ethereum_address)
+}
+inline void StakeDeposited::set_ethereum_address(const char* value,
+    size_t size) {
+
+  ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.StakeDeposited.ethereum_address)
+}
+inline std::string* StakeDeposited::_internal_mutable_ethereum_address() {
+
+  return ethereum_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* StakeDeposited::release_ethereum_address() {
+  // @@protoc_insertion_point(field_release:vega.StakeDeposited.ethereum_address)
+  return ethereum_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StakeDeposited::set_allocated_ethereum_address(std::string* ethereum_address) {
+  if (ethereum_address != nullptr) {
+
+  } else {
+
+  }
+  ethereum_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ethereum_address,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.StakeDeposited.ethereum_address)
+}
+
+// string vega_public_key = 2 [json_name = "vegaPublicKey"];
+inline void StakeDeposited::clear_vega_public_key() {
+  vega_public_key_.ClearToEmpty();
+}
+inline const std::string& StakeDeposited::vega_public_key() const {
+  // @@protoc_insertion_point(field_get:vega.StakeDeposited.vega_public_key)
+  return _internal_vega_public_key();
+}
+inline void StakeDeposited::set_vega_public_key(const std::string& value) {
+  _internal_set_vega_public_key(value);
+  // @@protoc_insertion_point(field_set:vega.StakeDeposited.vega_public_key)
+}
+inline std::string* StakeDeposited::mutable_vega_public_key() {
+  // @@protoc_insertion_point(field_mutable:vega.StakeDeposited.vega_public_key)
+  return _internal_mutable_vega_public_key();
+}
+inline const std::string& StakeDeposited::_internal_vega_public_key() const {
+  return vega_public_key_.Get();
+}
+inline void StakeDeposited::_internal_set_vega_public_key(const std::string& value) {
+
+  vega_public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void StakeDeposited::set_vega_public_key(std::string&& value) {
+
+  vega_public_key_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.StakeDeposited.vega_public_key)
+}
+inline void StakeDeposited::set_vega_public_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  vega_public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.StakeDeposited.vega_public_key)
+}
+inline void StakeDeposited::set_vega_public_key(const char* value,
+    size_t size) {
+
+  vega_public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.StakeDeposited.vega_public_key)
+}
+inline std::string* StakeDeposited::_internal_mutable_vega_public_key() {
+
+  return vega_public_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* StakeDeposited::release_vega_public_key() {
+  // @@protoc_insertion_point(field_release:vega.StakeDeposited.vega_public_key)
+  return vega_public_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StakeDeposited::set_allocated_vega_public_key(std::string* vega_public_key) {
+  if (vega_public_key != nullptr) {
+
+  } else {
+
+  }
+  vega_public_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_public_key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.StakeDeposited.vega_public_key)
+}
+
+// string amount = 3 [json_name = "amount"];
+inline void StakeDeposited::clear_amount() {
+  amount_.ClearToEmpty();
+}
+inline const std::string& StakeDeposited::amount() const {
+  // @@protoc_insertion_point(field_get:vega.StakeDeposited.amount)
+  return _internal_amount();
+}
+inline void StakeDeposited::set_amount(const std::string& value) {
+  _internal_set_amount(value);
+  // @@protoc_insertion_point(field_set:vega.StakeDeposited.amount)
+}
+inline std::string* StakeDeposited::mutable_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.StakeDeposited.amount)
+  return _internal_mutable_amount();
+}
+inline const std::string& StakeDeposited::_internal_amount() const {
+  return amount_.Get();
+}
+inline void StakeDeposited::_internal_set_amount(const std::string& value) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void StakeDeposited::set_amount(std::string&& value) {
+
+  amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.StakeDeposited.amount)
+}
+inline void StakeDeposited::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.StakeDeposited.amount)
+}
+inline void StakeDeposited::set_amount(const char* value,
+    size_t size) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.StakeDeposited.amount)
+}
+inline std::string* StakeDeposited::_internal_mutable_amount() {
+
+  return amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* StakeDeposited::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.StakeDeposited.amount)
+  return amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StakeDeposited::set_allocated_amount(std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.StakeDeposited.amount)
+}
+
+// int64 block_time = 4 [json_name = "blockTime"];
+inline void StakeDeposited::clear_block_time() {
+  block_time_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 StakeDeposited::_internal_block_time() const {
+  return block_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 StakeDeposited::block_time() const {
+  // @@protoc_insertion_point(field_get:vega.StakeDeposited.block_time)
+  return _internal_block_time();
+}
+inline void StakeDeposited::_internal_set_block_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+
+  block_time_ = value;
+}
+inline void StakeDeposited::set_block_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_block_time(value);
+  // @@protoc_insertion_point(field_set:vega.StakeDeposited.block_time)
+}
+
+// -------------------------------------------------------------------
+
+// StakeRemoved
+
+// string ethereum_address = 1 [json_name = "ethereumAddress"];
+inline void StakeRemoved::clear_ethereum_address() {
+  ethereum_address_.ClearToEmpty();
+}
+inline const std::string& StakeRemoved::ethereum_address() const {
+  // @@protoc_insertion_point(field_get:vega.StakeRemoved.ethereum_address)
+  return _internal_ethereum_address();
+}
+inline void StakeRemoved::set_ethereum_address(const std::string& value) {
+  _internal_set_ethereum_address(value);
+  // @@protoc_insertion_point(field_set:vega.StakeRemoved.ethereum_address)
+}
+inline std::string* StakeRemoved::mutable_ethereum_address() {
+  // @@protoc_insertion_point(field_mutable:vega.StakeRemoved.ethereum_address)
+  return _internal_mutable_ethereum_address();
+}
+inline const std::string& StakeRemoved::_internal_ethereum_address() const {
+  return ethereum_address_.Get();
+}
+inline void StakeRemoved::_internal_set_ethereum_address(const std::string& value) {
+
+  ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void StakeRemoved::set_ethereum_address(std::string&& value) {
+
+  ethereum_address_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.StakeRemoved.ethereum_address)
+}
+inline void StakeRemoved::set_ethereum_address(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.StakeRemoved.ethereum_address)
+}
+inline void StakeRemoved::set_ethereum_address(const char* value,
+    size_t size) {
+
+  ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.StakeRemoved.ethereum_address)
+}
+inline std::string* StakeRemoved::_internal_mutable_ethereum_address() {
+
+  return ethereum_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* StakeRemoved::release_ethereum_address() {
+  // @@protoc_insertion_point(field_release:vega.StakeRemoved.ethereum_address)
+  return ethereum_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StakeRemoved::set_allocated_ethereum_address(std::string* ethereum_address) {
+  if (ethereum_address != nullptr) {
+
+  } else {
+
+  }
+  ethereum_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ethereum_address,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.StakeRemoved.ethereum_address)
+}
+
+// string vega_public_key = 2 [json_name = "vegaPublicKey"];
+inline void StakeRemoved::clear_vega_public_key() {
+  vega_public_key_.ClearToEmpty();
+}
+inline const std::string& StakeRemoved::vega_public_key() const {
+  // @@protoc_insertion_point(field_get:vega.StakeRemoved.vega_public_key)
+  return _internal_vega_public_key();
+}
+inline void StakeRemoved::set_vega_public_key(const std::string& value) {
+  _internal_set_vega_public_key(value);
+  // @@protoc_insertion_point(field_set:vega.StakeRemoved.vega_public_key)
+}
+inline std::string* StakeRemoved::mutable_vega_public_key() {
+  // @@protoc_insertion_point(field_mutable:vega.StakeRemoved.vega_public_key)
+  return _internal_mutable_vega_public_key();
+}
+inline const std::string& StakeRemoved::_internal_vega_public_key() const {
+  return vega_public_key_.Get();
+}
+inline void StakeRemoved::_internal_set_vega_public_key(const std::string& value) {
+
+  vega_public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void StakeRemoved::set_vega_public_key(std::string&& value) {
+
+  vega_public_key_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.StakeRemoved.vega_public_key)
+}
+inline void StakeRemoved::set_vega_public_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  vega_public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.StakeRemoved.vega_public_key)
+}
+inline void StakeRemoved::set_vega_public_key(const char* value,
+    size_t size) {
+
+  vega_public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.StakeRemoved.vega_public_key)
+}
+inline std::string* StakeRemoved::_internal_mutable_vega_public_key() {
+
+  return vega_public_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* StakeRemoved::release_vega_public_key() {
+  // @@protoc_insertion_point(field_release:vega.StakeRemoved.vega_public_key)
+  return vega_public_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StakeRemoved::set_allocated_vega_public_key(std::string* vega_public_key) {
+  if (vega_public_key != nullptr) {
+
+  } else {
+
+  }
+  vega_public_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_public_key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.StakeRemoved.vega_public_key)
+}
+
+// string amount = 3 [json_name = "amount"];
+inline void StakeRemoved::clear_amount() {
+  amount_.ClearToEmpty();
+}
+inline const std::string& StakeRemoved::amount() const {
+  // @@protoc_insertion_point(field_get:vega.StakeRemoved.amount)
+  return _internal_amount();
+}
+inline void StakeRemoved::set_amount(const std::string& value) {
+  _internal_set_amount(value);
+  // @@protoc_insertion_point(field_set:vega.StakeRemoved.amount)
+}
+inline std::string* StakeRemoved::mutable_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.StakeRemoved.amount)
+  return _internal_mutable_amount();
+}
+inline const std::string& StakeRemoved::_internal_amount() const {
+  return amount_.Get();
+}
+inline void StakeRemoved::_internal_set_amount(const std::string& value) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void StakeRemoved::set_amount(std::string&& value) {
+
+  amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.StakeRemoved.amount)
+}
+inline void StakeRemoved::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.StakeRemoved.amount)
+}
+inline void StakeRemoved::set_amount(const char* value,
+    size_t size) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.StakeRemoved.amount)
+}
+inline std::string* StakeRemoved::_internal_mutable_amount() {
+
+  return amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* StakeRemoved::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.StakeRemoved.amount)
+  return amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StakeRemoved::set_allocated_amount(std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.StakeRemoved.amount)
+}
+
+// int64 block_time = 4 [json_name = "blockTime"];
+inline void StakeRemoved::clear_block_time() {
+  block_time_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 StakeRemoved::_internal_block_time() const {
+  return block_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 StakeRemoved::block_time() const {
+  // @@protoc_insertion_point(field_get:vega.StakeRemoved.block_time)
+  return _internal_block_time();
+}
+inline void StakeRemoved::_internal_set_block_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+
+  block_time_ = value;
+}
+inline void StakeRemoved::set_block_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_block_time(value);
+  // @@protoc_insertion_point(field_set:vega.StakeRemoved.block_time)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

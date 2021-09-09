@@ -14,161 +14,6 @@ public final class TradingServiceGrpc {
   public static final String SERVICE_NAME = "api.v1.TradingService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse> getPrepareSubmitOrderMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PrepareSubmitOrder",
-      requestType = io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest.class,
-      responseType = io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse> getPrepareSubmitOrderMethod() {
-    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest, io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse> getPrepareSubmitOrderMethod;
-    if ((getPrepareSubmitOrderMethod = TradingServiceGrpc.getPrepareSubmitOrderMethod) == null) {
-      synchronized (TradingServiceGrpc.class) {
-        if ((getPrepareSubmitOrderMethod = TradingServiceGrpc.getPrepareSubmitOrderMethod) == null) {
-          TradingServiceGrpc.getPrepareSubmitOrderMethod = getPrepareSubmitOrderMethod =
-              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest, io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrepareSubmitOrder"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("PrepareSubmitOrder"))
-              .build();
-        }
-      }
-    }
-    return getPrepareSubmitOrderMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse> getPrepareCancelOrderMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PrepareCancelOrder",
-      requestType = io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest.class,
-      responseType = io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse> getPrepareCancelOrderMethod() {
-    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest, io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse> getPrepareCancelOrderMethod;
-    if ((getPrepareCancelOrderMethod = TradingServiceGrpc.getPrepareCancelOrderMethod) == null) {
-      synchronized (TradingServiceGrpc.class) {
-        if ((getPrepareCancelOrderMethod = TradingServiceGrpc.getPrepareCancelOrderMethod) == null) {
-          TradingServiceGrpc.getPrepareCancelOrderMethod = getPrepareCancelOrderMethod =
-              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest, io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrepareCancelOrder"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("PrepareCancelOrder"))
-              .build();
-        }
-      }
-    }
-    return getPrepareCancelOrderMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse> getPrepareAmendOrderMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PrepareAmendOrder",
-      requestType = io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest.class,
-      responseType = io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse> getPrepareAmendOrderMethod() {
-    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest, io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse> getPrepareAmendOrderMethod;
-    if ((getPrepareAmendOrderMethod = TradingServiceGrpc.getPrepareAmendOrderMethod) == null) {
-      synchronized (TradingServiceGrpc.class) {
-        if ((getPrepareAmendOrderMethod = TradingServiceGrpc.getPrepareAmendOrderMethod) == null) {
-          TradingServiceGrpc.getPrepareAmendOrderMethod = getPrepareAmendOrderMethod =
-              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest, io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrepareAmendOrder"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("PrepareAmendOrder"))
-              .build();
-        }
-      }
-    }
-    return getPrepareAmendOrderMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse> getPrepareWithdrawMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PrepareWithdraw",
-      requestType = io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest.class,
-      responseType = io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse> getPrepareWithdrawMethod() {
-    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest, io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse> getPrepareWithdrawMethod;
-    if ((getPrepareWithdrawMethod = TradingServiceGrpc.getPrepareWithdrawMethod) == null) {
-      synchronized (TradingServiceGrpc.class) {
-        if ((getPrepareWithdrawMethod = TradingServiceGrpc.getPrepareWithdrawMethod) == null) {
-          TradingServiceGrpc.getPrepareWithdrawMethod = getPrepareWithdrawMethod =
-              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest, io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrepareWithdraw"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("PrepareWithdraw"))
-              .build();
-        }
-      }
-    }
-    return getPrepareWithdrawMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest,
-      io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse> getSubmitTransactionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SubmitTransaction",
-      requestType = io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest.class,
-      responseType = io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest,
-      io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse> getSubmitTransactionMethod() {
-    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest, io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse> getSubmitTransactionMethod;
-    if ((getSubmitTransactionMethod = TradingServiceGrpc.getSubmitTransactionMethod) == null) {
-      synchronized (TradingServiceGrpc.class) {
-        if ((getSubmitTransactionMethod = TradingServiceGrpc.getSubmitTransactionMethod) == null) {
-          TradingServiceGrpc.getSubmitTransactionMethod = getSubmitTransactionMethod =
-              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest, io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SubmitTransaction"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("SubmitTransaction"))
-              .build();
-        }
-      }
-    }
-    return getSubmitTransactionMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request,
       io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response> getSubmitTransactionV2Method;
 
@@ -198,68 +43,6 @@ public final class TradingServiceGrpc {
       }
     }
     return getSubmitTransactionV2Method;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse> getPrepareProposalSubmissionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PrepareProposalSubmission",
-      requestType = io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest.class,
-      responseType = io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse> getPrepareProposalSubmissionMethod() {
-    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest, io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse> getPrepareProposalSubmissionMethod;
-    if ((getPrepareProposalSubmissionMethod = TradingServiceGrpc.getPrepareProposalSubmissionMethod) == null) {
-      synchronized (TradingServiceGrpc.class) {
-        if ((getPrepareProposalSubmissionMethod = TradingServiceGrpc.getPrepareProposalSubmissionMethod) == null) {
-          TradingServiceGrpc.getPrepareProposalSubmissionMethod = getPrepareProposalSubmissionMethod =
-              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest, io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrepareProposalSubmission"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("PrepareProposalSubmission"))
-              .build();
-        }
-      }
-    }
-    return getPrepareProposalSubmissionMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse> getPrepareVoteSubmissionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PrepareVoteSubmission",
-      requestType = io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest.class,
-      responseType = io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse> getPrepareVoteSubmissionMethod() {
-    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest, io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse> getPrepareVoteSubmissionMethod;
-    if ((getPrepareVoteSubmissionMethod = TradingServiceGrpc.getPrepareVoteSubmissionMethod) == null) {
-      synchronized (TradingServiceGrpc.class) {
-        if ((getPrepareVoteSubmissionMethod = TradingServiceGrpc.getPrepareVoteSubmissionMethod) == null) {
-          TradingServiceGrpc.getPrepareVoteSubmissionMethod = getPrepareVoteSubmissionMethod =
-              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest, io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrepareVoteSubmission"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("PrepareVoteSubmission"))
-              .build();
-        }
-      }
-    }
-    return getPrepareVoteSubmissionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PropagateChainEventRequest,
@@ -293,35 +76,128 @@ public final class TradingServiceGrpc {
     return getPropagateChainEventMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse> getPrepareLiquidityProvisionMethod;
+  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.StatisticsRequest,
+      io.vegaprotocol.vega.api.Trading.StatisticsResponse> getStatisticsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PrepareLiquidityProvision",
-      requestType = io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest.class,
-      responseType = io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "Statistics",
+      requestType = io.vegaprotocol.vega.api.Trading.StatisticsRequest.class,
+      responseType = io.vegaprotocol.vega.api.Trading.StatisticsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest,
-      io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse> getPrepareLiquidityProvisionMethod() {
-    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest, io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse> getPrepareLiquidityProvisionMethod;
-    if ((getPrepareLiquidityProvisionMethod = TradingServiceGrpc.getPrepareLiquidityProvisionMethod) == null) {
+  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.StatisticsRequest,
+      io.vegaprotocol.vega.api.Trading.StatisticsResponse> getStatisticsMethod() {
+    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.StatisticsRequest, io.vegaprotocol.vega.api.Trading.StatisticsResponse> getStatisticsMethod;
+    if ((getStatisticsMethod = TradingServiceGrpc.getStatisticsMethod) == null) {
       synchronized (TradingServiceGrpc.class) {
-        if ((getPrepareLiquidityProvisionMethod = TradingServiceGrpc.getPrepareLiquidityProvisionMethod) == null) {
-          TradingServiceGrpc.getPrepareLiquidityProvisionMethod = getPrepareLiquidityProvisionMethod =
-              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest, io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse>newBuilder()
+        if ((getStatisticsMethod = TradingServiceGrpc.getStatisticsMethod) == null) {
+          TradingServiceGrpc.getStatisticsMethod = getStatisticsMethod =
+              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.StatisticsRequest, io.vegaprotocol.vega.api.Trading.StatisticsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrepareLiquidityProvision"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Statistics"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest.getDefaultInstance()))
+                  io.vegaprotocol.vega.api.Trading.StatisticsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("PrepareLiquidityProvision"))
+                  io.vegaprotocol.vega.api.Trading.StatisticsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("Statistics"))
               .build();
         }
       }
     }
-    return getPrepareLiquidityProvisionMethod;
+    return getStatisticsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest,
+      io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> getLastBlockHeightMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LastBlockHeight",
+      requestType = io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.class,
+      responseType = io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest,
+      io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> getLastBlockHeightMethod() {
+    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest, io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> getLastBlockHeightMethod;
+    if ((getLastBlockHeightMethod = TradingServiceGrpc.getLastBlockHeightMethod) == null) {
+      synchronized (TradingServiceGrpc.class) {
+        if ((getLastBlockHeightMethod = TradingServiceGrpc.getLastBlockHeightMethod) == null) {
+          TradingServiceGrpc.getLastBlockHeightMethod = getLastBlockHeightMethod =
+              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest, io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LastBlockHeight"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("LastBlockHeight"))
+              .build();
+        }
+      }
+    }
+    return getLastBlockHeightMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest,
+      io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse> getGetVegaTimeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetVegaTime",
+      requestType = io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest.class,
+      responseType = io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest,
+      io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse> getGetVegaTimeMethod() {
+    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest, io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse> getGetVegaTimeMethod;
+    if ((getGetVegaTimeMethod = TradingServiceGrpc.getGetVegaTimeMethod) == null) {
+      synchronized (TradingServiceGrpc.class) {
+        if ((getGetVegaTimeMethod = TradingServiceGrpc.getGetVegaTimeMethod) == null) {
+          TradingServiceGrpc.getGetVegaTimeMethod = getGetVegaTimeMethod =
+              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest, io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVegaTime"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("GetVegaTime"))
+              .build();
+        }
+      }
+    }
+    return getGetVegaTimeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.ObserveEventBusRequest,
+      io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse> getObserveEventBusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ObserveEventBus",
+      requestType = io.vegaprotocol.vega.api.Trading.ObserveEventBusRequest.class,
+      responseType = io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.ObserveEventBusRequest,
+      io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse> getObserveEventBusMethod() {
+    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.ObserveEventBusRequest, io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse> getObserveEventBusMethod;
+    if ((getObserveEventBusMethod = TradingServiceGrpc.getObserveEventBusMethod) == null) {
+      synchronized (TradingServiceGrpc.class) {
+        if ((getObserveEventBusMethod = TradingServiceGrpc.getObserveEventBusMethod) == null) {
+          TradingServiceGrpc.getObserveEventBusMethod = getObserveEventBusMethod =
+              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.ObserveEventBusRequest, io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ObserveEventBus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.ObserveEventBusRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("ObserveEventBus"))
+              .build();
+        }
+      }
+    }
+    return getObserveEventBusMethod;
   }
 
   /**
@@ -374,82 +250,12 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
-     * Prepare a submit order request
-     * </pre>
-     */
-    public void prepareSubmitOrder(io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPrepareSubmitOrderMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Prepare a cancel order request
-     * </pre>
-     */
-    public void prepareCancelOrder(io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPrepareCancelOrderMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Prepare an amend order request
-     * </pre>
-     */
-    public void prepareAmendOrder(io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPrepareAmendOrderMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Request a withdrawal
-     * </pre>
-     */
-    public void prepareWithdraw(io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPrepareWithdrawMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Submit a signed transaction
-     * </pre>
-     */
-    public void submitTransaction(io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitTransactionMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * Submit a signed transaction (v2)
      * </pre>
      */
     public void submitTransactionV2(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request request,
         io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitTransactionV2Method(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Prepare a governance proposal
-     * </pre>
-     */
-    public void prepareProposalSubmission(io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPrepareProposalSubmissionMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Prepare a governance vote
-     * </pre>
-     */
-    public void prepareVoteSubmission(io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPrepareVoteSubmissionMethod(), responseObserver);
     }
 
     /**
@@ -464,51 +270,46 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
-     * Prepare a liquidity provision request
+     * Get Statistics on Vega
      * </pre>
      */
-    public void prepareLiquidityProvision(io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPrepareLiquidityProvisionMethod(), responseObserver);
+    public void statistics(io.vegaprotocol.vega.api.Trading.StatisticsRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.StatisticsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStatisticsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get the height of the last tendermint block
+     * </pre>
+     */
+    public void lastBlockHeight(io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLastBlockHeightMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get Time
+     * </pre>
+     */
+    public void getVegaTime(io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVegaTimeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Subscribe to a stream of events from the core
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.ObserveEventBusRequest> observeEventBus(
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getObserveEventBusMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getPrepareSubmitOrderMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest,
-                io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse>(
-                  this, METHODID_PREPARE_SUBMIT_ORDER)))
-          .addMethod(
-            getPrepareCancelOrderMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest,
-                io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse>(
-                  this, METHODID_PREPARE_CANCEL_ORDER)))
-          .addMethod(
-            getPrepareAmendOrderMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest,
-                io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse>(
-                  this, METHODID_PREPARE_AMEND_ORDER)))
-          .addMethod(
-            getPrepareWithdrawMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest,
-                io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse>(
-                  this, METHODID_PREPARE_WITHDRAW)))
-          .addMethod(
-            getSubmitTransactionMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest,
-                io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse>(
-                  this, METHODID_SUBMIT_TRANSACTION)))
           .addMethod(
             getSubmitTransactionV2Method(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -517,20 +318,6 @@ public final class TradingServiceGrpc {
                 io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response>(
                   this, METHODID_SUBMIT_TRANSACTION_V2)))
           .addMethod(
-            getPrepareProposalSubmissionMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest,
-                io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse>(
-                  this, METHODID_PREPARE_PROPOSAL_SUBMISSION)))
-          .addMethod(
-            getPrepareVoteSubmissionMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest,
-                io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse>(
-                  this, METHODID_PREPARE_VOTE_SUBMISSION)))
-          .addMethod(
             getPropagateChainEventMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -538,12 +325,33 @@ public final class TradingServiceGrpc {
                 io.vegaprotocol.vega.api.Trading.PropagateChainEventResponse>(
                   this, METHODID_PROPAGATE_CHAIN_EVENT)))
           .addMethod(
-            getPrepareLiquidityProvisionMethod(),
+            getStatisticsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest,
-                io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse>(
-                  this, METHODID_PREPARE_LIQUIDITY_PROVISION)))
+                io.vegaprotocol.vega.api.Trading.StatisticsRequest,
+                io.vegaprotocol.vega.api.Trading.StatisticsResponse>(
+                  this, METHODID_STATISTICS)))
+          .addMethod(
+            getLastBlockHeightMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest,
+                io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse>(
+                  this, METHODID_LAST_BLOCK_HEIGHT)))
+          .addMethod(
+            getGetVegaTimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest,
+                io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse>(
+                  this, METHODID_GET_VEGA_TIME)))
+          .addMethod(
+            getObserveEventBusMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+              new MethodHandlers<
+                io.vegaprotocol.vega.api.Trading.ObserveEventBusRequest,
+                io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse>(
+                  this, METHODID_OBSERVE_EVENT_BUS)))
           .build();
     }
   }
@@ -564,61 +372,6 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
-     * Prepare a submit order request
-     * </pre>
-     */
-    public void prepareSubmitOrder(io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPrepareSubmitOrderMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Prepare a cancel order request
-     * </pre>
-     */
-    public void prepareCancelOrder(io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPrepareCancelOrderMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Prepare an amend order request
-     * </pre>
-     */
-    public void prepareAmendOrder(io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPrepareAmendOrderMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Request a withdrawal
-     * </pre>
-     */
-    public void prepareWithdraw(io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPrepareWithdrawMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Submit a signed transaction
-     * </pre>
-     */
-    public void submitTransaction(io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSubmitTransactionMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
      * Submit a signed transaction (v2)
      * </pre>
      */
@@ -626,28 +379,6 @@ public final class TradingServiceGrpc {
         io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSubmitTransactionV2Method(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Prepare a governance proposal
-     * </pre>
-     */
-    public void prepareProposalSubmission(io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPrepareProposalSubmissionMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Prepare a governance vote
-     * </pre>
-     */
-    public void prepareVoteSubmission(io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPrepareVoteSubmissionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -663,13 +394,46 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
-     * Prepare a liquidity provision request
+     * Get Statistics on Vega
      * </pre>
      */
-    public void prepareLiquidityProvision(io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest request,
-        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse> responseObserver) {
+    public void statistics(io.vegaprotocol.vega.api.Trading.StatisticsRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.StatisticsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPrepareLiquidityProvisionMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getStatisticsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get the height of the last tendermint block
+     * </pre>
+     */
+    public void lastBlockHeight(io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLastBlockHeightMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get Time
+     * </pre>
+     */
+    public void getVegaTime(io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetVegaTimeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Subscribe to a stream of events from the core
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.ObserveEventBusRequest> observeEventBus(
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getObserveEventBusMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -689,82 +453,12 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
-     * Prepare a submit order request
-     * </pre>
-     */
-    public io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse prepareSubmitOrder(io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPrepareSubmitOrderMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Prepare a cancel order request
-     * </pre>
-     */
-    public io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse prepareCancelOrder(io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPrepareCancelOrderMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Prepare an amend order request
-     * </pre>
-     */
-    public io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse prepareAmendOrder(io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPrepareAmendOrderMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Request a withdrawal
-     * </pre>
-     */
-    public io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse prepareWithdraw(io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPrepareWithdrawMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Submit a signed transaction
-     * </pre>
-     */
-    public io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse submitTransaction(io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSubmitTransactionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
      * Submit a signed transaction (v2)
      * </pre>
      */
     public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response submitTransactionV2(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitTransactionV2Method(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Prepare a governance proposal
-     * </pre>
-     */
-    public io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse prepareProposalSubmission(io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPrepareProposalSubmissionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Prepare a governance vote
-     * </pre>
-     */
-    public io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse prepareVoteSubmission(io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPrepareVoteSubmissionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -779,12 +473,32 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
-     * Prepare a liquidity provision request
+     * Get Statistics on Vega
      * </pre>
      */
-    public io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse prepareLiquidityProvision(io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest request) {
+    public io.vegaprotocol.vega.api.Trading.StatisticsResponse statistics(io.vegaprotocol.vega.api.Trading.StatisticsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPrepareLiquidityProvisionMethod(), getCallOptions(), request);
+          getChannel(), getStatisticsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get the height of the last tendermint block
+     * </pre>
+     */
+    public io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse lastBlockHeight(io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLastBlockHeightMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get Time
+     * </pre>
+     */
+    public io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse getVegaTime(io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVegaTimeMethod(), getCallOptions(), request);
     }
   }
 
@@ -804,61 +518,6 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
-     * Prepare a submit order request
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse> prepareSubmitOrder(
-        io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPrepareSubmitOrderMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Prepare a cancel order request
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse> prepareCancelOrder(
-        io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPrepareCancelOrderMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Prepare an amend order request
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse> prepareAmendOrder(
-        io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPrepareAmendOrderMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Request a withdrawal
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse> prepareWithdraw(
-        io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPrepareWithdrawMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Submit a signed transaction
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse> submitTransaction(
-        io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSubmitTransactionMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * Submit a signed transaction (v2)
      * </pre>
      */
@@ -866,28 +525,6 @@ public final class TradingServiceGrpc {
         io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSubmitTransactionV2Method(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Prepare a governance proposal
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse> prepareProposalSubmission(
-        io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPrepareProposalSubmissionMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Prepare a governance vote
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse> prepareVoteSubmission(
-        io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPrepareVoteSubmissionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -903,26 +540,44 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
-     * Prepare a liquidity provision request
+     * Get Statistics on Vega
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse> prepareLiquidityProvision(
-        io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.StatisticsResponse> statistics(
+        io.vegaprotocol.vega.api.Trading.StatisticsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPrepareLiquidityProvisionMethod(), getCallOptions()), request);
+          getChannel().newCall(getStatisticsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get the height of the last tendermint block
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> lastBlockHeight(
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLastBlockHeightMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get Time
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse> getVegaTime(
+        io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetVegaTimeMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_PREPARE_SUBMIT_ORDER = 0;
-  private static final int METHODID_PREPARE_CANCEL_ORDER = 1;
-  private static final int METHODID_PREPARE_AMEND_ORDER = 2;
-  private static final int METHODID_PREPARE_WITHDRAW = 3;
-  private static final int METHODID_SUBMIT_TRANSACTION = 4;
-  private static final int METHODID_SUBMIT_TRANSACTION_V2 = 5;
-  private static final int METHODID_PREPARE_PROPOSAL_SUBMISSION = 6;
-  private static final int METHODID_PREPARE_VOTE_SUBMISSION = 7;
-  private static final int METHODID_PROPAGATE_CHAIN_EVENT = 8;
-  private static final int METHODID_PREPARE_LIQUIDITY_PROVISION = 9;
+  private static final int METHODID_SUBMIT_TRANSACTION_V2 = 0;
+  private static final int METHODID_PROPAGATE_CHAIN_EVENT = 1;
+  private static final int METHODID_STATISTICS = 2;
+  private static final int METHODID_LAST_BLOCK_HEIGHT = 3;
+  private static final int METHODID_GET_VEGA_TIME = 4;
+  private static final int METHODID_OBSERVE_EVENT_BUS = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -941,45 +596,25 @@ public final class TradingServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_PREPARE_SUBMIT_ORDER:
-          serviceImpl.prepareSubmitOrder((io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderRequest) request,
-              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareSubmitOrderResponse>) responseObserver);
-          break;
-        case METHODID_PREPARE_CANCEL_ORDER:
-          serviceImpl.prepareCancelOrder((io.vegaprotocol.vega.api.Trading.PrepareCancelOrderRequest) request,
-              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareCancelOrderResponse>) responseObserver);
-          break;
-        case METHODID_PREPARE_AMEND_ORDER:
-          serviceImpl.prepareAmendOrder((io.vegaprotocol.vega.api.Trading.PrepareAmendOrderRequest) request,
-              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareAmendOrderResponse>) responseObserver);
-          break;
-        case METHODID_PREPARE_WITHDRAW:
-          serviceImpl.prepareWithdraw((io.vegaprotocol.vega.api.Trading.PrepareWithdrawRequest) request,
-              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareWithdrawResponse>) responseObserver);
-          break;
-        case METHODID_SUBMIT_TRANSACTION:
-          serviceImpl.submitTransaction((io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest) request,
-              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse>) responseObserver);
-          break;
         case METHODID_SUBMIT_TRANSACTION_V2:
           serviceImpl.submitTransactionV2((io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request) request,
               (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response>) responseObserver);
-          break;
-        case METHODID_PREPARE_PROPOSAL_SUBMISSION:
-          serviceImpl.prepareProposalSubmission((io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest) request,
-              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse>) responseObserver);
-          break;
-        case METHODID_PREPARE_VOTE_SUBMISSION:
-          serviceImpl.prepareVoteSubmission((io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest) request,
-              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse>) responseObserver);
           break;
         case METHODID_PROPAGATE_CHAIN_EVENT:
           serviceImpl.propagateChainEvent((io.vegaprotocol.vega.api.Trading.PropagateChainEventRequest) request,
               (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PropagateChainEventResponse>) responseObserver);
           break;
-        case METHODID_PREPARE_LIQUIDITY_PROVISION:
-          serviceImpl.prepareLiquidityProvision((io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest) request,
-              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse>) responseObserver);
+        case METHODID_STATISTICS:
+          serviceImpl.statistics((io.vegaprotocol.vega.api.Trading.StatisticsRequest) request,
+              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.StatisticsResponse>) responseObserver);
+          break;
+        case METHODID_LAST_BLOCK_HEIGHT:
+          serviceImpl.lastBlockHeight((io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest) request,
+              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse>) responseObserver);
+          break;
+        case METHODID_GET_VEGA_TIME:
+          serviceImpl.getVegaTime((io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest) request,
+              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -991,6 +626,9 @@ public final class TradingServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_OBSERVE_EVENT_BUS:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.observeEventBus(
+              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.ObserveEventBusResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -1042,16 +680,12 @@ public final class TradingServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new TradingServiceFileDescriptorSupplier())
-              .addMethod(getPrepareSubmitOrderMethod())
-              .addMethod(getPrepareCancelOrderMethod())
-              .addMethod(getPrepareAmendOrderMethod())
-              .addMethod(getPrepareWithdrawMethod())
-              .addMethod(getSubmitTransactionMethod())
               .addMethod(getSubmitTransactionV2Method())
-              .addMethod(getPrepareProposalSubmissionMethod())
-              .addMethod(getPrepareVoteSubmissionMethod())
               .addMethod(getPropagateChainEventMethod())
-              .addMethod(getPrepareLiquidityProvisionMethod())
+              .addMethod(getStatisticsMethod())
+              .addMethod(getLastBlockHeightMethod())
+              .addMethod(getGetVegaTimeMethod())
+              .addMethod(getObserveEventBusMethod())
               .build();
         }
       }

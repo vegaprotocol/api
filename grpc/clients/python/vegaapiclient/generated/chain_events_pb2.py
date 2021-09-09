@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.vegaprotocol.vegaZ\037code.vegaprotocol.io/vega/proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x12\x63hain_events.proto\x12\x04vega\"l\n\x13\x42uiltinAssetDeposit\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06\x61mount\x18\x03 \x01(\x04R\x06\x61mount\"o\n\x16\x42uiltinAssetWithdrawal\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06\x61mount\x18\x03 \x01(\x04R\x06\x61mount\"\x96\x01\n\x11\x42uiltinAssetEvent\x12\x36\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x19.vega.BuiltinAssetDepositH\x00R\x07\x64\x65posit\x12?\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x1c.vega.BuiltinAssetWithdrawalH\x00R\nwithdrawalB\x08\n\x06\x61\x63tion\"4\n\x0e\x45RC20AssetList\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\"6\n\x10\x45RC20AssetDelist\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\"\xaa\x01\n\x0c\x45RC20Deposit\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12\x36\n\x17source_ethereum_address\x18\x02 \x01(\tR\x15sourceEthereumAddress\x12&\n\x0ftarget_party_id\x18\x03 \x01(\tR\rtargetPartyId\x12\x16\n\x06\x61mount\x18\x04 \x01(\tR\x06\x61mount\"\x96\x01\n\x0f\x45RC20Withdrawal\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12\x36\n\x17target_ethereum_address\x18\x02 \x01(\tR\x15targetEthereumAddress\x12\'\n\x0freference_nonce\x18\x03 \x01(\tR\x0ereferenceNonce\"\xa3\x02\n\nERC20Event\x12\x14\n\x05index\x18\x01 \x01(\x04R\x05index\x12\x14\n\x05\x62lock\x18\x02 \x01(\x04R\x05\x62lock\x12\x36\n\nasset_list\x18\xe9\x07 \x01(\x0b\x32\x14.vega.ERC20AssetListH\x00R\tassetList\x12<\n\x0c\x61sset_delist\x18\xea\x07 \x01(\x0b\x32\x16.vega.ERC20AssetDelistH\x00R\x0b\x61ssetDelist\x12/\n\x07\x64\x65posit\x18\xeb\x07 \x01(\x0b\x32\x12.vega.ERC20DepositH\x00R\x07\x64\x65posit\x12\x38\n\nwithdrawal\x18\xec\x07 \x01(\x0b\x32\x15.vega.ERC20WithdrawalH\x00R\nwithdrawalB\x08\n\x06\x61\x63tion\"\x86\x01\n\nBTCDeposit\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12,\n\x12source_btc_address\x18\x02 \x01(\tR\x10sourceBtcAddress\x12&\n\x0ftarget_party_id\x18\x03 \x01(\tR\rtargetPartyId\"\xb2\x01\n\rBTCWithdrawal\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12&\n\x0fsource_party_id\x18\x02 \x01(\tR\rsourcePartyId\x12,\n\x12target_btc_address\x18\x03 \x01(\tR\x10targetBtcAddress\x12\'\n\x0freference_nonce\x18\x04 \x01(\tR\x0ereferenceNonce\"\xa7\x01\n\x08\x42TCEvent\x12\x14\n\x05index\x18\x01 \x01(\x04R\x05index\x12\x14\n\x05\x62lock\x18\x02 \x01(\x04R\x05\x62lock\x12-\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x10.vega.BTCDepositH\x00R\x07\x64\x65posit\x12\x36\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x13.vega.BTCWithdrawalH\x00R\nwithdrawalB\x08\n\x06\x61\x63tion\"+\n\x0f\x45thereumAddress\x12\x18\n\x07\x61\x64\x64ress\x18\x01 \x01(\tR\x07\x61\x64\x64ress\"*\n\x0e\x42itcoinAddress\x12\x18\n\x07\x61\x64\x64ress\x18\x01 \x01(\tR\x07\x61\x64\x64ress\"\x9f\x01\n\nIdentifier\x12\x42\n\x10\x65thereum_address\x18\x01 \x01(\x0b\x32\x15.vega.EthereumAddressH\x00R\x0f\x65thereumAddress\x12?\n\x0f\x62itcoin_address\x18\x02 \x01(\x0b\x32\x14.vega.BitcoinAddressH\x00R\x0e\x62itcoinAddressB\x0c\n\nidentifier\"0\n\x0c\x41\x64\x64Validator\x12 \n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.IdentifierR\x02id\"3\n\x0fRemoveValidator\x12 \n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.IdentifierR\x02id\"\x8a\x01\n\x0eValidatorEvent\x12\x1b\n\tsource_id\x18\x01 \x01(\tR\x08sourceId\x12\'\n\x03\x61\x64\x64\x18\xe9\x07 \x01(\x0b\x32\x12.vega.AddValidatorH\x00R\x03\x61\x64\x64\x12(\n\x02rm\x18\xea\x07 \x01(\x0b\x32\x15.vega.RemoveValidatorH\x00R\x02rmB\x08\n\x06\x61\x63tionB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\x12\x63hain_events.proto\x12\x04vega\"l\n\x13\x42uiltinAssetDeposit\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06\x61mount\x18\x03 \x01(\x04R\x06\x61mount\"o\n\x16\x42uiltinAssetWithdrawal\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06\x61mount\x18\x03 \x01(\tR\x06\x61mount\"\x96\x01\n\x11\x42uiltinAssetEvent\x12\x36\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x19.vega.BuiltinAssetDepositH\x00R\x07\x64\x65posit\x12?\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x1c.vega.BuiltinAssetWithdrawalH\x00R\nwithdrawalB\x08\n\x06\x61\x63tion\"4\n\x0e\x45RC20AssetList\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\"6\n\x10\x45RC20AssetDelist\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\"\xaa\x01\n\x0c\x45RC20Deposit\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12\x36\n\x17source_ethereum_address\x18\x02 \x01(\tR\x15sourceEthereumAddress\x12&\n\x0ftarget_party_id\x18\x03 \x01(\tR\rtargetPartyId\x12\x16\n\x06\x61mount\x18\x04 \x01(\tR\x06\x61mount\"\x96\x01\n\x0f\x45RC20Withdrawal\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12\x36\n\x17target_ethereum_address\x18\x02 \x01(\tR\x15targetEthereumAddress\x12\'\n\x0freference_nonce\x18\x03 \x01(\tR\x0ereferenceNonce\"\xa3\x02\n\nERC20Event\x12\x14\n\x05index\x18\x01 \x01(\x04R\x05index\x12\x14\n\x05\x62lock\x18\x02 \x01(\x04R\x05\x62lock\x12\x36\n\nasset_list\x18\xe9\x07 \x01(\x0b\x32\x14.vega.ERC20AssetListH\x00R\tassetList\x12<\n\x0c\x61sset_delist\x18\xea\x07 \x01(\x0b\x32\x16.vega.ERC20AssetDelistH\x00R\x0b\x61ssetDelist\x12/\n\x07\x64\x65posit\x18\xeb\x07 \x01(\x0b\x32\x12.vega.ERC20DepositH\x00R\x07\x64\x65posit\x12\x38\n\nwithdrawal\x18\xec\x07 \x01(\x0b\x32\x15.vega.ERC20WithdrawalH\x00R\nwithdrawalB\x08\n\x06\x61\x63tion\"\x86\x01\n\nBTCDeposit\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12,\n\x12source_btc_address\x18\x02 \x01(\tR\x10sourceBtcAddress\x12&\n\x0ftarget_party_id\x18\x03 \x01(\tR\rtargetPartyId\"\xb2\x01\n\rBTCWithdrawal\x12\"\n\rvega_asset_id\x18\x01 \x01(\tR\x0bvegaAssetId\x12&\n\x0fsource_party_id\x18\x02 \x01(\tR\rsourcePartyId\x12,\n\x12target_btc_address\x18\x03 \x01(\tR\x10targetBtcAddress\x12\'\n\x0freference_nonce\x18\x04 \x01(\tR\x0ereferenceNonce\"\xa7\x01\n\x08\x42TCEvent\x12\x14\n\x05index\x18\x01 \x01(\x04R\x05index\x12\x14\n\x05\x62lock\x18\x02 \x01(\x04R\x05\x62lock\x12-\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x10.vega.BTCDepositH\x00R\x07\x64\x65posit\x12\x36\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x13.vega.BTCWithdrawalH\x00R\nwithdrawalB\x08\n\x06\x61\x63tion\"+\n\x0f\x45thereumAddress\x12\x18\n\x07\x61\x64\x64ress\x18\x01 \x01(\tR\x07\x61\x64\x64ress\"*\n\x0e\x42itcoinAddress\x12\x18\n\x07\x61\x64\x64ress\x18\x01 \x01(\tR\x07\x61\x64\x64ress\"\x9f\x01\n\nIdentifier\x12\x42\n\x10\x65thereum_address\x18\x01 \x01(\x0b\x32\x15.vega.EthereumAddressH\x00R\x0f\x65thereumAddress\x12?\n\x0f\x62itcoin_address\x18\x02 \x01(\x0b\x32\x14.vega.BitcoinAddressH\x00R\x0e\x62itcoinAddressB\x0c\n\nidentifier\"0\n\x0c\x41\x64\x64Validator\x12 \n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.IdentifierR\x02id\"3\n\x0fRemoveValidator\x12 \n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.IdentifierR\x02id\"\x8a\x01\n\x0eValidatorEvent\x12\x1b\n\tsource_id\x18\x01 \x01(\tR\x08sourceId\x12\'\n\x03\x61\x64\x64\x18\xe9\x07 \x01(\x0b\x32\x12.vega.AddValidatorH\x00R\x03\x61\x64\x64\x12(\n\x02rm\x18\xea\x07 \x01(\x0b\x32\x15.vega.RemoveValidatorH\x00R\x02rmB\x08\n\x06\x61\x63tion\"\xc2\x01\n\x0cStakingEvent\x12\x14\n\x05index\x18\x01 \x01(\x04R\x05index\x12\x14\n\x05\x62lock\x18\x02 \x01(\x04R\x05\x62lock\x12@\n\x0fstake_deposited\x18\xe9\x07 \x01(\x0b\x32\x14.vega.StakeDepositedH\x00R\x0estakeDeposited\x12:\n\rstake_removed\x18\xea\x07 \x01(\x0b\x32\x12.vega.StakeRemovedH\x00R\x0cstakeRemovedB\x08\n\x06\x61\x63tion\"\x9a\x01\n\x0eStakeDeposited\x12)\n\x10\x65thereum_address\x18\x01 \x01(\tR\x0f\x65thereumAddress\x12&\n\x0fvega_public_key\x18\x02 \x01(\tR\rvegaPublicKey\x12\x16\n\x06\x61mount\x18\x03 \x01(\tR\x06\x61mount\x12\x1d\n\nblock_time\x18\x04 \x01(\x03R\tblockTime\"\x98\x01\n\x0cStakeRemoved\x12)\n\x10\x65thereum_address\x18\x01 \x01(\tR\x0f\x65thereumAddress\x12&\n\x0fvega_public_key\x18\x02 \x01(\tR\rvegaPublicKey\x12\x16\n\x06\x61mount\x18\x03 \x01(\tR\x06\x61mount\x12\x1d\n\nblock_time\x18\x04 \x01(\x03R\tblockTimeB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
 )
 
 
@@ -95,8 +95,8 @@ _BUILTINASSETWITHDRAWAL = _descriptor.Descriptor(
       serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.BuiltinAssetWithdrawal.amount', index=2,
-      number=3, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='amount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -775,6 +775,170 @@ _VALIDATOREVENT = _descriptor.Descriptor(
   serialized_end=2115,
 )
 
+
+_STAKINGEVENT = _descriptor.Descriptor(
+  name='StakingEvent',
+  full_name='vega.StakingEvent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='index', full_name='vega.StakingEvent.index', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='index', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='block', full_name='vega.StakingEvent.block', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='block', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stake_deposited', full_name='vega.StakingEvent.stake_deposited', index=2,
+      number=1001, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='stakeDeposited', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stake_removed', full_name='vega.StakingEvent.stake_removed', index=3,
+      number=1002, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='stakeRemoved', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='action', full_name='vega.StakingEvent.action',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=2118,
+  serialized_end=2312,
+)
+
+
+_STAKEDEPOSITED = _descriptor.Descriptor(
+  name='StakeDeposited',
+  full_name='vega.StakeDeposited',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ethereum_address', full_name='vega.StakeDeposited.ethereum_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='ethereumAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vega_public_key', full_name='vega.StakeDeposited.vega_public_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='vegaPublicKey', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='vega.StakeDeposited.amount', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='amount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='block_time', full_name='vega.StakeDeposited.block_time', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='blockTime', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2315,
+  serialized_end=2469,
+)
+
+
+_STAKEREMOVED = _descriptor.Descriptor(
+  name='StakeRemoved',
+  full_name='vega.StakeRemoved',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ethereum_address', full_name='vega.StakeRemoved.ethereum_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='ethereumAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vega_public_key', full_name='vega.StakeRemoved.vega_public_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='vegaPublicKey', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='vega.StakeRemoved.amount', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='amount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='block_time', full_name='vega.StakeRemoved.block_time', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='blockTime', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2472,
+  serialized_end=2624,
+)
+
 _BUILTINASSETEVENT.fields_by_name['deposit'].message_type = _BUILTINASSETDEPOSIT
 _BUILTINASSETEVENT.fields_by_name['withdrawal'].message_type = _BUILTINASSETWITHDRAWAL
 _BUILTINASSETEVENT.oneofs_by_name['action'].fields.append(
@@ -825,6 +989,14 @@ _VALIDATOREVENT.fields_by_name['add'].containing_oneof = _VALIDATOREVENT.oneofs_
 _VALIDATOREVENT.oneofs_by_name['action'].fields.append(
   _VALIDATOREVENT.fields_by_name['rm'])
 _VALIDATOREVENT.fields_by_name['rm'].containing_oneof = _VALIDATOREVENT.oneofs_by_name['action']
+_STAKINGEVENT.fields_by_name['stake_deposited'].message_type = _STAKEDEPOSITED
+_STAKINGEVENT.fields_by_name['stake_removed'].message_type = _STAKEREMOVED
+_STAKINGEVENT.oneofs_by_name['action'].fields.append(
+  _STAKINGEVENT.fields_by_name['stake_deposited'])
+_STAKINGEVENT.fields_by_name['stake_deposited'].containing_oneof = _STAKINGEVENT.oneofs_by_name['action']
+_STAKINGEVENT.oneofs_by_name['action'].fields.append(
+  _STAKINGEVENT.fields_by_name['stake_removed'])
+_STAKINGEVENT.fields_by_name['stake_removed'].containing_oneof = _STAKINGEVENT.oneofs_by_name['action']
 DESCRIPTOR.message_types_by_name['BuiltinAssetDeposit'] = _BUILTINASSETDEPOSIT
 DESCRIPTOR.message_types_by_name['BuiltinAssetWithdrawal'] = _BUILTINASSETWITHDRAWAL
 DESCRIPTOR.message_types_by_name['BuiltinAssetEvent'] = _BUILTINASSETEVENT
@@ -842,6 +1014,9 @@ DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
 DESCRIPTOR.message_types_by_name['AddValidator'] = _ADDVALIDATOR
 DESCRIPTOR.message_types_by_name['RemoveValidator'] = _REMOVEVALIDATOR
 DESCRIPTOR.message_types_by_name['ValidatorEvent'] = _VALIDATOREVENT
+DESCRIPTOR.message_types_by_name['StakingEvent'] = _STAKINGEVENT
+DESCRIPTOR.message_types_by_name['StakeDeposited'] = _STAKEDEPOSITED
+DESCRIPTOR.message_types_by_name['StakeRemoved'] = _STAKEREMOVED
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 BuiltinAssetDeposit = _reflection.GeneratedProtocolMessageType('BuiltinAssetDeposit', (_message.Message,), {
@@ -962,6 +1137,27 @@ ValidatorEvent = _reflection.GeneratedProtocolMessageType('ValidatorEvent', (_me
   # @@protoc_insertion_point(class_scope:vega.ValidatorEvent)
   })
 _sym_db.RegisterMessage(ValidatorEvent)
+
+StakingEvent = _reflection.GeneratedProtocolMessageType('StakingEvent', (_message.Message,), {
+  'DESCRIPTOR' : _STAKINGEVENT,
+  '__module__' : 'chain_events_pb2'
+  # @@protoc_insertion_point(class_scope:vega.StakingEvent)
+  })
+_sym_db.RegisterMessage(StakingEvent)
+
+StakeDeposited = _reflection.GeneratedProtocolMessageType('StakeDeposited', (_message.Message,), {
+  'DESCRIPTOR' : _STAKEDEPOSITED,
+  '__module__' : 'chain_events_pb2'
+  # @@protoc_insertion_point(class_scope:vega.StakeDeposited)
+  })
+_sym_db.RegisterMessage(StakeDeposited)
+
+StakeRemoved = _reflection.GeneratedProtocolMessageType('StakeRemoved', (_message.Message,), {
+  'DESCRIPTOR' : _STAKEREMOVED,
+  '__module__' : 'chain_events_pb2'
+  # @@protoc_insertion_point(class_scope:vega.StakeRemoved)
+  })
+_sym_db.RegisterMessage(StakeRemoved)
 
 
 DESCRIPTOR._options = None

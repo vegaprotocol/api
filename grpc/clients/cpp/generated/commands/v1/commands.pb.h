@@ -51,7 +51,7 @@ struct TableStruct_commands_2fv1_2fcommands_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -79,6 +79,9 @@ extern OrderSubmissionDefaultTypeInternal _OrderSubmission_default_instance_;
 class ProposalSubmission;
 class ProposalSubmissionDefaultTypeInternal;
 extern ProposalSubmissionDefaultTypeInternal _ProposalSubmission_default_instance_;
+class RestoreSnapshot;
+class RestoreSnapshotDefaultTypeInternal;
+extern RestoreSnapshotDefaultTypeInternal _RestoreSnapshot_default_instance_;
 class UndelegateSubmission;
 class UndelegateSubmissionDefaultTypeInternal;
 extern UndelegateSubmissionDefaultTypeInternal _UndelegateSubmission_default_instance_;
@@ -98,6 +101,7 @@ template<> ::vega::commands::v1::OrderAmendment* Arena::CreateMaybeMessage<::veg
 template<> ::vega::commands::v1::OrderCancellation* Arena::CreateMaybeMessage<::vega::commands::v1::OrderCancellation>(Arena*);
 template<> ::vega::commands::v1::OrderSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::OrderSubmission>(Arena*);
 template<> ::vega::commands::v1::ProposalSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::ProposalSubmission>(Arena*);
+template<> ::vega::commands::v1::RestoreSnapshot* Arena::CreateMaybeMessage<::vega::commands::v1::RestoreSnapshot>(Arena*);
 template<> ::vega::commands::v1::UndelegateSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::UndelegateSubmission>(Arena*);
 template<> ::vega::commands::v1::VoteSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::VoteSubmission>(Arena*);
 template<> ::vega::commands::v1::WithdrawSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::WithdrawSubmission>(Arena*);
@@ -248,9 +252,9 @@ class OrderSubmission PROTOBUF_FINAL :
 
   enum : int {
     kMarketIdFieldNumber = 1,
+    kPriceFieldNumber = 2,
     kReferenceFieldNumber = 8,
     kPeggedOrderFieldNumber = 9,
-    kPriceFieldNumber = 2,
     kSizeFieldNumber = 3,
     kSideFieldNumber = 4,
     kTimeInForceFieldNumber = 5,
@@ -271,6 +275,22 @@ class OrderSubmission PROTOBUF_FINAL :
   const std::string& _internal_market_id() const;
   void _internal_set_market_id(const std::string& value);
   std::string* _internal_mutable_market_id();
+  public:
+
+  // string price = 2 [json_name = "price"];
+  void clear_price();
+  const std::string& price() const;
+  void set_price(const std::string& value);
+  void set_price(std::string&& value);
+  void set_price(const char* value);
+  void set_price(const char* value, size_t size);
+  std::string* mutable_price();
+  std::string* release_price();
+  void set_allocated_price(std::string* price);
+  private:
+  const std::string& _internal_price() const;
+  void _internal_set_price(const std::string& value);
+  std::string* _internal_mutable_price();
   public:
 
   // string reference = 8 [json_name = "reference"];
@@ -306,15 +326,6 @@ class OrderSubmission PROTOBUF_FINAL :
   void unsafe_arena_set_allocated_pegged_order(
       ::vega::PeggedOrder* pegged_order);
   ::vega::PeggedOrder* unsafe_arena_release_pegged_order();
-
-  // uint64 price = 2 [json_name = "price"];
-  void clear_price();
-  ::PROTOBUF_NAMESPACE_ID::uint64 price() const;
-  void set_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_price() const;
-  void _internal_set_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
 
   // uint64 size = 3 [json_name = "size", (.validator.field) = {
   void clear_size();
@@ -369,9 +380,9 @@ class OrderSubmission PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::vega::PeggedOrder* pegged_order_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 price_;
   ::PROTOBUF_NAMESPACE_ID::uint64 size_;
   int side_;
   int time_in_force_;
@@ -912,9 +923,9 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
     kSellsFieldNumber = 4,
     kBuysFieldNumber = 5,
     kMarketIdFieldNumber = 1,
+    kCommitmentAmountFieldNumber = 2,
     kFeeFieldNumber = 3,
     kReferenceFieldNumber = 6,
-    kCommitmentAmountFieldNumber = 2,
   };
   // repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];
   int sells_size() const;
@@ -968,6 +979,22 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_market_id();
   public:
 
+  // string commitment_amount = 2 [json_name = "commitmentAmount"];
+  void clear_commitment_amount();
+  const std::string& commitment_amount() const;
+  void set_commitment_amount(const std::string& value);
+  void set_commitment_amount(std::string&& value);
+  void set_commitment_amount(const char* value);
+  void set_commitment_amount(const char* value, size_t size);
+  std::string* mutable_commitment_amount();
+  std::string* release_commitment_amount();
+  void set_allocated_commitment_amount(std::string* commitment_amount);
+  private:
+  const std::string& _internal_commitment_amount() const;
+  void _internal_set_commitment_amount(const std::string& value);
+  std::string* _internal_mutable_commitment_amount();
+  public:
+
   // string fee = 3 [json_name = "fee"];
   void clear_fee();
   const std::string& fee() const;
@@ -1000,15 +1027,6 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_reference();
   public:
 
-  // uint64 commitment_amount = 2 [json_name = "commitmentAmount"];
-  void clear_commitment_amount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount() const;
-  void set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_commitment_amount() const;
-  void _internal_set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:vega.commands.v1.LiquidityProvisionSubmission)
  private:
   class _Internal;
@@ -1019,9 +1037,9 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > sells_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > buys_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr commitment_amount_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fee_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_commands_2fv1_2fcommands_2eproto;
 };
@@ -1139,10 +1157,26 @@ class WithdrawSubmission PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kAmountFieldNumber = 1,
     kAssetFieldNumber = 2,
     kExtFieldNumber = 3,
-    kAmountFieldNumber = 1,
   };
+  // string amount = 1 [json_name = "amount"];
+  void clear_amount();
+  const std::string& amount() const;
+  void set_amount(const std::string& value);
+  void set_amount(std::string&& value);
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  std::string* mutable_amount();
+  std::string* release_amount();
+  void set_allocated_amount(std::string* amount);
+  private:
+  const std::string& _internal_amount() const;
+  void _internal_set_amount(const std::string& value);
+  std::string* _internal_mutable_amount();
+  public:
+
   // string asset = 2 [json_name = "asset"];
   void clear_asset();
   const std::string& asset() const;
@@ -1177,15 +1211,6 @@ class WithdrawSubmission PROTOBUF_FINAL :
       ::vega::WithdrawExt* ext);
   ::vega::WithdrawExt* unsafe_arena_release_ext();
 
-  // uint64 amount = 1 [json_name = "amount"];
-  void clear_amount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount() const;
-  void set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_amount() const;
-  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:vega.commands.v1.WithdrawSubmission)
  private:
   class _Internal;
@@ -1193,9 +1218,9 @@ class WithdrawSubmission PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
   ::vega::WithdrawExt* ext_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_commands_2fv1_2fcommands_2eproto;
 };
@@ -1649,13 +1674,20 @@ class DelegateSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_node_id();
   public:
 
-  // uint64 amount = 2 [json_name = "amount"];
+  // string amount = 2 [json_name = "amount"];
   void clear_amount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount() const;
-  void set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& amount() const;
+  void set_amount(const std::string& value);
+  void set_amount(std::string&& value);
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  std::string* mutable_amount();
+  std::string* release_amount();
+  void set_allocated_amount(std::string* amount);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_amount() const;
-  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& _internal_amount() const;
+  void _internal_set_amount(const std::string& value);
+  std::string* _internal_mutable_amount();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.commands.v1.DelegateSubmission)
@@ -1666,7 +1698,7 @@ class DelegateSubmission PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr node_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_commands_2fv1_2fcommands_2eproto;
 };
@@ -1838,13 +1870,20 @@ class UndelegateSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_node_id();
   public:
 
-  // uint64 amount = 2 [json_name = "amount"];
+  // string amount = 2 [json_name = "amount"];
   void clear_amount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount() const;
-  void set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& amount() const;
+  void set_amount(const std::string& value);
+  void set_amount(std::string&& value);
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  std::string* mutable_amount();
+  std::string* release_amount();
+  void set_allocated_amount(std::string* amount);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_amount() const;
-  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& _internal_amount() const;
+  void _internal_set_amount(const std::string& value);
+  std::string* _internal_mutable_amount();
   public:
 
   // .vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];
@@ -1864,8 +1903,151 @@ class UndelegateSubmission PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr node_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
   int method_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_commands_2fv1_2fcommands_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RestoreSnapshot PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.commands.v1.RestoreSnapshot) */ {
+ public:
+  inline RestoreSnapshot() : RestoreSnapshot(nullptr) {}
+  virtual ~RestoreSnapshot();
+
+  RestoreSnapshot(const RestoreSnapshot& from);
+  RestoreSnapshot(RestoreSnapshot&& from) noexcept
+    : RestoreSnapshot() {
+    *this = ::std::move(from);
+  }
+
+  inline RestoreSnapshot& operator=(const RestoreSnapshot& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RestoreSnapshot& operator=(RestoreSnapshot&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const RestoreSnapshot& default_instance();
+
+  static inline const RestoreSnapshot* internal_default_instance() {
+    return reinterpret_cast<const RestoreSnapshot*>(
+               &_RestoreSnapshot_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(RestoreSnapshot& a, RestoreSnapshot& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RestoreSnapshot* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RestoreSnapshot* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RestoreSnapshot* New() const final {
+    return CreateMaybeMessage<RestoreSnapshot>(nullptr);
+  }
+
+  RestoreSnapshot* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RestoreSnapshot>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const RestoreSnapshot& from);
+  void MergeFrom(const RestoreSnapshot& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RestoreSnapshot* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.commands.v1.RestoreSnapshot";
+  }
+  protected:
+  explicit RestoreSnapshot(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_commands_2fv1_2fcommands_2eproto);
+    return ::descriptor_table_commands_2fv1_2fcommands_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+  };
+  // bytes data = 1 [json_name = "data"];
+  void clear_data();
+  const std::string& data() const;
+  void set_data(const std::string& value);
+  void set_data(std::string&& value);
+  void set_data(const char* value);
+  void set_data(const void* value, size_t size);
+  std::string* mutable_data();
+  std::string* release_data();
+  void set_allocated_data(std::string* data);
+  private:
+  const std::string& _internal_data() const;
+  void _internal_set_data(const std::string& value);
+  std::string* _internal_mutable_data();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.commands.v1.RestoreSnapshot)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_commands_2fv1_2fcommands_2eproto;
 };
@@ -1941,24 +2123,65 @@ inline void OrderSubmission::set_allocated_market_id(std::string* market_id) {
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderSubmission.market_id)
 }
 
-// uint64 price = 2 [json_name = "price"];
+// string price = 2 [json_name = "price"];
 inline void OrderSubmission::clear_price() {
-  price_ = PROTOBUF_ULONGLONG(0);
+  price_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 OrderSubmission::_internal_price() const {
-  return price_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 OrderSubmission::price() const {
+inline const std::string& OrderSubmission::price() const {
   // @@protoc_insertion_point(field_get:vega.commands.v1.OrderSubmission.price)
   return _internal_price();
 }
-inline void OrderSubmission::_internal_set_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  price_ = value;
-}
-inline void OrderSubmission::set_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void OrderSubmission::set_price(const std::string& value) {
   _internal_set_price(value);
   // @@protoc_insertion_point(field_set:vega.commands.v1.OrderSubmission.price)
+}
+inline std::string* OrderSubmission::mutable_price() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.OrderSubmission.price)
+  return _internal_mutable_price();
+}
+inline const std::string& OrderSubmission::_internal_price() const {
+  return price_.Get();
+}
+inline void OrderSubmission::_internal_set_price(const std::string& value) {
+
+  price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void OrderSubmission::set_price(std::string&& value) {
+
+  price_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.OrderSubmission.price)
+}
+inline void OrderSubmission::set_price(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.OrderSubmission.price)
+}
+inline void OrderSubmission::set_price(const char* value,
+    size_t size) {
+
+  price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.OrderSubmission.price)
+}
+inline std::string* OrderSubmission::_internal_mutable_price() {
+
+  return price_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* OrderSubmission::release_price() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.OrderSubmission.price)
+  return price_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void OrderSubmission::set_allocated_price(std::string* price) {
+  if (price != nullptr) {
+
+  } else {
+
+  }
+  price_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderSubmission.price)
 }
 
 // uint64 size = 3 [json_name = "size", (.validator.field) = {
@@ -2807,24 +3030,65 @@ inline void LiquidityProvisionSubmission::set_allocated_market_id(std::string* m
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.LiquidityProvisionSubmission.market_id)
 }
 
-// uint64 commitment_amount = 2 [json_name = "commitmentAmount"];
+// string commitment_amount = 2 [json_name = "commitmentAmount"];
 inline void LiquidityProvisionSubmission::clear_commitment_amount() {
-  commitment_amount_ = PROTOBUF_ULONGLONG(0);
+  commitment_amount_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvisionSubmission::_internal_commitment_amount() const {
-  return commitment_amount_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvisionSubmission::commitment_amount() const {
+inline const std::string& LiquidityProvisionSubmission::commitment_amount() const {
   // @@protoc_insertion_point(field_get:vega.commands.v1.LiquidityProvisionSubmission.commitment_amount)
   return _internal_commitment_amount();
 }
-inline void LiquidityProvisionSubmission::_internal_set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  commitment_amount_ = value;
-}
-inline void LiquidityProvisionSubmission::set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void LiquidityProvisionSubmission::set_commitment_amount(const std::string& value) {
   _internal_set_commitment_amount(value);
   // @@protoc_insertion_point(field_set:vega.commands.v1.LiquidityProvisionSubmission.commitment_amount)
+}
+inline std::string* LiquidityProvisionSubmission::mutable_commitment_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.LiquidityProvisionSubmission.commitment_amount)
+  return _internal_mutable_commitment_amount();
+}
+inline const std::string& LiquidityProvisionSubmission::_internal_commitment_amount() const {
+  return commitment_amount_.Get();
+}
+inline void LiquidityProvisionSubmission::_internal_set_commitment_amount(const std::string& value) {
+
+  commitment_amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void LiquidityProvisionSubmission::set_commitment_amount(std::string&& value) {
+
+  commitment_amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.LiquidityProvisionSubmission.commitment_amount)
+}
+inline void LiquidityProvisionSubmission::set_commitment_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  commitment_amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.LiquidityProvisionSubmission.commitment_amount)
+}
+inline void LiquidityProvisionSubmission::set_commitment_amount(const char* value,
+    size_t size) {
+
+  commitment_amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.LiquidityProvisionSubmission.commitment_amount)
+}
+inline std::string* LiquidityProvisionSubmission::_internal_mutable_commitment_amount() {
+
+  return commitment_amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* LiquidityProvisionSubmission::release_commitment_amount() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.LiquidityProvisionSubmission.commitment_amount)
+  return commitment_amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LiquidityProvisionSubmission::set_allocated_commitment_amount(std::string* commitment_amount) {
+  if (commitment_amount != nullptr) {
+
+  } else {
+
+  }
+  commitment_amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), commitment_amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.LiquidityProvisionSubmission.commitment_amount)
 }
 
 // string fee = 3 [json_name = "fee"];
@@ -3025,24 +3289,65 @@ inline void LiquidityProvisionSubmission::set_allocated_reference(std::string* r
 
 // WithdrawSubmission
 
-// uint64 amount = 1 [json_name = "amount"];
+// string amount = 1 [json_name = "amount"];
 inline void WithdrawSubmission::clear_amount() {
-  amount_ = PROTOBUF_ULONGLONG(0);
+  amount_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 WithdrawSubmission::_internal_amount() const {
-  return amount_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 WithdrawSubmission::amount() const {
+inline const std::string& WithdrawSubmission::amount() const {
   // @@protoc_insertion_point(field_get:vega.commands.v1.WithdrawSubmission.amount)
   return _internal_amount();
 }
-inline void WithdrawSubmission::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  amount_ = value;
-}
-inline void WithdrawSubmission::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void WithdrawSubmission::set_amount(const std::string& value) {
   _internal_set_amount(value);
   // @@protoc_insertion_point(field_set:vega.commands.v1.WithdrawSubmission.amount)
+}
+inline std::string* WithdrawSubmission::mutable_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.WithdrawSubmission.amount)
+  return _internal_mutable_amount();
+}
+inline const std::string& WithdrawSubmission::_internal_amount() const {
+  return amount_.Get();
+}
+inline void WithdrawSubmission::_internal_set_amount(const std::string& value) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void WithdrawSubmission::set_amount(std::string&& value) {
+
+  amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.WithdrawSubmission.amount)
+}
+inline void WithdrawSubmission::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.WithdrawSubmission.amount)
+}
+inline void WithdrawSubmission::set_amount(const char* value,
+    size_t size) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.WithdrawSubmission.amount)
+}
+inline std::string* WithdrawSubmission::_internal_mutable_amount() {
+
+  return amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* WithdrawSubmission::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.WithdrawSubmission.amount)
+  return amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void WithdrawSubmission::set_allocated_amount(std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.WithdrawSubmission.amount)
 }
 
 // string asset = 2 [json_name = "asset"];
@@ -3475,24 +3780,65 @@ inline void DelegateSubmission::set_allocated_node_id(std::string* node_id) {
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.DelegateSubmission.node_id)
 }
 
-// uint64 amount = 2 [json_name = "amount"];
+// string amount = 2 [json_name = "amount"];
 inline void DelegateSubmission::clear_amount() {
-  amount_ = PROTOBUF_ULONGLONG(0);
+  amount_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 DelegateSubmission::_internal_amount() const {
-  return amount_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 DelegateSubmission::amount() const {
+inline const std::string& DelegateSubmission::amount() const {
   // @@protoc_insertion_point(field_get:vega.commands.v1.DelegateSubmission.amount)
   return _internal_amount();
 }
-inline void DelegateSubmission::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  amount_ = value;
-}
-inline void DelegateSubmission::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void DelegateSubmission::set_amount(const std::string& value) {
   _internal_set_amount(value);
   // @@protoc_insertion_point(field_set:vega.commands.v1.DelegateSubmission.amount)
+}
+inline std::string* DelegateSubmission::mutable_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.DelegateSubmission.amount)
+  return _internal_mutable_amount();
+}
+inline const std::string& DelegateSubmission::_internal_amount() const {
+  return amount_.Get();
+}
+inline void DelegateSubmission::_internal_set_amount(const std::string& value) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void DelegateSubmission::set_amount(std::string&& value) {
+
+  amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.DelegateSubmission.amount)
+}
+inline void DelegateSubmission::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.DelegateSubmission.amount)
+}
+inline void DelegateSubmission::set_amount(const char* value,
+    size_t size) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.DelegateSubmission.amount)
+}
+inline std::string* DelegateSubmission::_internal_mutable_amount() {
+
+  return amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* DelegateSubmission::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.DelegateSubmission.amount)
+  return amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void DelegateSubmission::set_allocated_amount(std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.DelegateSubmission.amount)
 }
 
 // -------------------------------------------------------------------
@@ -3560,24 +3906,65 @@ inline void UndelegateSubmission::set_allocated_node_id(std::string* node_id) {
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.UndelegateSubmission.node_id)
 }
 
-// uint64 amount = 2 [json_name = "amount"];
+// string amount = 2 [json_name = "amount"];
 inline void UndelegateSubmission::clear_amount() {
-  amount_ = PROTOBUF_ULONGLONG(0);
+  amount_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 UndelegateSubmission::_internal_amount() const {
-  return amount_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 UndelegateSubmission::amount() const {
+inline const std::string& UndelegateSubmission::amount() const {
   // @@protoc_insertion_point(field_get:vega.commands.v1.UndelegateSubmission.amount)
   return _internal_amount();
 }
-inline void UndelegateSubmission::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  amount_ = value;
-}
-inline void UndelegateSubmission::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void UndelegateSubmission::set_amount(const std::string& value) {
   _internal_set_amount(value);
   // @@protoc_insertion_point(field_set:vega.commands.v1.UndelegateSubmission.amount)
+}
+inline std::string* UndelegateSubmission::mutable_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.UndelegateSubmission.amount)
+  return _internal_mutable_amount();
+}
+inline const std::string& UndelegateSubmission::_internal_amount() const {
+  return amount_.Get();
+}
+inline void UndelegateSubmission::_internal_set_amount(const std::string& value) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void UndelegateSubmission::set_amount(std::string&& value) {
+
+  amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.UndelegateSubmission.amount)
+}
+inline void UndelegateSubmission::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.UndelegateSubmission.amount)
+}
+inline void UndelegateSubmission::set_amount(const char* value,
+    size_t size) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.UndelegateSubmission.amount)
+}
+inline std::string* UndelegateSubmission::_internal_mutable_amount() {
+
+  return amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* UndelegateSubmission::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.UndelegateSubmission.amount)
+  return amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void UndelegateSubmission::set_allocated_amount(std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.UndelegateSubmission.amount)
 }
 
 // .vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];
@@ -3600,9 +3987,76 @@ inline void UndelegateSubmission::set_method(::vega::commands::v1::UndelegateSub
   // @@protoc_insertion_point(field_set:vega.commands.v1.UndelegateSubmission.method)
 }
 
+// -------------------------------------------------------------------
+
+// RestoreSnapshot
+
+// bytes data = 1 [json_name = "data"];
+inline void RestoreSnapshot::clear_data() {
+  data_.ClearToEmpty();
+}
+inline const std::string& RestoreSnapshot::data() const {
+  // @@protoc_insertion_point(field_get:vega.commands.v1.RestoreSnapshot.data)
+  return _internal_data();
+}
+inline void RestoreSnapshot::set_data(const std::string& value) {
+  _internal_set_data(value);
+  // @@protoc_insertion_point(field_set:vega.commands.v1.RestoreSnapshot.data)
+}
+inline std::string* RestoreSnapshot::mutable_data() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.RestoreSnapshot.data)
+  return _internal_mutable_data();
+}
+inline const std::string& RestoreSnapshot::_internal_data() const {
+  return data_.Get();
+}
+inline void RestoreSnapshot::_internal_set_data(const std::string& value) {
+
+  data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void RestoreSnapshot::set_data(std::string&& value) {
+
+  data_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.RestoreSnapshot.data)
+}
+inline void RestoreSnapshot::set_data(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.RestoreSnapshot.data)
+}
+inline void RestoreSnapshot::set_data(const void* value,
+    size_t size) {
+
+  data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.RestoreSnapshot.data)
+}
+inline std::string* RestoreSnapshot::_internal_mutable_data() {
+
+  return data_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* RestoreSnapshot::release_data() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.RestoreSnapshot.data)
+  return data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void RestoreSnapshot::set_allocated_data(std::string* data) {
+  if (data != nullptr) {
+
+  } else {
+
+  }
+  data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), data,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.RestoreSnapshot.data)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

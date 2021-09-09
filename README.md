@@ -1,6 +1,6 @@
 # Vega API
 
-Version: 0.41.0
+Version: 0.42.0-pre6
 
 This repository contains everything you need for interacting with the Vega APIs.
 
@@ -79,7 +79,7 @@ VEGACORE=/path/to/go/src/vega make preproto
 make proto
 
 # Run tests
-GRPC_NODE=veganode.example.com:1234 WALLETSERVER=https://vegawallet.example.com make test
+CORE_GRPC_NODE=veganode.example.com:1234 DATA_GRPC_NODE=veganode.example.com:1235 WALLETSERVER=https://vegawallet.example.com make test
 ```
 
 ### Java gRPC generation

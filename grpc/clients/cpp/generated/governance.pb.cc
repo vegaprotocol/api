@@ -513,7 +513,7 @@ const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIA
   "nuous\0224\n\010discrete\030\311\001 \001(\0132\025.vega.Discrete"
   "TradingH\001R\010discreteB\021\n\017risk_parametersB\016"
   "\n\014trading_mode\"\310\001\n\023NewMarketCommitment\022+"
-  "\n\021commitment_amount\030\001 \001(\004R\020commitmentAmo"
+  "\n\021commitment_amount\030\001 \001(\tR\020commitmentAmo"
   "unt\022\020\n\003fee\030\002 \001(\tR\003fee\022*\n\005sells\030\003 \003(\0132\024.v"
   "ega.LiquidityOrderR\005sells\022(\n\004buys\030\004 \003(\0132"
   "\024.vega.LiquidityOrderR\004buys\022\034\n\treference"
@@ -563,7 +563,7 @@ const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIA
   ".Vote.ValueB\007\342\337\037\003\210\001\001R\005value\022\'\n\013proposal_"
   "id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposalId\022\034\n\ttimestam"
   "p\030\004 \001(\003R\ttimestamp\022C\n\036total_governance_t"
-  "oken_balance\030\005 \001(\004R\033totalGovernanceToken"
+  "oken_balance\030\005 \001(\tR\033totalGovernanceToken"
   "Balance\022A\n\035total_governance_token_weight"
   "\030\006 \001(\tR\032totalGovernanceTokenWeight\";\n\005Va"
   "lue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001"
@@ -2230,6 +2230,11 @@ NewMarketCommitment::NewMarketCommitment(const NewMarketCommitment& from)
       sells_(from.sells_),
       buys_(from.buys_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  commitment_amount_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_commitment_amount().empty()) {
+    commitment_amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_commitment_amount(),
+      GetArena());
+  }
   fee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_fee().empty()) {
     fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_fee(),
@@ -2240,15 +2245,14 @@ NewMarketCommitment::NewMarketCommitment(const NewMarketCommitment& from)
     reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reference(),
       GetArena());
   }
-  commitment_amount_ = from.commitment_amount_;
   // @@protoc_insertion_point(copy_constructor:vega.NewMarketCommitment)
 }
 
 void NewMarketCommitment::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NewMarketCommitment_governance_2eproto.base);
+  commitment_amount_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   fee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   reference_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  commitment_amount_ = PROTOBUF_ULONGLONG(0);
 }
 
 NewMarketCommitment::~NewMarketCommitment() {
@@ -2259,6 +2263,7 @@ NewMarketCommitment::~NewMarketCommitment() {
 
 void NewMarketCommitment::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
+  commitment_amount_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   fee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   reference_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2286,9 +2291,9 @@ void NewMarketCommitment::Clear() {
 
   sells_.Clear();
   buys_.Clear();
+  commitment_amount_.ClearToEmpty();
   fee_.ClearToEmpty();
   reference_.ClearToEmpty();
-  commitment_amount_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2299,10 +2304,12 @@ const char* NewMarketCommitment::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 commitment_amount = 1 [json_name = "commitmentAmount"];
+      // string commitment_amount = 1 [json_name = "commitmentAmount"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          commitment_amount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_commitment_amount();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.NewMarketCommitment.commitment_amount"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2376,10 +2383,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 commitment_amount = 1 [json_name = "commitmentAmount"];
-  if (this->commitment_amount() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_commitment_amount(), target);
+  // string commitment_amount = 1 [json_name = "commitmentAmount"];
+  if (this->commitment_amount().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_commitment_amount().data(), static_cast<int>(this->_internal_commitment_amount().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.NewMarketCommitment.commitment_amount");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_commitment_amount(), target);
   }
 
   // string fee = 2 [json_name = "fee"];
@@ -2448,6 +2459,13 @@ size_t NewMarketCommitment::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // string commitment_amount = 1 [json_name = "commitmentAmount"];
+  if (this->commitment_amount().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_commitment_amount());
+  }
+
   // string fee = 2 [json_name = "fee"];
   if (this->fee().size() > 0) {
     total_size += 1 +
@@ -2460,13 +2478,6 @@ size_t NewMarketCommitment::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_reference());
-  }
-
-  // uint64 commitment_amount = 1 [json_name = "commitmentAmount"];
-  if (this->commitment_amount() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_commitment_amount());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2502,14 +2513,14 @@ void NewMarketCommitment::MergeFrom(const NewMarketCommitment& from) {
 
   sells_.MergeFrom(from.sells_);
   buys_.MergeFrom(from.buys_);
+  if (from.commitment_amount().size() > 0) {
+    _internal_set_commitment_amount(from._internal_commitment_amount());
+  }
   if (from.fee().size() > 0) {
     _internal_set_fee(from._internal_fee());
   }
   if (from.reference().size() > 0) {
     _internal_set_reference(from._internal_reference());
-  }
-  if (from.commitment_amount() != 0) {
-    _internal_set_commitment_amount(from._internal_commitment_amount());
   }
 }
 
@@ -2536,9 +2547,9 @@ void NewMarketCommitment::InternalSwap(NewMarketCommitment* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   sells_.InternalSwap(&other->sells_);
   buys_.InternalSwap(&other->buys_);
+  commitment_amount_.Swap(&other->commitment_amount_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   fee_.Swap(&other->fee_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   reference_.Swap(&other->reference_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(commitment_amount_, other->commitment_amount_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NewMarketCommitment::GetMetadata() const {
@@ -4823,6 +4834,11 @@ Vote::Vote(const Vote& from)
     proposal_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_proposal_id(),
       GetArena());
   }
+  total_governance_token_balance_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_total_governance_token_balance().empty()) {
+    total_governance_token_balance_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_total_governance_token_balance(),
+      GetArena());
+  }
   total_governance_token_weight_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_total_governance_token_weight().empty()) {
     total_governance_token_weight_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_total_governance_token_weight(),
@@ -4838,6 +4854,7 @@ void Vote::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Vote_governance_2eproto.base);
   party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   proposal_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  total_governance_token_balance_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   total_governance_token_weight_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&timestamp_) - reinterpret_cast<char*>(this)),
@@ -4855,6 +4872,7 @@ void Vote::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   party_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   proposal_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  total_governance_token_balance_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   total_governance_token_weight_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -4881,6 +4899,7 @@ void Vote::Clear() {
 
   party_id_.ClearToEmpty();
   proposal_id_.ClearToEmpty();
+  total_governance_token_balance_.ClearToEmpty();
   total_governance_token_weight_.ClearToEmpty();
   ::memset(&timestamp_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&value_) -
@@ -4928,10 +4947,12 @@ const char* Vote::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
+      // string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          total_governance_token_balance_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_total_governance_token_balance();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Vote.total_governance_token_balance"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5005,10 +5026,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_timestamp(), target);
   }
 
-  // uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
-  if (this->total_governance_token_balance() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_total_governance_token_balance(), target);
+  // string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
+  if (this->total_governance_token_balance().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_total_governance_token_balance().data(), static_cast<int>(this->_internal_total_governance_token_balance().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.Vote.total_governance_token_balance");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_total_governance_token_balance(), target);
   }
 
   // string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];
@@ -5051,6 +5076,13 @@ size_t Vote::ByteSizeLong() const {
         this->_internal_proposal_id());
   }
 
+  // string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
+  if (this->total_governance_token_balance().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_total_governance_token_balance());
+  }
+
   // string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];
   if (this->total_governance_token_weight().size() > 0) {
     total_size += 1 +
@@ -5063,13 +5095,6 @@ size_t Vote::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_timestamp());
-  }
-
-  // uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
-  if (this->total_governance_token_balance() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_total_governance_token_balance());
   }
 
   // .vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = {
@@ -5115,14 +5140,14 @@ void Vote::MergeFrom(const Vote& from) {
   if (from.proposal_id().size() > 0) {
     _internal_set_proposal_id(from._internal_proposal_id());
   }
+  if (from.total_governance_token_balance().size() > 0) {
+    _internal_set_total_governance_token_balance(from._internal_total_governance_token_balance());
+  }
   if (from.total_governance_token_weight().size() > 0) {
     _internal_set_total_governance_token_weight(from._internal_total_governance_token_weight());
   }
   if (from.timestamp() != 0) {
     _internal_set_timestamp(from._internal_timestamp());
-  }
-  if (from.total_governance_token_balance() != 0) {
-    _internal_set_total_governance_token_balance(from._internal_total_governance_token_balance());
   }
   if (from.value() != 0) {
     _internal_set_value(from._internal_value());
@@ -5152,6 +5177,7 @@ void Vote::InternalSwap(Vote* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   party_id_.Swap(&other->party_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   proposal_id_.Swap(&other->proposal_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  total_governance_token_balance_.Swap(&other->total_governance_token_balance_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   total_governance_token_weight_.Swap(&other->total_governance_token_weight_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Vote, value_)

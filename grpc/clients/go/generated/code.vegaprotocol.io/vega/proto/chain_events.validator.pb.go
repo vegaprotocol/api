@@ -161,3 +161,26 @@ func (this *ValidatorEvent) Validate() error {
 	}
 	return nil
 }
+func (this *StakingEvent) Validate() error {
+	if oneOfNester, ok := this.GetAction().(*StakingEvent_StakeDeposited); ok {
+		if oneOfNester.StakeDeposited != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.StakeDeposited); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("StakeDeposited", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetAction().(*StakingEvent_StakeRemoved); ok {
+		if oneOfNester.StakeRemoved != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.StakeRemoved); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("StakeRemoved", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *StakeDeposited) Validate() error {
+	return nil
+}
+func (this *StakeRemoved) Validate() error {
+	return nil
+}

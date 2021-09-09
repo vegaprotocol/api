@@ -1498,7 +1498,7 @@ proto.vega.NewMarketCommitment.prototype.toObject = function(opt_includeInstance
  */
 proto.vega.NewMarketCommitment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    commitmentAmount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    commitmentAmount: jspb.Message.getFieldWithDefault(msg, 1, ""),
     fee: jspb.Message.getFieldWithDefault(msg, 2, ""),
     sellsList: jspb.Message.toObjectList(msg.getSellsList(),
     vega_pb.LiquidityOrder.toObject, includeInstance),
@@ -1542,7 +1542,7 @@ proto.vega.NewMarketCommitment.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setCommitmentAmount(value);
       break;
     case 2:
@@ -1593,8 +1593,8 @@ proto.vega.NewMarketCommitment.prototype.serializeBinary = function() {
 proto.vega.NewMarketCommitment.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCommitmentAmount();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1633,20 +1633,20 @@ proto.vega.NewMarketCommitment.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional uint64 commitment_amount = 1;
- * @return {number}
+ * optional string commitment_amount = 1;
+ * @return {string}
  */
 proto.vega.NewMarketCommitment.prototype.getCommitmentAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.NewMarketCommitment} returns this
  */
 proto.vega.NewMarketCommitment.prototype.setCommitmentAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -3530,7 +3530,7 @@ proto.vega.Vote.toObject = function(includeInstance, msg) {
     value: jspb.Message.getFieldWithDefault(msg, 2, 0),
     proposalId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    totalGovernanceTokenBalance: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    totalGovernanceTokenBalance: jspb.Message.getFieldWithDefault(msg, 5, ""),
     totalGovernanceTokenWeight: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
@@ -3585,7 +3585,7 @@ proto.vega.Vote.deserializeBinaryFromReader = function(msg, reader) {
       msg.setTimestamp(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setTotalGovernanceTokenBalance(value);
       break;
     case 6:
@@ -3650,8 +3650,8 @@ proto.vega.Vote.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getTotalGovernanceTokenBalance();
-  if (f !== 0) {
-    writer.writeUint64(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
@@ -3748,20 +3748,20 @@ proto.vega.Vote.prototype.setTimestamp = function(value) {
 
 
 /**
- * optional uint64 total_governance_token_balance = 5;
- * @return {number}
+ * optional string total_governance_token_balance = 5;
+ * @return {string}
  */
 proto.vega.Vote.prototype.getTotalGovernanceTokenBalance = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vega.Vote} returns this
  */
 proto.vega.Vote.prototype.setTotalGovernanceTokenBalance = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

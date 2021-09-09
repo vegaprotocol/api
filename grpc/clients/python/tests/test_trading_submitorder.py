@@ -1,18 +1,18 @@
 import vegaapiclient as vac
 
 
-def test_order_submission(trading, tradingdata, walletClientWalletKeypair):
+def test_order_submission(trading, coreapi, walletClientWalletKeypair):
     (walletclient, _, _, pub_key) = walletClientWalletKeypair
 
     # Get a market
-    req = vac.api.trading.MarketsRequest()
-    markets = tradingdata.Markets(req).markets
+    req = vac.coreapi.v1.coreapi.ListMarketsRequest()
+    markets = coreapi.ListMarkets(req).markets
     assert len(markets) > 0
     market = markets[0]
 
     # Get the chain time
     timereq = vac.api.trading.GetVegaTimeRequest()
-    now = int(tradingdata.GetVegaTime(timereq).timestamp)
+    now = int(trading.GetVegaTime(timereq).timestamp)
 
     # Create the tx
     req = vac.wallet.v1.wallet.SubmitTransactionRequest(

@@ -140,10 +140,11 @@ proto.vega.commands.v1.NodeRegistration.prototype.toObject = function(opt_includ
  */
 proto.vega.commands.v1.NodeRegistration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pubKey: msg.getPubKey_asB64(),
-    chainPubKey: msg.getChainPubKey_asB64(),
-    infoUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    country: jspb.Message.getFieldWithDefault(msg, 4, "")
+    vegaPubKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    ethereumAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    chainPubKey: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    infoUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    country: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -181,18 +182,22 @@ proto.vega.commands.v1.NodeRegistration.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setPubKey(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setVegaPubKey(value);
       break;
     case 2:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setChainPubKey(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEthereumAddress(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInfoUrl(value);
+      msg.setChainPubKey(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInfoUrl(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setCountry(value);
       break;
@@ -225,31 +230,38 @@ proto.vega.commands.v1.NodeRegistration.prototype.serializeBinary = function() {
  */
 proto.vega.commands.v1.NodeRegistration.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPubKey_asU8();
+  f = message.getVegaPubKey();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getChainPubKey_asU8();
+  f = message.getEthereumAddress();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       2,
       f
     );
   }
-  f = message.getInfoUrl();
+  f = message.getChainPubKey();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getCountry();
+  f = message.getInfoUrl();
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getCountry();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -257,94 +269,46 @@ proto.vega.commands.v1.NodeRegistration.serializeBinaryToWriter = function(messa
 
 
 /**
- * optional bytes pub_key = 1;
- * @return {!(string|Uint8Array)}
- */
-proto.vega.commands.v1.NodeRegistration.prototype.getPubKey = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * optional bytes pub_key = 1;
- * This is a type-conversion wrapper around `getPubKey()`
+ * optional string vega_pub_key = 1;
  * @return {string}
  */
-proto.vega.commands.v1.NodeRegistration.prototype.getPubKey_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getPubKey()));
+proto.vega.commands.v1.NodeRegistration.prototype.getVegaPubKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * optional bytes pub_key = 1;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getPubKey()`
- * @return {!Uint8Array}
- */
-proto.vega.commands.v1.NodeRegistration.prototype.getPubKey_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getPubKey()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.vega.commands.v1.NodeRegistration} returns this
  */
-proto.vega.commands.v1.NodeRegistration.prototype.setPubKey = function(value) {
-  return jspb.Message.setProto3BytesField(this, 1, value);
+proto.vega.commands.v1.NodeRegistration.prototype.setVegaPubKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional bytes chain_pub_key = 2;
- * @return {!(string|Uint8Array)}
+ * optional string ethereum_address = 2;
+ * @return {string}
+ */
+proto.vega.commands.v1.NodeRegistration.prototype.getEthereumAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.commands.v1.NodeRegistration} returns this
+ */
+proto.vega.commands.v1.NodeRegistration.prototype.setEthereumAddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string chain_pub_key = 3;
+ * @return {string}
  */
 proto.vega.commands.v1.NodeRegistration.prototype.getChainPubKey = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * optional bytes chain_pub_key = 2;
- * This is a type-conversion wrapper around `getChainPubKey()`
- * @return {string}
- */
-proto.vega.commands.v1.NodeRegistration.prototype.getChainPubKey_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getChainPubKey()));
-};
-
-
-/**
- * optional bytes chain_pub_key = 2;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getChainPubKey()`
- * @return {!Uint8Array}
- */
-proto.vega.commands.v1.NodeRegistration.prototype.getChainPubKey_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getChainPubKey()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
- * @return {!proto.vega.commands.v1.NodeRegistration} returns this
- */
-proto.vega.commands.v1.NodeRegistration.prototype.setChainPubKey = function(value) {
-  return jspb.Message.setProto3BytesField(this, 2, value);
-};
-
-
-/**
- * optional string info_url = 3;
- * @return {string}
- */
-proto.vega.commands.v1.NodeRegistration.prototype.getInfoUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -353,16 +317,16 @@ proto.vega.commands.v1.NodeRegistration.prototype.getInfoUrl = function() {
  * @param {string} value
  * @return {!proto.vega.commands.v1.NodeRegistration} returns this
  */
-proto.vega.commands.v1.NodeRegistration.prototype.setInfoUrl = function(value) {
+proto.vega.commands.v1.NodeRegistration.prototype.setChainPubKey = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string country = 4;
+ * optional string info_url = 4;
  * @return {string}
  */
-proto.vega.commands.v1.NodeRegistration.prototype.getCountry = function() {
+proto.vega.commands.v1.NodeRegistration.prototype.getInfoUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -371,8 +335,26 @@ proto.vega.commands.v1.NodeRegistration.prototype.getCountry = function() {
  * @param {string} value
  * @return {!proto.vega.commands.v1.NodeRegistration} returns this
  */
-proto.vega.commands.v1.NodeRegistration.prototype.setCountry = function(value) {
+proto.vega.commands.v1.NodeRegistration.prototype.setInfoUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string country = 5;
+ * @return {string}
+ */
+proto.vega.commands.v1.NodeRegistration.prototype.getCountry = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.commands.v1.NodeRegistration} returns this
+ */
+proto.vega.commands.v1.NodeRegistration.prototype.setCountry = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -783,7 +765,7 @@ proto.vega.commands.v1.NodeSignature.prototype.setKind = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.vega.commands.v1.ChainEvent.oneofGroups_ = [[1001,1002,1003,1004]];
+proto.vega.commands.v1.ChainEvent.oneofGroups_ = [[1001,1002,1003,1004,1005]];
 
 /**
  * @enum {number}
@@ -793,7 +775,8 @@ proto.vega.commands.v1.ChainEvent.EventCase = {
   BUILTIN: 1001,
   ERC20: 1002,
   BTC: 1003,
-  VALIDATOR: 1004
+  VALIDATOR: 1004,
+  STAKING_EVENT: 1005
 };
 
 /**
@@ -839,7 +822,8 @@ proto.vega.commands.v1.ChainEvent.toObject = function(includeInstance, msg) {
     builtin: (f = msg.getBuiltin()) && chain_events_pb.BuiltinAssetEvent.toObject(includeInstance, f),
     erc20: (f = msg.getErc20()) && chain_events_pb.ERC20Event.toObject(includeInstance, f),
     btc: (f = msg.getBtc()) && chain_events_pb.BTCEvent.toObject(includeInstance, f),
-    validator: (f = msg.getValidator()) && chain_events_pb.ValidatorEvent.toObject(includeInstance, f)
+    validator: (f = msg.getValidator()) && chain_events_pb.ValidatorEvent.toObject(includeInstance, f),
+    stakingEvent: (f = msg.getStakingEvent()) && chain_events_pb.StakingEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -903,6 +887,11 @@ proto.vega.commands.v1.ChainEvent.deserializeBinaryFromReader = function(msg, re
       var value = new chain_events_pb.ValidatorEvent;
       reader.readMessage(value,chain_events_pb.ValidatorEvent.deserializeBinaryFromReader);
       msg.setValidator(value);
+      break;
+    case 1005:
+      var value = new chain_events_pb.StakingEvent;
+      reader.readMessage(value,chain_events_pb.StakingEvent.deserializeBinaryFromReader);
+      msg.setStakingEvent(value);
       break;
     default:
       reader.skipField();
@@ -977,6 +966,14 @@ proto.vega.commands.v1.ChainEvent.serializeBinaryToWriter = function(message, wr
       1004,
       f,
       chain_events_pb.ValidatorEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getStakingEvent();
+  if (f != null) {
+    writer.writeMessage(
+      1005,
+      f,
+      chain_events_pb.StakingEvent.serializeBinaryToWriter
     );
   }
 };
@@ -1163,6 +1160,43 @@ proto.vega.commands.v1.ChainEvent.prototype.clearValidator = function() {
  */
 proto.vega.commands.v1.ChainEvent.prototype.hasValidator = function() {
   return jspb.Message.getField(this, 1004) != null;
+};
+
+
+/**
+ * optional vega.StakingEvent staking_event = 1005;
+ * @return {?proto.vega.StakingEvent}
+ */
+proto.vega.commands.v1.ChainEvent.prototype.getStakingEvent = function() {
+  return /** @type{?proto.vega.StakingEvent} */ (
+    jspb.Message.getWrapperField(this, chain_events_pb.StakingEvent, 1005));
+};
+
+
+/**
+ * @param {?proto.vega.StakingEvent|undefined} value
+ * @return {!proto.vega.commands.v1.ChainEvent} returns this
+*/
+proto.vega.commands.v1.ChainEvent.prototype.setStakingEvent = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1005, proto.vega.commands.v1.ChainEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.commands.v1.ChainEvent} returns this
+ */
+proto.vega.commands.v1.ChainEvent.prototype.clearStakingEvent = function() {
+  return this.setStakingEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.commands.v1.ChainEvent.prototype.hasStakingEvent = function() {
+  return jspb.Message.getField(this, 1005) != null;
 };
 
 

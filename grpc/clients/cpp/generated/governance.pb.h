@@ -1126,9 +1126,9 @@ class NewMarketCommitment PROTOBUF_FINAL :
   enum : int {
     kSellsFieldNumber = 3,
     kBuysFieldNumber = 4,
+    kCommitmentAmountFieldNumber = 1,
     kFeeFieldNumber = 2,
     kReferenceFieldNumber = 5,
-    kCommitmentAmountFieldNumber = 1,
   };
   // repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];
   int sells_size() const;
@@ -1166,6 +1166,22 @@ class NewMarketCommitment PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >&
       buys() const;
 
+  // string commitment_amount = 1 [json_name = "commitmentAmount"];
+  void clear_commitment_amount();
+  const std::string& commitment_amount() const;
+  void set_commitment_amount(const std::string& value);
+  void set_commitment_amount(std::string&& value);
+  void set_commitment_amount(const char* value);
+  void set_commitment_amount(const char* value, size_t size);
+  std::string* mutable_commitment_amount();
+  std::string* release_commitment_amount();
+  void set_allocated_commitment_amount(std::string* commitment_amount);
+  private:
+  const std::string& _internal_commitment_amount() const;
+  void _internal_set_commitment_amount(const std::string& value);
+  std::string* _internal_mutable_commitment_amount();
+  public:
+
   // string fee = 2 [json_name = "fee"];
   void clear_fee();
   const std::string& fee() const;
@@ -1198,15 +1214,6 @@ class NewMarketCommitment PROTOBUF_FINAL :
   std::string* _internal_mutable_reference();
   public:
 
-  // uint64 commitment_amount = 1 [json_name = "commitmentAmount"];
-  void clear_commitment_amount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount() const;
-  void set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_commitment_amount() const;
-  void _internal_set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:vega.NewMarketCommitment)
  private:
   class _Internal;
@@ -1216,9 +1223,9 @@ class NewMarketCommitment PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > sells_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > buys_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr commitment_amount_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fee_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
 };
@@ -2792,9 +2799,9 @@ class Vote PROTOBUF_FINAL :
   enum : int {
     kPartyIdFieldNumber = 1,
     kProposalIdFieldNumber = 3,
+    kTotalGovernanceTokenBalanceFieldNumber = 5,
     kTotalGovernanceTokenWeightFieldNumber = 6,
     kTimestampFieldNumber = 4,
-    kTotalGovernanceTokenBalanceFieldNumber = 5,
     kValueFieldNumber = 2,
   };
   // string party_id = 1 [json_name = "partyId", (.validator.field) = {
@@ -2829,6 +2836,22 @@ class Vote PROTOBUF_FINAL :
   std::string* _internal_mutable_proposal_id();
   public:
 
+  // string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
+  void clear_total_governance_token_balance();
+  const std::string& total_governance_token_balance() const;
+  void set_total_governance_token_balance(const std::string& value);
+  void set_total_governance_token_balance(std::string&& value);
+  void set_total_governance_token_balance(const char* value);
+  void set_total_governance_token_balance(const char* value, size_t size);
+  std::string* mutable_total_governance_token_balance();
+  std::string* release_total_governance_token_balance();
+  void set_allocated_total_governance_token_balance(std::string* total_governance_token_balance);
+  private:
+  const std::string& _internal_total_governance_token_balance() const;
+  void _internal_set_total_governance_token_balance(const std::string& value);
+  std::string* _internal_mutable_total_governance_token_balance();
+  public:
+
   // string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];
   void clear_total_governance_token_weight();
   const std::string& total_governance_token_weight() const;
@@ -2854,15 +2877,6 @@ class Vote PROTOBUF_FINAL :
   void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
-  void clear_total_governance_token_balance();
-  ::PROTOBUF_NAMESPACE_ID::uint64 total_governance_token_balance() const;
-  void set_total_governance_token_balance(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_governance_token_balance() const;
-  void _internal_set_total_governance_token_balance(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // .vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = {
   void clear_value();
   ::vega::Vote_Value value() const;
@@ -2881,9 +2895,9 @@ class Vote PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr proposal_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr total_governance_token_balance_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr total_governance_token_weight_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 total_governance_token_balance_;
   int value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
@@ -4138,24 +4152,65 @@ inline NewMarketConfiguration::TradingModeCase NewMarketConfiguration::trading_m
 
 // NewMarketCommitment
 
-// uint64 commitment_amount = 1 [json_name = "commitmentAmount"];
+// string commitment_amount = 1 [json_name = "commitmentAmount"];
 inline void NewMarketCommitment::clear_commitment_amount() {
-  commitment_amount_ = PROTOBUF_ULONGLONG(0);
+  commitment_amount_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewMarketCommitment::_internal_commitment_amount() const {
-  return commitment_amount_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewMarketCommitment::commitment_amount() const {
+inline const std::string& NewMarketCommitment::commitment_amount() const {
   // @@protoc_insertion_point(field_get:vega.NewMarketCommitment.commitment_amount)
   return _internal_commitment_amount();
 }
-inline void NewMarketCommitment::_internal_set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  commitment_amount_ = value;
-}
-inline void NewMarketCommitment::set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewMarketCommitment::set_commitment_amount(const std::string& value) {
   _internal_set_commitment_amount(value);
   // @@protoc_insertion_point(field_set:vega.NewMarketCommitment.commitment_amount)
+}
+inline std::string* NewMarketCommitment::mutable_commitment_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.NewMarketCommitment.commitment_amount)
+  return _internal_mutable_commitment_amount();
+}
+inline const std::string& NewMarketCommitment::_internal_commitment_amount() const {
+  return commitment_amount_.Get();
+}
+inline void NewMarketCommitment::_internal_set_commitment_amount(const std::string& value) {
+
+  commitment_amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void NewMarketCommitment::set_commitment_amount(std::string&& value) {
+
+  commitment_amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.NewMarketCommitment.commitment_amount)
+}
+inline void NewMarketCommitment::set_commitment_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  commitment_amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.NewMarketCommitment.commitment_amount)
+}
+inline void NewMarketCommitment::set_commitment_amount(const char* value,
+    size_t size) {
+
+  commitment_amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.NewMarketCommitment.commitment_amount)
+}
+inline std::string* NewMarketCommitment::_internal_mutable_commitment_amount() {
+
+  return commitment_amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* NewMarketCommitment::release_commitment_amount() {
+  // @@protoc_insertion_point(field_release:vega.NewMarketCommitment.commitment_amount)
+  return commitment_amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void NewMarketCommitment::set_allocated_commitment_amount(std::string* commitment_amount) {
+  if (commitment_amount != nullptr) {
+
+  } else {
+
+  }
+  commitment_amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), commitment_amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.NewMarketCommitment.commitment_amount)
 }
 
 // string fee = 2 [json_name = "fee"];
@@ -5837,24 +5892,65 @@ inline void Vote::set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
   // @@protoc_insertion_point(field_set:vega.Vote.timestamp)
 }
 
-// uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
+// string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
 inline void Vote::clear_total_governance_token_balance() {
-  total_governance_token_balance_ = PROTOBUF_ULONGLONG(0);
+  total_governance_token_balance_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Vote::_internal_total_governance_token_balance() const {
-  return total_governance_token_balance_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Vote::total_governance_token_balance() const {
+inline const std::string& Vote::total_governance_token_balance() const {
   // @@protoc_insertion_point(field_get:vega.Vote.total_governance_token_balance)
   return _internal_total_governance_token_balance();
 }
-inline void Vote::_internal_set_total_governance_token_balance(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  total_governance_token_balance_ = value;
-}
-inline void Vote::set_total_governance_token_balance(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Vote::set_total_governance_token_balance(const std::string& value) {
   _internal_set_total_governance_token_balance(value);
   // @@protoc_insertion_point(field_set:vega.Vote.total_governance_token_balance)
+}
+inline std::string* Vote::mutable_total_governance_token_balance() {
+  // @@protoc_insertion_point(field_mutable:vega.Vote.total_governance_token_balance)
+  return _internal_mutable_total_governance_token_balance();
+}
+inline const std::string& Vote::_internal_total_governance_token_balance() const {
+  return total_governance_token_balance_.Get();
+}
+inline void Vote::_internal_set_total_governance_token_balance(const std::string& value) {
+
+  total_governance_token_balance_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void Vote::set_total_governance_token_balance(std::string&& value) {
+
+  total_governance_token_balance_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.Vote.total_governance_token_balance)
+}
+inline void Vote::set_total_governance_token_balance(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  total_governance_token_balance_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Vote.total_governance_token_balance)
+}
+inline void Vote::set_total_governance_token_balance(const char* value,
+    size_t size) {
+
+  total_governance_token_balance_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.Vote.total_governance_token_balance)
+}
+inline std::string* Vote::_internal_mutable_total_governance_token_balance() {
+
+  return total_governance_token_balance_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* Vote::release_total_governance_token_balance() {
+  // @@protoc_insertion_point(field_release:vega.Vote.total_governance_token_balance)
+  return total_governance_token_balance_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Vote::set_allocated_total_governance_token_balance(std::string* total_governance_token_balance) {
+  if (total_governance_token_balance != nullptr) {
+
+  } else {
+
+  }
+  total_governance_token_balance_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), total_governance_token_balance,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.Vote.total_governance_token_balance)
 }
 
 // string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];

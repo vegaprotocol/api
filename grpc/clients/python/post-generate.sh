@@ -20,9 +20,11 @@ EOF
 for x in \
 	api \
 	commands/v1 \
+	coreapi/v1 \
 	events/v1 \
 	github/com/mwitkow/go_proto_validators \
 	oracles/v1 \
+	snapshot/v1 \
 	tm \
 	wallet/v1
 do
@@ -63,11 +65,13 @@ done
 
 for x in \
 	commands \
+	coreapi \
 	events \
 	github \
 	github/com \
 	github/com/mwitkow \
 	oracles \
+	snapshot \
 	wallet
 do
 	touch "$python_generated_dir/$x/__init__.py"
@@ -77,28 +81,34 @@ touch "$python_generated_dir/__init__.py"
 find "$python_generated_dir" -maxdepth 1 -name '*.py' -print0 | xargs -0r sed --in-place -r \
 	-e 's#^from github.com.mwitkow.go_proto_validators #from .github.com.mwitkow.go_proto_validators #' \
 	-e 's#^from commands.v1 import#from .commands.v1 import#' \
+	-e 's#^from coreapi.v1 import#from .coreapi.v1 import#' \
 	-e 's#^from events.v1 import#from .events.v1 import#' \
 	-e 's#^from oracles.v1 import#from .oracles.v1 import#' \
+	-e 's#^from snapshot.v1 import#from .snapshot.v1 import#' \
 	-e 's#^from wallet.v1 import#from .wallet.v1 import#' \
 	-e 's#^import ([a-z_]*)_pb2 as #from . import \1_pb2 as #'
 
 find "$python_generated_dir/api" -maxdepth 1 -name '*.py' -print0 | xargs -0r sed --in-place -r \
 	-e 's#^from github.com.mwitkow.go_proto_validators #from ..github.com.mwitkow.go_proto_validators #' \
 	-e 's#^from commands.v1 import#from ..commands.v1 import#' \
+	-e 's#^from coreapi.v1 import#from ..coreapi.v1 import#' \
 	-e 's#^from events.v1 import#from ..events.v1 import#' \
 	-e 's#^from oracles.v1 import#from ..oracles.v1 import#' \
+	-e 's#^from snapshot.v1 import#from ..snapshot.v1 import#' \
 	-e 's#^from wallet.v1 import#from ..wallet.v1 import#' \
 	-e 's#^import ([a-z_]*)_pb2 as #from .. import \1_pb2 as #' \
 	-e 's#^from api import #from . import #'
 
 find \
 	"$python_generated_dir/commands/v1" \
+	"$python_generated_dir/coreapi/v1" \
 	"$python_generated_dir/events/v1" \
 	"$python_generated_dir/oracles/v1" \
+	"$python_generated_dir/snapshot/v1" \
 	"$python_generated_dir/wallet/v1" \
 	-maxdepth 1 -name '*.py' -print0 | xargs -0r sed --in-place -r \
 	-e 's#^import ([a-z_]*_pb2) as #from ... import \1 as #' \
-	-e 's#^from (commands.v1|events.v2|oracles.v1|wallet.v1|github.com.mwitkow.go_proto_validators) import #from ...\1 import #'
+	-e 's#^from (commands.v1|coreapi.v1|events.v1|oracles.v1|snapshot.v1|wallet.v1|github.com.mwitkow.go_proto_validators) import #from ...\1 import #'
 
 pushd grpc/clients/python 1>/dev/null || exit 1
 python3 generate_init.py >"vegaapiclient/__init__.py"

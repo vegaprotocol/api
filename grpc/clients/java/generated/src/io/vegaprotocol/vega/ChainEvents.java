@@ -952,10 +952,20 @@ public final class ChainEvents {
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
-    long getAmount();
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * The amount to be withdrawn
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
   }
   /**
    * <pre>
@@ -976,6 +986,7 @@ public final class ChainEvents {
     private BuiltinAssetWithdrawal() {
       vegaAssetId_ = "";
       partyId_ = "";
+      amount_ = "";
     }
 
     @java.lang.Override
@@ -1020,9 +1031,10 @@ public final class ChainEvents {
               partyId_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readUInt64();
+              amount_ = s;
               break;
             }
             default: {
@@ -1150,18 +1162,49 @@ public final class ChainEvents {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 3;
-    private long amount_;
+    private volatile java.lang.Object amount_;
     /**
      * <pre>
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * <code>string amount = 3 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
-      return amount_;
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount to be withdrawn
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1184,8 +1227,8 @@ public final class ChainEvents {
       if (!getPartyIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyId_);
       }
-      if (amount_ != 0L) {
-        output.writeUInt64(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, amount_);
       }
       unknownFields.writeTo(output);
     }
@@ -1202,9 +1245,8 @@ public final class ChainEvents {
       if (!getPartyIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyId_);
       }
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, amount_);
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, amount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1225,8 +1267,8 @@ public final class ChainEvents {
           .equals(other.getVegaAssetId())) return false;
       if (!getPartyId()
           .equals(other.getPartyId())) return false;
-      if (getAmount()
-          != other.getAmount()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1243,8 +1285,7 @@ public final class ChainEvents {
       hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
+      hash = (53 * hash) + getAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1386,7 +1427,7 @@ public final class ChainEvents {
 
         partyId_ = "";
 
-        amount_ = 0L;
+        amount_ = "";
 
         return this;
       }
@@ -1473,8 +1514,9 @@ public final class ChainEvents {
           partyId_ = other.partyId_;
           onChanged();
         }
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1697,29 +1739,62 @@ public final class ChainEvents {
         return this;
       }
 
-      private long amount_ ;
+      private java.lang.Object amount_ = "";
       /**
        * <pre>
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return The amount.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount to be withdrawn
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         amount_ = value;
         onChanged();
@@ -1730,12 +1805,32 @@ public final class ChainEvents {
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * <code>string amount = 3 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
 
-        amount_ = 0L;
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount to be withdrawn
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
         onChanged();
         return this;
       }
@@ -16429,6 +16524,3289 @@ public final class ChainEvents {
 
   }
 
+  public interface StakingEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.StakingEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Index of the transaction
+     * </pre>
+     *
+     * <code>uint64 index = 1 [json_name = "index"];</code>
+     * @return The index.
+     */
+    long getIndex();
+
+    /**
+     * <pre>
+     * The block in which the transaction was added
+     * </pre>
+     *
+     * <code>uint64 block = 2 [json_name = "block"];</code>
+     * @return The block.
+     */
+    long getBlock();
+
+    /**
+     * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+     * @return Whether the stakeDeposited field is set.
+     */
+    boolean hasStakeDeposited();
+    /**
+     * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+     * @return The stakeDeposited.
+     */
+    io.vegaprotocol.vega.ChainEvents.StakeDeposited getStakeDeposited();
+    /**
+     * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+     */
+    io.vegaprotocol.vega.ChainEvents.StakeDepositedOrBuilder getStakeDepositedOrBuilder();
+
+    /**
+     * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+     * @return Whether the stakeRemoved field is set.
+     */
+    boolean hasStakeRemoved();
+    /**
+     * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+     * @return The stakeRemoved.
+     */
+    io.vegaprotocol.vega.ChainEvents.StakeRemoved getStakeRemoved();
+    /**
+     * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+     */
+    io.vegaprotocol.vega.ChainEvents.StakeRemovedOrBuilder getStakeRemovedOrBuilder();
+
+    public io.vegaprotocol.vega.ChainEvents.StakingEvent.ActionCase getActionCase();
+  }
+  /**
+   * Protobuf type {@code vega.StakingEvent}
+   */
+  public static final class StakingEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.StakingEvent)
+      StakingEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StakingEvent.newBuilder() to construct.
+    private StakingEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StakingEvent() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StakingEvent();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StakingEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              index_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              block_ = input.readUInt64();
+              break;
+            }
+            case 8010: {
+              io.vegaprotocol.vega.ChainEvents.StakeDeposited.Builder subBuilder = null;
+              if (actionCase_ == 1001) {
+                subBuilder = ((io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_).toBuilder();
+              }
+              action_ =
+                  input.readMessage(io.vegaprotocol.vega.ChainEvents.StakeDeposited.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 1001;
+              break;
+            }
+            case 8018: {
+              io.vegaprotocol.vega.ChainEvents.StakeRemoved.Builder subBuilder = null;
+              if (actionCase_ == 1002) {
+                subBuilder = ((io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_).toBuilder();
+              }
+              action_ =
+                  input.readMessage(io.vegaprotocol.vega.ChainEvents.StakeRemoved.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 1002;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakingEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakingEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.ChainEvents.StakingEvent.class, io.vegaprotocol.vega.ChainEvents.StakingEvent.Builder.class);
+    }
+
+    private int actionCase_ = 0;
+    private java.lang.Object action_;
+    public enum ActionCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      STAKE_DEPOSITED(1001),
+      STAKE_REMOVED(1002),
+      ACTION_NOT_SET(0);
+      private final int value;
+      private ActionCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ActionCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ActionCase forNumber(int value) {
+        switch (value) {
+          case 1001: return STAKE_DEPOSITED;
+          case 1002: return STAKE_REMOVED;
+          case 0: return ACTION_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ActionCase
+    getActionCase() {
+      return ActionCase.forNumber(
+          actionCase_);
+    }
+
+    public static final int INDEX_FIELD_NUMBER = 1;
+    private long index_;
+    /**
+     * <pre>
+     * Index of the transaction
+     * </pre>
+     *
+     * <code>uint64 index = 1 [json_name = "index"];</code>
+     * @return The index.
+     */
+    @java.lang.Override
+    public long getIndex() {
+      return index_;
+    }
+
+    public static final int BLOCK_FIELD_NUMBER = 2;
+    private long block_;
+    /**
+     * <pre>
+     * The block in which the transaction was added
+     * </pre>
+     *
+     * <code>uint64 block = 2 [json_name = "block"];</code>
+     * @return The block.
+     */
+    @java.lang.Override
+    public long getBlock() {
+      return block_;
+    }
+
+    public static final int STAKE_DEPOSITED_FIELD_NUMBER = 1001;
+    /**
+     * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+     * @return Whether the stakeDeposited field is set.
+     */
+    @java.lang.Override
+    public boolean hasStakeDeposited() {
+      return actionCase_ == 1001;
+    }
+    /**
+     * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+     * @return The stakeDeposited.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.ChainEvents.StakeDeposited getStakeDeposited() {
+      if (actionCase_ == 1001) {
+         return (io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_;
+      }
+      return io.vegaprotocol.vega.ChainEvents.StakeDeposited.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.ChainEvents.StakeDepositedOrBuilder getStakeDepositedOrBuilder() {
+      if (actionCase_ == 1001) {
+         return (io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_;
+      }
+      return io.vegaprotocol.vega.ChainEvents.StakeDeposited.getDefaultInstance();
+    }
+
+    public static final int STAKE_REMOVED_FIELD_NUMBER = 1002;
+    /**
+     * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+     * @return Whether the stakeRemoved field is set.
+     */
+    @java.lang.Override
+    public boolean hasStakeRemoved() {
+      return actionCase_ == 1002;
+    }
+    /**
+     * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+     * @return The stakeRemoved.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.ChainEvents.StakeRemoved getStakeRemoved() {
+      if (actionCase_ == 1002) {
+         return (io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_;
+      }
+      return io.vegaprotocol.vega.ChainEvents.StakeRemoved.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.ChainEvents.StakeRemovedOrBuilder getStakeRemovedOrBuilder() {
+      if (actionCase_ == 1002) {
+         return (io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_;
+      }
+      return io.vegaprotocol.vega.ChainEvents.StakeRemoved.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (index_ != 0L) {
+        output.writeUInt64(1, index_);
+      }
+      if (block_ != 0L) {
+        output.writeUInt64(2, block_);
+      }
+      if (actionCase_ == 1001) {
+        output.writeMessage(1001, (io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_);
+      }
+      if (actionCase_ == 1002) {
+        output.writeMessage(1002, (io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (index_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, index_);
+      }
+      if (block_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, block_);
+      }
+      if (actionCase_ == 1001) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1001, (io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_);
+      }
+      if (actionCase_ == 1002) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1002, (io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.ChainEvents.StakingEvent)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.ChainEvents.StakingEvent other = (io.vegaprotocol.vega.ChainEvents.StakingEvent) obj;
+
+      if (getIndex()
+          != other.getIndex()) return false;
+      if (getBlock()
+          != other.getBlock()) return false;
+      if (!getActionCase().equals(other.getActionCase())) return false;
+      switch (actionCase_) {
+        case 1001:
+          if (!getStakeDeposited()
+              .equals(other.getStakeDeposited())) return false;
+          break;
+        case 1002:
+          if (!getStakeRemoved()
+              .equals(other.getStakeRemoved())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getIndex());
+      hash = (37 * hash) + BLOCK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBlock());
+      switch (actionCase_) {
+        case 1001:
+          hash = (37 * hash) + STAKE_DEPOSITED_FIELD_NUMBER;
+          hash = (53 * hash) + getStakeDeposited().hashCode();
+          break;
+        case 1002:
+          hash = (37 * hash) + STAKE_REMOVED_FIELD_NUMBER;
+          hash = (53 * hash) + getStakeRemoved().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.ChainEvents.StakingEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.StakingEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.StakingEvent)
+        io.vegaprotocol.vega.ChainEvents.StakingEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakingEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakingEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.ChainEvents.StakingEvent.class, io.vegaprotocol.vega.ChainEvents.StakingEvent.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.ChainEvents.StakingEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        index_ = 0L;
+
+        block_ = 0L;
+
+        actionCase_ = 0;
+        action_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakingEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakingEvent getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.ChainEvents.StakingEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakingEvent build() {
+        io.vegaprotocol.vega.ChainEvents.StakingEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakingEvent buildPartial() {
+        io.vegaprotocol.vega.ChainEvents.StakingEvent result = new io.vegaprotocol.vega.ChainEvents.StakingEvent(this);
+        result.index_ = index_;
+        result.block_ = block_;
+        if (actionCase_ == 1001) {
+          if (stakeDepositedBuilder_ == null) {
+            result.action_ = action_;
+          } else {
+            result.action_ = stakeDepositedBuilder_.build();
+          }
+        }
+        if (actionCase_ == 1002) {
+          if (stakeRemovedBuilder_ == null) {
+            result.action_ = action_;
+          } else {
+            result.action_ = stakeRemovedBuilder_.build();
+          }
+        }
+        result.actionCase_ = actionCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.ChainEvents.StakingEvent) {
+          return mergeFrom((io.vegaprotocol.vega.ChainEvents.StakingEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.StakingEvent other) {
+        if (other == io.vegaprotocol.vega.ChainEvents.StakingEvent.getDefaultInstance()) return this;
+        if (other.getIndex() != 0L) {
+          setIndex(other.getIndex());
+        }
+        if (other.getBlock() != 0L) {
+          setBlock(other.getBlock());
+        }
+        switch (other.getActionCase()) {
+          case STAKE_DEPOSITED: {
+            mergeStakeDeposited(other.getStakeDeposited());
+            break;
+          }
+          case STAKE_REMOVED: {
+            mergeStakeRemoved(other.getStakeRemoved());
+            break;
+          }
+          case ACTION_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.ChainEvents.StakingEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.ChainEvents.StakingEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int actionCase_ = 0;
+      private java.lang.Object action_;
+      public ActionCase
+          getActionCase() {
+        return ActionCase.forNumber(
+            actionCase_);
+      }
+
+      public Builder clearAction() {
+        actionCase_ = 0;
+        action_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private long index_ ;
+      /**
+       * <pre>
+       * Index of the transaction
+       * </pre>
+       *
+       * <code>uint64 index = 1 [json_name = "index"];</code>
+       * @return The index.
+       */
+      @java.lang.Override
+      public long getIndex() {
+        return index_;
+      }
+      /**
+       * <pre>
+       * Index of the transaction
+       * </pre>
+       *
+       * <code>uint64 index = 1 [json_name = "index"];</code>
+       * @param value The index to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndex(long value) {
+
+        index_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Index of the transaction
+       * </pre>
+       *
+       * <code>uint64 index = 1 [json_name = "index"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIndex() {
+
+        index_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long block_ ;
+      /**
+       * <pre>
+       * The block in which the transaction was added
+       * </pre>
+       *
+       * <code>uint64 block = 2 [json_name = "block"];</code>
+       * @return The block.
+       */
+      @java.lang.Override
+      public long getBlock() {
+        return block_;
+      }
+      /**
+       * <pre>
+       * The block in which the transaction was added
+       * </pre>
+       *
+       * <code>uint64 block = 2 [json_name = "block"];</code>
+       * @param value The block to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBlock(long value) {
+
+        block_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The block in which the transaction was added
+       * </pre>
+       *
+       * <code>uint64 block = 2 [json_name = "block"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBlock() {
+
+        block_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.ChainEvents.StakeDeposited, io.vegaprotocol.vega.ChainEvents.StakeDeposited.Builder, io.vegaprotocol.vega.ChainEvents.StakeDepositedOrBuilder> stakeDepositedBuilder_;
+      /**
+       * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+       * @return Whether the stakeDeposited field is set.
+       */
+      @java.lang.Override
+      public boolean hasStakeDeposited() {
+        return actionCase_ == 1001;
+      }
+      /**
+       * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+       * @return The stakeDeposited.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeDeposited getStakeDeposited() {
+        if (stakeDepositedBuilder_ == null) {
+          if (actionCase_ == 1001) {
+            return (io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_;
+          }
+          return io.vegaprotocol.vega.ChainEvents.StakeDeposited.getDefaultInstance();
+        } else {
+          if (actionCase_ == 1001) {
+            return stakeDepositedBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.ChainEvents.StakeDeposited.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+       */
+      public Builder setStakeDeposited(io.vegaprotocol.vega.ChainEvents.StakeDeposited value) {
+        if (stakeDepositedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          action_ = value;
+          onChanged();
+        } else {
+          stakeDepositedBuilder_.setMessage(value);
+        }
+        actionCase_ = 1001;
+        return this;
+      }
+      /**
+       * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+       */
+      public Builder setStakeDeposited(
+          io.vegaprotocol.vega.ChainEvents.StakeDeposited.Builder builderForValue) {
+        if (stakeDepositedBuilder_ == null) {
+          action_ = builderForValue.build();
+          onChanged();
+        } else {
+          stakeDepositedBuilder_.setMessage(builderForValue.build());
+        }
+        actionCase_ = 1001;
+        return this;
+      }
+      /**
+       * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+       */
+      public Builder mergeStakeDeposited(io.vegaprotocol.vega.ChainEvents.StakeDeposited value) {
+        if (stakeDepositedBuilder_ == null) {
+          if (actionCase_ == 1001 &&
+              action_ != io.vegaprotocol.vega.ChainEvents.StakeDeposited.getDefaultInstance()) {
+            action_ = io.vegaprotocol.vega.ChainEvents.StakeDeposited.newBuilder((io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            action_ = value;
+          }
+          onChanged();
+        } else {
+          if (actionCase_ == 1001) {
+            stakeDepositedBuilder_.mergeFrom(value);
+          }
+          stakeDepositedBuilder_.setMessage(value);
+        }
+        actionCase_ = 1001;
+        return this;
+      }
+      /**
+       * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+       */
+      public Builder clearStakeDeposited() {
+        if (stakeDepositedBuilder_ == null) {
+          if (actionCase_ == 1001) {
+            actionCase_ = 0;
+            action_ = null;
+            onChanged();
+          }
+        } else {
+          if (actionCase_ == 1001) {
+            actionCase_ = 0;
+            action_ = null;
+          }
+          stakeDepositedBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+       */
+      public io.vegaprotocol.vega.ChainEvents.StakeDeposited.Builder getStakeDepositedBuilder() {
+        return getStakeDepositedFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeDepositedOrBuilder getStakeDepositedOrBuilder() {
+        if ((actionCase_ == 1001) && (stakeDepositedBuilder_ != null)) {
+          return stakeDepositedBuilder_.getMessageOrBuilder();
+        } else {
+          if (actionCase_ == 1001) {
+            return (io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_;
+          }
+          return io.vegaprotocol.vega.ChainEvents.StakeDeposited.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.StakeDeposited stake_deposited = 1001 [json_name = "stakeDeposited"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.ChainEvents.StakeDeposited, io.vegaprotocol.vega.ChainEvents.StakeDeposited.Builder, io.vegaprotocol.vega.ChainEvents.StakeDepositedOrBuilder>
+          getStakeDepositedFieldBuilder() {
+        if (stakeDepositedBuilder_ == null) {
+          if (!(actionCase_ == 1001)) {
+            action_ = io.vegaprotocol.vega.ChainEvents.StakeDeposited.getDefaultInstance();
+          }
+          stakeDepositedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.ChainEvents.StakeDeposited, io.vegaprotocol.vega.ChainEvents.StakeDeposited.Builder, io.vegaprotocol.vega.ChainEvents.StakeDepositedOrBuilder>(
+                  (io.vegaprotocol.vega.ChainEvents.StakeDeposited) action_,
+                  getParentForChildren(),
+                  isClean());
+          action_ = null;
+        }
+        actionCase_ = 1001;
+        onChanged();;
+        return stakeDepositedBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.ChainEvents.StakeRemoved, io.vegaprotocol.vega.ChainEvents.StakeRemoved.Builder, io.vegaprotocol.vega.ChainEvents.StakeRemovedOrBuilder> stakeRemovedBuilder_;
+      /**
+       * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+       * @return Whether the stakeRemoved field is set.
+       */
+      @java.lang.Override
+      public boolean hasStakeRemoved() {
+        return actionCase_ == 1002;
+      }
+      /**
+       * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+       * @return The stakeRemoved.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeRemoved getStakeRemoved() {
+        if (stakeRemovedBuilder_ == null) {
+          if (actionCase_ == 1002) {
+            return (io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_;
+          }
+          return io.vegaprotocol.vega.ChainEvents.StakeRemoved.getDefaultInstance();
+        } else {
+          if (actionCase_ == 1002) {
+            return stakeRemovedBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.ChainEvents.StakeRemoved.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+       */
+      public Builder setStakeRemoved(io.vegaprotocol.vega.ChainEvents.StakeRemoved value) {
+        if (stakeRemovedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          action_ = value;
+          onChanged();
+        } else {
+          stakeRemovedBuilder_.setMessage(value);
+        }
+        actionCase_ = 1002;
+        return this;
+      }
+      /**
+       * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+       */
+      public Builder setStakeRemoved(
+          io.vegaprotocol.vega.ChainEvents.StakeRemoved.Builder builderForValue) {
+        if (stakeRemovedBuilder_ == null) {
+          action_ = builderForValue.build();
+          onChanged();
+        } else {
+          stakeRemovedBuilder_.setMessage(builderForValue.build());
+        }
+        actionCase_ = 1002;
+        return this;
+      }
+      /**
+       * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+       */
+      public Builder mergeStakeRemoved(io.vegaprotocol.vega.ChainEvents.StakeRemoved value) {
+        if (stakeRemovedBuilder_ == null) {
+          if (actionCase_ == 1002 &&
+              action_ != io.vegaprotocol.vega.ChainEvents.StakeRemoved.getDefaultInstance()) {
+            action_ = io.vegaprotocol.vega.ChainEvents.StakeRemoved.newBuilder((io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            action_ = value;
+          }
+          onChanged();
+        } else {
+          if (actionCase_ == 1002) {
+            stakeRemovedBuilder_.mergeFrom(value);
+          }
+          stakeRemovedBuilder_.setMessage(value);
+        }
+        actionCase_ = 1002;
+        return this;
+      }
+      /**
+       * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+       */
+      public Builder clearStakeRemoved() {
+        if (stakeRemovedBuilder_ == null) {
+          if (actionCase_ == 1002) {
+            actionCase_ = 0;
+            action_ = null;
+            onChanged();
+          }
+        } else {
+          if (actionCase_ == 1002) {
+            actionCase_ = 0;
+            action_ = null;
+          }
+          stakeRemovedBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+       */
+      public io.vegaprotocol.vega.ChainEvents.StakeRemoved.Builder getStakeRemovedBuilder() {
+        return getStakeRemovedFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeRemovedOrBuilder getStakeRemovedOrBuilder() {
+        if ((actionCase_ == 1002) && (stakeRemovedBuilder_ != null)) {
+          return stakeRemovedBuilder_.getMessageOrBuilder();
+        } else {
+          if (actionCase_ == 1002) {
+            return (io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_;
+          }
+          return io.vegaprotocol.vega.ChainEvents.StakeRemoved.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.StakeRemoved stake_removed = 1002 [json_name = "stakeRemoved"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.ChainEvents.StakeRemoved, io.vegaprotocol.vega.ChainEvents.StakeRemoved.Builder, io.vegaprotocol.vega.ChainEvents.StakeRemovedOrBuilder>
+          getStakeRemovedFieldBuilder() {
+        if (stakeRemovedBuilder_ == null) {
+          if (!(actionCase_ == 1002)) {
+            action_ = io.vegaprotocol.vega.ChainEvents.StakeRemoved.getDefaultInstance();
+          }
+          stakeRemovedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.ChainEvents.StakeRemoved, io.vegaprotocol.vega.ChainEvents.StakeRemoved.Builder, io.vegaprotocol.vega.ChainEvents.StakeRemovedOrBuilder>(
+                  (io.vegaprotocol.vega.ChainEvents.StakeRemoved) action_,
+                  getParentForChildren(),
+                  isClean());
+          action_ = null;
+        }
+        actionCase_ = 1002;
+        onChanged();;
+        return stakeRemovedBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.StakingEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.StakingEvent)
+    private static final io.vegaprotocol.vega.ChainEvents.StakingEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.ChainEvents.StakingEvent();
+    }
+
+    public static io.vegaprotocol.vega.ChainEvents.StakingEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StakingEvent>
+        PARSER = new com.google.protobuf.AbstractParser<StakingEvent>() {
+      @java.lang.Override
+      public StakingEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StakingEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StakingEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StakingEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.ChainEvents.StakingEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StakeDepositedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.StakeDeposited)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+     * </pre>
+     *
+     * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+     * @return The ethereumAddress.
+     */
+    java.lang.String getEthereumAddress();
+    /**
+     * <pre>
+     * Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+     * </pre>
+     *
+     * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+     * @return The bytes for ethereumAddress.
+     */
+    com.google.protobuf.ByteString
+        getEthereumAddressBytes();
+
+    /**
+     * <pre>
+     * The public of the party receiving the stake deposit (hex encode)
+     * </pre>
+     *
+     * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+     * @return The vegaPublicKey.
+     */
+    java.lang.String getVegaPublicKey();
+    /**
+     * <pre>
+     * The public of the party receiving the stake deposit (hex encode)
+     * </pre>
+     *
+     * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+     * @return The bytes for vegaPublicKey.
+     */
+    com.google.protobuf.ByteString
+        getVegaPublicKeyBytes();
+
+    /**
+     * <pre>
+     * The amount deposited (base 10)
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * The amount deposited (base 10)
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
+
+    /**
+     * <pre>
+     * The time at which the block was produced
+     * will be used to inform the core at what time
+     * the stake started to be available.
+     * </pre>
+     *
+     * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+     * @return The blockTime.
+     */
+    long getBlockTime();
+  }
+  /**
+   * Protobuf type {@code vega.StakeDeposited}
+   */
+  public static final class StakeDeposited extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.StakeDeposited)
+      StakeDepositedOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StakeDeposited.newBuilder() to construct.
+    private StakeDeposited(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StakeDeposited() {
+      ethereumAddress_ = "";
+      vegaPublicKey_ = "";
+      amount_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StakeDeposited();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StakeDeposited(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ethereumAddress_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              vegaPublicKey_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              amount_ = s;
+              break;
+            }
+            case 32: {
+
+              blockTime_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeDeposited_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeDeposited_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.ChainEvents.StakeDeposited.class, io.vegaprotocol.vega.ChainEvents.StakeDeposited.Builder.class);
+    }
+
+    public static final int ETHEREUM_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object ethereumAddress_;
+    /**
+     * <pre>
+     * Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+     * </pre>
+     *
+     * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+     * @return The ethereumAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getEthereumAddress() {
+      java.lang.Object ref = ethereumAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ethereumAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+     * </pre>
+     *
+     * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+     * @return The bytes for ethereumAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEthereumAddressBytes() {
+      java.lang.Object ref = ethereumAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ethereumAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VEGA_PUBLIC_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object vegaPublicKey_;
+    /**
+     * <pre>
+     * The public of the party receiving the stake deposit (hex encode)
+     * </pre>
+     *
+     * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+     * @return The vegaPublicKey.
+     */
+    @java.lang.Override
+    public java.lang.String getVegaPublicKey() {
+      java.lang.Object ref = vegaPublicKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vegaPublicKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The public of the party receiving the stake deposit (hex encode)
+     * </pre>
+     *
+     * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+     * @return The bytes for vegaPublicKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVegaPublicKeyBytes() {
+      java.lang.Object ref = vegaPublicKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vegaPublicKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object amount_;
+    /**
+     * <pre>
+     * The amount deposited (base 10)
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount deposited (base 10)
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BLOCK_TIME_FIELD_NUMBER = 4;
+    private long blockTime_;
+    /**
+     * <pre>
+     * The time at which the block was produced
+     * will be used to inform the core at what time
+     * the stake started to be available.
+     * </pre>
+     *
+     * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+     * @return The blockTime.
+     */
+    @java.lang.Override
+    public long getBlockTime() {
+      return blockTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getEthereumAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ethereumAddress_);
+      }
+      if (!getVegaPublicKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, vegaPublicKey_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, amount_);
+      }
+      if (blockTime_ != 0L) {
+        output.writeInt64(4, blockTime_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getEthereumAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ethereumAddress_);
+      }
+      if (!getVegaPublicKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, vegaPublicKey_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, amount_);
+      }
+      if (blockTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, blockTime_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.ChainEvents.StakeDeposited)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.ChainEvents.StakeDeposited other = (io.vegaprotocol.vega.ChainEvents.StakeDeposited) obj;
+
+      if (!getEthereumAddress()
+          .equals(other.getEthereumAddress())) return false;
+      if (!getVegaPublicKey()
+          .equals(other.getVegaPublicKey())) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (getBlockTime()
+          != other.getBlockTime()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ETHEREUM_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getEthereumAddress().hashCode();
+      hash = (37 * hash) + VEGA_PUBLIC_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaPublicKey().hashCode();
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAmount().hashCode();
+      hash = (37 * hash) + BLOCK_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBlockTime());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.ChainEvents.StakeDeposited prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.StakeDeposited}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.StakeDeposited)
+        io.vegaprotocol.vega.ChainEvents.StakeDepositedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeDeposited_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeDeposited_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.ChainEvents.StakeDeposited.class, io.vegaprotocol.vega.ChainEvents.StakeDeposited.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.ChainEvents.StakeDeposited.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        ethereumAddress_ = "";
+
+        vegaPublicKey_ = "";
+
+        amount_ = "";
+
+        blockTime_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeDeposited_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeDeposited getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.ChainEvents.StakeDeposited.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeDeposited build() {
+        io.vegaprotocol.vega.ChainEvents.StakeDeposited result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeDeposited buildPartial() {
+        io.vegaprotocol.vega.ChainEvents.StakeDeposited result = new io.vegaprotocol.vega.ChainEvents.StakeDeposited(this);
+        result.ethereumAddress_ = ethereumAddress_;
+        result.vegaPublicKey_ = vegaPublicKey_;
+        result.amount_ = amount_;
+        result.blockTime_ = blockTime_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.ChainEvents.StakeDeposited) {
+          return mergeFrom((io.vegaprotocol.vega.ChainEvents.StakeDeposited)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.StakeDeposited other) {
+        if (other == io.vegaprotocol.vega.ChainEvents.StakeDeposited.getDefaultInstance()) return this;
+        if (!other.getEthereumAddress().isEmpty()) {
+          ethereumAddress_ = other.ethereumAddress_;
+          onChanged();
+        }
+        if (!other.getVegaPublicKey().isEmpty()) {
+          vegaPublicKey_ = other.vegaPublicKey_;
+          onChanged();
+        }
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
+        }
+        if (other.getBlockTime() != 0L) {
+          setBlockTime(other.getBlockTime());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.ChainEvents.StakeDeposited parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.ChainEvents.StakeDeposited) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object ethereumAddress_ = "";
+      /**
+       * <pre>
+       * Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @return The ethereumAddress.
+       */
+      public java.lang.String getEthereumAddress() {
+        java.lang.Object ref = ethereumAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ethereumAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @return The bytes for ethereumAddress.
+       */
+      public com.google.protobuf.ByteString
+          getEthereumAddressBytes() {
+        java.lang.Object ref = ethereumAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ethereumAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @param value The ethereumAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEthereumAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        ethereumAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEthereumAddress() {
+
+        ethereumAddress_ = getDefaultInstance().getEthereumAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @param value The bytes for ethereumAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEthereumAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        ethereumAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object vegaPublicKey_ = "";
+      /**
+       * <pre>
+       * The public of the party receiving the stake deposit (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @return The vegaPublicKey.
+       */
+      public java.lang.String getVegaPublicKey() {
+        java.lang.Object ref = vegaPublicKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          vegaPublicKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The public of the party receiving the stake deposit (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @return The bytes for vegaPublicKey.
+       */
+      public com.google.protobuf.ByteString
+          getVegaPublicKeyBytes() {
+        java.lang.Object ref = vegaPublicKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          vegaPublicKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The public of the party receiving the stake deposit (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @param value The vegaPublicKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVegaPublicKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        vegaPublicKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The public of the party receiving the stake deposit (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVegaPublicKey() {
+
+        vegaPublicKey_ = getDefaultInstance().getVegaPublicKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The public of the party receiving the stake deposit (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @param value The bytes for vegaPublicKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVegaPublicKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        vegaPublicKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object amount_ = "";
+      /**
+       * <pre>
+       * The amount deposited (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The amount.
+       */
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount deposited (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount deposited (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount deposited (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount deposited (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long blockTime_ ;
+      /**
+       * <pre>
+       * The time at which the block was produced
+       * will be used to inform the core at what time
+       * the stake started to be available.
+       * </pre>
+       *
+       * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+       * @return The blockTime.
+       */
+      @java.lang.Override
+      public long getBlockTime() {
+        return blockTime_;
+      }
+      /**
+       * <pre>
+       * The time at which the block was produced
+       * will be used to inform the core at what time
+       * the stake started to be available.
+       * </pre>
+       *
+       * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+       * @param value The blockTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBlockTime(long value) {
+
+        blockTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The time at which the block was produced
+       * will be used to inform the core at what time
+       * the stake started to be available.
+       * </pre>
+       *
+       * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBlockTime() {
+
+        blockTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.StakeDeposited)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.StakeDeposited)
+    private static final io.vegaprotocol.vega.ChainEvents.StakeDeposited DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.ChainEvents.StakeDeposited();
+    }
+
+    public static io.vegaprotocol.vega.ChainEvents.StakeDeposited getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StakeDeposited>
+        PARSER = new com.google.protobuf.AbstractParser<StakeDeposited>() {
+      @java.lang.Override
+      public StakeDeposited parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StakeDeposited(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StakeDeposited> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StakeDeposited> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.ChainEvents.StakeDeposited getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StakeRemovedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.StakeRemoved)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Ethereum address of the user removing stake (hex encode with 0x prefix)
+     * </pre>
+     *
+     * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+     * @return The ethereumAddress.
+     */
+    java.lang.String getEthereumAddress();
+    /**
+     * <pre>
+     * Ethereum address of the user removing stake (hex encode with 0x prefix)
+     * </pre>
+     *
+     * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+     * @return The bytes for ethereumAddress.
+     */
+    com.google.protobuf.ByteString
+        getEthereumAddressBytes();
+
+    /**
+     * <pre>
+     * The public key of the party from which to remove stake (hex encode)
+     * </pre>
+     *
+     * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+     * @return The vegaPublicKey.
+     */
+    java.lang.String getVegaPublicKey();
+    /**
+     * <pre>
+     * The public key of the party from which to remove stake (hex encode)
+     * </pre>
+     *
+     * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+     * @return The bytes for vegaPublicKey.
+     */
+    com.google.protobuf.ByteString
+        getVegaPublicKeyBytes();
+
+    /**
+     * <pre>
+     * The amount removed (base 10)
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * The amount removed (base 10)
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
+
+    /**
+     * <pre>
+     * The time at which the block was produced
+     * will be used to inform the core at what time
+     * the stake was made unavailable.
+     * </pre>
+     *
+     * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+     * @return The blockTime.
+     */
+    long getBlockTime();
+  }
+  /**
+   * Protobuf type {@code vega.StakeRemoved}
+   */
+  public static final class StakeRemoved extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.StakeRemoved)
+      StakeRemovedOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StakeRemoved.newBuilder() to construct.
+    private StakeRemoved(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StakeRemoved() {
+      ethereumAddress_ = "";
+      vegaPublicKey_ = "";
+      amount_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StakeRemoved();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StakeRemoved(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ethereumAddress_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              vegaPublicKey_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              amount_ = s;
+              break;
+            }
+            case 32: {
+
+              blockTime_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeRemoved_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeRemoved_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.ChainEvents.StakeRemoved.class, io.vegaprotocol.vega.ChainEvents.StakeRemoved.Builder.class);
+    }
+
+    public static final int ETHEREUM_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object ethereumAddress_;
+    /**
+     * <pre>
+     * Ethereum address of the user removing stake (hex encode with 0x prefix)
+     * </pre>
+     *
+     * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+     * @return The ethereumAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getEthereumAddress() {
+      java.lang.Object ref = ethereumAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ethereumAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Ethereum address of the user removing stake (hex encode with 0x prefix)
+     * </pre>
+     *
+     * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+     * @return The bytes for ethereumAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEthereumAddressBytes() {
+      java.lang.Object ref = ethereumAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ethereumAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VEGA_PUBLIC_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object vegaPublicKey_;
+    /**
+     * <pre>
+     * The public key of the party from which to remove stake (hex encode)
+     * </pre>
+     *
+     * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+     * @return The vegaPublicKey.
+     */
+    @java.lang.Override
+    public java.lang.String getVegaPublicKey() {
+      java.lang.Object ref = vegaPublicKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vegaPublicKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The public key of the party from which to remove stake (hex encode)
+     * </pre>
+     *
+     * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+     * @return The bytes for vegaPublicKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVegaPublicKeyBytes() {
+      java.lang.Object ref = vegaPublicKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vegaPublicKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object amount_;
+    /**
+     * <pre>
+     * The amount removed (base 10)
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount removed (base 10)
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BLOCK_TIME_FIELD_NUMBER = 4;
+    private long blockTime_;
+    /**
+     * <pre>
+     * The time at which the block was produced
+     * will be used to inform the core at what time
+     * the stake was made unavailable.
+     * </pre>
+     *
+     * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+     * @return The blockTime.
+     */
+    @java.lang.Override
+    public long getBlockTime() {
+      return blockTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getEthereumAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ethereumAddress_);
+      }
+      if (!getVegaPublicKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, vegaPublicKey_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, amount_);
+      }
+      if (blockTime_ != 0L) {
+        output.writeInt64(4, blockTime_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getEthereumAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ethereumAddress_);
+      }
+      if (!getVegaPublicKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, vegaPublicKey_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, amount_);
+      }
+      if (blockTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, blockTime_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.ChainEvents.StakeRemoved)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.ChainEvents.StakeRemoved other = (io.vegaprotocol.vega.ChainEvents.StakeRemoved) obj;
+
+      if (!getEthereumAddress()
+          .equals(other.getEthereumAddress())) return false;
+      if (!getVegaPublicKey()
+          .equals(other.getVegaPublicKey())) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (getBlockTime()
+          != other.getBlockTime()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ETHEREUM_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getEthereumAddress().hashCode();
+      hash = (37 * hash) + VEGA_PUBLIC_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaPublicKey().hashCode();
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAmount().hashCode();
+      hash = (37 * hash) + BLOCK_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBlockTime());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.ChainEvents.StakeRemoved prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.StakeRemoved}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.StakeRemoved)
+        io.vegaprotocol.vega.ChainEvents.StakeRemovedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeRemoved_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeRemoved_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.ChainEvents.StakeRemoved.class, io.vegaprotocol.vega.ChainEvents.StakeRemoved.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.ChainEvents.StakeRemoved.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        ethereumAddress_ = "";
+
+        vegaPublicKey_ = "";
+
+        amount_ = "";
+
+        blockTime_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.ChainEvents.internal_static_vega_StakeRemoved_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeRemoved getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.ChainEvents.StakeRemoved.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeRemoved build() {
+        io.vegaprotocol.vega.ChainEvents.StakeRemoved result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakeRemoved buildPartial() {
+        io.vegaprotocol.vega.ChainEvents.StakeRemoved result = new io.vegaprotocol.vega.ChainEvents.StakeRemoved(this);
+        result.ethereumAddress_ = ethereumAddress_;
+        result.vegaPublicKey_ = vegaPublicKey_;
+        result.amount_ = amount_;
+        result.blockTime_ = blockTime_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.ChainEvents.StakeRemoved) {
+          return mergeFrom((io.vegaprotocol.vega.ChainEvents.StakeRemoved)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.StakeRemoved other) {
+        if (other == io.vegaprotocol.vega.ChainEvents.StakeRemoved.getDefaultInstance()) return this;
+        if (!other.getEthereumAddress().isEmpty()) {
+          ethereumAddress_ = other.ethereumAddress_;
+          onChanged();
+        }
+        if (!other.getVegaPublicKey().isEmpty()) {
+          vegaPublicKey_ = other.vegaPublicKey_;
+          onChanged();
+        }
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
+        }
+        if (other.getBlockTime() != 0L) {
+          setBlockTime(other.getBlockTime());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.ChainEvents.StakeRemoved parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.ChainEvents.StakeRemoved) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object ethereumAddress_ = "";
+      /**
+       * <pre>
+       * Ethereum address of the user removing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @return The ethereumAddress.
+       */
+      public java.lang.String getEthereumAddress() {
+        java.lang.Object ref = ethereumAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ethereumAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Ethereum address of the user removing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @return The bytes for ethereumAddress.
+       */
+      public com.google.protobuf.ByteString
+          getEthereumAddressBytes() {
+        java.lang.Object ref = ethereumAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ethereumAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Ethereum address of the user removing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @param value The ethereumAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEthereumAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        ethereumAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum address of the user removing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEthereumAddress() {
+
+        ethereumAddress_ = getDefaultInstance().getEthereumAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum address of the user removing stake (hex encode with 0x prefix)
+       * </pre>
+       *
+       * <code>string ethereum_address = 1 [json_name = "ethereumAddress"];</code>
+       * @param value The bytes for ethereumAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEthereumAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        ethereumAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object vegaPublicKey_ = "";
+      /**
+       * <pre>
+       * The public key of the party from which to remove stake (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @return The vegaPublicKey.
+       */
+      public java.lang.String getVegaPublicKey() {
+        java.lang.Object ref = vegaPublicKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          vegaPublicKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The public key of the party from which to remove stake (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @return The bytes for vegaPublicKey.
+       */
+      public com.google.protobuf.ByteString
+          getVegaPublicKeyBytes() {
+        java.lang.Object ref = vegaPublicKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          vegaPublicKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The public key of the party from which to remove stake (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @param value The vegaPublicKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVegaPublicKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        vegaPublicKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The public key of the party from which to remove stake (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVegaPublicKey() {
+
+        vegaPublicKey_ = getDefaultInstance().getVegaPublicKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The public key of the party from which to remove stake (hex encode)
+       * </pre>
+       *
+       * <code>string vega_public_key = 2 [json_name = "vegaPublicKey"];</code>
+       * @param value The bytes for vegaPublicKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVegaPublicKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        vegaPublicKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object amount_ = "";
+      /**
+       * <pre>
+       * The amount removed (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The amount.
+       */
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount removed (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount removed (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount removed (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount removed (base 10)
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long blockTime_ ;
+      /**
+       * <pre>
+       * The time at which the block was produced
+       * will be used to inform the core at what time
+       * the stake was made unavailable.
+       * </pre>
+       *
+       * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+       * @return The blockTime.
+       */
+      @java.lang.Override
+      public long getBlockTime() {
+        return blockTime_;
+      }
+      /**
+       * <pre>
+       * The time at which the block was produced
+       * will be used to inform the core at what time
+       * the stake was made unavailable.
+       * </pre>
+       *
+       * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+       * @param value The blockTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBlockTime(long value) {
+
+        blockTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The time at which the block was produced
+       * will be used to inform the core at what time
+       * the stake was made unavailable.
+       * </pre>
+       *
+       * <code>int64 block_time = 4 [json_name = "blockTime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBlockTime() {
+
+        blockTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.StakeRemoved)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.StakeRemoved)
+    private static final io.vegaprotocol.vega.ChainEvents.StakeRemoved DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.ChainEvents.StakeRemoved();
+    }
+
+    public static io.vegaprotocol.vega.ChainEvents.StakeRemoved getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StakeRemoved>
+        PARSER = new com.google.protobuf.AbstractParser<StakeRemoved>() {
+      @java.lang.Override
+      public StakeRemoved parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StakeRemoved(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StakeRemoved> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StakeRemoved> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.ChainEvents.StakeRemoved getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_BuiltinAssetDeposit_descriptor;
   private static final
@@ -16514,6 +19892,21 @@ public final class ChainEvents {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ValidatorEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_StakingEvent_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_StakingEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_StakeDeposited_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_StakeDeposited_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_StakeRemoved_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_StakeRemoved_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -16529,7 +19922,7 @@ public final class ChainEvents {
       "nt\030\003 \001(\004R\006amount\"o\n\026BuiltinAssetWithdraw" +
       "al\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAssetId\022\031" +
       "\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(" +
-      "\004R\006amount\"\226\001\n\021BuiltinAssetEvent\0226\n\007depos" +
+      "\tR\006amount\"\226\001\n\021BuiltinAssetEvent\0226\n\007depos" +
       "it\030\351\007 \001(\0132\031.vega.BuiltinAssetDepositH\000R\007" +
       "deposit\022?\n\nwithdrawal\030\352\007 \001(\0132\034.vega.Buil" +
       "tinAssetWithdrawalH\000R\nwithdrawalB\010\n\006acti" +
@@ -16575,9 +19968,22 @@ public final class ChainEvents {
       "IdentifierR\002id\"\212\001\n\016ValidatorEvent\022\033\n\tsou" +
       "rce_id\030\001 \001(\tR\010sourceId\022\'\n\003add\030\351\007 \001(\0132\022.v" +
       "ega.AddValidatorH\000R\003add\022(\n\002rm\030\352\007 \001(\0132\025.v" +
-      "ega.RemoveValidatorH\000R\002rmB\010\n\006actionB7\n\024i" +
-      "o.vegaprotocol.vegaZ\037code.vegaprotocol.i" +
-      "o/vega/protob\006proto3"
+      "ega.RemoveValidatorH\000R\002rmB\010\n\006action\"\302\001\n\014" +
+      "StakingEvent\022\024\n\005index\030\001 \001(\004R\005index\022\024\n\005bl" +
+      "ock\030\002 \001(\004R\005block\022@\n\017stake_deposited\030\351\007 \001" +
+      "(\0132\024.vega.StakeDepositedH\000R\016stakeDeposit" +
+      "ed\022:\n\rstake_removed\030\352\007 \001(\0132\022.vega.StakeR" +
+      "emovedH\000R\014stakeRemovedB\010\n\006action\"\232\001\n\016Sta" +
+      "keDeposited\022)\n\020ethereum_address\030\001 \001(\tR\017e" +
+      "thereumAddress\022&\n\017vega_public_key\030\002 \001(\tR" +
+      "\rvegaPublicKey\022\026\n\006amount\030\003 \001(\tR\006amount\022\035" +
+      "\n\nblock_time\030\004 \001(\003R\tblockTime\"\230\001\n\014StakeR" +
+      "emoved\022)\n\020ethereum_address\030\001 \001(\tR\017ethere" +
+      "umAddress\022&\n\017vega_public_key\030\002 \001(\tR\rvega" +
+      "PublicKey\022\026\n\006amount\030\003 \001(\tR\006amount\022\035\n\nblo" +
+      "ck_time\030\004 \001(\003R\tblockTimeB7\n\024io.vegaproto" +
+      "col.vegaZ\037code.vegaprotocol.io/vega/prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16685,6 +20091,24 @@ public final class ChainEvents {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ValidatorEvent_descriptor,
         new java.lang.String[] { "SourceId", "Add", "Rm", "Action", });
+    internal_static_vega_StakingEvent_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_vega_StakingEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_StakingEvent_descriptor,
+        new java.lang.String[] { "Index", "Block", "StakeDeposited", "StakeRemoved", "Action", });
+    internal_static_vega_StakeDeposited_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_vega_StakeDeposited_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_StakeDeposited_descriptor,
+        new java.lang.String[] { "EthereumAddress", "VegaPublicKey", "Amount", "BlockTime", });
+    internal_static_vega_StakeRemoved_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_vega_StakeRemoved_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_StakeRemoved_descriptor,
+        new java.lang.String[] { "EthereumAddress", "VegaPublicKey", "Amount", "BlockTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

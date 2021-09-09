@@ -92,7 +92,7 @@ type OrderSubmission struct {
 	// Price for the order, the price is an integer, for example `123456` is a correctly
 	// formatted price of `1.23456` assuming market configured to 5 decimal places,
 	// , required field for limit orders, however it is not required for market orders
-	Price uint64 `protobuf:"varint,2,opt,name=price,proto3" json:"price,omitempty"`
+	Price string `protobuf:"bytes,2,opt,name=price,proto3" json:"price,omitempty"`
 	// Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
 	Size uint64 `protobuf:"varint,3,opt,name=size,proto3" json:"size,omitempty"`
 	// Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
@@ -153,11 +153,11 @@ func (x *OrderSubmission) GetMarketId() string {
 	return ""
 }
 
-func (x *OrderSubmission) GetPrice() uint64 {
+func (x *OrderSubmission) GetPrice() string {
 	if x != nil {
 		return x.Price
 	}
-	return 0
+	return ""
 }
 
 func (x *OrderSubmission) GetSize() uint64 {
@@ -394,7 +394,7 @@ type LiquidityProvisionSubmission struct {
 	// Market identifier for the order, required field
 	MarketId string `protobuf:"bytes,1,opt,name=market_id,json=marketId,proto3" json:"market_id,omitempty"`
 	// Specified as a unitless number that represents the amount of settlement asset of the market
-	CommitmentAmount uint64 `protobuf:"varint,2,opt,name=commitment_amount,json=commitmentAmount,proto3" json:"commitment_amount,omitempty"`
+	CommitmentAmount string `protobuf:"bytes,2,opt,name=commitment_amount,json=commitmentAmount,proto3" json:"commitment_amount,omitempty"`
 	// Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
 	Fee string `protobuf:"bytes,3,opt,name=fee,proto3" json:"fee,omitempty"`
 	// A set of liquidity sell orders to meet the liquidity provision obligation
@@ -444,11 +444,11 @@ func (x *LiquidityProvisionSubmission) GetMarketId() string {
 	return ""
 }
 
-func (x *LiquidityProvisionSubmission) GetCommitmentAmount() uint64 {
+func (x *LiquidityProvisionSubmission) GetCommitmentAmount() string {
 	if x != nil {
 		return x.CommitmentAmount
 	}
-	return 0
+	return ""
 }
 
 func (x *LiquidityProvisionSubmission) GetFee() string {
@@ -486,7 +486,7 @@ type WithdrawSubmission struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The amount to be withdrawn
-	Amount uint64 `protobuf:"varint,1,opt,name=amount,proto3" json:"amount,omitempty"`
+	Amount string `protobuf:"bytes,1,opt,name=amount,proto3" json:"amount,omitempty"`
 	// The asset we want to withdraw
 	Asset string `protobuf:"bytes,2,opt,name=asset,proto3" json:"asset,omitempty"`
 	// Foreign chain specifics
@@ -525,11 +525,11 @@ func (*WithdrawSubmission) Descriptor() ([]byte, []int) {
 	return file_commands_v1_commands_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *WithdrawSubmission) GetAmount() uint64 {
+func (x *WithdrawSubmission) GetAmount() string {
 	if x != nil {
 		return x.Amount
 	}
-	return 0
+	return ""
 }
 
 func (x *WithdrawSubmission) GetAsset() string {
@@ -673,7 +673,7 @@ type DelegateSubmission struct {
 	// The ID for the node to delegate to
 	NodeId string `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
 	// The amount of stake to delegate
-	Amount uint64 `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	Amount string `protobuf:"bytes,2,opt,name=amount,proto3" json:"amount,omitempty"`
 }
 
 func (x *DelegateSubmission) Reset() {
@@ -715,11 +715,11 @@ func (x *DelegateSubmission) GetNodeId() string {
 	return ""
 }
 
-func (x *DelegateSubmission) GetAmount() uint64 {
+func (x *DelegateSubmission) GetAmount() string {
 	if x != nil {
 		return x.Amount
 	}
-	return 0
+	return ""
 }
 
 type UndelegateSubmission struct {
@@ -729,7 +729,7 @@ type UndelegateSubmission struct {
 
 	NodeId string `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
 	// optional, if not specified = ALL
-	Amount uint64                      `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	Amount string                      `protobuf:"bytes,2,opt,name=amount,proto3" json:"amount,omitempty"`
 	Method UndelegateSubmission_Method `protobuf:"varint,3,opt,name=method,proto3,enum=vega.commands.v1.UndelegateSubmission_Method" json:"method,omitempty"`
 }
 
@@ -772,11 +772,11 @@ func (x *UndelegateSubmission) GetNodeId() string {
 	return ""
 }
 
-func (x *UndelegateSubmission) GetAmount() uint64 {
+func (x *UndelegateSubmission) GetAmount() string {
 	if x != nil {
 		return x.Amount
 	}
-	return 0
+	return ""
 }
 
 func (x *UndelegateSubmission) GetMethod() UndelegateSubmission_Method {
@@ -784,6 +784,54 @@ func (x *UndelegateSubmission) GetMethod() UndelegateSubmission_Method {
 		return x.Method
 	}
 	return UndelegateSubmission_METHOD_UNSPECIFIED
+}
+
+// A command that loads the state from a given checkpoint
+type RestoreSnapshot struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Data []byte `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
+}
+
+func (x *RestoreSnapshot) Reset() {
+	*x = RestoreSnapshot{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_commands_v1_commands_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RestoreSnapshot) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RestoreSnapshot) ProtoMessage() {}
+
+func (x *RestoreSnapshot) ProtoReflect() protoreflect.Message {
+	mi := &file_commands_v1_commands_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RestoreSnapshot.ProtoReflect.Descriptor instead.
+func (*RestoreSnapshot) Descriptor() ([]byte, []int) {
+	return file_commands_v1_commands_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *RestoreSnapshot) GetData() []byte {
+	if x != nil {
+		return x.Data
+	}
+	return nil
 }
 
 var File_commands_v1_commands_proto protoreflect.FileDescriptor
@@ -803,7 +851,7 @@ var file_commands_v1_commands_proto_rawDesc = []byte{
 	0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x23, 0x0a, 0x09, 0x6d, 0x61, 0x72, 0x6b,
 	0x65, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f,
 	0x02, 0x58, 0x01, 0x52, 0x08, 0x6d, 0x61, 0x72, 0x6b, 0x65, 0x74, 0x49, 0x64, 0x12, 0x14, 0x0a,
-	0x05, 0x70, 0x72, 0x69, 0x63, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x70, 0x72,
+	0x05, 0x70, 0x72, 0x69, 0x63, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x70, 0x72,
 	0x69, 0x63, 0x65, 0x12, 0x1a, 0x0a, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28,
 	0x04, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x12,
 	0x1e, 0x0a, 0x04, 0x73, 0x69, 0x64, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0a, 0x2e,
@@ -856,7 +904,7 @@ var file_commands_v1_commands_proto_rawDesc = []byte{
 	0x6b, 0x65, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf,
 	0x1f, 0x02, 0x58, 0x01, 0x52, 0x08, 0x6d, 0x61, 0x72, 0x6b, 0x65, 0x74, 0x49, 0x64, 0x12, 0x2b,
 	0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x74, 0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x61, 0x6d, 0x6f,
-	0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x10, 0x63, 0x6f, 0x6d, 0x6d, 0x69,
+	0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x63, 0x6f, 0x6d, 0x6d, 0x69,
 	0x74, 0x6d, 0x65, 0x6e, 0x74, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x66,
 	0x65, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x66, 0x65, 0x65, 0x12, 0x2a, 0x0a,
 	0x05, 0x73, 0x65, 0x6c, 0x6c, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x76,
@@ -868,7 +916,7 @@ var file_commands_v1_commands_proto_rawDesc = []byte{
 	0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x65, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63,
 	0x65, 0x22, 0x67, 0x0a, 0x12, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x53, 0x75, 0x62,
 	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e,
-	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12,
+	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12,
 	0x14, 0x0a, 0x05, 0x61, 0x73, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
 	0x61, 0x73, 0x73, 0x65, 0x74, 0x12, 0x23, 0x0a, 0x03, 0x65, 0x78, 0x74, 0x18, 0x03, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x11, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72,
@@ -889,12 +937,12 @@ var file_commands_v1_commands_proto_rawDesc = []byte{
 	0x53, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x1f, 0x0a, 0x07, 0x6e, 0x6f,
 	0x64, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f,
 	0x02, 0x58, 0x01, 0x52, 0x06, 0x6e, 0x6f, 0x64, 0x65, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61,
-	0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f,
+	0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x61, 0x6d, 0x6f,
 	0x75, 0x6e, 0x74, 0x22, 0xf9, 0x01, 0x0a, 0x14, 0x55, 0x6e, 0x64, 0x65, 0x6c, 0x65, 0x67, 0x61,
 	0x74, 0x65, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x1f, 0x0a, 0x07,
 	0x6e, 0x6f, 0x64, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2,
 	0xdf, 0x1f, 0x02, 0x58, 0x01, 0x52, 0x06, 0x6e, 0x6f, 0x64, 0x65, 0x49, 0x64, 0x12, 0x16, 0x0a,
-	0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61,
+	0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x61,
 	0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x45, 0x0a, 0x06, 0x6d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x18,
 	0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x2d, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x61, 0x6e, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x64, 0x65, 0x6c, 0x65, 0x67,
@@ -905,13 +953,15 @@ var file_commands_v1_commands_proto_rawDesc = []byte{
 	0x0a, 0x0a, 0x4d, 0x45, 0x54, 0x48, 0x4f, 0x44, 0x5f, 0x4e, 0x4f, 0x57, 0x10, 0x01, 0x12, 0x1a,
 	0x0a, 0x16, 0x4d, 0x45, 0x54, 0x48, 0x4f, 0x44, 0x5f, 0x41, 0x54, 0x5f, 0x45, 0x4e, 0x44, 0x5f,
 	0x4f, 0x46, 0x5f, 0x45, 0x50, 0x4f, 0x43, 0x48, 0x10, 0x02, 0x12, 0x13, 0x0a, 0x0f, 0x4d, 0x45,
-	0x54, 0x48, 0x4f, 0x44, 0x5f, 0x49, 0x4e, 0x5f, 0x41, 0x4e, 0x47, 0x45, 0x52, 0x10, 0x03, 0x42,
-	0x4f, 0x0a, 0x20, 0x69, 0x6f, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63,
-	0x6f, 0x6c, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x5a, 0x2b, 0x63, 0x6f, 0x64, 0x65, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x69, 0x6f, 0x2f, 0x76, 0x65, 0x67, 0x61, 0x2f, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x73, 0x2f, 0x76, 0x31,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x54, 0x48, 0x4f, 0x44, 0x5f, 0x49, 0x4e, 0x5f, 0x41, 0x4e, 0x47, 0x45, 0x52, 0x10, 0x03, 0x22,
+	0x25, 0x0a, 0x0f, 0x52, 0x65, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68,
+	0x6f, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0c,
+	0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x42, 0x4f, 0x0a, 0x20, 0x69, 0x6f, 0x2e, 0x76, 0x65, 0x67,
+	0x61, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x63,
+	0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x5a, 0x2b, 0x63, 0x6f, 0x64, 0x65,
+	0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x69, 0x6f,
+	0x2f, 0x76, 0x65, 0x67, 0x61, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d,
+	0x61, 0x6e, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -927,7 +977,7 @@ func file_commands_v1_commands_proto_rawDescGZIP() []byte {
 }
 
 var file_commands_v1_commands_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_commands_v1_commands_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_commands_v1_commands_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_commands_v1_commands_proto_goTypes = []interface{}{
 	(UndelegateSubmission_Method)(0),     // 0: vega.commands.v1.UndelegateSubmission.Method
 	(*OrderSubmission)(nil),              // 1: vega.commands.v1.OrderSubmission
@@ -939,34 +989,35 @@ var file_commands_v1_commands_proto_goTypes = []interface{}{
 	(*VoteSubmission)(nil),               // 7: vega.commands.v1.VoteSubmission
 	(*DelegateSubmission)(nil),           // 8: vega.commands.v1.DelegateSubmission
 	(*UndelegateSubmission)(nil),         // 9: vega.commands.v1.UndelegateSubmission
-	(proto1.Side)(0),                     // 10: vega.Side
-	(proto1.Order_TimeInForce)(0),        // 11: vega.Order.TimeInForce
-	(proto1.Order_Type)(0),               // 12: vega.Order.Type
-	(*proto1.PeggedOrder)(nil),           // 13: vega.PeggedOrder
-	(*proto1.Price)(nil),                 // 14: vega.Price
-	(*proto1.Timestamp)(nil),             // 15: vega.Timestamp
-	(*wrappers.Int64Value)(nil),          // 16: google.protobuf.Int64Value
-	(proto1.PeggedReference)(0),          // 17: vega.PeggedReference
-	(*proto1.LiquidityOrder)(nil),        // 18: vega.LiquidityOrder
-	(*proto1.WithdrawExt)(nil),           // 19: vega.WithdrawExt
-	(*proto1.ProposalTerms)(nil),         // 20: vega.ProposalTerms
-	(proto1.Vote_Value)(0),               // 21: vega.Vote.Value
+	(*RestoreSnapshot)(nil),              // 10: vega.commands.v1.RestoreSnapshot
+	(proto1.Side)(0),                     // 11: vega.Side
+	(proto1.Order_TimeInForce)(0),        // 12: vega.Order.TimeInForce
+	(proto1.Order_Type)(0),               // 13: vega.Order.Type
+	(*proto1.PeggedOrder)(nil),           // 14: vega.PeggedOrder
+	(*proto1.Price)(nil),                 // 15: vega.Price
+	(*proto1.Timestamp)(nil),             // 16: vega.Timestamp
+	(*wrappers.Int64Value)(nil),          // 17: google.protobuf.Int64Value
+	(proto1.PeggedReference)(0),          // 18: vega.PeggedReference
+	(*proto1.LiquidityOrder)(nil),        // 19: vega.LiquidityOrder
+	(*proto1.WithdrawExt)(nil),           // 20: vega.WithdrawExt
+	(*proto1.ProposalTerms)(nil),         // 21: vega.ProposalTerms
+	(proto1.Vote_Value)(0),               // 22: vega.Vote.Value
 }
 var file_commands_v1_commands_proto_depIdxs = []int32{
-	10, // 0: vega.commands.v1.OrderSubmission.side:type_name -> vega.Side
-	11, // 1: vega.commands.v1.OrderSubmission.time_in_force:type_name -> vega.Order.TimeInForce
-	12, // 2: vega.commands.v1.OrderSubmission.type:type_name -> vega.Order.Type
-	13, // 3: vega.commands.v1.OrderSubmission.pegged_order:type_name -> vega.PeggedOrder
-	14, // 4: vega.commands.v1.OrderAmendment.price:type_name -> vega.Price
-	15, // 5: vega.commands.v1.OrderAmendment.expires_at:type_name -> vega.Timestamp
-	11, // 6: vega.commands.v1.OrderAmendment.time_in_force:type_name -> vega.Order.TimeInForce
-	16, // 7: vega.commands.v1.OrderAmendment.pegged_offset:type_name -> google.protobuf.Int64Value
-	17, // 8: vega.commands.v1.OrderAmendment.pegged_reference:type_name -> vega.PeggedReference
-	18, // 9: vega.commands.v1.LiquidityProvisionSubmission.sells:type_name -> vega.LiquidityOrder
-	18, // 10: vega.commands.v1.LiquidityProvisionSubmission.buys:type_name -> vega.LiquidityOrder
-	19, // 11: vega.commands.v1.WithdrawSubmission.ext:type_name -> vega.WithdrawExt
-	20, // 12: vega.commands.v1.ProposalSubmission.terms:type_name -> vega.ProposalTerms
-	21, // 13: vega.commands.v1.VoteSubmission.value:type_name -> vega.Vote.Value
+	11, // 0: vega.commands.v1.OrderSubmission.side:type_name -> vega.Side
+	12, // 1: vega.commands.v1.OrderSubmission.time_in_force:type_name -> vega.Order.TimeInForce
+	13, // 2: vega.commands.v1.OrderSubmission.type:type_name -> vega.Order.Type
+	14, // 3: vega.commands.v1.OrderSubmission.pegged_order:type_name -> vega.PeggedOrder
+	15, // 4: vega.commands.v1.OrderAmendment.price:type_name -> vega.Price
+	16, // 5: vega.commands.v1.OrderAmendment.expires_at:type_name -> vega.Timestamp
+	12, // 6: vega.commands.v1.OrderAmendment.time_in_force:type_name -> vega.Order.TimeInForce
+	17, // 7: vega.commands.v1.OrderAmendment.pegged_offset:type_name -> google.protobuf.Int64Value
+	18, // 8: vega.commands.v1.OrderAmendment.pegged_reference:type_name -> vega.PeggedReference
+	19, // 9: vega.commands.v1.LiquidityProvisionSubmission.sells:type_name -> vega.LiquidityOrder
+	19, // 10: vega.commands.v1.LiquidityProvisionSubmission.buys:type_name -> vega.LiquidityOrder
+	20, // 11: vega.commands.v1.WithdrawSubmission.ext:type_name -> vega.WithdrawExt
+	21, // 12: vega.commands.v1.ProposalSubmission.terms:type_name -> vega.ProposalTerms
+	22, // 13: vega.commands.v1.VoteSubmission.value:type_name -> vega.Vote.Value
 	0,  // 14: vega.commands.v1.UndelegateSubmission.method:type_name -> vega.commands.v1.UndelegateSubmission.Method
 	15, // [15:15] is the sub-list for method output_type
 	15, // [15:15] is the sub-list for method input_type
@@ -1089,6 +1140,18 @@ func file_commands_v1_commands_proto_init() {
 				return nil
 			}
 		}
+		file_commands_v1_commands_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RestoreSnapshot); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1096,7 +1159,7 @@ func file_commands_v1_commands_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_commands_v1_commands_proto_rawDesc,
 			NumEnums:      1,
-			NumMessages:   9,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

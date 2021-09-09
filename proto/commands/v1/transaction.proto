@@ -38,6 +38,9 @@ message InputData {
 
     // Oracles
     OracleDataSubmission oracle_data_submission = 3001;
+
+    // Checkpoints
+    RestoreSnapshot restore_snapshot_submission = 4001;
   }
 }
 

@@ -6518,10 +6518,20 @@ public final class Governance {
      * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
+     * <code>string commitment_amount = 1 [json_name = "commitmentAmount"];</code>
      * @return The commitmentAmount.
      */
-    long getCommitmentAmount();
+    java.lang.String getCommitmentAmount();
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market
+     * </pre>
+     *
+     * <code>string commitment_amount = 1 [json_name = "commitmentAmount"];</code>
+     * @return The bytes for commitmentAmount.
+     */
+    com.google.protobuf.ByteString
+        getCommitmentAmountBytes();
 
     /**
      * <pre>
@@ -6668,6 +6678,7 @@ public final class Governance {
       super(builder);
     }
     private NewMarketCommitment() {
+      commitmentAmount_ = "";
       fee_ = "";
       sells_ = java.util.Collections.emptyList();
       buys_ = java.util.Collections.emptyList();
@@ -6705,9 +6716,10 @@ public final class Governance {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              commitmentAmount_ = input.readUInt64();
+              commitmentAmount_ = s;
               break;
             }
             case 18: {
@@ -6779,18 +6791,49 @@ public final class Governance {
     }
 
     public static final int COMMITMENT_AMOUNT_FIELD_NUMBER = 1;
-    private long commitmentAmount_;
+    private volatile java.lang.Object commitmentAmount_;
     /**
      * <pre>
      * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
+     * <code>string commitment_amount = 1 [json_name = "commitmentAmount"];</code>
      * @return The commitmentAmount.
      */
     @java.lang.Override
-    public long getCommitmentAmount() {
-      return commitmentAmount_;
+    public java.lang.String getCommitmentAmount() {
+      java.lang.Object ref = commitmentAmount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        commitmentAmount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market
+     * </pre>
+     *
+     * <code>string commitment_amount = 1 [json_name = "commitmentAmount"];</code>
+     * @return The bytes for commitmentAmount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCommitmentAmountBytes() {
+      java.lang.Object ref = commitmentAmount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        commitmentAmount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int FEE_FIELD_NUMBER = 2;
@@ -7019,8 +7062,8 @@ public final class Governance {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (commitmentAmount_ != 0L) {
-        output.writeUInt64(1, commitmentAmount_);
+      if (!getCommitmentAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, commitmentAmount_);
       }
       if (!getFeeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fee_);
@@ -7043,9 +7086,8 @@ public final class Governance {
       if (size != -1) return size;
 
       size = 0;
-      if (commitmentAmount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, commitmentAmount_);
+      if (!getCommitmentAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, commitmentAmount_);
       }
       if (!getFeeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fee_);
@@ -7076,8 +7118,8 @@ public final class Governance {
       }
       io.vegaprotocol.vega.Governance.NewMarketCommitment other = (io.vegaprotocol.vega.Governance.NewMarketCommitment) obj;
 
-      if (getCommitmentAmount()
-          != other.getCommitmentAmount()) return false;
+      if (!getCommitmentAmount()
+          .equals(other.getCommitmentAmount())) return false;
       if (!getFee()
           .equals(other.getFee())) return false;
       if (!getSellsList()
@@ -7098,8 +7140,7 @@ public final class Governance {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + COMMITMENT_AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCommitmentAmount());
+      hash = (53 * hash) + getCommitmentAmount().hashCode();
       hash = (37 * hash) + FEE_FIELD_NUMBER;
       hash = (53 * hash) + getFee().hashCode();
       if (getSellsCount() > 0) {
@@ -7251,7 +7292,7 @@ public final class Governance {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        commitmentAmount_ = 0L;
+        commitmentAmount_ = "";
 
         fee_ = "";
 
@@ -7365,8 +7406,9 @@ public final class Governance {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Governance.NewMarketCommitment other) {
         if (other == io.vegaprotocol.vega.Governance.NewMarketCommitment.getDefaultInstance()) return this;
-        if (other.getCommitmentAmount() != 0L) {
-          setCommitmentAmount(other.getCommitmentAmount());
+        if (!other.getCommitmentAmount().isEmpty()) {
+          commitmentAmount_ = other.commitmentAmount_;
+          onChanged();
         }
         if (!other.getFee().isEmpty()) {
           fee_ = other.fee_;
@@ -7458,29 +7500,62 @@ public final class Governance {
       }
       private int bitField0_;
 
-      private long commitmentAmount_ ;
+      private java.lang.Object commitmentAmount_ = "";
       /**
        * <pre>
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
+       * <code>string commitment_amount = 1 [json_name = "commitmentAmount"];</code>
        * @return The commitmentAmount.
        */
-      @java.lang.Override
-      public long getCommitmentAmount() {
-        return commitmentAmount_;
+      public java.lang.String getCommitmentAmount() {
+        java.lang.Object ref = commitmentAmount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          commitmentAmount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
+       * <code>string commitment_amount = 1 [json_name = "commitmentAmount"];</code>
+       * @return The bytes for commitmentAmount.
+       */
+      public com.google.protobuf.ByteString
+          getCommitmentAmountBytes() {
+        java.lang.Object ref = commitmentAmount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          commitmentAmount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market
+       * </pre>
+       *
+       * <code>string commitment_amount = 1 [json_name = "commitmentAmount"];</code>
        * @param value The commitmentAmount to set.
        * @return This builder for chaining.
        */
-      public Builder setCommitmentAmount(long value) {
+      public Builder setCommitmentAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         commitmentAmount_ = value;
         onChanged();
@@ -7491,12 +7566,32 @@ public final class Governance {
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
+       * <code>string commitment_amount = 1 [json_name = "commitmentAmount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCommitmentAmount() {
 
-        commitmentAmount_ = 0L;
+        commitmentAmount_ = getDefaultInstance().getCommitmentAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market
+       * </pre>
+       *
+       * <code>string commitment_amount = 1 [json_name = "commitmentAmount"];</code>
+       * @param value The bytes for commitmentAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCommitmentAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        commitmentAmount_ = value;
         onChanged();
         return this;
       }
@@ -17643,10 +17738,20 @@ public final class Governance {
      * Total number of governance token for the party that casted the vote
      * </pre>
      *
-     * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+     * <code>string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
      * @return The totalGovernanceTokenBalance.
      */
-    long getTotalGovernanceTokenBalance();
+    java.lang.String getTotalGovernanceTokenBalance();
+    /**
+     * <pre>
+     * Total number of governance token for the party that casted the vote
+     * </pre>
+     *
+     * <code>string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+     * @return The bytes for totalGovernanceTokenBalance.
+     */
+    com.google.protobuf.ByteString
+        getTotalGovernanceTokenBalanceBytes();
 
     /**
      * <pre>
@@ -17688,6 +17793,7 @@ public final class Governance {
       partyId_ = "";
       value_ = 0;
       proposalId_ = "";
+      totalGovernanceTokenBalance_ = "";
       totalGovernanceTokenWeight_ = "";
     }
 
@@ -17744,9 +17850,10 @@ public final class Governance {
               timestamp_ = input.readInt64();
               break;
             }
-            case 40: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              totalGovernanceTokenBalance_ = input.readUInt64();
+              totalGovernanceTokenBalance_ = s;
               break;
             }
             case 50: {
@@ -18067,18 +18174,49 @@ public final class Governance {
     }
 
     public static final int TOTAL_GOVERNANCE_TOKEN_BALANCE_FIELD_NUMBER = 5;
-    private long totalGovernanceTokenBalance_;
+    private volatile java.lang.Object totalGovernanceTokenBalance_;
     /**
      * <pre>
      * Total number of governance token for the party that casted the vote
      * </pre>
      *
-     * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+     * <code>string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
      * @return The totalGovernanceTokenBalance.
      */
     @java.lang.Override
-    public long getTotalGovernanceTokenBalance() {
-      return totalGovernanceTokenBalance_;
+    public java.lang.String getTotalGovernanceTokenBalance() {
+      java.lang.Object ref = totalGovernanceTokenBalance_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        totalGovernanceTokenBalance_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Total number of governance token for the party that casted the vote
+     * </pre>
+     *
+     * <code>string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+     * @return The bytes for totalGovernanceTokenBalance.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTotalGovernanceTokenBalanceBytes() {
+      java.lang.Object ref = totalGovernanceTokenBalance_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        totalGovernanceTokenBalance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int TOTAL_GOVERNANCE_TOKEN_WEIGHT_FIELD_NUMBER = 6;
@@ -18153,8 +18291,8 @@ public final class Governance {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
-      if (totalGovernanceTokenBalance_ != 0L) {
-        output.writeUInt64(5, totalGovernanceTokenBalance_);
+      if (!getTotalGovernanceTokenBalanceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, totalGovernanceTokenBalance_);
       }
       if (!getTotalGovernanceTokenWeightBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, totalGovernanceTokenWeight_);
@@ -18182,9 +18320,8 @@ public final class Governance {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
       }
-      if (totalGovernanceTokenBalance_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, totalGovernanceTokenBalance_);
+      if (!getTotalGovernanceTokenBalanceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, totalGovernanceTokenBalance_);
       }
       if (!getTotalGovernanceTokenWeightBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, totalGovernanceTokenWeight_);
@@ -18211,8 +18348,8 @@ public final class Governance {
           .equals(other.getProposalId())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
-      if (getTotalGovernanceTokenBalance()
-          != other.getTotalGovernanceTokenBalance()) return false;
+      if (!getTotalGovernanceTokenBalance()
+          .equals(other.getTotalGovernanceTokenBalance())) return false;
       if (!getTotalGovernanceTokenWeight()
           .equals(other.getTotalGovernanceTokenWeight())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -18236,8 +18373,7 @@ public final class Governance {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
       hash = (37 * hash) + TOTAL_GOVERNANCE_TOKEN_BALANCE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTotalGovernanceTokenBalance());
+      hash = (53 * hash) + getTotalGovernanceTokenBalance().hashCode();
       hash = (37 * hash) + TOTAL_GOVERNANCE_TOKEN_WEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalGovernanceTokenWeight().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -18385,7 +18521,7 @@ public final class Governance {
 
         timestamp_ = 0L;
 
-        totalGovernanceTokenBalance_ = 0L;
+        totalGovernanceTokenBalance_ = "";
 
         totalGovernanceTokenWeight_ = "";
 
@@ -18483,8 +18619,9 @@ public final class Governance {
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
         }
-        if (other.getTotalGovernanceTokenBalance() != 0L) {
-          setTotalGovernanceTokenBalance(other.getTotalGovernanceTokenBalance());
+        if (!other.getTotalGovernanceTokenBalance().isEmpty()) {
+          totalGovernanceTokenBalance_ = other.totalGovernanceTokenBalance_;
+          onChanged();
         }
         if (!other.getTotalGovernanceTokenWeight().isEmpty()) {
           totalGovernanceTokenWeight_ = other.totalGovernanceTokenWeight_;
@@ -18828,29 +18965,62 @@ public final class Governance {
         return this;
       }
 
-      private long totalGovernanceTokenBalance_ ;
+      private java.lang.Object totalGovernanceTokenBalance_ = "";
       /**
        * <pre>
        * Total number of governance token for the party that casted the vote
        * </pre>
        *
-       * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * <code>string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
        * @return The totalGovernanceTokenBalance.
        */
-      @java.lang.Override
-      public long getTotalGovernanceTokenBalance() {
-        return totalGovernanceTokenBalance_;
+      public java.lang.String getTotalGovernanceTokenBalance() {
+        java.lang.Object ref = totalGovernanceTokenBalance_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          totalGovernanceTokenBalance_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Total number of governance token for the party that casted the vote
        * </pre>
        *
-       * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * <code>string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * @return The bytes for totalGovernanceTokenBalance.
+       */
+      public com.google.protobuf.ByteString
+          getTotalGovernanceTokenBalanceBytes() {
+        java.lang.Object ref = totalGovernanceTokenBalance_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          totalGovernanceTokenBalance_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Total number of governance token for the party that casted the vote
+       * </pre>
+       *
+       * <code>string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
        * @param value The totalGovernanceTokenBalance to set.
        * @return This builder for chaining.
        */
-      public Builder setTotalGovernanceTokenBalance(long value) {
+      public Builder setTotalGovernanceTokenBalance(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
 
         totalGovernanceTokenBalance_ = value;
         onChanged();
@@ -18861,12 +19031,32 @@ public final class Governance {
        * Total number of governance token for the party that casted the vote
        * </pre>
        *
-       * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * <code>string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalGovernanceTokenBalance() {
 
-        totalGovernanceTokenBalance_ = 0L;
+        totalGovernanceTokenBalance_ = getDefaultInstance().getTotalGovernanceTokenBalance();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total number of governance token for the party that casted the vote
+       * </pre>
+       *
+       * <code>string total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * @param value The bytes for totalGovernanceTokenBalance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalGovernanceTokenBalanceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        totalGovernanceTokenBalance_ = value;
         onChanged();
         return this;
       }
@@ -19133,7 +19323,7 @@ public final class Governance {
       "nuous\0224\n\010discrete\030\311\001 \001(\0132\025.vega.Discrete" +
       "TradingH\001R\010discreteB\021\n\017risk_parametersB\016" +
       "\n\014trading_mode\"\310\001\n\023NewMarketCommitment\022+" +
-      "\n\021commitment_amount\030\001 \001(\004R\020commitmentAmo" +
+      "\n\021commitment_amount\030\001 \001(\tR\020commitmentAmo" +
       "unt\022\020\n\003fee\030\002 \001(\tR\003fee\022*\n\005sells\030\003 \003(\0132\024.v" +
       "ega.LiquidityOrderR\005sells\022(\n\004buys\030\004 \003(\0132" +
       "\024.vega.LiquidityOrderR\004buys\022\034\n\treference" +
@@ -19183,7 +19373,7 @@ public final class Governance {
       ".Vote.ValueB\007\342\337\037\003\210\001\001R\005value\022\'\n\013proposal_" +
       "id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposalId\022\034\n\ttimestam" +
       "p\030\004 \001(\003R\ttimestamp\022C\n\036total_governance_t" +
-      "oken_balance\030\005 \001(\004R\033totalGovernanceToken" +
+      "oken_balance\030\005 \001(\tR\033totalGovernanceToken" +
       "Balance\022A\n\035total_governance_token_weight" +
       "\030\006 \001(\tR\032totalGovernanceTokenWeight\";\n\005Va" +
       "lue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001" +
